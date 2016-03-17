@@ -72,16 +72,22 @@ ul li {
 
 .con {
     width: 1024px;
-    overflow: hidden;
+    height:370px;
     margin: 0 auto;
     margin-top: 10px;
 }
 
+.connews {
+    width: 1024px;
+    height:300px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
 .con1 {
-    width: 340px;
+    width: 333px;
     float: left;
     display: inline;
-    margin-right: 4px;
+    margin-right: 10px;
     height: 300px;
     overflow: hidden;
 }
@@ -100,7 +106,6 @@ ul li {
  line-height:36px;
  text-align:center;
  color:#292929;
- 
  cursor:pointer;
 }
 
@@ -116,10 +121,10 @@ ul li {
 
 
 .con2 {
-    width: 340px;
+    width: 333px;
     float: left;
     display: inline;
-    margin-right: 4px;
+    margin-right: 10px;
     height: 300px;
     overflow: hidden;
 }
@@ -180,10 +185,9 @@ ul li {
 
 
 .conblue {
-    width: 340px;
+    width: 333px;
     float: left;
     display: inline;
-    margin-right: 4px;
     height: 300px;
     overflow: hidden;
 }
@@ -194,7 +198,7 @@ ul li {
  border-bottom:1px solid #7e7e7e;
 }
 .conblue .name ul li{
- width:160px;
+ width:166px;
  height:36px;
  float:left;
  display:inline;
@@ -217,10 +221,10 @@ ul li {
 }
 
 .congray {
-    width: 330px;
+    width: 333px;
     float: left;
     display: inline;
-    margin-right: 4px;
+   
     height: 300px;
     overflow: hidden;
 }
@@ -231,7 +235,7 @@ ul li {
  border-bottom:1px solid #7e7e7e;
 }
 .congray .name ul li{
- width:160px;
+ width:166px;
  height:36px;
  float:left;
  display:inline;
@@ -262,5 +266,26 @@ ul li {
   top: 0; left: 0; bottom: 0; right: 0;  
 }  
 
+.bigThree{
+	width: 1024px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+    height:50px;
+}
+
+.bigThree li{
+	width:333px;
+	text-align: center;
+	float: left;
+	color:#FFFFFF;
+	font:18px 微软雅黑;
+	background: url(../images/libg.png)repeat right top;
+	cursor:pointer;
+	height:50px;
+	vertical-align: middle;
+	list-style-type:none;
+	padding:10px;
+}
 
 
