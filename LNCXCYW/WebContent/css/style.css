@@ -86,6 +86,35 @@ ul li {
     overflow: hidden;
 }
 
+.con1 .name{
+ width:100%;
+ height:36px;
+ border-bottom:1px solid #7e7e7e;
+}
+.con1 .name ul li{
+ width:170px;
+ height:36px;
+ float:left;
+ display:inline;
+ font:14px 微软雅黑;
+ line-height:36px;
+ text-align:center;
+ color:#292929;
+ 
+ cursor:pointer;
+}
+
+.con1 .name ul li.curnews{
+ 
+ color:#ffffff;
+ background: url(../images/litabbg.png) no-repeat right top;
+}
+
+.con1 .name ul li a{
+ color:#ffffff;
+}
+
+
 .con2 {
     width: 340px;
     float: left;
@@ -148,6 +177,82 @@ ul li {
 	color:#FFFFFF;
 	cursor:pointer;
 }
+
+
+.conblue {
+    width: 340px;
+    float: left;
+    display: inline;
+    margin-right: 4px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.conblue .name{
+ width:100%;
+ height:36px;
+ border-bottom:1px solid #7e7e7e;
+}
+.conblue .name ul li{
+ width:160px;
+ height:36px;
+ float:left;
+ display:inline;
+ font:14px 微软雅黑;
+ line-height:36px;
+ text-align:center;
+ color:#292929;
+ 
+ cursor:pointer;
+}
+
+.conblue .name ul li.curnews{
+ 
+ color:#ffffff;
+ background: url(../images/litabbg.png) no-repeat right top;
+}
+
+.conblue .name ul li a{
+ color:#ffffff;
+}
+
+.congray {
+    width: 330px;
+    float: left;
+    display: inline;
+    margin-right: 4px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.congray .name{
+ width:100%;
+ height:36px;
+ border-bottom:1px solid #7e7e7e;
+}
+.congray .name ul li{
+ width:160px;
+ height:36px;
+ float:left;
+ display:inline;
+ font:14px 微软雅黑;
+ line-height:36px;
+ text-align:center;
+ color:#292929;
+ 
+ cursor:pointer;
+}
+
+.congray .name ul li.curnews{
+ 
+ color:#ffffff;
+ background: url(../images/splitterbar.png)repeat right top;
+}
+
+.congray .name ul li a{
+ color:#ffffff;
+}
+
 .Absolute-Center {  
   width: 50%;  
   height: 50%;  
@@ -156,3 +261,6 @@ ul li {
   position: absolute;  
   top: 0; left: 0; bottom: 0; right: 0;  
 }  
+
+
+
