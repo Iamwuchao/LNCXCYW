@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+
+
+*{margin:0;padding:0;}
+html       { padding:0;}
+ul li{ list-style:none; padding:0; margin:0px;}
+.clear{clear:both;}
+
+input,select{ font-size:12px; vertical-align:middle;}
+
+.logobox{ width:1024px; height: 105px; margin:0 auto; background: #f6f6f6;}
+.logo{
+ width:1003px;
+ height:105px;
+ background-color:#f6f6f6;
+ background:url(../images/title.png);
+ margin:0 auto;
+ text-align:right;
+ font:12px 微软雅黑;
+ line-height:20px;
+}
+
+.splitterbars{
+ width:1024px;
+ height:30px;
+ background-color:#f6f6f6;
+ background:url(../images/splitterbar.png);
+ margin:0 auto;
+ text-align:right;
+ font-size:14px;
+ font-family:'宋体';
+ line-height:20px;
+}
+.splitterbars a{color:#FFFFFF}
+.logo span{  display:block; padding:13px 0 0 0;}
+.logo a{ color:#898989;}
+.nav {
+	width:1024px;
+	height:50px;
+	margin:0 auto;
+	background-color:#195591;
+}
+
+.nav_all li {
+    width: 146px;
+    height: 50px;
+    float: left;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_all li:hover{
+	cursor: pointer;
+	background:url(../images/lihoverbg.png) repeat right top;
+}
+
+.nav_all li a{
+	color:#FFFFFF;
+	height: 50px;
+	font: 20px 微软雅黑;
+	line-height: 55px;
+	text-decoration:none;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    
+}
+
+.con {
+    width: 1024px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.con1 {
+    width: 340px;
+    float: left;
+    display: inline;
+    margin-right: 4px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.con2 {
+    width: 340px;
+    float: left;
+    display: inline;
+    margin-right: 4px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.con2 .name{
+ width:100%;
+ height:36px;
+ border-bottom:1px solid #7e7e7e;
+}
+.con2 .name ul li{
+ width:105px;
+ height:36px;
+ float:left;
+ display:inline;
+ font:14px 微软雅黑;
+ line-height:36px;
+ text-align:center;
+ color:#292929;
+ 
+ cursor:pointer;
+}
+
+.con2 .name ul li.curnews{
+ 
+ color:#ffffff;
+ background: url(../images/litabbg.png) no-repeat right top;
+}
+
+.con2 .name ul li a{
+ color:#ffffff;
+}
+
+
+.con3 {
+    width: 335px;
+    float: left;
+    height: 300px;
+    display: inline;
+}
+.con3 ul{
+	height: 300px;
+}
+.con3 ul li{
+	background:url(../images/libg.png) no-repeat right top;
+	height:50px;
+	font:16px 微软雅黑;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.con3 ul li:hover{
+	background:url(../images/lihoverbg.png) repeat right top;
+	height:50px;
+	font:16px 微软雅黑;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+.Absolute-Center {  
+  width: 50%;  
+  height: 50%;  
+  overflow: auto;  
+  margin: auto;  
+  position: absolute;  
+  top: 0; left: 0; bottom: 0; right: 0;  
+}  
