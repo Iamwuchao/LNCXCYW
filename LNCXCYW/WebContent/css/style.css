@@ -188,7 +188,7 @@ ul li {
     width: 333px;
     float: left;
     display: inline;
-    height: 300px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -225,7 +225,7 @@ ul li {
     float: left;
     display: inline;
    
-    height: 300px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -289,3 +289,20 @@ ul li {
 }
 
 
+.bigDivider{
+	width:1024px;
+	height:60px;
+	background-color:#f6f6f6;
+ 	background:url(../images/bigDiver.png);
+ 	margin:0 auto;
+ 	text-align:right;
+}
+
+.foot{
+	width:1024px;
+	height:150px;
+	background-color:#f6f6f6;
+ 	background:url(../images/foot.png);
+ 	margin:0 auto;
+ 	text-align:right;
+}
