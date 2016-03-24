@@ -6,9 +6,13 @@
 <struts>
     <package name="Default" namespace="/" extends="struts-default">
     <default-action-ref name="homepage"></default-action-ref>
-      <action name="homepage" >
+      <action name="homepage">
         	<result> /jsp/homepage/homepage.jsp</result>
-        </action>      
+        </action> 
+        
+       <action name = "test" class="action.TransferAction" method="test">
+       		<result>/jsp/homepage/homepage.jsp</result>
+       </action>    
     </package>
 	
     <!-- Add packages here -->

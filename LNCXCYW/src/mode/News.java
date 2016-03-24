@@ -1,7 +1,6 @@
 package mode;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 @Table(name="news_table")
 
@@ -20,7 +22,7 @@ public class News {
 	private String newsTile;
 	private String news_address;
 	private String news_content;
-	private User author;
+	private String author;
 	private NewsCategory category;
 	
 	@Id
@@ -29,31 +31,29 @@ public class News {
 		return newsId;
 	}
 	
-	@Column(name="news_tile")
+	@Column
 	public String getNewsTile() {
 		return newsTile;
 	}
 	
-	@Column(name="news_address")
+	@Column
 	public String getNews_address() {
 		return news_address;
 	}
 	
-	@Column(name="news_content")
+	@Column
 	public String getNews_content() {
 		return news_content;
 	}
 	
-	@Column(name="author_id")
-	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.LAZY)
-	@JoinColumn(name="user_id")
-	public User getAuthor() {
+	@Column
+	public String getAuthor() {
 		return author;
 	}
 	
-	@Column(name="category_id")
-	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.LAZY)
-	@JoinColumn(name="category_id")
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn
 	public NewsCategory getCategory() {
 		return category;
 	}
@@ -69,7 +69,7 @@ public class News {
 	public void setNews_content(String news_content) {
 		this.news_content = news_content;
 	}
-	public void setAuthor(User author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 	public void setCategory(NewsCategory category) {

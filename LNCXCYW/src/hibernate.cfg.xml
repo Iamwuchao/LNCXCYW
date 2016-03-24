@@ -31,10 +31,10 @@
 		
 <!-- 		<mapping class="model.ChooseClassSwitch"/> -->
 		
-		<mapping class="src.mode.News"/>
-		<mapping class="src.mode.NewsCategory"/>
-		<mapping class="src.mode.Role"/>
-		<mapping class="src.mode.User"/>
-		<mapping class="src.mode.UserAuthority"/>
+		<mapping class="mode.News"/>
+		<mapping class="mode.NewsCategory"/>
+	<!--  	<mapping class="mode.Role"/>-->
+		<mapping class="mode.User"/>
+		<mapping class="mode.UserAuthority"/>
     </session-factory>
 </hibernate-configuration>
