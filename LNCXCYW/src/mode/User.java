@@ -21,7 +21,7 @@ public class User {
 	private String userName;
 	private String mail;
 	private String password;
-	private int role;
+	private Role role;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -47,7 +47,7 @@ public class User {
 	@Column(name="role")
 	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.LAZY)
 	@JoinColumn(name="role_check")
-	public int getRole() {
+	public Role getRole() {
 		return role;
 	}
 	
@@ -63,7 +63,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public void setRole(int role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
