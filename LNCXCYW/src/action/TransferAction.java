@@ -21,7 +21,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class TransferAction extends ActionSupport{
 	public String test(){
 		System.out.println("hehehe");
-		SessionFactory sessionFactory = null;
+	/*	SessionFactory sessionFactory = null;
 		Configuration cfg = new Configuration().configure();
     	StandardServiceRegistryBuilder srb = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties());
     	StandardServiceRegistry sr = srb.build();
@@ -35,7 +35,7 @@ public class TransferAction extends ActionSupport{
 		} catch (ServletException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		return ActionSupport.SUCCESS;
 	}
 }
