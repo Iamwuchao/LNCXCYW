@@ -7,6 +7,7 @@
 	 <div class="menu-list" style="height:820px"> 
 	     <a href="news_classify.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-blackboard">&nbsp;新闻分类</span></a>
 	    <a href="news_manage.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻管理</span></a>
+	    <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;管理员审核</span></a>
 	    <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;新闻审核</span></a>
 	    <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon-list-alt">&nbsp;下载中心</span></a>
 	    <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon glyphicon-user">&nbsp;个人信息</span></a>

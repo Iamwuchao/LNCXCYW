@@ -4,7 +4,7 @@
 	<!-- <script type='text/javascript' src="/js/admin/teachbuilding.js"></script> -->
 	
 	<div class="mycontent">  
-		普通管理员主页（include admin下的base.jsp）
+		超级管理员主页(include super_admin下的super_base.jsp)
 	<!-- 	<hr>
 		Modal
 		<div class="modal fade" id="teachBuildingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -88,4 +88,4 @@
 </layout:override>
 
 
-<%@ include file="base.jsp" %>
+<%@ include file="super_base.jsp" %>
