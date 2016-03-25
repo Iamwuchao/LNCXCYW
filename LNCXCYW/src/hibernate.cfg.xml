@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!-- 		部署的服务器使用本地数据库 -->
+        <property name="connection.url"> jdbc:mysql://localhost:3306/lncxcyw?autoReconnect=true&amp;autoReconnectForPools=true&amp;useUnicode=true&amp;characterEncoding=utf8</property>
+        
+	
+        <property name="connection.username">root</property>
+        <property name="connection.password">21424019</property>
+<!--         <property name="format_sql">true</property> -->
+        
+<!--         <property name="connection.autocommit">true</property> -->
+
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+<!--         <property name="hbm2ddl.auto">create-drop</property> -->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+<!-- 		<property name="connection.autoReconnect">true</property> -->
+<!--         <property name="connection.autoReconnectForPools">true</property>  -->
+<!--         <property name="connection.is-connection-validation-required">true</property>  -->
+<!--         <property name="connection.failOverReadOnly">false</property> -->
+		
+<!--         <mapping resource="model/UserModel.hbm.xml"/> -->
+		
+<!-- 		<mapping class="model.ChooseClassSwitch"/> -->
+		
+		<mapping class="mode.News"/>
+		<mapping class="mode.NewsCategory"/>
+	<!--  	<mapping class="mode.Role"/>-->
+		<mapping class="mode.User"/>
+		<mapping class="mode.UserAuthority"/>
+    </session-factory>
+</hibernate-configuration>
