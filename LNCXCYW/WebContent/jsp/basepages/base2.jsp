@@ -18,19 +18,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="keywords" content="" />
         <meta name="author" content="" />
-		<script type='text/javascript' src="/js/base/myutil.js"></script>
+		<script type='text/javascript' src="${pageContext.request.contextPath}/js/base/myutil.js"></script>
         <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />		
-		<link href="/datepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-        <script type='text/javascript' src="/js/base/jquery-2.1.4.min.js"></script>
-        <script type='text/javascript' src="/datepicker/js/bootstrap-datetimepicker.min.js"></script>
-		<script type="text/javascript" src="/datepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+		<link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />		
+		 <link href="${pageContext.request.contextPath}/datepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <script type='text/javascript' src="${pageContext.request.contextPath}/js/base/jquery-2.1.4.min.js"></script>
+        <script type='text/javascript' src="${pageContext.request.contextPath}/datepicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/datepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 		
-		<link rel="stylesheet" type="text/css" media="screen" href="/css/base/table.css" >		
-		<link rel="stylesheet" type="text/css" media="screen" href="/css/base/base.css"/> 
-		<link rel="stylesheet" type="text/css" media="screen" href="/css/admin/classroom_manage.css"/>
+		 <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/base/table.css" >		
+		<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/base/base.css"/> 
+		<!-- <link rel="stylesheet" type="text/css" media="screen" href="/css/admin/classroom_manage.css"/> -->
 
-		<link rel="stylesheet" type="text/css" media="screen" href="/css/base/websocket.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/base/websocket.css">
 		 <%-- <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/dashboard.css"> --%> 
 		
 		
@@ -52,13 +52,13 @@
 		</footer>
 	
 
-        <script type='text/javascript' src="/bootstrap/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 
 		<!--TinyMCE Editor-->
-		<script type='text/javascript' src="/js/base/tiny_mce.js"></script>
+		 <script type='text/javascript' src="${pageContext.request.contextPath}/js/base/tiny_mce.js"></script> 
 		<!-- JQuery Masonry-->
-		<script type='text/javascript' src="/js/base/jquery.masonry.min.js"></script>
-		<script type='text/javascript' src="/js/base/base.js"></script>		       
+		<script type='text/javascript' src="${pageContext.request.contextPath}/js/base/jquery.masonry.min.js"></script>
+		<script type='text/javascript' src="${pageContext.request.contextPath}/js/base/base.js"></script> 	       
         <!-- 百度推广JS -->
         <script type="text/javascript">
             var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
