@@ -22,12 +22,12 @@
 <div class="splitterbars">
       <ul class="f_left">
       <a onclick="javascript:window.external.addFavorite('http://www.baidu.com','辽宁省大学生创新创业网')" 
-      href="http://www.galyglj.cn">加入收藏 </a>|<a  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.galyglj.cn');" href="http://www.galyglj.cn">设为首页</a>
+      href="http://www.localhost:8080.cn">加入收藏 </a>|<a  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.localhost:8080');" href="http://www.localhost:8080">设为首页</a>
       </ul>
 </div>
 <div class="logobox">
 <div class="logo">
-	<span>&nbsp;&nbsp;&nbsp;<a href="http://en.dlut.edu.cn" target="_blank">ENGLISH</a></span> 
+	<span>&nbsp;&nbsp;&nbsp;<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a></span> 
 </div>
 <div class="splitterbars"></div>
 <div class="nav">
