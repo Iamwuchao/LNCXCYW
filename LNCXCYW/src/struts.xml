@@ -16,7 +16,8 @@
        
               
        <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
-       		<result>/jsp/homepage/homepage.jsp</result>
+       		<result name="success" type="json">
+       		</result>
        </action>   
        
        <action name="second_page" >

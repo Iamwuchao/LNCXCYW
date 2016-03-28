@@ -37,7 +37,7 @@
 		var classify = $("#classify").val();
 		var author = $("#author").val();
 		var content = UE.getEditor('editor').getContent();
-		alert(title+" "+classify+" "+author+" "+content);
+		//alert(title+" "+classify+" "+author+" "+content);
 		
 		$.ajax({
 			url : '/newsSubmit',
@@ -53,7 +53,7 @@
 		});
 	}
 	
-	function submitCallback(data){
+	function submitCallback(){
 		alert("callback");
 	}
 </script>

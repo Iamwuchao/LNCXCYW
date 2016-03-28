@@ -12,7 +12,8 @@ public class NewsAction extends ActionSupport{
 	
 	public String newsSubmit() {
 		System.out.println("newsSubmit:");
-		return ActionSupport.SUCCESS;
+		System.out.println(title+""+classify);
+		return SUCCESS;
 	}
 
 
