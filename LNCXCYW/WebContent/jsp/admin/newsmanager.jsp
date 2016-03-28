@@ -3,6 +3,12 @@
 <layout:override name="main_content">
 <div class="mycontent">  
 		新闻管理页面
-		</div>
+		
+		
+		
+</div>
+		
+	
+		
 </layout:override>
 <%@ include file="base.jsp" %>
