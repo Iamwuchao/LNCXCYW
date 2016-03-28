@@ -171,7 +171,11 @@ ul li {
 	width:98%;
 	height: 50%;
 	margin:10px 5px 5px 5px ;
-	background-color: #195591;
+	background-image: url(../images/concern.png);
+	background-size: 401px 450px;
+}
+.inner-top p{
+	text-align:center;
 }
 .deep-inner-top{
 	height: 83%;
@@ -201,7 +205,8 @@ ul li {
 	width: 98%;
 	height: 45%;
 	margin: 30px 5px 5px 5px;
-	background-color: #195591;
+	background-image: url(../images/everyday.png);
+	background-size: 401px 405px;
 }
 .deep-inner-bottom{
 	height: 81.5%;
