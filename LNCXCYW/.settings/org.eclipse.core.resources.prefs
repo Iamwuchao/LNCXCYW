@@ -1,5 +1,6 @@
 =\=\=\=\=\=\=
 eclipse.preferences.version=1
+encoding//WebContent/UEditor/ueditor.jsp=UTF-8
 encoding//WebContent/jsp/admin/admin.jsp=UTF-8
 encoding//WebContent/jsp/admin/base.jsp=UTF-8
 encoding//WebContent/jsp/admin/news_classify.jsp=UTF-8
@@ -9,11 +10,10 @@ encoding//WebContent/jsp/homepage/homepage.jsp=UTF-8
 encoding//WebContent/jsp/second_page/base.jsp=UTF-8
 encoding//WebContent/jsp/second_page/second.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/admin.jsp=UTF-8
+encoding//WebContent/jsp/super_admin/news_add.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/news_classify.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/news_manage.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/super_base.jsp=UTF-8
-
 encoding//WebContent/jsp/third.jsp/third_page.jsp=UTF-8
-
 encoding//src/dao/BaseDao.java=UTF-8
 encoding/<project>=UTF-8
