@@ -12,7 +12,13 @@
         
        <action name = "test" class="action.TransferAction" method="test">
        		<result>/jsp/homepage/homepage.jsp</result>
-       </action>    
+       </action>   
+       
+       <action name="second_page" >
+			<result>
+				/jsp/second_page/second.jsp
+			</result>
+		</action> 
     </package>
 	
     <!-- Add packages here -->

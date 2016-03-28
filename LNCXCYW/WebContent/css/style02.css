@@ -117,7 +117,7 @@ ul li {
    	margin: 0 ;
     /*display: inline;*/
    /* margin-right: 10px;*/
-    height: 300px;
+    height: 800px;
     overflow: hidden;
     float: left;
 }
@@ -227,5 +227,30 @@ ul li {
  	background:url(../images/foot.png);
  	margin:0 auto;
  	text-align:right;
-
+}
+/*  .inner-bottom .deep-inner-bottom{
+	position:relative;
+}
+.inner_bottom .high{
+	position:absolute;
+	top:0;
+	width:100%;
+	height:40%;
+}
+} */ 
+.inner-bottom .left{
+	float:left;
+	margin:0;
+	width:165.5px;
+}
+.inner-bottom .right{
+	float:right;
+	margin-left:20px;
+	width:165.5px;
+}
+.inner-bottom .one{
+	margin:0 20px 20px 0;
+}
+.inner-bottom .two{
+	margin:0 0 20px 0;
 }
