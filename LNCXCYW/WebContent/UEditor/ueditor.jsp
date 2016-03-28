@@ -5,6 +5,7 @@
 </div>
 
 <div id="btns">
+    <!-- <div>
     	<button onclick="saveContent()">保存</button>
         <button onclick="getAllHtml()">获得整个html的内容</button>
         <button onclick="getContent()">获得内容</button>
@@ -31,12 +32,15 @@
     <div>
         <button onclick="getLocalData()" >获取草稿箱内容</button>
         <button onclick="clearLocalData()" >清空草稿箱</button>
+    </div>  -->
 
 </div>
+<!-- <div>
     <button onclick="createEditor()">
     创建编辑器</button>
     <button onclick="deleteEditor()">
     删除编辑器</button>
+</div>  -->
 
 
 
