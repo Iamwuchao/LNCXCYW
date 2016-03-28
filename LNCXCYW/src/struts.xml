@@ -23,7 +23,7 @@
        </action> 
        
        <action name="second">
-       	<result>/jsp/second.jsp</result>
+       	<result>/jsp/second_page/second.jsp</result>
        </action>
        
     </package>

@@ -42,7 +42,7 @@
 			<button type="reset" class="btn btn-primary" id="login"
 				style="margin-left: 5%">重置</button>
 			<button type="submit" class="btn btn-primary" id="login"
-				style="margin-left: 5%; margin-right: 5%">登录</button>
+				style="margin-left: 5%; margin-right: 5%" onclick="window.open('/jsp/admin/newsmanager.jsp')">登录</button>
 				<!-- <a>注册</a> -->
 	
 	</form>
