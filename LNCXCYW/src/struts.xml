@@ -11,7 +11,7 @@
         </action> 
         
        <action name = "test" class="action.TransferAction" method="test">
-       		<result>/jsp/homepage/homepage.jsp</result>
+       		<result>/jsp/admin/news_manage.jsp</result>
        </action>    
     </package>
 	
