@@ -1,6 +1,15 @@
 package admin;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import com.opensymphony.xwork2.ActionSupport;
+import mode.News;
+import util.SingletonSessionFactory;
 
 public class NewsAction extends ActionSupport{
 	private String title;
@@ -10,9 +19,34 @@ public class NewsAction extends ActionSupport{
 	
 	
 	
-	public String newsSubmit() {
+	public String newsSubmit() throws Exception{
 		System.out.println("newsSubmit:");
 		System.out.println(title+""+classify);
+		News news=new News();
+		news.setAuthor(author);
+		news.setNewsTile(title); 
+		String address = null;
+		try {
+			address=util.JspToHTML.writeHTML(content);
+		} catch (Exception e) {
+			//e.printStackTrace();
+			System.out.println(e.getMessage());
+			return ERROR;
+		}
+		
+		news.setNews_address(address);
+		
+		Session session=SingletonSessionFactory.getSession();
+		try{			
+			Transaction trans=session.beginTransaction();
+			session.save(news);
+			trans.commit();
+		}catch(Exception e){
+			System.out.println("error");
+		}
+		session.close();
+		
+		System.out.println("save");
 		return SUCCESS;
 	}
 
