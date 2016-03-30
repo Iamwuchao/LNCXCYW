@@ -16,7 +16,7 @@
        
               
        <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
-       		<result name="success" type="json">
+       		<result name="success">
        		</result>
        </action>   
        
