@@ -18,4 +18,5 @@ public interface BaseDao<T,PK> {
 	
 	List<T> findById(PK pk);
 	List<T> find(Serializable id);
+	List findPagination(int start, int end);
 }

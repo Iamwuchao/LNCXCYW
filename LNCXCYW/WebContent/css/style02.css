@@ -147,12 +147,12 @@ ul li {
 .content-right{
 	width: 40%;
 	float: right;
-	height:900px;
+	height:880px;
 	position: relative;
 /*	display: inline-block;*/
 	/*overflow: hidden;*/
 	/*margin: 0 auto;*/
-	margin-top: 52px;
+	margin-top: 60px;
 	margin-right: 10px;
 	/*padding: 60px 10px 10px 150px;*/
 	box-sizing:border-box;
@@ -169,22 +169,32 @@ ul li {
 	position: absolute;
 	top: 0;
 	width:98%;
-	height: 50%;
-	margin:10px 5px 5px 5px ;
-	background-image: url(../images/concern.png);
-	background-size: 401px 450px;
+	height: 48%;
+	background-color:rgb(25,85,145);
+	text-align:center;
+	
+	/* background-size: 401px 450px; */
 }
 .inner-top p{
-	text-align:center;
+	font-weight:bold;
+	color:#fff;
+	font-size: 25px;
+	display: block;
+	padding: 20px;
 }
 .deep-inner-top{
-	height: 83%;
-	margin: 50px 5px 5px 5px;
-	padding: 10px 20px;
-	text-align: left;
-	background-color: #fff;
+	padding:20px;
+	position:absolute;
+	top:60px;
+	bottom:5px;
+	left:5px;
+	right:5px;
+	background-color:#fff;
+	overflow:hidden;
+	
 }
 .deep-inner-top li{
+	text-align:left;
 	list-style: disc;
 	line-height: 25px;
 	font-size: 13px;
@@ -203,16 +213,24 @@ ul li {
 	position: absolute;
 	bottom: 0;
 	width: 98%;
-	height: 45%;
-	margin: 30px 5px 5px 5px;
-	background-image: url(../images/everyday.png);
-	background-size: 401px 405px;
+	height: 47%;
+	background-color:rgb(25,85,145);
+	text-align:center;
+}
+.inner-bottom p{
+	font-weight:bold;
+	color:#fff;
+	font-size: 25px;
+	display: block;
+	padding: 20px;
 }
 .deep-inner-bottom{
-	height: 81.5%;
-	margin: 50px 5px 5px 5px;
-	padding: 10px 20px;
-	text-align: left;
+	padding:10px;
+	position:absolute;
+	top:55px;
+	left:5px;
+	right:5px;
+	bottom:5px;
 	background-color: #fff;
 
 }

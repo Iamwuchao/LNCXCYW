@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="css/style02.css">
-<title>Insert title here</title>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/style02.css">
 </head>
 <body>
 <div class="main">
@@ -41,24 +39,18 @@
 				<hr size="3" color="#195591">
 			</div>
 			<div class="inner">
-				<ul>
-					<li><a href="#">【组图】“双代会”上的表情包</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【教代会】部院回眸</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 17:08</time></li>
-					<li><a href="#">学校召开本科教学工作会议倡导优势专业建设</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">西南政法大学副教授校长刘想树一行访问我校</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">英国莱斯特大学代表团访问盘锦校区</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月8日 13:05</time></li>
-					<li><a href="#">卓越大学联盟暨辽宁省高校专业认证研讨交流会举办</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">机械红马甲：在平凡中坚持 在坚持中传承</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【研招进行时】学校公布2016年考研初试成绩基本要求</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">2016年高水平运动队（篮球）考试举行</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>	
-				</ul>
+				
+				
+				
+				
+				
 			</div>
 			
 		</div>
 		<div class="content-right">
 			<div class="inner-top">
 				<div class="deep-inner-top">
-					<ul>
+					<!-- <ul>
 						<li>【组图】“双代会”上的表情包</li>
 						<li>【教代会】部院回眸</li>
 						<li>学校召开本科教学工作会议倡导优势专业建设</li>
@@ -73,13 +65,22 @@
 						<li>学校召开本科教学工作会议倡导优势专业</li>
 						<li>【辽宁日报】大连理工社区驿站吸引学生从“网上”</li>
 						<li>【教代会】部院回眸（二）</li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 
 			<div class="inner-bottom">
 				<div class="deep-inner-bottom">
-						
+					<div class="left">
+							<img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+							<img class="two" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+					</div>
+					
+					<div class="right">
+						<img class="one" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
+						<img class="two" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
+					</div>
+					
 				</div>
 			</div>
 		</div>	

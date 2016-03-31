@@ -73,6 +73,7 @@
 		</div>
 		<div class="content-right">
 			<div class="inner-top">
+			<p>每日推荐</p>
 				<div class="deep-inner-top">
 					<ul>
 						<li>【组图】“双代会”上的表情包</li>
@@ -88,12 +89,13 @@
 						<li>学校召开加强报告会、研讨会、论坛、讲座管理</li>
 						<li>学校召开本科教学工作会议倡导优势专业</li>
 						<li>【辽宁日报】大连理工社区驿站吸引学生从“网上”</li>
-						<li>【教代会】部院回眸（二）</li>
+						
 					</ul>
 				</div>
 			</div>
 
 			<div class="inner-bottom">
+			<p>焦点图片</p>
 				<div class="deep-inner-bottom">
 					<div class="left">
 							<img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
