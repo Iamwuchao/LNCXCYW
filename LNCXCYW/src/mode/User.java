@@ -1,14 +1,10 @@
 package mode;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 
@@ -22,35 +18,43 @@ public class User {
 	private String mail;
 	private String password;
 	private int role;
-	
+	private boolean avaliable;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	public int getUserId() {
 		return userId;
 	}
 	
-	@Column(name="user_name")
+	@Column(name="user_name",nullable=false)
 	public String getUserName() {
 		return userName;
 	}
 	
-	@Column(name="mail")
+	@Column(name="mail" ,nullable=false)
 	public String getMail() {
 		return mail;
 	}
 	
-	@Column(name="password")
+	@Column(name="password",nullable=false)
 	public String getPassword() {
 		return password;
 	}
 	
-	@Column(name="role")
-	/*@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH},fetch = FetchType.LAZY)
-	@JoinColumn(name="role_check")*/
+	@Column(name="role",nullable=false,columnDefinition="INT default 0")
 	public int getRole() {
 		return role;
 	}
 	
+	
+	@Column(name="avaliable" ,columnDefinition="BOOLEAN DEFAULT false")
+	public boolean getAvaliable() {
+		return avaliable;
+	}
+
+	public void setAvaliable(boolean avaliable) {
+		this.avaliable = avaliable;
+	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}

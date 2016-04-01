@@ -16,22 +16,20 @@ import util.JspToHTML;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import dao.BaseDao;
+import dao.DaoFactory;
+import dao.NewsCategoryDao;
+import mode.NewsCategory;
+
 
 
 public class TransferAction extends ActionSupport{
 	public String test(){
-		System.out.println("hehehe");
+		BaseDao bd = DaoFactory.getDaoByName(NewsCategoryDao.class);
+		NewsCategory nc = new NewsCategory();
+		nc.setNewscategory("创业实践");
+		bd.save(nc);
 		
-		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpServletResponse response = ServletActionContext.getResponse();
-		System.out.println("TTTTTTT");
-		try {
-			JspToHTML.getHTMLbyJSPPath("/jsp/homepage/homepage.jsp", request, response);
-			
-		} catch (ServletException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return ActionSupport.SUCCESS;
 	}
 }
