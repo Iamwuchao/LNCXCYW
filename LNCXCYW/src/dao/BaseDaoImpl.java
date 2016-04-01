@@ -92,5 +92,4 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 		this.classType = classType;
 	}
 	
-	
 }
