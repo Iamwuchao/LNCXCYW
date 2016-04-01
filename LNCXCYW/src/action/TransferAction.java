@@ -27,7 +27,7 @@ public class TransferAction extends ActionSupport{
 		System.out.println("TTTTTTT");
 		try {
 			JspToHTML.getHTMLbyJSPPath("/jsp/homepage/homepage.jsp", request, response);
-			
+			String str = JspToHTML.writeHTML("ttt");
 		} catch (ServletException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

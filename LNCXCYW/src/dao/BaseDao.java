@@ -9,13 +9,12 @@ import java.util.List;
  */
 public interface BaseDao<T,PK> {
 	/*
-	 * 返回函数是否执行成功 如果中间出现异常可选择向上抛出
+	 * 返回函数是否执行成功
 	 */
-	boolean save(T entity);
-	boolean update(T entity) throws Exception;
-	boolean delete(T entity) throws Exception;
+	void setClass(Class classType);
+	void save(T entity);
+	boolean update(T entity);
+	boolean delete(T entity);
 	boolean saveAll(Collection<T> entities);
-	
 	List<T> findById(PK pk);
-	List<T> find(Serializable id);
 }
