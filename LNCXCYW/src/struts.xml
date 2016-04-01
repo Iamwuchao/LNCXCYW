@@ -33,13 +33,12 @@
        	<result>/jsp/second_page/second.jsp</result>
        </action>
        
-<<<<<<< HEAD
+
        <action name="regist" class="homepage.AdminAction" method="regist">
         <result name="success" type="json">
         </result> 
        </action>
-=======
->>>>>>> origin/master
+
        
     </package>
 	

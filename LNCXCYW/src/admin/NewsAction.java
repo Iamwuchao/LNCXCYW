@@ -1,6 +1,12 @@
 package admin;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import com.opensymphony.xwork2.ActionSupport;
+
+import mode.News;
+import util.SingletonSessionFactory;
 
 public class NewsAction extends ActionSupport{
 	private String title;
@@ -13,6 +19,24 @@ public class NewsAction extends ActionSupport{
 	public String newsSubmit() {
 		System.out.println("newsSubmit:");
 		System.out.println(title+""+classify);
+		
+		News news=new News();
+		news.setAuthor(author);
+		news.setNewsTile(title);
+		
+		Session session=SingletonSessionFactory.getSession();
+		try{
+			Transaction trans=session.beginTransaction();
+			session.save(news);
+			trans.commit();
+		}catch(Exception e){
+			System.out.println("error");	
+			session.close();
+			return ERROR;
+		}
+		session.close();
+		System.out.println("save");
+		
 		return SUCCESS;
 	}
 
