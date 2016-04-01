@@ -33,6 +33,7 @@
        	<result>/jsp/second_page/second.jsp</result>
        </action>
        
+       
     </package>
 	
     <!-- Add packages here -->
