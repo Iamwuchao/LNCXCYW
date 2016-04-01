@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import util.SingletonSessionFactory;
@@ -21,7 +22,9 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	public void save(Object entity){
 		// TODO Auto-generated method stub
 		Session session = getSession();
+		Transaction tx = session.beginTransaction();
 		session.save(entity);
+		tx.commit();
 		session.close();
 	}
 
@@ -29,7 +32,9 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	public boolean update(Object entity){
 		// TODO Auto-generated method stub
 		Session session = getSession();
+		Transaction tx = session.beginTransaction();
 		session.update(entity);
+		tx.commit();
 		session.close();
 		return false;
 	}
@@ -38,7 +43,9 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	public boolean delete(Object entity){
 		// TODO Auto-generated method stub
 		Session session = getSession();
+		Transaction tx = session.beginTransaction();
 		session.delete(entity);
+		tx.commit();
 		session.close();
 		return false;
 	}
@@ -47,9 +54,11 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	public boolean saveAll(Collection entities) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
+		Transaction tx = session.beginTransaction();
 		for(Object ob:entities){
 			session.save(ob);
 		}
+		tx.commit();
 		session.close();
 		return false;
 	}

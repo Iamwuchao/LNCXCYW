@@ -29,6 +29,7 @@ public class TransferAction extends ActionSupport{
 		NewsCategory nc = new NewsCategory();
 		nc.setNewscategory("创业实践");
 		bd.save(nc);
+		
 		return ActionSupport.SUCCESS;
 	}
 }
