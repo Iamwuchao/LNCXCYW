@@ -54,7 +54,7 @@
 	}
 	
 	function submitCallback(){
-		alert("callback");
+		alert("添加成功！");
 	}
 </script>
 

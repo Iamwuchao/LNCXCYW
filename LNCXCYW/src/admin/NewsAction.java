@@ -1,5 +1,7 @@
 package admin;
 
+import java.io.IOException;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -16,13 +18,22 @@ public class NewsAction extends ActionSupport{
 	
 	
 	
-	public String newsSubmit() {
+	public String newsSubmit() throws Exception {
 		System.out.println("newsSubmit:");
 		System.out.println(title+""+classify);
+		String address;
+		
+		try{
+			address=util.JspToHTML.writeHTML(content);
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			return ERROR;
+		}
 		
 		News news=new News();
 		news.setAuthor(author);
 		news.setNewsTile(title);
+		news.setNews_address(address);
 		
 		Session session=SingletonSessionFactory.getSession();
 		try{
