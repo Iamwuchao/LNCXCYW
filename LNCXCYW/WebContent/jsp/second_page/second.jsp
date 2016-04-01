@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style02.css">
+	<link rel="stylesheet" type="text/css" href="/css/style02.css">
 </head>
 <body>
 <div class="main">
@@ -96,13 +96,13 @@
 			<div class="inner-bottom">
 				<div class="deep-inner-bottom">
 					<div class="left">
-							<img class="one" src="./images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
-							<img class="two" src="./images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+							<img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+							<img class="two" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
 					</div>
 					
 					<div class="right">
-						<img class="one" alt="图片无法显示" src="./images/Desert.jpg" width="165.5px" height="155px">
-						<img class="two" alt="图片无法显示" src="./images/Desert.jpg" width="165.5px" height="155px">
+						<img class="one" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
+						<img class="two" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
 					</div>
 					
 				</div>

@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import GlobalInfo.GlobalInfo;
+
 
 public class JspToHTML {
 	public static String getHTMLbyJSPPath(String pathofJsp,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
@@ -21,7 +23,7 @@ public class JspToHTML {
 	
 	public static String writeHTML(String newContent) throws IOException{
 		long time = System.currentTimeMillis();
-		String filePath = "/home/pc/"+String.valueOf(time)+".html";
+		String filePath = GlobalInfo.GLOBALINFO.HTMLPath+String.valueOf(time)+".html";
 		File file = new File(filePath);
 		RandomAccessFile fileInputStream = null;
 		try {
