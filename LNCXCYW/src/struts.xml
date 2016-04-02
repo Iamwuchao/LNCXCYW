@@ -21,8 +21,8 @@
        		
        </action>   
        
-       <action name="second_page" >
-			<result>
+       <action name="second_page" class="admin.NewsAction" method="newsList">
+			<result name="success">
 				/jsp/second_page/second.jsp
 			</result>
 		</action> 

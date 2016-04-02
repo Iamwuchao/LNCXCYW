@@ -1,9 +1,12 @@
 package admin;
 
 import java.io.IOException;
+import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -16,8 +19,10 @@ public class NewsAction extends ActionSupport{
 	private String author;
 	private String content;
 	
+	private List<News> newsList;
 	
 	
+	//添加新闻
 	public String newsSubmit() throws Exception {
 		System.out.println("newsSubmit:");
 		System.out.println(title+""+classify);
@@ -51,12 +56,15 @@ public class NewsAction extends ActionSupport{
 		return SUCCESS;
 	}
 
-
-
-
-
-	
-	
+	public String newsList() throws Exception{
+		System.out.println("newsList:");
+		Session session=SingletonSessionFactory.getSession();
+		Criteria q=session.createCriteria(News.class);
+		newsList=q.list();
+		session.close();
+		System.out.println(newsList);
+		return SUCCESS;
+	}
 	
 	/*
 	 * getters and setters
