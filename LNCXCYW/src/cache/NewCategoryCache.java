@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 import java.util.LinkedList;
 
+import dao.BaseDao;
+import dao.DaoFactory;
+import dao.NewsCategoryDao;
 import mode.NewsCategory;
 
 public class NewCategoryCache<NewsCategory> implements LeftCycle<NewsCategory>{
@@ -28,6 +31,7 @@ public class NewCategoryCache<NewsCategory> implements LeftCycle<NewsCategory>{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
+		BaseDao baseDao = DaoFactory.getDaoByName(NewsCategoryDao.class);
 		
 	}
 
