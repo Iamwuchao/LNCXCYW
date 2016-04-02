@@ -8,7 +8,6 @@ import mode.NewsCategory;
 
 public class NewCategoryCache<NewsCategory> implements LeftCycle<NewsCategory>{
 	private HashMap<String,NewsCategory> map;
-	private Listener listener;
 	public LinkedList<NewsCategory> getAllNewsCategory(){
 		LinkedList<NewsCategory> list = new LinkedList<NewsCategory>();
 		list.addAll(map.values());
