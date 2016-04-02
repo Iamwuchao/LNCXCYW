@@ -1,16 +1,17 @@
 package cache;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import mode.NewsCategory;
 
 public class Cache {
-	private NewCategoryCache<NewsCategory> categoryCache;
-	private NewsCache<String> newsCache;
+	private NewCategoryCache categoryCache;
+	private NewsCache newsCache;
 	private static final Cache cache = new Cache();
 	private Cache(){
-		categoryCache = new NewCategoryCache<NewsCategory>();
-		newsCache = new NewsCache<String>();
+		categoryCache = new NewCategoryCache();
+		newsCache = new NewsCache();
 		categoryCache.init();
 		newsCache.init();
 	}
@@ -23,8 +24,12 @@ public class Cache {
 		cache.newsCache.add(newsCategory,news);
 	}
 	
-	public static void updateNewsCategory(){
-		
+	public static void updateNewsCategory(NewsCategory oldCategory,NewsCategory newCategory){
+		cache.categoryCache.update(oldCategory, newCategory);
+	}
+	
+	public static LinkedList<String> getNewsCategoryList(){
+		return cache.categoryCache.getAllNewsCategory();
 	}
 	
 	public static void setMaxNewsCache(int max){

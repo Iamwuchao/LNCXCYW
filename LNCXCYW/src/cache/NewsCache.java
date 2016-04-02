@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 	一个栏目对应一个list
  */
 
-public class NewsCache<String> implements LeftCycle<String>{
+public class NewsCache implements LeftCycle<String>{
 	private  AtomicBoolean isInited = new AtomicBoolean(false); 
 	private  AtomicInteger MAX_CACHE = new AtomicInteger(1000);
 	private HashMap<String,ConcurrentLinkedDeque<String>> cacheMap; 
