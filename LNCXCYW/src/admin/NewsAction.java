@@ -44,7 +44,7 @@ public class NewsAction extends ActionSupport{
 		System.out.println("newsSubmit:");
 		System.out.println("content:"+content);
 		try{
-			content=JspToHTML.getJspOutput("/jsp/third/base.jsp");
+			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
 			System.out.println("content:"+content);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
