@@ -59,8 +59,12 @@
 		});
 	}
 	
-	function submitCallback(){
-		alert("添加成功！");
+	function submitCallback(data){
+		if(data.status=="1"){
+			alert("添加失败");
+		}else{
+			alert("添加成功！");
+		}
 	}
 </script>
 
