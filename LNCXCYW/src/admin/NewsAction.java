@@ -48,6 +48,8 @@ public class NewsAction extends ActionSupport{
 		
 		News news=new News();
 		news.setNews_address(address);
+		news.setAuthor(author);
+		news.setNewsTile(title);
 		
 		Session session=SingletonSessionFactory.getSession();
 		
@@ -60,7 +62,7 @@ public class NewsAction extends ActionSupport{
 			System.out.println("error");
 		}
 		session.close();
-		
+
 		System.out.println("save");
 
 			
