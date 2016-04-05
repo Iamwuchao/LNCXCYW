@@ -1,6 +1,7 @@
 package action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,10 +26,9 @@ import mode.NewsCategory;
 
 public class TransferAction extends ActionSupport{
 	public String test(){
-		BaseDao bd = DaoFactory.getDaoByName(NewsCategoryDao.class);
-		NewsCategory nc = new NewsCategory();
-		nc.setNewscategory("创业实践");
-		bd.save(nc);
+		NewsCategoryDao bd = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
+		List<NewsCategory> list = bd.getAll();
+		
 		
 		return ActionSupport.SUCCESS;
 	}

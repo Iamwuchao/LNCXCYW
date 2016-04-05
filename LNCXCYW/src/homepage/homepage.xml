@@ -6,14 +6,12 @@
 
 
 <package name="homepage" namespace="/" extends="Default">
-
-	<action name="checkinrecord_name" class="checkin.CheckInAction" method="getCheckInRecordByUsername">
+	<action name="homepageGetNewsList" class="homepage.HomePageAction" method="getNewsListByCategoryName">
 		<result>/jsp/student/checkin.jsp</result>   
 	</action>
-	<action name="checkinbyusername" class="checkin.CheckInAction" method="checkIn">
-		<result name="success" type="json">
-				<param name="includeProperties">result</param>
-		</result>   
+	
+	<action name="homepageGetNewsCategory" class="homepage.HomePageAction" method="getAllNewsCategoryList">
+		<result>/jsp/student/checkin.jsp</result>   
 	</action>
 </package>
 </struts>

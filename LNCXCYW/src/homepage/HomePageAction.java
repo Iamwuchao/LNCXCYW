@@ -14,14 +14,10 @@ public class HomePageAction {
 		return newsList;
 	}
 
-
-
 	public void setNewsList(List<String> newsList) {
 		this.newsList = newsList;
 	}
 	
-	
-
 	public List<String> getNewsCategoryList() {
 		return newsCategoryList;
 	}

@@ -51,7 +51,7 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	}
 
 	@Override
-	public boolean saveAll(Collection entities) {
+	public void saveAll(Collection<T> entities) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
@@ -60,7 +60,6 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 		}
 		tx.commit();
 		session.close();
-		return false;
 	}
 
 	@Override
@@ -75,7 +74,7 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	}
 
 
-	public List findPagination(Criteria query,int start, int end) {
+	public List<T> findPagination(Criteria query,int start, int end) {
 		if(start>end){
 			throw new IllegalArgumentException("start > end");
 		}
