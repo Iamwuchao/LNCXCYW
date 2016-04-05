@@ -13,7 +13,7 @@
 	</div>
 	<div>
 		分类
-		<input type="text" id="classify"> 
+		<s:select lable="test" list="categoryList" name="category"></s:select>  
 	</div>
 	<div>
 		作者
@@ -28,13 +28,19 @@
 	<br>
 	<div>
 		<button onclick="submit()">提交</button>
+		<button onclick="test()">test</button>
 	</div>
 		
 </div>
 <script>
+	function test(){
+		var test = $("#category").val();
+		alert(test);
+	}
+ 
 	function submit(){
 		var title = $("#title").val();
-		var classify = $("#classify").val();
+		var category = $("#category").val();
 		var author = $("#author").val();
 		var content = UE.getEditor('editor').getContent();
 		//alert(title+" "+classify+" "+author+" "+content);
@@ -45,7 +51,7 @@
 			dataType : 'json',
 			data : {
 				"title" : title,
-				"classify" : classify,
+				"category" : category,
 				"author" : author,
 				"content" : content,
 			},

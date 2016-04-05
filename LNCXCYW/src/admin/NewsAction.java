@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,6 +18,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import mode.News;
+import mode.NewsCategory;
 import util.SingletonSessionFactory;
 
 import mode.News;
@@ -24,20 +26,32 @@ import util.SingletonSessionFactory;
 
 public class NewsAction extends ActionSupport{
 	private String title;
-	private String classify;
+	private String category;
 	private String author;
 	private String content;
 	
 	private List<News> newsList;
+	private List<String> categoryList;
 	
-	
+	public String newsAdd(){
+		System.out.println("newsAdd:");
+//		List<String> list=cache.Cache.getNewsCategoryList();
+//		for(String s: list){
+//			System.out.println(s);
+//		}
+		categoryList=new ArrayList<String>();
+		categoryList.add("cate1");
+		categoryList.add("cate2");
+		categoryList.add("cate3");
+		
+		return SUCCESS;
+	}
 
 	//添加新闻
 	public String newsSubmit() throws Exception {
 		System.out.println("newsSubmit:");
-		System.out.println(title+""+classify);
+		System.out.println(title+""+category+""+author);
 		String address;
-		
 		try{
 			address=util.JspToHTML.writeHTML(content);
 		}catch(Exception e){
@@ -47,6 +61,8 @@ public class NewsAction extends ActionSupport{
 		}
 		
 		News news=new News();
+		NewsCategory category=new NewsCategory();
+		
 		news.setNews_address(address);
 		news.setAuthor(author);
 		news.setNewsTile(title);
@@ -90,12 +106,13 @@ public class NewsAction extends ActionSupport{
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getClassify() {
-		return classify;
+
+	public String getCategory() {
+		return category;
 	}
 
-	public void setClassify(String classify) {
-		this.classify = classify;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getAuthor() {
@@ -112,5 +129,23 @@ public class NewsAction extends ActionSupport{
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	public List<News> getNewsList() {
+		return newsList;
+	}
+
+	public void setNewsList(List<News> newsList) {
+		this.newsList = newsList;
+	}
+
+	public List<String> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<String> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	
 	
 }
