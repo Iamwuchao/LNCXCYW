@@ -17,6 +17,7 @@ import util.JspToHTML;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import cache.Cache;
 import dao.BaseDao;
 import dao.DaoFactory;
 import dao.NewsCategoryDao;
@@ -26,10 +27,16 @@ import mode.NewsCategory;
 
 public class TransferAction extends ActionSupport{
 	public String test(){
-		NewsCategoryDao bd = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
-		List<NewsCategory> list = bd.getAll();
-		
-		
+		System.out.println("HHHHHHHHHHHHHHHH");
+		List<String> list = Cache.getNewsCategoryList();
+		for(String str:list){
+			System.out.println(str);
+		}
+		NewsCategoryDao  ncd = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
+		NewsCategory nc = new NewsCategory();
+		nc.setNewscategory("测试中文乱码");
+		ncd.save(nc);
+		System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
 		return ActionSupport.SUCCESS;
 	}
 }

@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import util.SingletonSessionFactory;
 
-public class BaseDaoImpl<T,PK> implements BaseDao{
+public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	
 	private Class classType;
 	
@@ -51,7 +51,7 @@ public class BaseDaoImpl<T,PK> implements BaseDao{
 	}
 
 	@Override
-	public void saveAll(Collection<T> entities) {
+	public void saveAll(Collection entities) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();

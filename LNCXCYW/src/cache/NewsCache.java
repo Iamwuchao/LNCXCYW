@@ -7,6 +7,8 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import mode.News;
+
 /*
  * 新闻html文件地址缓存，保存MAX_VALUE条记录
 	一个栏目对应一个list
@@ -15,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class NewsCache implements LeftCycle<String>{
 	private  AtomicBoolean isInited = new AtomicBoolean(false); 
 	private  AtomicInteger MAX_CACHE = new AtomicInteger(1000);
-	private HashMap<String,ConcurrentLinkedDeque<String>> cacheMap; 
+	private HashMap<String,ConcurrentLinkedDeque<News>> cacheMap; 
 	
 	NewsCache(){
 		
@@ -24,7 +26,7 @@ public class NewsCache implements LeftCycle<String>{
 	public void init() {
 		// TODO Auto-generated method stub
 		if(isInited.compareAndSet(false, true)){
-			cacheMap = new HashMap<String,ConcurrentLinkedDeque<String>>();
+			cacheMap = new HashMap<String,ConcurrentLinkedDeque<News>>();
 		}
 	}
 
@@ -54,15 +56,15 @@ public class NewsCache implements LeftCycle<String>{
 	 * 获取新闻栏目的新闻列表 ［fromIndex,toIndex)
 	 * 
 	 */
-	public LinkedList<String> getNewCacheList(String category,int fromIndex,int toIndex){
+	public LinkedList<News> getNewCacheList(String category,int fromIndex,int toIndex){
 		if(fromIndex > toIndex){
 			throw new IllegalArgumentException("fromIndex > toIndex");
 		}
-		LinkedList<String> list = new LinkedList<String>();
+		LinkedList<News> list = new LinkedList<News>();
 		
 		if(!cacheMap.containsKey(category)) return list;
 		
-		Iterator<String> iter = (Iterator<String>) (cacheMap.get(category)).iterator();
+		Iterator<News> iter = (Iterator<News>) (cacheMap.get(category)).iterator();
 		for(int i=0;i<toIndex;i++){
 			if(i>=fromIndex){
 				list.add(iter.next());
@@ -74,16 +76,16 @@ public class NewsCache implements LeftCycle<String>{
 	/*
 	 * 添加一条新闻html文件的地址 ，对应的栏目如果不存在则添加该栏目对应的list
 	 */
-	public void add(String category,String news){
+	public void add(String category,News news){
 		//为初始化/或已经关闭则 直接返回
 		if(!isInited.get()){
 			return;
 		}
 		
 		//add list if not exist
-		cacheMap.putIfAbsent(category, new ConcurrentLinkedDeque<String>());
+		cacheMap.putIfAbsent(category, new ConcurrentLinkedDeque<News>());
 		
-		ConcurrentLinkedDeque<String> queue = cacheMap.get(category);
+		ConcurrentLinkedDeque<News> queue = cacheMap.get(category);
 		while(MAX_CACHE.get()<queue.size()){
 			queue.removeLast();
 		}

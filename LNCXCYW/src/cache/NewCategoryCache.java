@@ -2,6 +2,7 @@ package cache;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import dao.DaoFactory;
@@ -12,18 +13,24 @@ public class NewCategoryCache implements LeftCycle<NewsCategory>{
 	private ConcurrentHashMap<String,NewsCategory> map;
 	private AtomicBoolean isinited = new AtomicBoolean(false);
 	NewCategoryCache(){
-		
+		map = new ConcurrentHashMap<String,NewsCategory>();
 	}
 	
-	public LinkedList<String> getAllNewsCategory(){
-		LinkedList<String> list = new LinkedList<String>();
-		list.addAll(map.keySet());
-		return list;
-	}
 	
+	public NewsCategory getNewsCategory(String newsCategory){
+		NewsCategory nc = new NewsCategory();
+		NewsCategory tem = map.get(newsCategory);
+		nc.setNewscategory(tem.getNewscategory());
+		nc.setCategoryId(tem.getCategoryId());
+		return nc;
+	}
 	public LinkedList<String> getAllNewsCategoryName(){
 		LinkedList<String> list = new LinkedList<String>();
-		list.addAll(map.keySet());
+		Set<String> set = map.keySet();
+		for(String str:set){
+			System.out.println("get "+str);
+		}
+		list.addAll(set);
 		return list;
 	}
 	
@@ -35,6 +42,7 @@ public class NewCategoryCache implements LeftCycle<NewsCategory>{
 			 NewsCategoryDao dao = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
 			 List<NewsCategory> list = (List<NewsCategory>) dao.getAll();
 			 for(NewsCategory category:list){
+				 System.out.println("init "+category.getNewscategory());
 				 map.put(category.getNewscategory(),category);
 			 }
 		}

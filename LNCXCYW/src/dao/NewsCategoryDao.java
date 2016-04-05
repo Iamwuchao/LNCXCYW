@@ -14,14 +14,12 @@ public class NewsCategoryDao extends BaseDaoImpl <NewsCategory,Integer>{
 	}
 	
 	
-	
 	public List<NewsCategory> getAll(){
 		Session session = getSession();
-		Transaction transaction = session.beginTransaction();
 		Criteria crit = session.createCriteria(NewsCategory.class);
 		@SuppressWarnings("unchecked")
 		List<NewsCategory> list = crit.list();
-		transaction.commit();
+		System.out.println("HEHEHEHEEH "+list.size());
 		session.close();
 		return list;
 	}

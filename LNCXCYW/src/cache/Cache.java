@@ -3,6 +3,7 @@ package cache;
 import java.util.LinkedList;
 import java.util.List;
 
+import mode.News;
 import mode.NewsCategory;
 
 public class Cache {
@@ -16,11 +17,11 @@ public class Cache {
 		newsCache.init();
 	}
 	
-	public static List<String> getNewsList(String newsCategory,int fromIndex,int toIndex){
+	public static List<News> getNewsList(String newsCategory,int fromIndex,int toIndex){
 		return cache.newsCache.getNewCacheList(newsCategory, fromIndex, toIndex);
 	}
 	
-	public static void updateNews(String newsCategory,String news){
+	public static void updateNews(String newsCategory,News news){
 		cache.newsCache.add(newsCategory,news);
 	}
 	
@@ -28,8 +29,12 @@ public class Cache {
 		cache.categoryCache.update(oldCategory, newCategory);
 	}
 	
+	public static NewsCategory getNewsCategorybyName(String name){
+		return cache.categoryCache.getNewsCategory(name);
+	}
+	
 	public static LinkedList<String> getNewsCategoryList(){
-		return cache.categoryCache.getAllNewsCategory();
+		return cache.categoryCache.getAllNewsCategoryName();
 	}
 	
 	public static void setMaxNewsCache(int max){
