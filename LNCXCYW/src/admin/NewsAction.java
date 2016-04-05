@@ -1,20 +1,19 @@
 package admin;
 
-<<<<<<< HEAD
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-=======
+
 import java.io.IOException;
 import java.util.List;
->>>>>>> origin/master
+
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-<<<<<<< HEAD
-=======
+
 import org.hibernate.criterion.Restrictions;
->>>>>>> origin/master
+
 
 import com.opensymphony.xwork2.ActionSupport;
 import mode.News;
@@ -32,19 +31,7 @@ public class NewsAction extends ActionSupport{
 	private List<News> newsList;
 	
 	
-<<<<<<< HEAD
-	public String newsSubmit() throws Exception{
-		System.out.println("newsSubmit:");
-		System.out.println(title+""+classify);
-		News news=new News();
-		news.setAuthor(author);
-		news.setNewsTile(title); 
-		String address = null;
-		try {
-			address=util.JspToHTML.writeHTML(content);
-		} catch (Exception e) {
-			//e.printStackTrace();
-=======
+
 	//添加新闻
 	public String newsSubmit() throws Exception {
 		System.out.println("newsSubmit:");
@@ -54,44 +41,30 @@ public class NewsAction extends ActionSupport{
 		try{
 			address=util.JspToHTML.writeHTML(content);
 		}catch(Exception e){
->>>>>>> origin/master
+
 			System.out.println(e.getMessage());
 			return ERROR;
 		}
 		
-<<<<<<< HEAD
-		news.setNews_address(address);
-		
-		Session session=SingletonSessionFactory.getSession();
-		try{			
-=======
 		News news=new News();
-		news.setAuthor(author);
-		news.setNewsTile(title);
 		news.setNews_address(address);
 		
 		Session session=SingletonSessionFactory.getSession();
+		
 		try{
->>>>>>> origin/master
 			Transaction trans=session.beginTransaction();
 			session.save(news);
 			trans.commit();
 		}catch(Exception e){
-<<<<<<< HEAD
+
 			System.out.println("error");
 		}
 		session.close();
 		
 		System.out.println("save");
-=======
-			System.out.println("error");	
-			session.close();
-			return ERROR;
-		}
-		session.close();
-		System.out.println("save");
-		
->>>>>>> origin/master
+
+			
+
 		return SUCCESS;
 	}
 
