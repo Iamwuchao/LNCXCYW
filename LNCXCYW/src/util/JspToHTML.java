@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.ServletActionContext;
+
 import GlobalInfo.GlobalInfo;
 
 
@@ -20,6 +22,28 @@ public class JspToHTML {
 		request.getRequestDispatcher(pathofJsp).include(request, wrapperResponse);
 		return wrapperResponse.getContent();
 	}
+	
+	static public  String getJspOutput(String jsppath)
+//	throws Exception
+	{
+		WrapperResponse wrapperResponse = null;
+		try
+		{
+			HttpServletRequest request = ServletActionContext.getRequest();        
+			HttpServletResponse response = ServletActionContext.getResponse();
+			
+			wrapperResponse = new WrapperResponse(response);
+			request.getRequestDispatcher(jsppath).include(request, wrapperResponse);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return wrapperResponse.getContent();
+	}
+
+	
 	
 	public static String writeHTML(String newContent) throws IOException{
 		long time = System.currentTimeMillis();

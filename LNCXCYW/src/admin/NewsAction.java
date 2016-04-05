@@ -10,8 +10,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.opensymphony.xwork2.ActionSupport;
+
+import cache.Cache;
 import mode.News;
 import mode.NewsCategory;
+import util.JspToHTML;
 import util.SingletonSessionFactory;
 
 public class NewsAction extends ActionSupport{
@@ -26,15 +29,12 @@ public class NewsAction extends ActionSupport{
 	
 	public String newsAdd(){
 		System.out.println("newsAdd:");
-		List<String> list=cache.Cache.getNewsCategoryList();
+		List<String> list=Cache.getNewsCategoryList();
 		for(String s: list){
 			System.out.println(s);
 		}
-		categoryList=new ArrayList<String>();
-		categoryList.add("cate1");
-		categoryList.add("cate2");
-		categoryList.add("cate3");
-		//categoryList=list;
+
+		categoryList=list;
 		return SUCCESS;
 	}
 
@@ -42,7 +42,16 @@ public class NewsAction extends ActionSupport{
 	public String newsSubmit() throws Exception {
 		status="0";
 		System.out.println("newsSubmit:");
-		System.out.println(title+""+category+""+author);
+		System.out.println("content:"+content);
+		try{
+			content=JspToHTML.getJspOutput("/jsp/third/base.jsp");
+			System.out.println("content:"+content);
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			status="1";
+			return ERROR;
+		}
+		
 		String address;
 		try{
 			address=util.JspToHTML.writeHTML(content);
@@ -53,13 +62,13 @@ public class NewsAction extends ActionSupport{
 		}
 		
 		News news=new News();
-		NewsCategory newsCategory=new NewsCategory();
+		NewsCategory newsCategory=Cache.getNewsCategorybyName(category);
 		newsCategory.setNewscategory(category);
 		
 		news.setNews_address(address);
 		news.setAuthor(author);
 		news.setNewsTile(title);
-		//news.setCategory(newsCategory);
+		news.setCategory(newsCategory);
 		Session session=SingletonSessionFactory.getSession();
 		
 		try{
