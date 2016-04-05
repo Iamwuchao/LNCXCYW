@@ -1,17 +1,23 @@
 package cache;
 
-import java.util.HashMap;
-
 import java.util.LinkedList;
-
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import dao.DaoFactory;
+import dao.NewsCategoryDao;
 import mode.NewsCategory;
 
-public class NewCategoryCache<NewsCategory> implements LeftCycle<NewsCategory>{
-	private HashMap<String,NewsCategory> map;
-	private Listener listener;
-	public LinkedList<NewsCategory> getAllNewsCategory(){
-		LinkedList<NewsCategory> list = new LinkedList<NewsCategory>();
-		list.addAll(map.values());
+public class NewCategoryCache implements LeftCycle<NewsCategory>{
+	private ConcurrentHashMap<String,NewsCategory> map;
+	private AtomicBoolean isinited = new AtomicBoolean(false);
+	NewCategoryCache(){
+		
+	}
+	
+	public LinkedList<String> getAllNewsCategory(){
+		LinkedList<String> list = new LinkedList<String>();
+		list.addAll(map.keySet());
 		return list;
 	}
 	
@@ -24,37 +30,32 @@ public class NewCategoryCache<NewsCategory> implements LeftCycle<NewsCategory>{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-		
+		if(isinited.get()) return;
+		if(isinited.compareAndSet(false, true)){
+			 NewsCategoryDao dao = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
+			 List<NewsCategory> list = (List<NewsCategory>) dao.getAll();
+			 for(NewsCategory category:list){
+				 map.put(category.getNewscategory(),category);
+			 }
+		}
 	}
 
 	@Override
 	public void destory() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void register(Listener listener) {
-		// TODO Auto-generated method stub
-		if(listener == null) {
-			throw new NullPointerException("Listener is null");
+		if(!isinited.get()) return;
+		if(!isinited.compareAndSet(false,true)){
+			map.clear();
 		}
-		this.listener = listener;
 	}
+
 	
-	public void add(){
-		
-	}
-
-	@Override
-	public void add(NewsCategory newt) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(NewsCategory oldT) {
-		// TODO Auto-generated method stub
-		
+	public void update(NewsCategory oldCategory,NewsCategory newCategory){
+		if(isinited.get()){
+			if(oldCategory!=null)
+			map.remove(oldCategory.getNewscategory());
+			if(newCategory!=null)
+			map.put(newCategory.getNewscategory(), newCategory);
+		}
 	}
 }

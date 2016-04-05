@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="Default" namespace="/" extends="struts-default">
+    <package name="Default" namespace="/" extends="json-default,struts-default ">
     <default-action-ref name="homepage"></default-action-ref>
       <action name="homepage">
         	<result>/jsp/homepage/homepage.jsp</result>
@@ -16,12 +16,13 @@
        
               
        <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
-       		<result name="success">
+       		<result name="success" type="json">
        		</result>
+       		
        </action>   
        
-       <action name="second_page" >
-			<result>
+       <action name="second_page" class="admin.NewsAction" method="newsList">
+			<result name="success">
 				/jsp/second_page/second.jsp
 			</result>
 		</action> 
@@ -32,6 +33,13 @@
        <action name="second">
        	<result>/jsp/second_page/second.jsp</result>
        </action>
+       
+
+       <action name="regist" class="homepage.AdminAction" method="regist">
+        <result name="success" type="json">
+        </result> 
+       </action>
+
        
     </package>
 	

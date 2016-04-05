@@ -7,6 +7,11 @@ encoding//WebContent/jsp/admin/news_classify.jsp=UTF-8
 encoding//WebContent/jsp/admin/newsmanager.jsp=UTF-8
 encoding//WebContent/jsp/basepages/user_base.jsp=UTF-8
 encoding//WebContent/jsp/homepage/homepage.jsp=UTF-8
+<<<<<<< HEAD
+=======
+encoding//WebContent/jsp/homepage/regist.jsp=UTF-8
+encoding//WebContent/jsp/second_page/base.jsp=UTF-8
+>>>>>>> origin/master
 encoding//WebContent/jsp/second_page/second.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/admin.jsp=UTF-8
 encoding//WebContent/jsp/super_admin/news_add.jsp=UTF-8

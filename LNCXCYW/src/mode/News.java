@@ -76,5 +76,8 @@ public class News {
 		this.category = category;
 	}
 	
+	public String toString(){
+		return this.newsId+":"+this.newsTile;
+	}
 	
 }
