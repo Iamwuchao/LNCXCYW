@@ -83,12 +83,24 @@ public String login(){
 	System.out.println(email);
 	UserDaoImpl dao = new UserDaoImpl();
 	List<User> list = dao.findUserByEmailAndPass(email, password);
-	if (list.size()>0) {
+	List<User> list2 = dao.findAvaliableUser(email, password);
+	List<User> list3 = dao.findAvaliableSuperUser(email, password);
+	if (list3.size()>0) {
+		this.register_status="3";//超级管理员
+	}
+	else if (list2.size()>0) {//普通管理员
 		this.register_status = "0";
 	}
-	else {
-		this.register_status = "1";
+	else if (list.size()>0 && list2.size()==0) {
+		this.register_status = "审核还未通过，请等待";
 	}
+	
+	else if (list.size()==0) {
+		this.register_status = "1";//用户名或密码错误
+	}
+	
+	
+	
 	return ActionSupport.SUCCESS;
 }
 public String execute(){
