@@ -8,7 +8,7 @@
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"> --%>
 <script type='text/javascript' src="/js/base/jquery-2.1.4.min.js"></script>
 </head>
-<body style="background: url(a.jpg)">
+<body style="background: url(/images/a.jpg)">
 	<br>
 	<br>
 	<br>
@@ -80,7 +80,12 @@
 </body>
 <script >
 $(document).on("click","#regist", function (){
-    alert("4");
+	
+	/* checkPassword();
+	confirmPassword();
+	checkEmail(); */
+	if(checkUserName() && checkPassword() && confirmPassword() && checkEmail()){
+	alert("4");
 	var username = $("#username").val();
     var password = $("#password").val();
     var email = $("#email").val();
@@ -95,7 +100,7 @@ $(document).on("click","#regist", function (){
 //	   alert($("#phoneNumber").val());
     
     $.ajax({
-      url: 'regist',
+      url: '/admin/regist',
       type: 'post',
       dataType: 'json',
       data: params,
@@ -104,10 +109,14 @@ $(document).on("click","#regist", function (){
       processData:false, */
       success: registerCallback
     });
+	}
+	else{
+		
+	}
 
 }); 
 
-function checkUserName(){
+function  checkUserName(){
 	
 	var username = $("#username").val(); 
 	//alert(username);
@@ -116,18 +125,28 @@ function checkUserName(){
 		 
 		$("#userName_msg").text("不能为空"); 
 		$("#username").focus();
+		return false;
 		 }
 	 else
+	 { 
 		 $("#userName_msg").text("");
+		 return true;
+	 }
+	
 }
 
 
 function checkPassword(){
 	var password=$('#password').val();
-	if(password=="")
+	if(password==""){
 		$('#password_msg').text("不能为空");
+		return false;
+	}
 	else
+		{
 		$('#password_msg').text("");
+		return true;
+		}
 }
 
 function confirmPassword(){
@@ -137,9 +156,13 @@ function confirmPassword(){
 		{
 			$('#confirm_msg').text("两次密码不一致");
 			$('#passwordAgain').focus();
+			return false;
 		}
 	else
+		{
 		$('#confirm_msg').text("");
+		return true;
+		}
 }
 
 function checkEmail(){
@@ -147,9 +170,11 @@ function checkEmail(){
 	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
 	if(!reg.test(email)){
 		$('#email_msg').text("请填入有效的邮箱");
+		return false;
 	}
 	else{
 		$('#email_msg').text("");
+		return true;
 	}
 }
 function registerCallback(data)
@@ -157,28 +182,12 @@ function registerCallback(data)
 	if(data.register_status == "0")
 	{    		
 		alert("注册成功, 您现在可以登录了");
-		window.location.href = "/login";
+		window.location.href = "/admin/login";
 	}
 	else if(data.register_status == "1")
-	{
-		alert("有未填项，注册失败");
-	}
-	else if(data.register_status == "2")
 		{
-		alert("注册用户名重复");
+		alert("该邮箱已被注册");
 		}
-	/* else if(data.register_status == "4")
-	{
-		alert("姓名不能为空");
-	}*/
-	else if(data.register_status == "3")
-	{
-		alert("两次密码不一致");
-	} 
-	else if(data.register_status == "6")
-	{
-		alert("学号已经存在！");
-	} 
 	else 
 		{
 		alert("error with status：" + data.register_status);

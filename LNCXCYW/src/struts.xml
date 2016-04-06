@@ -55,5 +55,8 @@
     </package>
 	
     <!-- Add packages here -->
-
+<package name="AdminDefault" extends="Default">	
+	</package>
+    <!-- Add packages here -->
+<include file="/admin/admin.xml"/>
 </struts>
