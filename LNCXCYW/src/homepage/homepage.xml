@@ -5,9 +5,9 @@
 <struts>
 
 
-<package name="homepage" namespace="/" extends="Default">
-	<action name="homepageGetNewsCategory" class="homepage.HomePageAction" method="getAllNewsCategoryList">
-		<result></result>   
+<package name="homepage" namespace="/" extends="HomepageDefault">
+	<action name="homepageGetNewsList" class="homepage.HomePageAction" method="getHomePageNewsList">
+		<result name="SUCCESS" type="json">newsList</result>   
 	</action>
 </package>
 </struts>

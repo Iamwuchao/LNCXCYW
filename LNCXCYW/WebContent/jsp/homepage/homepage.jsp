@@ -2661,4 +2661,12 @@
 
 <%@ include file="/jsp/basepages/base.jsp" %>
 <script type="text/javascript">
+	$(document).ready(function(){
+			$.ajax({
+				type:'post',
+				url:"/homepage/homepageGetNewsList.action",
+				data:{"newsCount":10,"pictureNewsCount":3}
+			}
+		);
+	});
 </script>

@@ -10,9 +10,18 @@ import mode.News;
 public class HomePageAction extends ActionSupport{
 	private List<News> newsList;
 	private List<String> newsCategoryList;
-	private final static int newsNum = 10; 
-	
-	
+	private final static int MAX = 10; 
+	private int newsCount;
+
+
+	public int getNewsCount() {
+		return newsCount;
+	}
+
+	public void setNewsCount(int newsCount) {
+		this.newsCount = newsCount;
+	}
+
 	public List<News> getNewsList() {
 		return newsList;
 	}
@@ -34,7 +43,13 @@ public class HomePageAction extends ActionSupport{
 	}
 	
 	public String getHomePageNewsList(){
+		getAllNewsCategoryList();
+		int fromIndex=0;
+		int toIndex = newsCount < MAX ? newsCount:MAX;
 		
+		for(String category:newsCategoryList){
+			newsList.addAll(Cache.getNewsList(category, fromIndex, toIndex));
+		}
 		return SUCCESS;
 	}
 	
