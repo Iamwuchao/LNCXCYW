@@ -42,10 +42,10 @@ public class NewsAction extends ActionSupport{
 	public String newsSubmit() throws Exception {
 		status="0";
 		System.out.println("newsSubmit:");
-		System.out.println("content:"+content);
+		System.out.println(title+""+category+""+author);
 		try{
 			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
-			System.out.println("content:"+content);
+			//System.out.println("content:"+content);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			status="1";
@@ -69,8 +69,8 @@ public class NewsAction extends ActionSupport{
 		news.setAuthor(author);
 		news.setNewsTile(title);
 		news.setCategory(newsCategory);
-		Session session=SingletonSessionFactory.getSession();
 		
+		Session session=SingletonSessionFactory.getSession();		
 		try{
 			Transaction trans=session.beginTransaction();
 			session.save(news);
@@ -82,6 +82,7 @@ public class NewsAction extends ActionSupport{
 			return ERROR;
 		}
 		session.close();
+		Cache.updateNews(category, news);
 		System.out.println("save");
 		return SUCCESS;
 	}
@@ -104,11 +105,12 @@ public class NewsAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
+	
+	
+	
 	/*
 	 * getters and setters
 	 */
-	
-	
 	
 	public String getTitle() {
 		return title;
