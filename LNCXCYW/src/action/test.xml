@@ -5,9 +5,9 @@
 <struts>
 
 
-<package name="homepage" namespace="/" extends="Default">
-	<action name="homepageGetNewsCategory" class="homepage.HomePageAction" method="getAllNewsCategoryList">
-		<result></result>   
+<package name="test" namespace="/" extends="Default">
+	<action name="test" class="action.TransferAction" method="test">
+		<result>/jsp/homepage/homepage.jsp</result>   
 	</action>
 </package>
 </struts>

@@ -24,7 +24,6 @@ public class JspToHTML {
 	}
 	
 	static public  String getJspOutput(String jsppath)
-//	throws Exception
 	{
 		WrapperResponse wrapperResponse = null;
 		try
@@ -47,8 +46,14 @@ public class JspToHTML {
 	
 	public static String writeHTML(String newContent) throws IOException{
 		long time = System.currentTimeMillis();
-		String filePath = GlobalInfo.GLOBALINFO.HTMLPath+String.valueOf(time)+".html";
+		String fileName = String.valueOf(time)+".html";
+		String filePath = GlobalInfo.GLOBALINFO.HTMLPath+ "/" + fileName;
 		File file = new File(filePath);
+		File parent = file.getParentFile();
+		if(!parent.exists()){
+			parent.mkdirs();
+		}
+		String url = GlobalInfo.GLOBALINFO.ROOTURL+ GlobalInfo.GLOBALINFO.NEWS + "/" + fileName;
 		RandomAccessFile fileInputStream = null;
 		try {
 			fileInputStream = new RandomAccessFile(file,"rws");
@@ -67,6 +72,6 @@ public class JspToHTML {
 				fileInputStream.close();
 			}
 		}
-		return filePath;
+		return url;
 	}
 }

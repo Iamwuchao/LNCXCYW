@@ -27,15 +27,14 @@ import mode.NewsCategory;
 
 public class TransferAction extends ActionSupport{
 	public String test(){
-		System.out.println("HHHHHHHHHHHHHHHH");
-		List<String> list = Cache.getNewsCategoryList();
-		for(String str:list){
-			System.out.println(str);
+		System.out.println("HHHHHHHHHHHHHHHHHHHHHH");
+		try {
+			String url = JspToHTML.writeHTML("hehehe");
+			System.out.println("DDDDDD "+url);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		NewsCategoryDao  ncd = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
-		NewsCategory nc = new NewsCategory();
-		nc.setNewscategory("测试中文乱码");
-		ncd.save(nc);
 		System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
 		return ActionSupport.SUCCESS;
 	}
