@@ -24,4 +24,36 @@
 			</result> 
 		</action>
 	</package>
+	<package name="user_request" namespace="/admin/user_request" extends="AdminDefault">
+		
+		<action name="" >
+			<result name="success" type="redirect">untreated</result>
+		</action>
+		
+		<action name="untreated" class="admin.RequestAction" method="userRequest">
+			<result>
+				/jsp/super_admin/untreated.jsp
+			</result>
+
+		</action>
+		<action name="request_ensure" class="admin.RequestAction" method="userRequestEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,userId</param>
+			</result>
+		</action>
+		
+		 <action name="request_change" class="admin.RequestAction" method="userRequestEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,userId</param>
+			</result>
+		</action>
+
+		<action name="handled" class="admin.RequestAction" method="userRequestResult">
+			<result>
+				/jsp/super_admin/handled.jsp
+			</result>
+
+		</action>
+		
+		</package>
 	</struts>

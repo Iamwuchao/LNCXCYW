@@ -109,14 +109,19 @@ function loginCallback(data)
 	//alert(99); 	
 	if(data.register_status == "0")
 	{    		
-		alert("登陆成功");
+		alert("普通管理员登陆成功");
 		window.location.href = "/jsp/admin/newsmanager.jsp";
 	}
 	else if(data.register_status == "1")
 		{
 		alert("用户名或密码错误");
 		}
-	else 
+	else if(data.register_status == "3")
+	{
+		alert("超级管理员登陆成功");
+		window.location.href = "/jsp/super_admin/admin.jsp";
+	}
+	else  
 		{
 		alert("error with status：" + data.register_status);
 		}
@@ -124,8 +129,8 @@ function loginCallback(data)
 	
 }
 
-function registerCallback(data)
-{    alert(000);	
+/* function registerCallback(data)
+{    //alert(000);	
 	if(data.register_status == "0")
 	{    		
 		alert("注册成功, 您现在可以登录了");
@@ -133,15 +138,20 @@ function registerCallback(data)
 	}
 	else if(data.register_status == "1")
 		{
-		alert("该邮箱已被注册");
+		alert("用户名或密码错误");
 		}
-	else 
+	else if(data.register_status == "3")
+	{
+		alert("超级管理员");
+		window.location.href = "/jsp/super_admin/admin.jsp";
+	}
+	else  
 		{
 		alert("error with status：" + data.register_status);
 		}
 
 	
-}
+} */
 
 </script>
 </html>

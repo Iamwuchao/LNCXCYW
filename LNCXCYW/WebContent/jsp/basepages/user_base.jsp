@@ -1,6 +1,6 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 <!-- <link href="./dashboard.css" rel="stylesheet"> -->
- <link href="dashboard.css" rel="stylesheet">  
+ <link href="/css/dashboard.css" rel="stylesheet">  
 <layout:override name="base_content">
 	
  <!-- <a href="/"> -->
