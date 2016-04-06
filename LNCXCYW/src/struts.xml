@@ -49,10 +49,9 @@
     </package>
     <package name="AdminDefault" extends="Default">	
 	</package>
-	<package name="HomepageDefault" extends="Default json-default">
+	<package name="HomepageDefault" extends="Default">
 	</package>
     <!-- Add packages here -->
-
 	 <include file="/action/test.xml"/>
 	 <include file="/homepage/homepage.xml"/>
 	<include file="/admin/admin.xml"/>
