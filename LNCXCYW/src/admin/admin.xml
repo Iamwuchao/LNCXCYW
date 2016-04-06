@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+	<package name="admin" namespace="/admin"
+		extends="AdminDefault">
+		
+		<action name="regist" class="admin.AdminAction" method="regist">
+			 <result name="success" type="json">
+			</result> 
+		</action>
+		
+		 <action name="login" class="admin.AdminAction">
+	<result >
+		/jsp/homepage/login.jsp
+	</result>
+</action> 
+		
+		<action name="login_handle" class="admin.AdminAction" method="login">
+			 <result name="success" type="json">
+			</result> 
+		</action>
+	</package>
+	</struts>
