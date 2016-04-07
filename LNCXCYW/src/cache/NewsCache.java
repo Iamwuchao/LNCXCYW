@@ -3,11 +3,15 @@ package cache;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import dao.DaoFactory;
+import dao.NewsDao;
 import mode.News;
+import mode.NewsCategory;
 
 /*
  * 新闻html文件地址缓存，保存MAX_VALUE条记录
@@ -20,16 +24,24 @@ public class NewsCache implements LeftCycle<String>{
 	private HashMap<String,ConcurrentLinkedDeque<News>> cacheMap; 
 	
 	NewsCache(){
-		
 	}
+	
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
 		if(isInited.compareAndSet(false, true)){
 			cacheMap = new HashMap<String,ConcurrentLinkedDeque<News>>();
+			List<String> newsCategorylist = Cache.getNewsCategoryList();
+			NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+			for(String category:newsCategorylist){
+				NewsCategory nc = Cache.getNewsCategorybyName(category);
+				List<News> list = nd.getNewsSubList(nc, 0, MAX_CACHE.get());
+				ConcurrentLinkedDeque<News> cdq = new ConcurrentLinkedDeque<News>();
+				cdq.addAll(list);
+				cacheMap.put(category,cdq);
+			}
 		}
 	}
-
 	@Override
 	public void destory() {
 		// TODO Auto-generated method stub
@@ -76,12 +88,14 @@ public class NewsCache implements LeftCycle<String>{
 	/*
 	 * 添加一条新闻html文件的地址 ，对应的栏目如果不存在则添加该栏目对应的list
 	 */
-	public void add(String category,News news){
+	public void add(String category,News news) throws Exception{
 		//为初始化/或已经关闭则 直接返回
 		if(!isInited.get()){
 			return;
 		}
-		
+		if(null==Cache.getNewsCategorybyName(category)){
+			throw new Exception("该新闻栏目不存在");
+		}
 		//add list if not exist
 		cacheMap.putIfAbsent(category, new ConcurrentLinkedDeque<News>());
 		

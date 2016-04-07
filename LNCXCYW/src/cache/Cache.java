@@ -21,7 +21,7 @@ public class Cache {
 		return cache.newsCache.getNewCacheList(newsCategory, fromIndex, toIndex);
 	}
 	
-	public static void updateNews(String newsCategory,News news){
+	public static void updateNews(String newsCategory,News news) throws Exception{
 		cache.newsCache.add(newsCategory,news);
 	}
 	

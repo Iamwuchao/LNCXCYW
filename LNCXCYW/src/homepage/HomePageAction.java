@@ -7,12 +7,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import cache.Cache;
 import mode.News;
 
+@SuppressWarnings("serial")
 public class HomePageAction extends ActionSupport{
 	private List<News> newsList;
 	private List<String> newsCategoryList;
 	private final static int MAX = 10; 
 	private int newsCount;
-
+	
 
 	public int getNewsCount() {
 		return newsCount;

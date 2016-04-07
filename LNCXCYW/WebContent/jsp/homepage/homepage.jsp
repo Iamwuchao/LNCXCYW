@@ -48,132 +48,29 @@
          <div id="con_one_1" style="display: block;">
 				<div class="list1" style="padding-top: 15px">
 					<ul><table width="100%" cellspacing="0" cellpadding="0">
-	
-					<tbody><tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
+					<tbody>
+					<s:iterator value="newsList" var="i"  status="index" begin="0" end="9"> 
+					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65427.shtml" class="c50257" title="书香润校园 盘锦校区27个团支部获得团省委表彰" target="_blank">
-					        书香润校园 盘锦校区27个团支部获得团省委表彰
+					        <a href="#i.news_address" class="c50257" title="i.newsTile" target="_blank">
+					        	<s:property value="#i.newsTile"/>
 					        </a>
-					        
-					        
-					        
 					            </td>
 					        
 					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65431.shtml" class="c50257" title="“深海关键技术与装备”研讨会在大连理工大学召开" target="_blank">
-					        “深海关键技术与装备”研讨会在大连理工大学召开
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65434.shtml" class="c50257" title="【组图】双代会·回顾" target="_blank">
-					        【组图】双代会·回顾
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65430.shtml" class="c50257" title="【双代会·评论】百舸争流 奋楫争先" target="_blank">
-					        【双代会·评论】百舸争流 奋楫争先
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65426.shtml" class="c50257" title="软件学院校区迎接“十三五” 全面推动“双一流”建设" target="_blank">
-					        软件学院校区迎接“十三五” 全面推动“双一流...
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65415.shtml" class="c50257" title="【双代会】热议发展大计 谋划美好愿景" target="_blank">
-					        【双代会】热议发展大计 谋划美好愿景
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65410.shtml" class="c50257" title="大连理工大学迎来五洲新生" target="_blank">
-					        大连理工大学迎来五洲新生
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65403.shtml" class="c50257" title="盘锦校区开展2016年就业工作动员" target="_blank">
-					        盘锦校区开展2016年就业工作动员
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/photo/2016/0310/65408.shtml" class="c50257" title="【组图】双代会·心声" target="_blank">
-					        【组图】双代会·心声
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>
-					</tbody></table><!--#endeditable--></ul>
+					</s:iterator>
+					</tbody>
+					</table><!--#endeditable--></ul>
 				</div>
 		</div>
+		
 		<div id="con_one_2" style="display: block;">
 			<div class="list1" style="padding-top: 15px">
 					<ul><table width="100%" cellspacing="0" cellpadding="0">
 	
-					<tbody><tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
+					<tbody>
+					<tr>
+					<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 					<td valign="middle" align="left">
 					    
 					    
@@ -183,113 +80,11 @@
 					        
 					        
 					        
-					            </td>
+					   </td>
 					        
 					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
 					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65431.shtml" class="c50257" title="“深海关键技术与装备”研讨会在大连理工大学召开" target="_blank">
-					        “深海关键技术与装备”研讨会在大连理工大学召开
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65434.shtml" class="c50257" title="【组图】双代会·回顾" target="_blank">
-					        【组图】双代会·回顾
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65430.shtml" class="c50257" title="【双代会·评论】百舸争流 奋楫争先" target="_blank">
-					        【双代会·评论】百舸争流 奋楫争先
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65426.shtml" class="c50257" title="软件学院校区迎接“十三五” 全面推动“双一流”建设" target="_blank">
-					        软件学院校区迎接“十三五” 全面推动“双一流...
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65415.shtml" class="c50257" title="【双代会】热议发展大计 谋划美好愿景" target="_blank">
-					        【双代会】热议发展大计 谋划美好愿景
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65410.shtml" class="c50257" title="大连理工大学迎来五洲新生" target="_blank">
-					        大连理工大学迎来五洲新生
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0311/65403.shtml" class="c50257" title="盘锦校区开展2016年就业工作动员" target="_blank">
-					        盘锦校区开展2016年就业工作动员
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/photo/2016/0310/65408.shtml" class="c50257" title="【组图】双代会·心声" target="_blank">
-					        【组图】双代会·心声
-					        </a>
-					        
-					        
-					        
-					            </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>
+					
 					</tbody></table><!--#endeditable--></ul>
 			</div>
 		</div>

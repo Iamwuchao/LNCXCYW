@@ -51,7 +51,7 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	}
 
 	@Override
-	public void saveAll(Collection entities) {
+	public void saveAll(Collection<T> entities) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
@@ -63,12 +63,12 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	}
 
 	@Override
-	public List findById(Object pk) {
+	public List<T> findById(Object pk) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Criteria crit = session.createCriteria(classType);
 		crit.add(Restrictions.eq("id", pk));
-		List list = crit.list();
+		List<T> list = crit.list();
 		session.close();
 		return list;
 	}

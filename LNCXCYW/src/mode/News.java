@@ -1,6 +1,8 @@
 package mode;
 
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,9 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 @Entity
 @Table(name="news_table")
 
@@ -22,6 +21,7 @@ public class News {
 	private String newsTile;
 	private String news_address;
 	private String news_content;
+	private Date date;
 	private String author;
 	private NewsCategory category;
 	
@@ -31,6 +31,20 @@ public class News {
 		return newsId;
 	}
 	
+	
+	@Column(nullable=false)
+	public Date getDate() {
+		return date;
+	}
+
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+
 	@Column
 	public String getNewsTile() {
 		return newsTile;
@@ -53,7 +67,7 @@ public class News {
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn
+	@JoinColumn(nullable=false)
 	public NewsCategory getCategory() {
 		return category;
 	}

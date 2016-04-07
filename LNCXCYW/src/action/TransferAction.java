@@ -27,7 +27,7 @@ import mode.NewsCategory;
 
 public class TransferAction extends ActionSupport{
 	public String test(){
-		System.out.println("HHHHHHHHHHHHHHHHHHHHHH");
+	/*	System.out.println("HHHHHHHHHHHHHHHHHHHHHH");
 		try {
 			String url = JspToHTML.writeHTML("hehehe");
 			System.out.println("DDDDDD "+url);
@@ -35,7 +35,8 @@ public class TransferAction extends ActionSupport{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
+		System.out.println("XXXXXXXXXXXXXXXXXXXXXX");*/
+		Cache.getNewsCategoryList();
 		return ActionSupport.SUCCESS;
 	}
 }
