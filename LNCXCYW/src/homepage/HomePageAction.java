@@ -1,5 +1,6 @@
 package homepage;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -47,9 +48,10 @@ public class HomePageAction extends ActionSupport{
 		getAllNewsCategoryList();
 		int fromIndex=0;
 		int toIndex = newsCount < MAX ? newsCount:MAX;
-		
+		newsList = new LinkedList<News>();
 		for(String category:newsCategoryList){
-			newsList.addAll(Cache.getNewsList(category, fromIndex, toIndex));
+			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex);
+			newsList.addAll(temList);
 		}
 		return SUCCESS;
 	}

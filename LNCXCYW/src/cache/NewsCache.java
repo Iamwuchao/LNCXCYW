@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import dao.DaoFactory;
+import dao.NewsCategoryDao;
 import dao.NewsDao;
 import mode.News;
 import mode.NewsCategory;
@@ -31,14 +32,14 @@ public class NewsCache implements LeftCycle<String>{
 		// TODO Auto-generated method stub
 		if(isInited.compareAndSet(false, true)){
 			cacheMap = new HashMap<String,ConcurrentLinkedDeque<News>>();
-			List<String> newsCategorylist = Cache.getNewsCategoryList();
-			NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-			for(String category:newsCategorylist){
-				NewsCategory nc = Cache.getNewsCategorybyName(category);
-				List<News> list = nd.getNewsSubList(nc, 0, MAX_CACHE.get());
+			 NewsCategoryDao dao = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
+			 List<NewsCategory> newsCategorylist = (List<NewsCategory>) dao.getAll();
+			 NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+			for(NewsCategory category:newsCategorylist){
+				List<News> list = nd.getNewsSubList(category, 0, MAX_CACHE.get());
 				ConcurrentLinkedDeque<News> cdq = new ConcurrentLinkedDeque<News>();
 				cdq.addAll(list);
-				cacheMap.put(category,cdq);
+				cacheMap.put(category.getNewscategory(),cdq);
 			}
 		}
 	}
@@ -77,9 +78,11 @@ public class NewsCache implements LeftCycle<String>{
 		if(!cacheMap.containsKey(category)) return list;
 		
 		Iterator<News> iter = (Iterator<News>) (cacheMap.get(category)).iterator();
-		for(int i=0;i<toIndex;i++){
-			if(i>=fromIndex){
-				list.add(iter.next());
+		int index=0;
+		while(iter.hasNext()){
+			News news = iter.next();
+			if(index>=fromIndex&& index<=toIndex){
+					list.add(news);
 			}
 		}
 		return list;
