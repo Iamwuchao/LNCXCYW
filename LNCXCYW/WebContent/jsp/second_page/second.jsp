@@ -41,44 +41,22 @@
 				<br/>
 				<hr size="3" color="#195591">
 			</div>
+			
 			<div class="inner">
-			<s:iterator value="news_list" var="i" status="index">			
+				<s:iterator value="news_list" var="i" status="index">		
 				<ul>
+				
 					<li>
 						<a>
-							<s:property value="#i.author"/>
+							<s:property value="#i.newsTile"/>
 						</a>
 					</li>
-					<!-- <li><a href="#">【组图】“双代会”上的表情包</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【教代会】部院回眸</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 17:08</time></li>
-					<li><a href="#">学校召开本科教学工作会议倡导优势专业建设</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">西南政法大学副教授校长刘想树一行访问我校</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">英国莱斯特大学代表团访问盘锦校区</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月8日 13:05</time></li>
-					<li><a href="#">卓越大学联盟暨辽宁省高校专业认证研讨交流会举办</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">机械红马甲：在平凡中坚持 在坚持中传承</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【研招进行时】学校公布2016年考研初试成绩基本要求</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">2016年高水平运动队（篮球）考试举行</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【组图】“双代会”上的表情包</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【教代会】部院回眸</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 17:08</time></li>
-					<li><a href="#">学校召开本科教学工作会议倡导优势专业建设</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">西南政法大学副教授校长刘想树一行访问我校</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">英国莱斯特大学代表团访问盘锦校区</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月8日 13:05</time></li>
-					<li><a href="#">卓越大学联盟暨辽宁省高校专业认证研讨交流会举办</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">机械红马甲：在平凡中坚持 在坚持中传承</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【研招进行时】学校公布2016年考研初试成绩基本要求</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">2016年高水平运动队（篮球）考试举行</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【组图】“双代会”上的表情包</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【教代会】部院回眸</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 17:08</time></li>
-					<li><a href="#">学校召开本科教学工作会议倡导优势专业建设</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">西南政法大学副教授校长刘想树一行访问我校</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 16:56</time></li>
-					<li><a href="#">英国莱斯特大学代表团访问盘锦校区</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月8日 13:05</time></li>
-					<li><a href="#">卓越大学联盟暨辽宁省高校专业认证研讨交流会举办</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">机械红马甲：在平凡中坚持 在坚持中传承</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">【研招进行时】学校公布2016年考研初试成绩基本要求</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
-					<li><a href="#">2016年高水平运动队（篮球）考试举行</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>	 -->
-				<!-- </ul> -->
+					
+				
+				</ul>
 			</s:iterator>
 			</div>
+			
 			
 		</div>
 		<div class="content-right">

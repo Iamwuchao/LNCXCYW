@@ -33,9 +33,7 @@ public class NewsShowAction {
 			news_list=q.list();
 			for(News m:news_list)
 				System.out.println(m.getNewsTile()+"  "+m.getAuthor());
-			Collections.reverse(news_list);
 			System.out.println("test");
-			/*Collections.reverse(user_list);*/
 			session.close();
 		}
 		catch(Exception e)
