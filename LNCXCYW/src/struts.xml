@@ -10,6 +10,12 @@
         	<result>/jsp/homepage/homepage.jsp</result>
         </action> 
        
+       <action name="test2" class="admin.NewsAction" method="newsList">
+			<result name="success">
+				/jsp/third/second_page.jsp
+			</result>
+		</action>
+		
        <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
 			<result name="success">
 				/jsp/super_admin/news_add.jsp

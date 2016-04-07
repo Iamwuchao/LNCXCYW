@@ -1,7 +1,9 @@
 package admin;
 
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -65,9 +67,12 @@ public class NewsAction extends ActionSupport{
 		NewsCategory newsCategory=Cache.getNewsCategorybyName(category);
 		newsCategory.setNewscategory(category);
 		
+		Date date=new Date(new java.util.Date().getTime()); 
+		System.out.println(date);
 		news.setNews_address(address);
 		news.setAuthor(author);
 		news.setNewsTile(title);
+		news.setDate(date);
 		news.setCategory(newsCategory);
 		
 		Session session=SingletonSessionFactory.getSession();		
@@ -88,40 +93,33 @@ public class NewsAction extends ActionSupport{
 	}
 
 	
-	
-	
-	
-	
-	
-	
-	
 	public String newsList() throws Exception{
+		status="0";
 		System.out.println("newsList:");
 		Session session=SingletonSessionFactory.getSession();
 		Criteria q=session.createCriteria(News.class);
 		newsList=q.list();
 		session.close();
-		System.out.println(newsList);
+		//System.out.println(newsList);
 		return SUCCESS;
 	}
-	
+
 	
 	
 	
 	/*
 	 * getters and setters
 	 */
-	
-	public String getTitle() {
-		return title;
-	}
-
 	public String getStatus() {
 		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getTitle() {
+		return title;
 	}
 
 	public void setTitle(String title) {
@@ -147,6 +145,7 @@ public class NewsAction extends ActionSupport{
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
@@ -166,7 +165,6 @@ public class NewsAction extends ActionSupport{
 	public void setCategoryList(List<String> categoryList) {
 		this.categoryList = categoryList;
 	}
-
 	
 	
 }
