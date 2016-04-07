@@ -39,7 +39,7 @@
       <div class="con2">
          <div class="name">
          	<ul style="width:100%;height:36px;overflow:hidden">
-         		<a href="second.action" onclick="" target="_blank"><li id="one1" onmouseover="setTabsnow('one',1,3)" class="curnews">通知公告</li></a>
+         		<a href="/second_page" onclick="" target="_blank"><li id="one1" onmouseover="setTabsnow('one',1,3)" class="curnews">通知公告</li></a>
          		<li id="one2" onmouseover="setTabsnow('one',2,3)" >工作动态</li>
          		<li id="one3" onmouseover="setTabsnow('one',3,3)" >高校动态</li>
          	</ul>

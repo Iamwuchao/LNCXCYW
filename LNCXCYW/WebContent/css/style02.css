@@ -117,8 +117,8 @@ ul li {
    	margin: 0 ;
     /*display: inline;*/
    /* margin-right: 10px;*/
-    height: 800px;
-    overflow: hidden;
+    /* height: 800px; */
+    /* overflow: hidden; */
     float: left;
 }
 .content-left .head{
@@ -129,16 +129,18 @@ ul li {
 	padding: 10px 10px;
 }
 .content-left li{
-	list-style: disc;
+	list-style: none;
 	line-height: 30px;
 }
 .content-left a{
 	text-decoration: none;
 	color: black;
+	
 }
 .content-left a:hover{
 	text-decoration: underline;
 	color: blue;
+	cursor: pointer;
 }
 .content-left time{
 	color: #888;
