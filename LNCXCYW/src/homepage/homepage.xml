@@ -9,5 +9,11 @@
 	<action name="homepageGetNewsList" class="homepage.HomePageAction" method="getHomePageNewsList">
 		<result name="SUCCESS" type="json">newsList</result>   
 	</action>
+	
+	<action name="second_page" class="admin.NewsAction" method="newsList">
+		<result name="success">
+			/jsp/third/second_page.jsp
+		</result>
+	</action>
 </package>
 </struts>

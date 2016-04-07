@@ -10,11 +10,7 @@
         	<result>/jsp/homepage/homepage.jsp</result>
         </action> 
        
-       <action name="test2" class="admin.NewsAction" method="newsList">
-			<result name="success">
-				/jsp/third/second_page.jsp
-			</result>
-		</action>
+       
 		
        <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
 			<result name="success">
@@ -31,19 +27,10 @@
        		</result>
        </action>   
        
-       <action name="second_page" class="admin.NewsShowAction" method="showNews">
-			<result name="success">
-				/jsp/second_page/second.jsp
-			</result>
-		</action> 
 		
 		<action name="fd">
        		<result>/jsp/admin/news_manage.jsp</result>
        </action> 
-       
-       <action name="second">
-       	<result>/jsp/second_page/second.jsp</result>
-       </action>
        
 
        <action name="regist" class="homepage.AdminAction" method="regist">
