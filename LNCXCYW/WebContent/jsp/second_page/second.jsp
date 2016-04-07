@@ -47,7 +47,7 @@
 				<ul>
 					<li>
 						<a>
-							<s:property value="news_list.get(index))"/>
+							<s:property value="#i.author"/>
 						</a>
 					</li>
 					<!-- <li><a href="#">【组图】“双代会”上的表情包</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
