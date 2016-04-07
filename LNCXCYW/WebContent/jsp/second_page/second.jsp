@@ -41,9 +41,8 @@
 				<br/>
 				<hr size="3" color="#195591">
 			</div>
-			<s:iterator value="news_list" var="i" status="index">
 			<div class="inner">
-				
+			<s:iterator value="news_list" var="i" status="index">			
 				<ul>
 					<li>
 						<a>
@@ -78,8 +77,8 @@
 					<li><a href="#">【研招进行时】学校公布2016年考研初试成绩基本要求</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>
 					<li><a href="#">2016年高水平运动队（篮球）考试举行</a>&nbsp;&nbsp;&nbsp;&nbsp;<time>2016年3月9日 18:31</time></li>	 -->
 				<!-- </ul> -->
-			</div>
 			</s:iterator>
+			</div>
 			
 		</div>
 		<div class="content-right">
