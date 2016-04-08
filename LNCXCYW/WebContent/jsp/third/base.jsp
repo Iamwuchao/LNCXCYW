@@ -50,12 +50,14 @@
 		</div>
 		<div class="content-right">
 			<div class="inner-top">
+			<p>每日推荐</p>
 				<div class="deep-inner-top">
 				
 				</div>
 			</div>
 
 			<div class="inner-bottom">
+			<p>焦点图片</p>
 				<div class="deep-inner-bottom">
 					<div class="left">
 							<img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">

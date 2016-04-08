@@ -112,6 +112,7 @@ ul li {
 }
 .content-left{
 	width: 55%;
+	min-height:1024px;
     /*float: left;*/
    	margin: 0 ;
     /*display: inline;*/

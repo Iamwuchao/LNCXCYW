@@ -4,7 +4,13 @@
 	<div class="inner">
 		<ul>
 			<s:iterator value="newsList" var="i" status="index">	
-				<li><a href="<s:property value="#i.news_address" />"><s:property value="#i.newsTile" /></a></li>
+				<%-- <s:if test="%{#i.category==null}"> --%>
+					<li>
+						<a href="<s:property value="#i.news_address" />">
+							<s:property value="#i.category" />
+						</a>
+					</li>
+				<%-- </s:if> --%>
 			</s:iterator>
 		</ul>
 	</div>
