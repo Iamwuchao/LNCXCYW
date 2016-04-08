@@ -4,13 +4,14 @@
 	<div class="inner">
 		<ul>
 			<s:iterator value="newsList" var="i" status="index">	
-				<%-- <s:if test="%{#i.category==null}"> --%>
 					<li>
 						<a href="<s:property value="#i.news_address" />">
-							<s:property value="#i.newsTile" />
+							<s:property value="#i.newsTile" />   
+						</a>
+						<a href="http://localhost:8080/second_page?category=<s:property value="#i.getCategory().getNewscategory()" />"    >
+							<s:property value="#i.getCategory().getNewscategory()" />
 						</a>
 					</li>
-				<%-- </s:if> --%>
 			</s:iterator>
 		</ul>
 	</div>

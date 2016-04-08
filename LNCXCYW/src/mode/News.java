@@ -66,7 +66,7 @@ public class News {
 	}
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(nullable=false)
 	public NewsCategory getCategory() {
 		return category;
