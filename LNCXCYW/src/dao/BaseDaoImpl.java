@@ -19,13 +19,19 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	}
 
 	@Override
-	public void save(Object entity){
+	public boolean save(Object entity){
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
+		try{
 		session.save(entity);
 		tx.commit();
-		session.close();
+		}catch(Exception e){
+			return false;
+		}finally{
+			session.close();
+		}
+		return true;
 	}
 
 	@Override
@@ -33,10 +39,15 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
+		try{
 		session.update(entity);
 		tx.commit();
+		}catch(Exception e){
+			return false;
+		}finally{
 		session.close();
-		return false;
+		}
+		return true;
 	}
 
 	@Override
@@ -44,10 +55,15 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
+		try{
 		session.delete(entity);
 		tx.commit();
-		session.close();
-		return false;
+		}catch(Exception e){
+			return false;
+		}finally{
+			session.close();
+		}
+		return true;
 	}
 
 	@Override

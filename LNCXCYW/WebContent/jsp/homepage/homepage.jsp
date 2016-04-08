@@ -52,7 +52,7 @@
 					<s:iterator value="newsList" var="i"  status="index" begin="0" end="9"> 
 					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 					<td valign="middle" align="left">
-					        <a href="#i.news_address" class="c50257" title="i.newsTile" target="_blank">
+					        <a href="#i.news_address" class="c50257" title="#i.newsTile" target="_blank">
 					        	<s:property value="#i.newsTile"/>
 					        </a>
 					            </td>
@@ -69,22 +69,16 @@
 					<ul><table width="100%" cellspacing="0" cellpadding="0">
 	
 					<tbody>
+					<s:iterator value="newsList" var="i"  status="index" begin="10" end="19"> 
 					<tr>
 					<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 					<td valign="middle" align="left">
-					    
-					    
-					        <a href="http://news.dlut.edu.cn/article/2016/0314/65427.shtml" class="c50257" title="书香润校园 盘锦校区27个团支部获得团省委表彰" target="_blank">
-					        书香润校园 盘锦校区27个团支部获得团省委表彰
-					        </a>
-					        
-					        
-					        
-					   </td>
-					        
-					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
-					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
-					
+					        <a href="#i.news_address" class="c50257" title="#i.newsTile" target="_blank">
+					        	<s:property value="#i.newsTile"/>
+					        </a>   
+					   </td>     
+					   <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
+					</s:iterator>
 					</tbody></table><!--#endeditable--></ul>
 			</div>
 		</div>

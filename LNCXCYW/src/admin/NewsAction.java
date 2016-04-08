@@ -103,9 +103,6 @@ public class NewsAction extends ActionSupport{
 		//System.out.println(newsList);
 		return SUCCESS;
 	}
-
-	
-	
 	
 	/*
 	 * getters and setters

@@ -36,6 +36,10 @@ public class TransferAction extends ActionSupport{
 			e.printStackTrace();
 		}
 		System.out.println("XXXXXXXXXXXXXXXXXXXXXX");*/
+		
+		/*
+		 * 插入500条新闻记录 对每个新闻栏目
+		 */
 		Cache.getNewsCategoryList();
 		return ActionSupport.SUCCESS;
 	}
