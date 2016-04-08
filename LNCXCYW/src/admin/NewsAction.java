@@ -2,18 +2,16 @@ package admin;
 
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
+import dao.DaoFactory;
+import dao.NewsDao;
 import mode.News;
 import mode.NewsCategory;
 import util.JspToHTML;
@@ -31,27 +29,24 @@ public class NewsAction extends ActionSupport{
 	
 	public String newsAdd(){
 		System.out.println("newsAdd:");
-		List<String> list=Cache.getNewsCategoryList();
-		for(String s: list){
-			System.out.println(s);
-		}
-
-		categoryList=list;
+		categoryList=Cache.getNewsCategoryList();
+//		for(String s: categoryList){
+//			System.out.println(s);
+//		}
 		return SUCCESS;
 	}
 
 	//添加新闻
 	public String newsSubmit() throws Exception {
 		status="0";
-		System.out.println("newsSubmit:");
+		System.out.print("newsSubmit: ");
 		System.out.println(title+""+category+""+author);
 		try{
 			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
-			//System.out.println("content:"+content);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			status="1";
-			return ERROR;
+			return SUCCESS;
 		}
 		
 		String address;
@@ -60,7 +55,7 @@ public class NewsAction extends ActionSupport{
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			status="1";
-			return ERROR;
+			return SUCCESS;
 		}
 		
 		News news=new News();
@@ -68,25 +63,21 @@ public class NewsAction extends ActionSupport{
 		newsCategory.setNewscategory(category);
 		
 		Date date=new Date(new java.util.Date().getTime()); 
-		System.out.println(date);
-		news.setNews_address(address);
+		//System.out.println(date);
 		news.setAuthor(author);
 		news.setNewsTile(title);
+		news.setNews_address(address);
 		news.setDate(date);
 		news.setCategory(newsCategory);
 		
-		Session session=SingletonSessionFactory.getSession();		
-		try{
-			Transaction trans=session.beginTransaction();
-			session.save(news);
-			trans.commit();
-		}catch(Exception e){
-			session.close();
-			System.out.println("error:"+e.getMessage());
+		
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		if(!dao.save(news)){
+			System.out.println("dao false!");
 			status="1";
-			return ERROR;
+			return SUCCESS;
 		}
-		session.close();
+		
 		Cache.updateNews(category, news);
 		System.out.println("save");
 		return SUCCESS;
@@ -94,7 +85,6 @@ public class NewsAction extends ActionSupport{
 
 	
 	public String newsList() throws Exception{
-		status="0";
 		System.out.println("newsList:");
 		Session session=SingletonSessionFactory.getSession();
 		Criteria q=session.createCriteria(News.class);
