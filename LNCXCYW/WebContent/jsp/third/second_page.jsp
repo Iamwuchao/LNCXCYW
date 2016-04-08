@@ -7,8 +7,8 @@
 					<li>
 						<a href="<s:property value="#i.news_address" />">
 							<s:property value="#i.newsTile" />   
-						</a>
-						<a href="http://localhost:8080/second_page?category=<s:property value="#i.getCategory().getNewscategory()" />"    >
+						</a>       类         别  ->  
+						<a href="http://localhost:8080/second_page?category=<s:property value="#i.getCategory().getNewscategory()" />" >
 							<s:property value="#i.getCategory().getNewscategory()" />
 						</a>
 					</li>
