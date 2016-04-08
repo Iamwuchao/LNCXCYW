@@ -21,7 +21,6 @@ input,select{
 }
 .main{
 	width:1024px;
-	height:auto;
 	margin:0 auto;
 }
 
@@ -105,9 +104,9 @@ ul li {
 	float:left; padding-left:5px; padding-top:5px;
 }
 .con{
-	width: 1024px;
-	height: 1024px;
-	margin: 0 auto;
+	width: 100%;
+	/*height: 1024px;*/
+	/*margin: 0 auto;*/
 	margin-top: 10px;
 
 }
@@ -162,7 +161,7 @@ ul li {
 .content-right{
 	width: 40%;
 	float: right;
-	height:880px;
+	/*height:880px;*/
 	position: relative;
 /*	display: inline-block;*/
 	/*overflow: hidden;*/
@@ -183,8 +182,8 @@ ul li {
 .inner-top{
 	position: absolute;
 	top: 0;
-	width:98%;
-	height: 48%;
+	width:401px;
+	height: 422px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 	
@@ -226,9 +225,9 @@ ul li {
 }*/
 .inner-bottom{
 	position: absolute;
-	bottom: 0;
-	width: 98%;
-	height: 47%;
+	top:442px;
+	width: 401px;
+	height: 414px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 }
@@ -249,21 +248,25 @@ ul li {
 	background-color: #fff;
 
 }
+.bottom-wrap{
+	width: 100%;
+	clear: both;
+/*	position: absolute;
+	bottom: 0;*/
+}
 .bigDivider{
-	width:1024px;
+	width:100%;
 	height:60px;
 	background-color:#f6f6f6;
  	background:url(../images/bigDiver.png);
- 	margin:0 auto;
  	text-align:right;
  }
 
 .foot{
-	width:1024px;
+	width:100%;
 	height:150px;
 	background-color:#f6f6f6;
  	background:url(../images/foot.png);
- 	margin:0 auto;
  	text-align:right;
 }
 /*  .inner-bottom .deep-inner-bottom{

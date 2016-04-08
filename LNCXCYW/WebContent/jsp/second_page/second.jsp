@@ -99,10 +99,13 @@
 			</div>
 		</div>	
 	</div>
-</div>
-<div id="bigDiver" class="bigDivider">
-</div>
-<div id="foot" class="foot">
+
+	<div class="bottom-wrap">
+		<div class="bigDivider">
+		</div>
+		<div class="foot">
+		</div>
+	</div>
 </div>
 </body>
 </html>
