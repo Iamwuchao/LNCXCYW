@@ -49,7 +49,15 @@
 				<div class="list1" style="padding-top: 15px">
 					<ul><table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
+					<s:if test="newsList.size()==0">
+						<h4>NULLLL</h4>
+					</s:if>
+					<s:else>
+					<h4>ggggggg</h4>
+					</s:else>
+					<s:if test="!newsList.isEmpty()&&newsList.size()!=0">
 					<s:iterator value="newsList" var="i"  status="index" begin="0" end="9"> 
+					
 					<tr><td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 					<td valign="middle" align="left">
 					        <a href="#i.news_address" class="c50257" title="#i.newsTile" target="_blank">
@@ -59,6 +67,7 @@
 					        
 					        <td valign="middle" align="right" class="timestyle50257" width="1%" nowrap=""></td></tr>  
 					</s:iterator>
+					</s:if>
 					</tbody>
 					</table><!--#endeditable--></ul>
 				</div>
@@ -67,7 +76,6 @@
 		<div id="con_one_2" style="display: block;">
 			<div class="list1" style="padding-top: 15px">
 					<ul><table width="100%" cellspacing="0" cellpadding="0">
-	
 					<tbody>
 					<s:iterator value="newsList" var="i"  status="index" begin="10" end="19"> 
 					<tr>
@@ -2454,8 +2462,12 @@
 			$.ajax({
 				type:'post',
 				url:"/homepage/homepageGetNewsList.action",
-				data:{"newsCount":10,"pictureNewsCount":3}
+				data:{"newsCount":10,"pictureNewsCount":3},
+				success:callback()
 			}
 		);
 	});
+	function callback(data) {
+		alert("success");
+	}
 </script>

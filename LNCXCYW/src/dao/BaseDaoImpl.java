@@ -12,7 +12,7 @@ import util.SingletonSessionFactory;
 
 public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	
-	private Class classType;
+	protected Class classType;
 	
 	Session getSession(){
 		return SingletonSessionFactory.getSession();
@@ -89,14 +89,13 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 		return list;
 	}
 
-
-	public List<T> findPagination(Criteria query,int start, int end) {
-		if(start>end){
-			throw new IllegalArgumentException("start > end");
+	public List<T> findPagination(Criteria query,int start, int count) {
+		if(start<0 || count<0){
+			throw new IllegalArgumentException("start < 0 || count < 0");
 		}
 		// TODO Auto-generated method stub
 		query.setFirstResult(start);
-		query.setMaxResults(end-start);
+		query.setMaxResults(count);
 		List<T> list = query.list();
 		return list;
 	}
@@ -106,5 +105,4 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 		// TODO Auto-generated method stub
 		this.classType = classType;
 	}
-	
 }

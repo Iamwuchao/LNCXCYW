@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
@@ -21,10 +22,12 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 */
 	public List<News> getNewsSubList(NewsCategory category,int start,int count){
 			Session session = getSession();
-			Criteria criteria = session.createCriteria(this.getClass());
+			Criteria criteria = session.createCriteria(News.class);
 			criteria.add(Restrictions.eq("category.categoryId", category.getCategoryId()));
 			criteria.addOrder(Order.desc("date"));
-			List<News> result = this.findPagination(criteria, start, start+count-1);
+			List<News> result = this.findPagination(criteria, start, count);
+			System.out.println("getNewsSubList "+result.size());
+			session.close();
 			return result;
 	}
 }

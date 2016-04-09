@@ -47,12 +47,14 @@ public class HomePageAction extends ActionSupport{
 	public String getHomePageNewsList(){
 		getAllNewsCategoryList();
 		int fromIndex=0;
-		int toIndex = newsCount < MAX ? newsCount:MAX;
+		int toIndex = 10;//newsCount < MAX ? newsCount:MAX;
 		newsList = new LinkedList<News>();
 		for(String category:newsCategoryList){
 			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex);
+			System.out.println(category+"  "+temList.size());
 			newsList.addAll(temList);
 		}
+		System.out.println("newsList.size()"+"   "+newsList.size());
 		return SUCCESS;
 	}
 	

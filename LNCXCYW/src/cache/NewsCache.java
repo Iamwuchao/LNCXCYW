@@ -25,6 +25,7 @@ public class NewsCache implements LeftCycle<String>{
 	private HashMap<String,ConcurrentLinkedDeque<News>> cacheMap; 
 	
 	NewsCache(){
+		
 	}
 	
 	@Override
@@ -37,6 +38,7 @@ public class NewsCache implements LeftCycle<String>{
 			 NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 			for(NewsCategory category:newsCategorylist){
 				List<News> list = nd.getNewsSubList(category, 0, MAX_CACHE.get());
+				System.out.println("init news cache"+"  "+category.getNewscategory()+"  "+list.size());
 				ConcurrentLinkedDeque<News> cdq = new ConcurrentLinkedDeque<News>();
 				cdq.addAll(list);
 				cacheMap.put(category.getNewscategory(),cdq);
@@ -84,6 +86,7 @@ public class NewsCache implements LeftCycle<String>{
 			if(index>=fromIndex&& index<=toIndex){
 					list.add(news);
 			}
+			index++;
 		}
 		return list;
 	}
