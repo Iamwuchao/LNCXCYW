@@ -12,6 +12,7 @@ import dao.NewsCategoryDao;
 import dao.UserDaoImpl;
 import mode.NewsCategory;
 import mode.User;
+import mode.UserAuthority;
 import util.SingletonSessionFactory;
 
 public class AdminAction {
@@ -73,8 +74,12 @@ public String regist(){
 	}
 	else {
 		dao.save(u);
+//		UserAuthority userAuthority = new UserAuthority();
+//		userAuthority.setUser(u);
+//		dao.save(userAuthority);
 		this.register_status = "0";
 	}
+	
 	return ActionSupport.SUCCESS;
 	
 }
