@@ -95,7 +95,7 @@ public class NewsAction extends ActionSupport{
 			newsList=q.list();
 			session.close();
 		}else{//根据参数获取对应类别
-			newsList=Cache.getNewsList(category, 1, 200);
+			newsList=Cache.getNewsList(category, 0, 200);
 		}
 		
 		//System.out.println(newsList);
