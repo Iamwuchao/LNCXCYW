@@ -16,6 +16,7 @@ import org.hibernate.cfg.Configuration;
 
 import util.JspToHTML;
 import util.MyUtil;
+import GlobalInfo.PathInfo;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -44,7 +45,7 @@ public class TransferAction extends ActionSupport{
 		/*
 		 * 插入500条新闻记录 对每个新闻栏目
 		 */
-		Date date = MyUtil.getSqlDate();
+		/*Date date = MyUtil.getSqlDate();
 		List<String> list = Cache.getNewsCategoryList();
 		NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		for(String str:list){
@@ -64,7 +65,16 @@ public class TransferAction extends ActionSupport{
 					e.printStackTrace();
 				}
 			}
-		}
+		}*/
+	/*	String content = JspToHTML.getJspOutput("/homepage/homepageGetNewsList.action");
+		
+		try {
+			String url = JspToHTML.writeHTML(PathInfo.HOMEPAGEPATH,content);
+			System.out.println(url);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 		return ActionSupport.SUCCESS;
 	}
 }

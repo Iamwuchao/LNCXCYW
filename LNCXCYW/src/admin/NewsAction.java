@@ -7,6 +7,8 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 
+import GlobalInfo.PathInfo;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
@@ -51,7 +53,7 @@ public class NewsAction extends ActionSupport{
 		
 		String address;
 		try{
-			address=util.JspToHTML.writeHTML(content);
+			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,content);
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			status="1";

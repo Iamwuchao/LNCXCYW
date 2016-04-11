@@ -53,6 +53,7 @@ public class NewsCache implements LeftCycle<String>{
 				cacheMap.clear();
 			}
 		}
+		
 	}
 	
 	public void setMaxCache(int max){

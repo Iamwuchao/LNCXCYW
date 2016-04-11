@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 
 import GlobalInfo.GlobalInfo;
+import GlobalInfo.PathInfo;
 
 
 public class JspToHTML {
@@ -44,16 +45,18 @@ public class JspToHTML {
 
 	
 	
-	public static String writeHTML(String newContent) throws IOException{
+	public static String writeHTML(PathInfo pathinfo,String newContent) throws IOException{
 		long time = System.currentTimeMillis();
 		String fileName = String.valueOf(time)+".html";
-		String filePath = GlobalInfo.GLOBALINFO.HTMLPath+ "/" + fileName;
+		String tempath = pathinfo.getValue().length()>0?pathinfo.getValue() + "/":"";
+		String filePath = PathInfo.ROOTPATH.getValue()+ tempath+"/" + fileName;
+		System.out.println("filePath  "+filePath);
 		File file = new File(filePath);
 		File parent = file.getParentFile();
 		if(!parent.exists()){
 			parent.mkdirs();
 		}
-		String url = GlobalInfo.GLOBALINFO.ROOTURL+ GlobalInfo.GLOBALINFO.NEWS + "/" + fileName;
+		String url = PathInfo.ROOTURL.getValue()+ tempath + fileName;
 		RandomAccessFile fileInputStream = null;
 		try {
 			fileInputStream = new RandomAccessFile(file,"rws");

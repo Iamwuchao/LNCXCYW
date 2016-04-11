@@ -31,7 +31,7 @@
 
   
      <welcome-file-list>
-    <welcome-file>http://localhost:8080/homepage.action</welcome-file>
+    <welcome-file>http://localhost:8080/homepage/homepageGetNewsList.action</welcome-file>
    </welcome-file-list> 
    
   

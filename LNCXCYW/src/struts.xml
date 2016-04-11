@@ -6,12 +6,6 @@
 <struts>
     <package name="Default" namespace="/" extends="json-default,struts-default ">
     <default-action-ref name="homepage"></default-action-ref>
-      <action name="homepage">
-        	<result>/jsp/homepage/homepage.jsp</result>
-        </action> 
-       
-       
-		
        <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
 			<result name="success">
 				/jsp/super_admin/news_add.jsp
