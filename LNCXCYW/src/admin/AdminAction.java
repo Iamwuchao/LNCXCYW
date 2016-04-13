@@ -1,9 +1,11 @@
 package admin;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.BaseDao;
@@ -92,9 +94,13 @@ public String login(){
 	List<User> list3 = dao.findAvaliableSuperUser(email, password);
 	if (list3.size()>0) {
 		this.register_status="3";//超级管理员
+		Map session = ActionContext.getContext().getSession();
+		session.put("user", list3.get(0));
 	}
 	else if (list2.size()>0) {//普通管理员
 		this.register_status = "0";
+		Map session = ActionContext.getContext().getSession();
+		session.put("user", list2.get(0));
 	}
 	else if (list.size()>0 && list2.size()==0) {
 		this.register_status = "审核还未通过，请等待";

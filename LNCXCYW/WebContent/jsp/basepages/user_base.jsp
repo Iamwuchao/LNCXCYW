@@ -1,3 +1,4 @@
+<%@page import="mode.User"%>
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 <!-- <link href="./dashboard.css" rel="stylesheet"> -->
  <link href="/css/dashboard.css" rel="stylesheet">  
@@ -47,7 +48,8 @@
             <li><a href="#">Help</a></li> -->
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">欢迎您，管理员</a></li>
+             <%-- <li><a href="#"><%=((User)request.getSession().getAttribute("user")).getUserName() %> 欢迎您</a></li> --%>
+          <li><a href="#"><s:property value="#session.user.userName"/>欢迎您</a></li> 
             <li><a href="#">退出</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -60,7 +62,7 @@
     
     
 <!-- </a> -->
-
+  
 
 
 

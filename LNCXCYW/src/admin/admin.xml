@@ -5,7 +5,7 @@
 
 
 <struts>
-	<package name="admin" namespace="/admin"
+	<package name="admin" namespace="/"
 		extends="AdminDefault">
 		
 		<action name="regist" class="admin.AdminAction" method="regist">

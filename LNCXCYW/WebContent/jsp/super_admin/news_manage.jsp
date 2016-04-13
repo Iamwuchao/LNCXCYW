@@ -5,4 +5,4 @@
 		新闻管理页面
 		</div>
 </layout:override>
-<%@ include file="super_base.jsp" %>
+<%@ include file="/jsp/basepages/menu_base.jsp" %>
