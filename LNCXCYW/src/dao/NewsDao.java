@@ -18,9 +18,9 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	}
 	
 	/*
-	 * 按时间顺序获得最近的count条记录,start为起点
+	 * 按时间顺序获得最近的count条记录,start为起点,针对某一栏目
 	 */
-	public List<News> getNewsSubList(NewsCategory category,int start,int count){
+	public List<News> getNewsSubListOrderByDate(NewsCategory category,int start,int count){
 			Session session = getSession();
 			Criteria criteria = session.createCriteria(News.class);
 			criteria.add(Restrictions.eq("category.categoryId", category.getCategoryId()));
@@ -29,5 +29,17 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			System.out.println("getNewsSubList "+result.size());
 			session.close();
 			return result;
+	}
+	
+	/*
+	 * 按时间顺序获取新闻列表 
+	 */
+	public List<News> getNewsSubListOrderByDate(int start,int count){
+		Session session = getSession();
+		Criteria criteria = session.createCriteria(News.class);
+		criteria.addOrder(Order.desc("date"));
+		List<News> result = this.findPagination(criteria, start, count);
+		session.close();
+		return result;
 	}
 }

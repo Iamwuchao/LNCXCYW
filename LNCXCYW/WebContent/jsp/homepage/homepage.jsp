@@ -181,7 +181,7 @@
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
 	         		<a href="#" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">项目推介</li></a>
-	         		<li id="three2" onmouseover="setTabsnow('three',2,2)" >创新创业资讯</li>
+	         		<li id="three2" onmouseover="setTabsnow('three',2,2)" >企业需求</li>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -231,8 +231,8 @@
 	        <div id="second_con3" class="conblue">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">项目推介</li></a>
-	         		<li id="four2" onmouseover="setTabsnow('four',2,2)" >创新创业资讯</li>
+	         		<a href="#" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">教指委工作动态</li></a>
+	         		<li id="four2" onmouseover="setTabsnow('four',2,2)" >高校创新创业教育季报</li>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -282,7 +282,7 @@
        <div id="bigThree" class="bigThree">
 	      <ul> 	
 	      		<li style="margin-right:10px">创新创业训练计划项目管理平台</li>
-	       		<li style="margin-right:10px">高校创新创业教育季报</li>
+	       		<li style="margin-right:10px">创新创业项目推荐</li>
 	       		<li >创新创业竞赛平台</li>
 	       	</ul>
        </div>
@@ -501,8 +501,8 @@
 		 	<div id="fourth_con2" style="margin-right:10px" class="congray">
 		 		 	<div id="fourth_con2" class="name">
 		  		<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业培训</li></a>
-	         		<li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业理论</li>
+	         		<a href="#" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业教材</li></a>
+	         		<li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业课程</li>
 	         	</ul>
 		  	</div>
 		  	<div class="clear"></div>
@@ -551,8 +551,8 @@
       		<div id="fourth_con3"  class="conblue">
       			<div id="fourth_con2" class="name">
 			  		<ul style="width:100%;height:36px;overflow:hidden">
-		         		<a href="#" target="_blank"><li id="ten1" onmouseover="setTabsnow('ten',1,2)" class="curnews">创新创业培训</li></a>
-		         		<li id="ten2" onmouseover="setTabsnow('ten',2,2)" >创新创业理论</li>
+		         		<a href="#" target="_blank"><li id="ten1" onmouseover="setTabsnow('ten',1,2)" class="curnews">创新创业导师</li></a>
+		         		<li id="ten2" onmouseover="setTabsnow('ten',2,2)" >素质测评</li>
 		         	</ul>
 		  		</div>
 		  	<div class="clear"></div>

@@ -66,4 +66,18 @@ public class NewCategoryCache implements LeftCycle<NewsCategory>{
 			map.put(newCategory.getNewscategory(), newCategory);
 		}
 	}
+
+
+	@Override
+	public void registe(Cache cache) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void update(NewsCategory t) {
+		// TODO Auto-generated method stub
+		
+	}
 }

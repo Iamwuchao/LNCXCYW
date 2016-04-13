@@ -45,10 +45,11 @@ public class JspToHTML {
 
 	
 	
-	public static String writeHTML(PathInfo pathinfo,String newContent) throws IOException{
+	public static String writeHTML(PathInfo pathinfo,String newsContent) throws IOException{
 		long time = System.currentTimeMillis();
 		String fileName = String.valueOf(time)+".html";
-		String tempath = pathinfo.getValue().length()>0?pathinfo.getValue() + "/":"";
+		String tempath = pathinfo.getValue().length()>0?"/"+pathinfo.getValue() + "/":"";
+		String temUrl = pathinfo.getValue().length()>0?pathinfo.getValue() + "/":"";
 		String filePath = PathInfo.ROOTPATH.getValue()+ tempath+"/" + fileName;
 		System.out.println("filePath  "+filePath);
 		File file = new File(filePath);
@@ -56,13 +57,15 @@ public class JspToHTML {
 		if(!parent.exists()){
 			parent.mkdirs();
 		}
-		String url = PathInfo.ROOTURL.getValue()+ tempath + fileName;
-		RandomAccessFile fileInputStream = null;
+		String url = PathInfo.ROOTURL.getValue()+ temUrl + fileName;
+		RandomAccessFile fileOutputStream = null;
 		try {
-			fileInputStream = new RandomAccessFile(file,"rws");
-			Charset cs = Charset.forName("utf-8");
-			ByteBuffer bb = cs.encode(newContent);
-			fileInputStream.write(bb.array());
+			fileOutputStream = new RandomAccessFile(file,"rws");
+			System.out.println(newsContent);
+		//	Charset cs = Charset.forName("utf-8");
+		//	ByteBuffer bb = cs.encode(newContent);
+			//while(bb.hasRemaining())
+				fileOutputStream.writeUTF(newsContent);
 			System.out.println("hehe");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -71,8 +74,8 @@ public class JspToHTML {
 			// TODO Auto-generated catch block
 			throw new IOException("failed to write HTML FIle ");
 		}finally{
-			if(fileInputStream!=null){
-				fileInputStream.close();
+			if(fileOutputStream!=null){
+				fileOutputStream.close();
 			}
 		}
 		return url;
