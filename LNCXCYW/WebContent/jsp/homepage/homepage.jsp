@@ -50,7 +50,7 @@
 					<ul>
 					<table width="100%" cellspacing="0" cellpadding="0">
 						<tbody>
-						<s:iterator var="i"  begin="10" end="19"> 
+						<s:iterator var="i"  begin="0" end="9"> 
 						<tr>
 						<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 							<td valign="middle" align="left">
