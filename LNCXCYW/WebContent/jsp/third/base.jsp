@@ -6,6 +6,7 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/css/style02.css">
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 <div class="main">

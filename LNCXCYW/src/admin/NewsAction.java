@@ -2,6 +2,7 @@ package admin;
 
 
 import java.sql.Date;
+import java.io.File;
 import java.util.List;
 
 
@@ -15,15 +16,25 @@ import dao.NewsDao;
 import mode.News;
 import mode.NewsCategory;
 import util.JspToHTML;
+import util.PageGetBaseAction;
 import util.SingletonSessionFactory;
 
-public class NewsAction extends ActionSupport{
+public class NewsAction extends PageGetBaseAction{
 	private String status;
 	private String title;
 	private String category;
 	private String author;
 	private String content;
+	public String news_list_html;
 	
+	public String getNews_list_html() {
+		return news_list_html;
+	}
+
+	public void setNews_list_html(String news_list_html) {
+		this.news_list_html = news_list_html;
+	}
+
 	private List<News> newsList;
 	private List<String> categoryList;
 	
@@ -88,10 +99,16 @@ public class NewsAction extends ActionSupport{
 		System.out.println("newsList:");
 		Session session=SingletonSessionFactory.getSession();
 		Criteria q=session.createCriteria(News.class);
-		newsList=q.list();
+		newsList = this.makeCurrentPageList(q, 10);
+		System.out.println(newsList);
 		session.close();
+		if(this.getIsAjaxTransmission())
+		{
+			news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
+			return "getPage";
+		}
 		//System.out.println(newsList);
-		return SUCCESS;
+		return ActionSupport.SUCCESS;
 	}
 	
 	/*
