@@ -23,6 +23,8 @@
 <filter-mapping>
   <filter-name>login</filter-name>
   <url-pattern>/admin/*</url-pattern>
+  <url-pattern>/newsAdd</url-pattern>
+   <url-pattern>/newsSubmit</url-pattern>
   </filter-mapping>
  
   <filter-mapping>
