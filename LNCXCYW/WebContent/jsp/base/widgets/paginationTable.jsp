@@ -3,10 +3,11 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
 <nav >
-  <ul class="pagination pagination-lg ">
+  <ul class="pagination pagination-lg " >
   	
   	<li class="previous" id="firstPage"><a>首页</a></li>
   	<s:if test="currentPageNum - 2 > 1"> 
+  	
 		<li>
 	      <a >
 	        <span aria-hidden="true">...</span>
@@ -15,7 +16,6 @@
   	</s:if>
   	
   	<!-- 代替@@@max -->
-  	
   	<s:if test="currentPageNum-2 > 1">
   		<s:iterator  var="i" begin="currentPageNum - 2" end="currentPageNum - 1" step = "1" >
   			<li> 
@@ -30,7 +30,6 @@
 			</li>
 		</s:iterator>
   	</s:else>
-<%-- 	<li  class="active"> <a> <s:property value="currentPageNum"/>  </a></li> --%>
 
 <!-- 代替@@min -->
 
@@ -42,18 +41,13 @@
 		</s:iterator>
 	</s:if>
 	<s:else>
-		<s:iterator var="i"  begin="currentPageNum + 1" end="totalPageNum" step = "1" >
+		<s:iterator var="i"  begin="currentPageNum " end="totalPageNum" step = "1" >
 			<li>
 				<a requestPageNum=<s:property value="i"/> class="page-link"> <s:property value="i"/> </a>
 			</li>
 		</s:iterator>
 	</s:else>
 	
-<%-- 	<s:iterator var="i"  begin="currentPageNum + 1" end="@@min(currentPageNum + 2, totalPageNum)" step = "1" > --%>
-<!-- 			<li requestPageNum=<s:property value="i"/> >  -->
-<%-- 				<a href="#"> <s:property value="i"/> </a>   --%>
-<!-- 			</li> -->
-<%-- 	</s:iterator> --%>
 	
 	
  	<s:if test="currentPageNum + 2 < totalPageNum"> 

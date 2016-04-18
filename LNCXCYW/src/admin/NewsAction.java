@@ -103,23 +103,9 @@ public class NewsAction extends PageGetBaseAction{
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	public String newsList() throws Exception{
-		System.out.println("newsList:");
-		Session session=SingletonSessionFactory.getSession();
-		Criteria q=session.createCriteria(News.class);
-		newsList = this.makeCurrentPageList(q, 10);
-		session.close();
-		if(this.getIsAjaxTransmission())
-		{
-			news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
-			//System.out.println(news_list_html);
-			return ActionSupport.ERROR;
-		}
-		return ActionSupport.SUCCESS;
-		
-		/*
 		System.out.println("newsList: "+category);
-		
 		if(category==null){//获取所有新闻
 			Session session=SingletonSessionFactory.getSession();
 			Criteria q=session.createCriteria(News.class);
@@ -127,12 +113,20 @@ public class NewsAction extends PageGetBaseAction{
 			session.close();
 		}else{//根据参数获取对应类别
 			newsList=Cache.getNewsList(category, 0, 200);
-		}
+			newsList=makeCurrentPageList(newsList, 10);
+		}		
+		return ActionSupport.SUCCESS;
 		
-		//System.out.println(newsList);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String newsPage(){
+		System.out.println("newsPage:"+category);
+		newsList=Cache.getNewsList(category, 0, 200);
+		newsList=makeCurrentPageList(newsList, 10);
+		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
+		return ActionSupport.SUCCESS;
 		
-		
-		return SUCCESS;*/
 	}
 	
 	/*

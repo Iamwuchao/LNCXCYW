@@ -17,7 +17,7 @@ public class PageGetBaseAction extends ActionSupport  {
 	
 	private int totalPageNum;
 	private int currentPageNum = 1;
-	private String paginationHtml;
+	protected String paginationHtml;
 	
 	private boolean isAjaxTransmission = false;
 	
@@ -75,7 +75,7 @@ public class PageGetBaseAction extends ActionSupport  {
 		int[] res = getPageRange(currentPageNum, page_size, l.size());
 		if(this.getIsAjaxTransmission())
 		{
-			this.paginationHtml = JspToHTML.getJspOutput("/jsp/base/widgets/paginationTable.jsp");
+			this.paginationHtml = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
 		}
 		else 
 		{
@@ -88,6 +88,7 @@ public class PageGetBaseAction extends ActionSupport  {
 		{
 			ans.add(l.get(i));
 		}
+		System.out.println("makeCurrentPageList "+this.currentPageNum+"  "+this.totalPageNum+" "+this.isAjaxTransmission);
 		return ans;
 	}
 	

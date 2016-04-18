@@ -27,7 +27,12 @@ $("span").on("click",function(){
 
 var paginationURL='news_page';
 function sendRequestPage(currentPageNum) {
-	var data = {"currentPageNum": currentPageNum , "isAjaxTransmission":true, };
+	var category="<s:property value="category"/>";
+	var data = {
+			"currentPageNum": currentPageNum , 
+			"isAjaxTransmission":true, 
+			"category": category,
+			};
 	
 	if(typeof(pageAddtionalData)!="undefined")
 		data = $.extend({}, data, pageAddtionalData);
@@ -42,6 +47,7 @@ function sendRequestPage(currentPageNum) {
 }
 
 function _requestPageCallback(data) {
+	//alert(data.paginationHtml);
 	$("#paginationTableDiv").html(data.news_list_html);
 }
 
