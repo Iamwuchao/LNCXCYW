@@ -21,9 +21,6 @@ $(document).on("click",".page-link",  function(){
     sendRequestPage($(this).attr("requestPageNum"));
 });
 
-$("span").on("click",function(){
-	alert("hell");
-});
 
 var paginationURL='news_page';
 function sendRequestPage(currentPageNum) {
