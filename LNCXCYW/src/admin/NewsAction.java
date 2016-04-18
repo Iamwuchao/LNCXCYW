@@ -1,7 +1,9 @@
 package admin;
 
 
+import java.nio.charset.Charset;
 import java.sql.Date;
+import java.io.File;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -16,16 +18,27 @@ import dao.DaoFactory;
 import dao.NewsDao;
 import mode.News;
 import mode.NewsCategory;
+import util.CheckEncode;
 import util.JspToHTML;
+import util.PageGetBaseAction;
 import util.SingletonSessionFactory;
 
-public class NewsAction extends ActionSupport{
+public class NewsAction extends PageGetBaseAction{
 	private String status;
 	private String title;
 	private String category;
 	private String author;
 	private String content;
+	public String news_list_html;
 	
+	public String getNews_list_html() {
+		return news_list_html;
+	}
+
+	public void setNews_list_html(String news_list_html) {
+		this.news_list_html = news_list_html;
+	}
+
 	private List<News> newsList;
 	private List<String> categoryList;
 	
@@ -45,19 +58,18 @@ public class NewsAction extends ActionSupport{
 		System.out.println(title+""+category+""+author);
 		System.out.println(content);
 		String newcontent = "";
+		newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+		System.out.println("#########################");
+		System.out.println(newcontent);
 		try{
-			newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
-			System.out.println("#########################");
-			System.out.println(newcontent);
+			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			status="1";
 			return SUCCESS;
 		}
-		
 		String address;
 		try{
-			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,newcontent);
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
@@ -92,6 +104,22 @@ public class NewsAction extends ActionSupport{
 
 	
 	public String newsList() throws Exception{
+		System.out.println("newsList:");
+		Session session=SingletonSessionFactory.getSession();
+		Criteria q=session.createCriteria(News.class);
+		newsList = this.makeCurrentPageList(q, 10);
+		System.out.println(newsList);
+		
+		session.close();
+		if(this.getIsAjaxTransmission())
+		{
+			news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
+			return "getPage";
+		}
+		//System.out.println(newsList);
+		return ActionSupport.SUCCESS;
+		
+		/*
 		System.out.println("newsList: "+category);
 		
 		if(category==null){//获取所有新闻
@@ -106,7 +134,7 @@ public class NewsAction extends ActionSupport{
 		//System.out.println(newsList);
 		
 		
-		return SUCCESS;
+		return SUCCESS;*/
 	}
 	
 	/*
