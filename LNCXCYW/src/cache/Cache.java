@@ -9,6 +9,7 @@ import mode.NewsCategory;
 public class Cache {
 	private NewCategoryCache categoryCache;
 	private NewsCache newsCache;
+	//private NewestNewsCache newestNews
 	private static final Cache cache = new Cache();
 	private Cache(){
 		categoryCache = new NewCategoryCache();
@@ -17,6 +18,9 @@ public class Cache {
 		newsCache.init();
 	}
 	
+	/*
+	 * 获取新闻列表 获取范围为[fromIndex,toIndex]两端都包含
+	 */
 	public static List<News> getNewsList(String newsCategory,int fromIndex,int toIndex){
 		return cache.newsCache.getNewCacheList(newsCategory, fromIndex, toIndex);
 	}
@@ -41,6 +45,14 @@ public class Cache {
 		if(max>0){
 			cache.newsCache.setMaxCache(max);
 		}
+	}
+	
+	public static List<News> getNewestNewsList(int count){
+		LinkedList<News> list = new LinkedList<News>();
+		if(count>0){
+			//list = 
+		}
+		return list;
 	}
 	
 	public static void clear(){

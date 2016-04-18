@@ -24,7 +24,7 @@
 		<div class="splitterbars"></div>
 		<div class="nav">
 			<ul class="nav_all" >
-				<li><a href="#">首页</a></li>
+				<li><a href="/">首页</a></li>
 				<li><a>创新创业资讯</a></li>
 				<li><a>创新创业训练</a></li>
 				<li><a>创新创业竞赛</a></li>
@@ -37,7 +37,10 @@
 	<div class="con">
 		<div class="content-left">
 			<div class="head">
-				<p>首页>创新创业资讯>综合新闻</p>
+				<a href="/">首页></a>
+				<a href="/second_page?category=<s:property value="category"/>" >
+					<s:property value="category"/>  
+				</a>
 				<br/>
 				<hr size="3" color="#195591">
 			</div>

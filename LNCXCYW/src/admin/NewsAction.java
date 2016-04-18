@@ -5,9 +5,11 @@ import java.sql.Date;
 import java.io.File;
 import java.util.List;
 
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+
+import GlobalInfo.PathInfo;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
@@ -62,7 +64,7 @@ public class NewsAction extends PageGetBaseAction{
 		
 		String address;
 		try{
-			address=util.JspToHTML.writeHTML(content);
+			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,content);
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			status="1";
@@ -101,6 +103,7 @@ public class NewsAction extends PageGetBaseAction{
 		Criteria q=session.createCriteria(News.class);
 		newsList = this.makeCurrentPageList(q, 10);
 		System.out.println(newsList);
+		
 		session.close();
 		if(this.getIsAjaxTransmission())
 		{
@@ -109,6 +112,23 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		//System.out.println(newsList);
 		return ActionSupport.SUCCESS;
+		
+		/*
+		System.out.println("newsList: "+category);
+		
+		if(category==null){//获取所有新闻
+			Session session=SingletonSessionFactory.getSession();
+			Criteria q=session.createCriteria(News.class);
+			newsList=q.list();
+			session.close();
+		}else{//根据参数获取对应类别
+			newsList=Cache.getNewsList(category, 0, 200);
+		}
+		
+		//System.out.println(newsList);
+		
+		
+		return SUCCESS;*/
 	}
 	
 	/*

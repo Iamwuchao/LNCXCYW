@@ -6,8 +6,8 @@
 
 
 <package name="homepage" namespace="/" extends="HomepageDefault">
-	<action name="homepageGetNewsList" class="homepage.HomePageAction" method="getHomePageNewsList">
-		<result name="SUCCESS" type="json">newsList</result>   
+	<action name="homepage" class="homepage.HomePageAction" method="getHomePageNewsList">
+		<result name="success">/jsp/homepage/homepage.jsp</result>   
 	</action>
 	
 	<action name="second_page" class="admin.NewsAction" method="newsList">

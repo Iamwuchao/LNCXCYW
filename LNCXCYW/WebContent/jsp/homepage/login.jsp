@@ -67,7 +67,7 @@ $(document).on("click","#login", function (){
 //	   alert($("#phoneNumber").val());
     
     $.ajax({
-      url: '/admin/login_handle',
+      url: '/login_handle',
       type: 'post',
       dataType: 'json',
       data: params,

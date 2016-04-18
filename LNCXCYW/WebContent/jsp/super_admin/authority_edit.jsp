@@ -10,11 +10,11 @@
     		<div class="row nomargin">
         
         		<div class="col-lg-6 nopadding">
-           			<a href="/admin/user_request/untreated" class="navbar-button navbar-button-left">未处理</a> 
+           			<a href="/admin/user_authority/add_authority" class="navbar-button navbar-button-left">增加权限</a> 
         		</div>
         
        			<div class="col-lg-6 nopadding" >
-           			<a href="/admin/user_request/handled" class="navbar-button">已处理</a> 
+           			<a href="/admin/user_authority/delete_authority" class="navbar-button">撤销权限</a> 
         		</div>
     
     		</div>

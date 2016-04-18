@@ -11,4 +11,4 @@
 	
 		
 </layout:override>
-<%@ include file="base.jsp" %>
+<%@ include file="/jsp/basepages/menu_base.jsp" %>

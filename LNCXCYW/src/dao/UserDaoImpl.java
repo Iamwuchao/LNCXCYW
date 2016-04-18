@@ -87,4 +87,17 @@ public List<User> listUsers(){
 	session.close();
 	return list;
 }
+
+public List<User> findUserByTag(String name, Object value){
+	List<User> list;
+	Session session = getSession();
+	Criteria criteria = session.createCriteria(User.class);
+	list = criteria.add(Restrictions.eq(name, value)).list();
+	session.close();
+	return list;
+}
+public void setAuthority(User u, int category){
+	Session session = getSession();
+	
+}
 }

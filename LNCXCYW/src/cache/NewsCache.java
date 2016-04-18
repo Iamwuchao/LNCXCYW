@@ -25,6 +25,7 @@ public class NewsCache implements LeftCycle<String>{
 	private HashMap<String,ConcurrentLinkedDeque<News>> cacheMap; 
 	
 	NewsCache(){
+
 	}
 	
 	@Override
@@ -36,7 +37,8 @@ public class NewsCache implements LeftCycle<String>{
 			 List<NewsCategory> newsCategorylist = (List<NewsCategory>) dao.getAll();
 			 NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 			for(NewsCategory category:newsCategorylist){
-				List<News> list = nd.getNewsSubList(category, 0, MAX_CACHE.get());
+				List<News> list = nd.getNewsSubListOrderByDate(category, 0, MAX_CACHE.get());
+				System.out.println("init news cache"+"  "+category.getNewscategory()+"  "+list.size());
 				ConcurrentLinkedDeque<News> cdq = new ConcurrentLinkedDeque<News>();
 				cdq.addAll(list);
 				cacheMap.put(category.getNewscategory(),cdq);
@@ -51,6 +53,7 @@ public class NewsCache implements LeftCycle<String>{
 				cacheMap.clear();
 			}
 		}
+		
 	}
 	
 	public void setMaxCache(int max){
@@ -66,7 +69,7 @@ public class NewsCache implements LeftCycle<String>{
 	}
 	
 	/*
-	 * 获取新闻栏目的新闻列表 ［fromIndex,toIndex)
+	 * 获取新闻栏目的新闻列表 ［fromIndex,toIndex]
 	 * 
 	 */
 	public LinkedList<News> getNewCacheList(String category,int fromIndex,int toIndex){
@@ -83,7 +86,8 @@ public class NewsCache implements LeftCycle<String>{
 			News news = iter.next();
 			if(index>=fromIndex&& index<=toIndex){
 					list.add(news);
-			}
+			} 
+			index++;
 		}
 		return list;
 	}
@@ -107,5 +111,17 @@ public class NewsCache implements LeftCycle<String>{
 			queue.removeLast();
 		}
 		queue.addFirst(news);
+	}
+
+	@Override
+	public void registe(Cache cache) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(String t) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -100,7 +100,7 @@ $(document).on("click","#regist", function (){
 //	   alert($("#phoneNumber").val());
     
     $.ajax({
-      url: '/admin/regist',
+      url: '/regist',
       type: 'post',
       dataType: 'json',
       data: params,
@@ -182,7 +182,7 @@ function registerCallback(data)
 	if(data.register_status == "0")
 	{    		
 		alert("注册成功, 您现在可以登录了");
-		window.location.href = "/admin/login";
+		window.location.href = "/login";
 	}
 	else if(data.register_status == "1")
 		{

@@ -11,7 +11,12 @@
     <filter-name>struts2</filter-name>
     <filter-class>util.MyStrutsFilter</filter-class>
   </filter>
-
+ <!-- 对action的过滤不起作用的原因是因为Struts本身有过滤器，需要将该过滤器放在Struts过滤器的前面 --> 
+<filter-mapping>
+  <filter-name>login</filter-name>
+  <url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+  
   <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
@@ -31,7 +36,7 @@
 
   
      <welcome-file-list>
-    <welcome-file>http://localhost:8080/homepage.action</welcome-file>
+    <welcome-file>http://localhost:8080/homepage/homepageGetNewsList.action</welcome-file>
    </welcome-file-list> 
    
   
@@ -59,4 +64,17 @@
 		<filter-name>hibernateFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
   </filter-mapping> -->
+  <filter>
+  <filter-name>login</filter-name>
+  <filter-class>admin.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>login</filter-name>
+  <url-pattern>/jsp/admin/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  <filter-name>login</filter-name>
+  <url-pattern>/jsp/super_admin/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>

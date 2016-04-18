@@ -5,7 +5,7 @@
 
 
 <struts>
-	<package name="admin" namespace="/admin"
+	<package name="admin" namespace="/"
 		extends="AdminDefault">
 		
 		<action name="regist" class="admin.AdminAction" method="regist">
@@ -48,12 +48,41 @@
 			</result>
 		</action>
 
-		<action name="handled" class="admin.RequestAction" method="userRequestResult">
+		<action name="handled" class="admin.RequestAction" method="userRequestResult" >
 			<result>
 				/jsp/super_admin/handled.jsp
 			</result>
 
 		</action>
 		
+		</package>
+		
+		<package name="user_authority" namespace="/admin/user_authority" extends="AdminDefault">
+		<action name="" >
+			<result name="success" type="redirect">add_authority</result>
+		</action>
+		<action name="add_authority" class="admin.AuthorityAction" method="authorityEdit">
+			<result>
+				/jsp/super_admin/authority_add.jsp
+			</result>
+		</action>
+		 <action name="add_ensure" class="admin.AuthorityAction" method="addEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,userId</param>
+			</result>
+		</action>
+		
+		 <action name="delete_ensure" class="admin.AuthorityAction" method="deleteEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,userId</param>
+			</result>
+		</action> 
+
+		<action name="delete_authority" class="admin.AuthorityAction" method="authorityEdit" >
+			<result>
+				/jsp/super_admin/authority_delete.jsp
+			</result>
+
+		</action>
 		</package>
 	</struts>

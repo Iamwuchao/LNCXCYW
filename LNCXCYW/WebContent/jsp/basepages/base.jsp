@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="./css/style.css" rel="stylesheet">
-<link href="./css/main.css" rel="stylesheet">
-<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="./js/main.js"></script>
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<script src="/jquery/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
 <script type="text/javascript">
 	$('.carousel').carousel({
 	  interval: 2000

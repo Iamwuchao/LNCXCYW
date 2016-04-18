@@ -64,6 +64,7 @@
 			alert("添加失败");
 		}else{
 			alert("添加成功！");
+			location.reload();
 		}
 	}
 </script>
@@ -78,4 +79,4 @@
 
 </layout:override>
 
-<%@ include file="super_base.jsp" %>
+<%@ include file="/jsp/basepages/menu_base.jsp" %>
