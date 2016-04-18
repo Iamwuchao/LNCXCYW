@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 
 
 public class WrapperResponse  extends HttpServletResponseWrapper {
@@ -25,10 +26,11 @@ public class WrapperResponse  extends HttpServletResponseWrapper {
    public String getContent() {
       try {
          tmpWriter.flush();   //刷新该流的缓冲，详看java.io.Writer.flush()
-         String s = tmpWriter.getByteArrayOutputStream().toString("UTF-8");
+        byte[] bytearray =  tmpWriter.getByteArrayOutputStream().toByteArray();
+         String str = new String(bytearray,Charset.defaultCharset().name());//tmpWriter.getByteArrayOutputStream().toString("UTF-8");
          //此处可根据需要进行对输出流以及Writer的重置操作
        //比如tmpWriter.getByteArrayOutputStream().reset()
-         return s;
+         return str;
       } catch (UnsupportedEncodingException e) {
          return "UnsupportedEncoding";
       }

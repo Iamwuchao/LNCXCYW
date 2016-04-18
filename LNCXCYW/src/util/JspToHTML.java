@@ -61,10 +61,11 @@ public class JspToHTML {
 		RandomAccessFile fileOutputStream = null;
 		try {
 			fileOutputStream = new RandomAccessFile(file,"rws");
-			System.out.println(newsContent);
+			//System.out.println(newsContent);
 		//	Charset cs = Charset.forName("utf-8");
 		//	ByteBuffer bb = cs.encode(newContent);
 			//while(bb.hasRemaining())
+			System.out.println(newsContent);
 				fileOutputStream.writeUTF(newsContent);
 			System.out.println("hehe");
 		} catch (FileNotFoundException e) {

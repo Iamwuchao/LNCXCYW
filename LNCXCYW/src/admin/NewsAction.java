@@ -1,6 +1,7 @@
 package admin;
 
 
+import java.nio.charset.Charset;
 import java.sql.Date;
 import java.io.File;
 import java.util.List;
@@ -17,6 +18,7 @@ import dao.DaoFactory;
 import dao.NewsDao;
 import mode.News;
 import mode.NewsCategory;
+import util.CheckEncode;
 import util.JspToHTML;
 import util.PageGetBaseAction;
 import util.SingletonSessionFactory;
@@ -54,8 +56,11 @@ public class NewsAction extends PageGetBaseAction{
 		status="0";
 		System.out.print("newsSubmit: ");
 		System.out.println(title+""+category+""+author);
+		//System.out.println("content:"+content);
+		
 		try{
 			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+			//System.out.println("content:"+content);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			status="1";

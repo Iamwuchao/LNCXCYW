@@ -13,19 +13,19 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
-                    <img src="./images/test1.jpg" alt="">
+                    <img src="/images/test1.jpg" alt="">
                     <div class="carousel-caption">
                       <h4>First Thumbnail label</h4>
                     </div>
                   </div>
                   <div class="item" style="background:url(./images/test2.jpg);background-size:340px 300px">
-                    <img src="./images/test2.jpg" alt="">
+                    <img src="/images/test2.jpg" alt="">
                     <div class="carousel-caption">
                       <h4>Second Thumbnail label</h4>
                     </div>
                   </div>
                   <div class="item" style="background:url(./images/test3.jpg);background-size:340px 300px">
-                    <img src="./images/test3.jpg" alt="">
+                    <img src="/images/test3.jpg" alt="">
                     <div class="carousel-caption">
                       <h4>Third Thumbnail label</h4>
                     </div>
