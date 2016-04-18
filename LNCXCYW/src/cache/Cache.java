@@ -7,15 +7,19 @@ import mode.News;
 import mode.NewsCategory;
 
 public class Cache {
-	private NewCategoryCache categoryCache;
-	private NewsCache newsCache;
-	//private NewestNewsCache newestNews
+	private NewCategoryCache categoryCache;//新闻栏目缓存
+	private NewsCache newsCache;//新闻列表缓存 各个栏目
+	private NewestNewsCache newestNews;//最新新闻列表缓存
 	private static final Cache cache = new Cache();
+	
+	//初始化各个缓存
 	private Cache(){
 		categoryCache = new NewCategoryCache();
 		newsCache = new NewsCache();
+		newestNews = new NewestNewsCache();
 		categoryCache.init();
 		newsCache.init();
+		newestNews.init();
 	}
 	
 	/*
@@ -50,7 +54,7 @@ public class Cache {
 	public static List<News> getNewestNewsList(int count){
 		LinkedList<News> list = new LinkedList<News>();
 		if(count>0){
-			//list = 
+			
 		}
 		return list;
 	}

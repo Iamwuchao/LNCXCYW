@@ -43,8 +43,12 @@ public class NewsAction extends ActionSupport{
 		status="0";
 		System.out.print("newsSubmit: ");
 		System.out.println(title+""+category+""+author);
+		System.out.println(content);
+		String newcontent = "";
 		try{
-			content=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+			newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+			System.out.println("#########################");
+			System.out.println(newcontent);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			status="1";
@@ -53,7 +57,8 @@ public class NewsAction extends ActionSupport{
 		
 		String address;
 		try{
-			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,content);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,newcontent);
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			status="1";
