@@ -4,37 +4,28 @@
 
 
 
-<div id="paginationTableDiv">
-
 <%@ include file="/jsp/base/widgets/paginationTable.jsp" %>
 
-</div>
+
+<script type="text/javascript" src="/js/base/jquery-2.1.4.min.js" ></script>
+
 <script> 
-
-
-// var pageAddtionalData = {}
-alert("hello");
-$("#firstPage").click(function(){
-	alert("sdfwef");
-});
 $(document).on("click","#firstPage",  function(){
-    alert("hello");
 	sendRequestPage(1);
 });
 $(document).on("click","#lastPage",  function(){
     sendRequestPage($(this).attr("totalPageNum"));
 });
 
-// $(document).on("click",".page-link",  function(){
-// 	alert("hell");
-//     sendRequestPage($(this).attr("requestPageNum"));
-// });
+$(document).on("click",".page-link",  function(){
+    sendRequestPage($(this).attr("requestPageNum"));
+});
 
 $("span").on("click",function(){
 	alert("hell");
 });
 
-var paginationURL='';
+var paginationURL='news_page';
 function sendRequestPage(currentPageNum) {
 	var data = {"currentPageNum": currentPageNum , "isAjaxTransmission":true, };
 	
@@ -51,8 +42,7 @@ function sendRequestPage(currentPageNum) {
 }
 
 function _requestPageCallback(data) {
-	$("#paginationTableDiv").html(data.paginationHtml);
-	requestPageCallback(data);
+	$("#paginationTableDiv").html(data.news_list_html);
 }
 
 function requesterror(data){

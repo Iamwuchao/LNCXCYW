@@ -15,5 +15,16 @@
 			/jsp/third/second_page.jsp
 		</result>
 	</action>
+	
+	<action name="news_page" class="admin.NewsAction" method="newsList">
+		<result name="success">
+			/jsp/third/second_page.jsp
+		</result>
+    	<result name="error" type="json">
+			<param name="includeProperties">status,news_list_html</param>
+		</result>
+	</action>
+	
+	
 </package>
 </struts>

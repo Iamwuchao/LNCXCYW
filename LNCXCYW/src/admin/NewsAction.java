@@ -108,15 +108,13 @@ public class NewsAction extends PageGetBaseAction{
 		Session session=SingletonSessionFactory.getSession();
 		Criteria q=session.createCriteria(News.class);
 		newsList = this.makeCurrentPageList(q, 10);
-		System.out.println(newsList);
-		
 		session.close();
 		if(this.getIsAjaxTransmission())
 		{
 			news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
-			return "getPage";
+			//System.out.println(news_list_html);
+			return ActionSupport.ERROR;
 		}
-		//System.out.println(newsList);
 		return ActionSupport.SUCCESS;
 		
 		/*
