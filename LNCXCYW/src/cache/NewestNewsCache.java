@@ -12,7 +12,7 @@ import mode.News;
 public class NewestNewsCache implements LeftCycle<News>{
 	
 	private ConcurrentLinkedDeque<News> cacheNewsList = new ConcurrentLinkedDeque<News>();
-	private AtomicInteger MAX_CACHE = new AtomicInteger(1000);
+	private AtomicInteger MAX_CACHE = new AtomicInteger(10);
 	private AtomicBoolean isInited = new AtomicBoolean(false);
 	@Override
 	public void init() {
