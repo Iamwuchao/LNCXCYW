@@ -7,7 +7,7 @@
 	 <div class="menu-list" style="height:820px"> 
 	 	<a href="news_classify.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-blackboard">&nbsp;新闻分类</span></a>
 	    <a href="news_manage.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻管理</span></a>
-	    <a href="news_add.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻添加</span></a>
+	    <a href="/newsAdd" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻添加</span></a>
 	   <s:if test="#session.user.role==1">
 	    <a href="/admin/user_request/" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;管理员审核</span></a>
 	    <a href="/admin/user_authority/" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;权限管理</span></a>
