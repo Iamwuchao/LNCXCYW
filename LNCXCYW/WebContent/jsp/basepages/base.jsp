@@ -27,6 +27,7 @@
 </div>
 <div class="logobox">
 <div class="logo">
+	<img src="/images/2Dcode.jpg"  height="60px" width="60px"/>
 	<span>&nbsp;&nbsp;&nbsp;<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a></span> 
 </div>
 <div class="splitterbars"></div>
