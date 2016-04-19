@@ -19,7 +19,7 @@ public class HomePageAction extends ActionSupport{
 	private int newsCount;
 	private HashMap<String,List<News>> newsMap;
 	public String[] orderOfCategory={"通知公告","工作动态","高校动态","政策规章","创新创业资讯","项目推介","企业需求","教指委工作动态",
-			"在线交流","创新训练","创业实践","创新创业年会","优秀创新创业作品","创新创业典型","他山之石","创新创业培训","创新创业理论","创新创业教材","创新创业课程","创新创业导师","素质测评","图片新闻"};
+			"高校创新创业教育季报","创新训练","创业实践","创新创业年会","优秀创新创业作品","创新创业典型","他山之石","创新创业培训","创新创业理论","创新创业教材","创新创业课程","创新创业导师","素质测评","图片新闻"};
 	
 	
 	
@@ -39,7 +39,7 @@ public class HomePageAction extends ActionSupport{
 		this.newsCount = newsCount;
 	}
 	
-	public String getHomePageNewsList(){
+	public String getHomePageNewsMap(){
 		//getAllNewsCategoryList();
 		int fromIndex=0;
 		int toIndex = HomePageInfo.HOMEPAGEINFO.getNewsCountOfCategory();
