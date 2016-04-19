@@ -129,8 +129,8 @@
   		<div id="second_con1" style=" margin-right: 10px" class="conblue">
 	  		<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="two1" onmouseover="setTabsnow('two',1,2)" class="curnews">政策规章</li></a>
-	         		<li id="two2" onmouseover="setTabsnow('two',2,2)" >创新创业资讯</li>
+	         		<a href="/second_page?category=政策规章" target="_blank"><li id="two1" onmouseover="setTabsnow('two',1,2)" class="curnews">政策规章</li></a>
+	         		<a href="/second_page?category=创新创业资讯" target="_blank"><li id="two2" onmouseover="setTabsnow('two',2,2)" >创新创业资讯</li></a>
 	         	</ul>
 	         </div>
 	         <div class="clear"></div>
@@ -180,8 +180,8 @@
 	        <div id="second_con2" style=" margin-right: 10px" class="congray">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">项目推介</li></a>
-	         		<li id="three2" onmouseover="setTabsnow('three',2,2)" >企业需求</li>
+	         		<a href="/second_page?category=项目推介" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">项目推介</li></a>
+	         		<a href="/second_page?category=企业需求" target="_blank"><li id="three2" onmouseover="setTabsnow('three',2,2)" >企业需求</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -231,8 +231,8 @@
 	        <div id="second_con3" class="conblue">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">教指委工作动态</li></a>
-	         		<li id="four2" onmouseover="setTabsnow('four',2,2)" >高校创新创业教育季报</li>
+	         		<a href="/second_page?category=教指委工作动态" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">教指委工作动态</li></a>
+	         		<a href="/second_page?category=高校创新创业教育季报" target="_blank"><li id="four2" onmouseover="setTabsnow('four',2,2)" >高校创新创业教育季报</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
