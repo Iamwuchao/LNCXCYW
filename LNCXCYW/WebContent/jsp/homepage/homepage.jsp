@@ -210,7 +210,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('企业需求')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -241,7 +241,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('教指委工作动态')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -260,7 +260,7 @@
 		         <div class="list1" style="padding-top: 15px">
 							<ul><table width="100%" cellspacing="0" cellpadding="0">
 							<tbody>
-							<s:iterator value="newsMap.get('高校创新创业季报')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -304,7 +304,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-						<s:iterator value="newsMap.get('创新训练')" var="i" status="index"> 
+						<s:iterator value="%{newsMap.get('创新训练')}" var="i" status="index"> 
 						<tr>
 						<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 							<td valign="middle" align="left">
@@ -324,7 +324,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-						<s:iterator value="newsMap.get('创业实践')" var="i" status="index"> 
+						<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index"> 
 						<tr>
 						<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 							<td valign="middle" align="left">
@@ -354,7 +354,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('创新创业年会')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -374,7 +374,7 @@
 							<ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
-								<s:iterator value="newsMap.get('优秀创新创业作品')" var="i" status="index"> 
+								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index"> 
 								<tr>
 								<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 									<td valign="middle" align="left">
@@ -425,7 +425,7 @@
 							<ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
-							<s:iterator value="newsMap.get('他山之石')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -460,7 +460,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('创新创业培训')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -480,7 +480,7 @@
 							<ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
-								<s:iterator value="newsMap.get('创新创业理论')" var="i" status="index"> 
+								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index"> 
 								<tr>
 								<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 									<td valign="middle" align="left">
@@ -511,7 +511,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('创新创业教材')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
@@ -530,7 +530,7 @@
 		         <div class="list1" style="padding-top: 15px">
 							<ul><table width="100%" cellspacing="0" cellpadding="0">
 							<tbody>
-								<s:iterator value="newsMap.get('创新创业课程')" var="i" status="index"> 
+								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index"> 
 								<tr>
 								<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 									<td valign="middle" align="left">
@@ -561,7 +561,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-						<s:iterator value="newsMap.get('创新创业导师')" var="i" status="index"> 
+						<s:iterator value="%{newsMap.get('创新创业导师')}" var="i" status="index"> 
 						<tr>
 						<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 							<td valign="middle" align="left">
@@ -581,7 +581,7 @@
 						<ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
-							<s:iterator value="newsMap.get('素质测评')" var="i" status="index"> 
+							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index"> 
 							<tr>
 							<td align="center" valign="middle" width="10" nowrap=""><span class="leaderfont50257">·</span></td>
 								<td valign="middle" align="left">
