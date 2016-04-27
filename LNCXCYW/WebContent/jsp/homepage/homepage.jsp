@@ -48,7 +48,15 @@
          <div id="con_one_1" style="display: block;">
 				<div class="list1" style="padding-top: 15px">
 					<ul>
-					<table width="100%" cellspacing="0" cellpadding="0">
+						<s:iterator var="i"  begin="0" end="9">
+							<li>
+								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
+						        	<s:property value="newsList.get(#i).getNewsTile()"/>
+						        </a>   
+							</li>
+						</s:iterator>
+					</ul>
+					<%-- <table width="100%" cellspacing="0" cellpadding="0">
 						<tbody>
 						<s:iterator value="%{newsMap.get('通知公告')}" var="i" status="index">		
 						<tr>
@@ -63,14 +71,22 @@
 						  </tr>  
 					</s:iterator>
 						</tbody>
-					</table>
-					</ul>
+					</table> --%>
 				</div>
 		</div>
 		
 		<div id="con_one_2" style="display: block;">
 			<div class="list1" style="padding-top: 15px">
-					<ul><table width="100%" cellspacing="0" cellpadding="0">
+					<ul>
+						<s:iterator var="i"  begin="10" end="19"> 
+							<li>
+								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
+					        		<s:property value="newsList.get(#i).getNewsTile()"/>
+					        	</a>
+							</li>
+						</s:iterator>
+					</ul>
+					<%-- <table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
 					<s:iterator value="newsMap['工作动态']" var="i" status="index"> 
 					<tr>
@@ -84,13 +100,23 @@
 					   </td>
 					  </tr>  
 					</s:iterator>
-					</tbody></table><!--#endeditable--></ul>
+					</tbody></table> --%><!--#endeditable-->
 			</div>
 		</div>
 		
 		<div id="con_one_3" style="display: block;">
 			<div class="list1" style="padding-top: 15px">
-					<ul><table width="100%" cellspacing="0" cellpadding="0">
+			
+					<ul>
+						<s:iterator var="i"  begin="30" end="39">
+							<li>
+								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
+									<s:property value="newsList.get(#i).getNewsTile()"/>
+								</a>
+							</li>
+						</s:iterator>
+					</ul>
+					<%-- <table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
 					<s:iterator value="newsMap['高校动态']" var="i" status="index"> 
 					<tr>
@@ -104,7 +130,8 @@
 					   </td>
 					  </tr>  
 					</s:iterator>
-					</tbody></table><!--#endeditable--></ul>
+					</tbody></table> --%><!--#endeditable-->
+				
 			</div>
 		</div>
      </div>
