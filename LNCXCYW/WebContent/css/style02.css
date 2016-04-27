@@ -7,7 +7,7 @@ html{
 	padding:0;
 }
 ul li{ 
-	list-style:none; 
+	/* list-style:none;  */
 	padding:0; 
 	margin:0px;
 }
@@ -92,7 +92,7 @@ input,select{
 	text-decoration:none;
 }
 ul li {
-    list-style: none;
+    /* list-style: none; */
     padding: 0;
     margin: 0px;
     
@@ -129,8 +129,11 @@ ul li {
 	padding: 10px 10px;
 }
 .content-left li{
-	list-style: none;
+	/* list-style: none; */
 	line-height: 30px;
+}
+.content-left ul li:hover{
+	list-style-image:url("../images/li.gif");
 }
 .content-left a{
 	text-decoration: none;
