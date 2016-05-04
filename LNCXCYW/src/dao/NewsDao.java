@@ -1,15 +1,18 @@
 package dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import GlobalInfo.PathInfo;
+import cache.Cache;
 import mode.News;
 import mode.NewsCategory;
+import util.JspToHTML;
 
 public class NewsDao extends BaseDaoImpl<News,Integer> {
 	
@@ -42,4 +45,44 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		session.close();
 		return result;
 	}
+	
+	/**
+	 * 保存新闻 
+	 * @param title
+	 * @param author
+	 * @param content
+	 * @param category
+	 * @throws Exception
+	 */
+	public static void newsSave(String title, String author, String content, String category) throws Exception{
+		String newcontent = "";
+		newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+		//System.out.println("#########################");
+		//System.out.println(newcontent);
+		
+		String address;
+		try{
+			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,newcontent);
+		}catch(Exception e){
+			throw new Exception("JspToHTML false!");
+		}
+		NewsCategory newsCategory=Cache.getNewsCategorybyName(category);
+		newsCategory.setNewscategory(category);
+		Date date=new Date(new java.util.Date().getTime()); 
+		
+		News news=new News();		
+		news.setAuthor(author);
+		news.setNewsTile(title);
+		news.setNews_address(address);
+		news.setDate(date);
+		news.setCategory(newsCategory);
+	
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		if(!dao.save(news)){
+			throw new Exception("dao false!");
+		}
+		Cache.updateNews(category, news);
+	}
+	
+	
 }
