@@ -37,3 +37,33 @@
 					 
 				</tbody>
 			</table>
+			<script>
+			$(".ensure-button").click(function() {
+						
+				var newsId = $(this).closest("tr").attr("id");
+						alert(newsId);
+
+						$.ajax({
+							url : '/admin/news_manage/news_delete',
+							type : 'post',
+							dataType : 'json',
+							data : {
+								newsId : newsId
+							},
+							success : ensureCallBack,
+							error : errorSolution
+						}); 
+					})
+
+					function errorSolution(data){
+						alert("error");
+					}
+					function ensureCallBack(data) {
+						if (data.status == "success") {
+							var t = $("#" + data.newsId);
+							$("#" + data.newsId).remove();
+						} else
+							alert("something wrong!!"); 
+					} 
+			
+			</script>

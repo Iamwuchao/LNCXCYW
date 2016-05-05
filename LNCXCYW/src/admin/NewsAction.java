@@ -37,6 +37,10 @@ public class NewsAction extends PageGetBaseAction{
 	private java.util.Date endDate;
 	private String newsMessageTable;
 	private String keyWords;
+	/**
+	 * 删除新闻的id
+	 */
+	private int newsId;
 	/*
 	 * 新闻添加
 	 */
@@ -112,6 +116,17 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
 //		System.out.println("RRRRRR$$$$$$$$$$$");
+		return SUCCESS;
+	}
+	/**
+	 * 删除新闻
+	 * @return
+	 */
+	public String newsDelete(){
+		
+		System.out.println("NewsAction.newsDelete()");
+		System.out.println(newsId);
+		status = "success";
 		return SUCCESS;
 	}
 	/*
@@ -259,6 +274,12 @@ public class NewsAction extends PageGetBaseAction{
 	}
 	public void setKeyWords(String keyWords) {
 		this.keyWords = keyWords;
+	}
+	public int getNewsId() {
+		return newsId;
+	}
+	public void setNewsId(int newsId) {
+		this.newsId = newsId;
 	}
 	
 	

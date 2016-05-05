@@ -82,18 +82,18 @@ $("#news_search_by_time").click(function(){
 })
 
 $(".ensure-button").click(function() {
-			var newsId = $(this).closest("tr").attr("id");
+	alert(0009);		
+	var newsId = $(this).closest("tr").attr("id");
 			alert(newsId);
 
 			$.ajax({
-				url : '/admin/user_authority/delete_ensure',
+				url : '/admin/news_manage/news_delete',
 				type : 'post',
 				dataType : 'json',
 				data : {
-					userId : id,
-					selected : selected
+					newsId : newsId
 				},
-				success : ensureCallBack,
+				success : searchCallback,
 				error : errorSolution
 			}); 
 		})
@@ -114,7 +114,7 @@ function searchCallback(data) {
 		$("#news_messeage_table").html(data.newsMessageTable);
 	}	
 	else{
-		alert("查找的学生不存在！");
+		alert("没有符合条件的查询结果！");
 		location.reload();
 	}
 }

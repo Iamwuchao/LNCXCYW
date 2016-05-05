@@ -107,6 +107,12 @@
 				<param name="includeProperties">*</param>
 			</result>
 		</action>
+		<action name="news_delete" class="admin.NewsAction"
+			method="newsDelete">
+			<result name="success" type="json">
+				<param name="includeProperties">*</param>
+			</result>
+		</action>
 		<!-- <action name="news_search" >
 			<result >
 				 /jsp/admin/news_delete.jsp 
