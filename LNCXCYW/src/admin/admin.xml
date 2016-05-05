@@ -101,10 +101,10 @@
 				<param name="includeProperties">*</param>    
 			</result>	
 		</action>
-		<action name="news_search_by_Title" class="admin.NewsAction"
+		<action name="news_search_by_title" class="admin.NewsAction"
 			method="newsSearchByTitle">
 			<result name="success" type="json">
-				<param name="includeProperties">status</param>
+				<param name="includeProperties">*</param>
 			</result>
 		</action>
 		<!-- <action name="news_search" >

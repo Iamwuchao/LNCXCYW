@@ -12,7 +12,7 @@
 					<div class="col-lg-2">
 						<input type="text" class="col-lg-3 form-control"
 							style="margin: 3px; height: 34px;"
-							aria-describedby="basic-addon1" name="title_id" id="title_id">
+							aria-describedby="basic-addon1" name="keyWords" id="keyWords">
 					</div>
 
 					<div class="col-lg-1">
@@ -53,13 +53,21 @@
 		
 <script>
 $("#news_search_by_title").click(function(){
-	var keyWords = $()	
+	var keyWords = $("#keyWords").val();
+	$.ajax({
+		url : '/admin/news_manage/news_search_by_title',
+		type : 'post',
+		dataType : 'json',
+		data : {
+			keyWords : keyWords
+		},
+		success : searchCallback,
+		error : errorSolution
+	}); 
 })
 $("#news_search_by_time").click(function(){
-	alert(11);
 	var startDate = $("#inputBeginDate").val();
 	var endDate = $("#inputEndDate").val();
-	alert(startDate);
 	$.ajax({
 		url : '/admin/news_manage/news_search_by_time',
 		type : 'post',

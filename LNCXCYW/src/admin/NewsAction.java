@@ -36,6 +36,7 @@ public class NewsAction extends PageGetBaseAction{
 	private java.util.Date startDate;
 	private java.util.Date endDate;
 	private String newsMessageTable;
+	private String keyWords;
 	/*
 	 * 新闻添加
 	 */
@@ -75,7 +76,19 @@ public class NewsAction extends PageGetBaseAction{
 	 */
 	public String newsSearchByTitle(){
 		System.out.println("NewsAction.newsSearchByTitle()");
-		
+		System.out.println(keyWords+"keyOoo");
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		try{
+			newsList=dao.getNewsListByKeyword(keyWords);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println(newsList);
+		if (newsList.size()>0) {
+			status = "1";
+		}
+		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
 		return SUCCESS;
 	}
 	
@@ -86,10 +99,7 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsSearchByTime(){
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		System.out.println("NewsAction.newsSearchByTime()");
-//		Calendar cal=Calendar.getInstance();
-//		cal.set(2016, 2, 2);
 		Date start=new Date(startDate.getTime());
-//		cal.set(2016, 5, 5);
 		Date end=new Date(endDate.getTime());
 		System.out.println(start+" "+end);
 		try{
@@ -97,11 +107,11 @@ public class NewsAction extends PageGetBaseAction{
 		}catch(Exception e){
 			System.out.println("查询失败！  日期不对");
 		}
-		if (newsList.size()>1) {
+		if (newsList.size()>0) {
 			status = "1";
 		}
 		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
-		System.out.println("RRRRRR$$$$$$$$$$$");
+//		System.out.println("RRRRRR$$$$$$$$$$$");
 		return SUCCESS;
 	}
 	/*
@@ -243,6 +253,12 @@ public class NewsAction extends PageGetBaseAction{
 	}
 	public void setNewsMessageTable(String newsMessageTable) {
 		this.newsMessageTable = newsMessageTable;
+	}
+	public String getKeyWords() {
+		return keyWords;
+	}
+	public void setKeyWords(String keyWords) {
+		this.keyWords = keyWords;
 	}
 	
 	
