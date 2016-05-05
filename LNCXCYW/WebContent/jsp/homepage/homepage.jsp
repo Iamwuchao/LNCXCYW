@@ -48,10 +48,10 @@
          <div id="con_one_1" style="display: block;">
 				<div class="list1" style="padding-top: 15px">
 					<ul>
-						<s:iterator var="i"  begin="0" end="9">
+						<s:iterator value="%{newsMap.get('通知公告')}" var="i" status="index">
 							<li>
-								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
-						        	<s:property value="newsList.get(#i).getNewsTile()"/>
+								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+						        	<s:property value="#i.getNewsTile()"/>
 						        </a>   
 							</li>
 						</s:iterator>
@@ -78,11 +78,11 @@
 		<div id="con_one_2" style="display: block;">
 			<div class="list1" style="padding-top: 15px">
 					<ul>
-						<s:iterator var="i"  begin="10" end="19"> 
+						<s:iterator value="newsMap['工作动态']" var="i" status="index"> 
 							<li>
-								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
-					        		<s:property value="newsList.get(#i).getNewsTile()"/>
-					        	</a>
+								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+					        		<s:property value="#i.getNewsTile()"/>
+					        	</a> 
 							</li>
 						</s:iterator>
 					</ul>
@@ -108,11 +108,11 @@
 			<div class="list1" style="padding-top: 15px">
 			
 					<ul>
-						<s:iterator var="i"  begin="30" end="39">
+						<s:iterator value="newsMap['高校动态']" var="i" status="index"> 
 							<li>
-								<a href="<s:property value="newsList.get(#i).getNews_address()"/>" class="c50257" title="<s:property value="newsList.get(#i).getNewsTile()"/>" target="_blank">
-									<s:property value="newsList.get(#i).getNewsTile()"/>
-								</a>
+								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+					        		<s:property value="#i.getNewsTile()"/>
+					        	</a>
 							</li>
 						</s:iterator>
 					</ul>
@@ -163,7 +163,18 @@
 	         <div class="clear"></div>
 	          <div id="con_two_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="newsMap.get('政策规章')" var="i" status="index"> 
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							        </a> 
+								</li>
+							</s:iterator>
+						</ul>
+						
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 						<s:iterator value="newsMap.get('政策规章')" var="i" status="index"> 
@@ -178,13 +189,23 @@
 							   </td>
 						  </tr>  
 						</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 	  		 </div>
 	  		 
 	  		 <div id="con_two_2" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index">  
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							        </a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 						<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index"> 
@@ -199,7 +220,7 @@
 							   </td>
 						  </tr>  
 						</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 	  		 </div>
   		</div>
@@ -214,7 +235,17 @@
 	         	<div class="clear"></div>
 	         	 <div id="con_three_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index">   
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							        </a> 
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index"> 
@@ -229,12 +260,22 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
 		  		  <div id="con_three_2" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							        </a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index"> 
@@ -249,7 +290,7 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
 	        </div>
@@ -265,7 +306,17 @@
 	         	<div class="clear"></div>
 	         	 <div id="con_four_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index">   
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							        </a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index"> 
@@ -280,12 +331,22 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
 				<div id="con_four_2" style="display: block;">
 		         <div class="list1" style="padding-top: 15px">
-							<ul><table width="100%" cellspacing="0" cellpadding="0">
+					<ul>
+						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
+							<li>
+								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        <s:property value="#i.getNewsTile()"/>
+							    </a>
+							</li>
+						</s:iterator>
+					</ul>
+							
+							<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 							<tbody>
 							<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index"> 
 							<tr>
@@ -299,7 +360,7 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-							</tbody></table><!--#endeditable--></ul>
+							</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
 	        </div>
@@ -328,7 +389,17 @@
 	         <div class="clear"></div>
 	          <div id="con_five_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('创新训练')}" var="i" status="index">    
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							        	<s:property value="#i.getNewsTile()"/>
+							    	</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 						<s:iterator value="%{newsMap.get('创新训练')}" var="i" status="index"> 
@@ -343,12 +414,22 @@
 						   </td>
 						  </tr>  
 						</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 			</div>
 			<div id="con_five_2" style="display: block;">
 	         <div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+				<ul>
+					<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index">     
+						<li>
+							<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     <s:property value="#i.getNewsTile()"/>
+							</a>
+						</li>
+					</s:iterator>
+				</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 						<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index"> 
@@ -363,7 +444,7 @@
 						   </td>
 						  </tr>  
 						</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 	  		 </div>
   		</div>
@@ -378,7 +459,17 @@
 	         	<div class="clear"></div>
 	         	 <div id="con_six_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index">     
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index"> 
@@ -393,12 +484,22 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
 				<div id="con_six_2" style="display: block;">
 		         <div class="list1" style="padding-top: 15px">
-							<ul><table width="100%" cellspacing="0" cellpadding="0">
+							<ul>
+								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index">     
+									<li>
+										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     			<s:property value="#i.getNewsTile()"/>
+										</a>
+									</li>
+								</s:iterator>
+							</ul>
+							
+							<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
 								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index"> 
@@ -413,7 +514,7 @@
 								   </td>
 								  </tr>  
 								</s:iterator>
-							</tbody></table><!--#endeditable--></ul>
+							</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
 	        </div>
@@ -429,7 +530,17 @@
 	         	<div class="clear"></div>
 	         	 <div id="con_seven_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="newsMap['创新创业典型']" var="i" status="index">      
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="newsMap['创新创业典型']" var="i" status="index"> 
@@ -444,12 +555,22 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
 				<div id="con_seven_2" style="display: block;">
 		         <div class="list1" style="padding-top: 15px">
-							<ul><table width="100%" cellspacing="0" cellpadding="0">
+							<ul>
+								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
+									<li>
+										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     			<s:property value="#i.getNewsTile()"/>
+										</a>
+									</li>
+								</s:iterator>
+							</ul>
+							
+							<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
 							<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index"> 
@@ -464,7 +585,7 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-							</tbody></table><!--#endeditable--></ul>
+							</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
 	        </div>
@@ -484,7 +605,17 @@
 		  	<div class="clear"></div>
        		<div id="con_eight_1">
        			<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index">     
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index"> 
@@ -499,12 +630,22 @@
 							   </td>
 							  </tr>  
 					</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
        		<div id="con_eight_2" style="display: block;">
 		         <div class="list1" style="padding-top: 15px">
-							<ul><table width="100%" cellspacing="0" cellpadding="0">
+							<ul>
+								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index">    
+									<li>
+										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     			<s:property value="#i.getNewsTile()"/>
+										</a>
+									</li>
+								</s:iterator>
+							</ul>
+							
+							<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 			
 							<tbody>
 								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index"> 
@@ -519,7 +660,7 @@
 								   </td>
 								  </tr>  
 								</s:iterator>
-							</tbody></table><!--#endeditable--></ul>
+							</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  	</div>
        		</div>
@@ -535,7 +676,17 @@
 		  	<div class="clear"></div>
        		<div id="con_nine_1">
        			<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index"> 
@@ -550,12 +701,22 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
        		<div id="con_nine_2" style="display: block;">
 		         <div class="list1" style="padding-top: 15px">
-							<ul><table width="100%" cellspacing="0" cellpadding="0">
+							<ul>
+								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
+									<li>
+										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     			<s:property value="#i.getNewsTile()"/>
+										</a>
+									</li>
+								</s:iterator>
+							</ul>
+							
+							<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 							<tbody>
 								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index"> 
 								<tr>
@@ -569,7 +730,7 @@
 								   </td>
 								  </tr>  
 								</s:iterator>
-							</tbody></table><!--#endeditable--></ul>
+							</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  	</div>
 		 	</div>
@@ -585,7 +746,17 @@
 		  	<div class="clear"></div>
        		<div id="con_ten_1">
        			<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('创新创业导师')}" var="i" status="index">  
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 						<s:iterator value="%{newsMap.get('创新创业导师')}" var="i" status="index"> 
@@ -600,12 +771,22 @@
 						   </td>
 						  </tr>  
 						</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
        		<div id="con_ten_2" style="display: block;">
        		<div class="list1" style="padding-top: 15px">
-						<ul><table width="100%" cellspacing="0" cellpadding="0">
+						<ul>
+							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index">
+								<li>
+									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
+							     		<s:property value="#i.getNewsTile()"/>
+									</a>
+								</li>
+							</s:iterator>
+						</ul>
+						
+						<%-- <ul><table width="100%" cellspacing="0" cellpadding="0">
 		
 						<tbody>
 							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index"> 
@@ -620,7 +801,7 @@
 							   </td>
 							  </tr>  
 							</s:iterator>
-						</tbody></table><!--#endeditable--></ul>
+						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
       		</div>

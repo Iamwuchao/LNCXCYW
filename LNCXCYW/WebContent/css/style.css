@@ -68,7 +68,7 @@ input,select{ font-size:12px; vertical-align:middle;}
     list-style:circle; 
     padding: 0px;
     margin: 0px;
-    line-height:30px; 
+    line-height:25px; 
 }
 
 .list1 ul li:hover{
@@ -148,7 +148,6 @@ input,select{ font-size:12px; vertical-align:middle;}
  line-height:36px;
  text-align:center;
  color:#292929;
- 
  cursor:pointer;
 }
 
@@ -162,6 +161,33 @@ input,select{ font-size:12px; vertical-align:middle;}
  color:#ffffff;
 }
 
+.list1 a{
+	display:block;
+	width:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+}
+/* #second_con .list1 ul{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+} */
+/* #second_con .list1 a{
+	display:block;
+	width:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+} */
+#fourth_con .list1{
+	height:245px;
+}
 
 .con3 {
     width: 335px;
