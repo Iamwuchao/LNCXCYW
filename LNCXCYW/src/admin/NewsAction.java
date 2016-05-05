@@ -42,6 +42,15 @@ public class NewsAction extends PageGetBaseAction{
 		categoryList=Cache.getNewsCategoryList();
 		
 		
+		
+		//测试按关键字查询
+//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+//		List<News> list=dao.getNewsListByKeyword("开发者");
+//		System.out.println(list);
+		
+		
+		
+		
 		//测试按日期查询
 //		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 //		Calendar cal=Calendar.getInstance();

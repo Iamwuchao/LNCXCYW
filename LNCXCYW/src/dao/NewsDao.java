@@ -66,6 +66,19 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		return re;
 	}
 	
+	/*
+	 * 按关键字查询
+	 */
+	public List<News> getNewsListByKeyword(String keyword){
+		System.out.println("getNewsByKeyword:"+keyword);
+		List<News> re=new ArrayList<News>();
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(News.class);
+		criteria.add(Restrictions.like("newsTile", "%"+keyword+"%"));
+		re=criteria.list();
+		return re;
+	}
+	
 	
 	
 	/**
