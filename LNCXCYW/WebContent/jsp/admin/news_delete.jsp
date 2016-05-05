@@ -2,7 +2,7 @@
  <!-- <link href="dashboard.css" rel="stylesheet">  -->
 <layout:override name="main_content">
 <div class="mycontent">  
-		新闻管理页面
+		新闻删除页面
 		
 		
 		
