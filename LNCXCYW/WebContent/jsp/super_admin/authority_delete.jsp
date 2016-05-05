@@ -84,7 +84,7 @@
 				alert("something wrong!!"); */
 		} 
 	</script>
-	<s:debug></s:debug>
+	
 </layout:override>
 
 

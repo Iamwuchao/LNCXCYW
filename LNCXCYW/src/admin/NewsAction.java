@@ -33,7 +33,9 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> newsList;
 	private List<String> categoryList;
 	
-	
+	private java.util.Date startDate;
+	private java.util.Date endDate;
+	private String newsMessageTable;
 	/*
 	 * 新闻添加
 	 */
@@ -67,7 +69,41 @@ public class NewsAction extends PageGetBaseAction{
 		
 		return SUCCESS;
 	}
-
+	/**
+	 * 按照关键字查询
+	 * @return
+	 */
+	public String newsSearchByTitle(){
+		System.out.println("NewsAction.newsSearchByTitle()");
+		
+		return SUCCESS;
+	}
+	
+	/**
+	 * 按照时间进行查询
+	 * @return
+	 */
+	public String newsSearchByTime(){
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		System.out.println("NewsAction.newsSearchByTime()");
+//		Calendar cal=Calendar.getInstance();
+//		cal.set(2016, 2, 2);
+		Date start=new Date(startDate.getTime());
+//		cal.set(2016, 5, 5);
+		Date end=new Date(endDate.getTime());
+		System.out.println(start+" "+end);
+		try{
+			newsList = dao.getNewsListByDate(start, end);
+		}catch(Exception e){
+			System.out.println("查询失败！  日期不对");
+		}
+		if (newsList.size()>1) {
+			status = "1";
+		}
+		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
+		System.out.println("RRRRRR$$$$$$$$$$$");
+		return SUCCESS;
+	}
 	/*
 	 * 提交新闻
 	 */
@@ -189,6 +225,24 @@ public class NewsAction extends PageGetBaseAction{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public java.util.Date getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(java.util.Date startDate) {
+		this.startDate = startDate;
+	}
+	public java.util.Date getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(java.util.Date endDate) {
+		this.endDate = endDate;
+	}
+	public String getNewsMessageTable() {
+		return newsMessageTable;
+	}
+	public void setNewsMessageTable(String newsMessageTable) {
+		this.newsMessageTable = newsMessageTable;
 	}
 	
 	

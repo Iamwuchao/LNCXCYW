@@ -5,84 +5,112 @@
 
 
 <struts>
-	<package name="admin" namespace="/"
-		extends="AdminDefault">
-		
+	<package name="admin" namespace="/" extends="AdminDefault">
+
 		<action name="regist" class="admin.AdminAction" method="regist">
-			 <result name="success" type="json">
-			</result> 
+			<result name="success" type="json">
+			</result>
 		</action>
-		
-		 <action name="login" class="admin.AdminAction">
-	<result >
-		/jsp/homepage/login.jsp
-	</result>
-</action> 
-		
+
+		<action name="login" class="admin.AdminAction">
+			<result>
+				/jsp/homepage/login.jsp
+			</result>
+		</action>
+
 		<action name="login_handle" class="admin.AdminAction" method="login">
-			 <result name="success" type="json">
-			</result> 
+			<result name="success" type="json">
+			</result>
 		</action>
 	</package>
-	<package name="user_request" namespace="/admin/user_request" extends="AdminDefault">
-		
-		<action name="" >
+	<package name="user_request" namespace="/admin/user_request"
+		extends="AdminDefault">
+
+		<action name="">
 			<result name="success" type="redirect">untreated</result>
 		</action>
-		
+
 		<action name="untreated" class="admin.RequestAction" method="userRequest">
 			<result>
 				/jsp/super_admin/untreated.jsp
 			</result>
 
 		</action>
-		<action name="request_ensure" class="admin.RequestAction" method="userRequestEnsure">
-			<result name="success" type="json">
-				<param name="includeProperties">strValue,userId</param>
-			</result>
-		</action>
-		
-		 <action name="request_change" class="admin.RequestAction" method="userRequestEnsure">
+		<action name="request_ensure" class="admin.RequestAction"
+			method="userRequestEnsure">
 			<result name="success" type="json">
 				<param name="includeProperties">strValue,userId</param>
 			</result>
 		</action>
 
-		<action name="handled" class="admin.RequestAction" method="userRequestResult" >
+		<action name="request_change" class="admin.RequestAction"
+			method="userRequestEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,userId</param>
+			</result>
+		</action>
+
+		<action name="handled" class="admin.RequestAction" method="userRequestResult">
 			<result>
 				/jsp/super_admin/handled.jsp
 			</result>
 
 		</action>
-		
-		</package>
-		
-		<package name="user_authority" namespace="/admin/user_authority" extends="AdminDefault">
-		<action name="" >
+
+	</package>
+
+	<package name="user_authority" namespace="/admin/user_authority"
+		extends="AdminDefault">
+		<action name="">
 			<result name="success" type="redirect">add_authority</result>
 		</action>
-		<action name="add_authority" class="admin.AuthorityAction" method="authorityEdit">
+		<action name="add_authority" class="admin.AuthorityAction"
+			method="authorityEdit">
 			<result>
 				/jsp/super_admin/authority_add.jsp
 			</result>
 		</action>
-		 <action name="add_ensure" class="admin.AuthorityAction" method="addEnsure">
+		<action name="add_ensure" class="admin.AuthorityAction" method="addEnsure">
 			<result name="success" type="json">
 				<param name="includeProperties">strValue,userId</param>
 			</result>
 		</action>
-		
-		 <action name="delete_ensure" class="admin.AuthorityAction" method="deleteEnsure">
+
+		<action name="delete_ensure" class="admin.AuthorityAction"
+			method="deleteEnsure">
 			<result name="success" type="json">
 				<param name="includeProperties">strValue,userId</param>
 			</result>
-		</action> 
+		</action>
 
-		<action name="delete_authority" class="admin.AuthorityAction" method="authorityEdit" >
+		<action name="delete_authority" class="admin.AuthorityAction"
+			method="authorityEdit">
 			<result>
 				/jsp/super_admin/authority_delete.jsp
 			</result>
 
 		</action>
-		</package>
-	</struts>
+	</package>
+
+	<package name="news_manage" namespace="/admin/news_manage"
+		extends="AdminDefault">
+		
+		<action name="news_search_by_time" class="admin.NewsAction"
+			method="newsSearchByTime">
+			<result name="success" type="json">
+				<param name="includeProperties">*</param>    
+			</result>	
+		</action>
+		<action name="news_search_by_Title" class="admin.NewsAction"
+			method="newsSearchByTitle">
+			<result name="success" type="json">
+				<param name="includeProperties">status</param>
+			</result>
+		</action>
+		<!-- <action name="news_search" >
+			<result >
+				 /jsp/admin/news_delete.jsp 
+			</result>
+		</action> -->
+	</package>  
+</struts>
