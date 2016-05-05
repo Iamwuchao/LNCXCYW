@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -45,6 +46,27 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		session.close();
 		return result;
 	}
+	
+	/*
+	 * 按时间范围查询新闻
+	 * 
+	 * sql.Date
+	 */
+	public List<News> getNewsListByDate(Date start, Date end) throws Exception{
+		System.out.println("getNewsByDate:");
+		List<News> re=new ArrayList<News>();
+		if(start.after(end)){
+			throw new Exception("wrong date!");
+		}
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(News.class);
+		criteria.add(Restrictions.between("date", start, end));
+		re=criteria.list();
+		System.out.println(re);
+		return re;
+	}
+	
+	
 	
 	/**
 	 * 保存新闻 

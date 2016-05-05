@@ -1,6 +1,9 @@
 package admin;
 
 
+
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -9,6 +12,8 @@ import org.hibernate.Session;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
+import dao.DaoFactory;
+import dao.NewsDao;
 import mode.News;
 import util.JspToHTML;
 import util.PageGetBaseAction;
@@ -32,9 +37,25 @@ public class NewsAction extends PageGetBaseAction{
 	/*
 	 * 新闻添加
 	 */
-	public String newsAdd(){
+	public String newsAdd() {
 		System.out.println("newsAdd:");
 		categoryList=Cache.getNewsCategoryList();
+		
+		
+		//测试按日期查询
+//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+//		Calendar cal=Calendar.getInstance();
+//		cal.set(2016, 2, 2);
+//		Date start=new Date(cal.getTime().getTime());
+//		cal.set(2016, 5, 5);
+//		Date end=new Date(cal.getTime().getTime());
+//		System.out.println(start+""+end);
+//		try{
+//			dao.getNewsListByDate(start, end);
+//		}catch(Exception e){
+//			System.out.println("查询失败！  日期不对");
+//		}
+		
 		return SUCCESS;
 	}
 
