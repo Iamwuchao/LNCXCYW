@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
@@ -20,6 +21,39 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	public NewsDao(){
 		super.setClass(News.class);
 	}
+	/*
+	 * 删除新闻
+	 */
+	public void deleteNewsByIde(int id) throws Exception{
+		System.out.println("deleteNewsById: "+id);
+		Session session=getSession();
+		News news = null;
+		try{
+			Criteria criteria=session.createCriteria(News.class);
+			criteria.add(Restrictions.eq("id", id));
+			news=(News)criteria.list().get(0);
+		}catch(Exception e){
+			throw new Exception("wrong id!");
+		}
+		String address=PathInfo.ROOTPATH.getValue()+news.getNews_address();
+		Transaction trans=session.beginTransaction();
+		
+		util.FileOperate.deleteFile(address);
+		
+		try{
+			session.delete(news);
+			trans.commit();
+		}catch(Exception e){
+			if(trans!=null){
+				trans.rollback();
+			}
+			throw e;
+		}finally{
+			System.out.println("session close");
+			session.close();
+		}
+	}
+	
 	
 	/*
 	 * 按时间顺序获得最近的count条记录,start为起点,针对某一栏目
@@ -52,6 +86,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * 
 	 * sql.Date
 	 */
+	@SuppressWarnings("unchecked")
 	public List<News> getNewsListByDate(Date start, Date end) throws Exception{
 		System.out.println("getNewsByDate:");
 		List<News> re=new ArrayList<News>();
@@ -62,13 +97,13 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		Criteria criteria=session.createCriteria(News.class);
 		criteria.add(Restrictions.between("date", start, end));
 		re=criteria.list();
-		System.out.println(re);
 		return re;
 	}
 	
 	/*
 	 * 按关键字查询
 	 */
+	@SuppressWarnings("unchecked")
 	public List<News> getNewsListByKeyword(String keyword){
 		System.out.println("getNewsByKeyword:"+keyword);
 		List<News> re=new ArrayList<News>();

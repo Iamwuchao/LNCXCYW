@@ -49,6 +49,14 @@ public class NewsAction extends PageGetBaseAction{
 		categoryList=Cache.getNewsCategoryList();
 		
 		
+		//测试新闻删除
+//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+//		try{
+//			dao.deleteNewsByIde(7590);
+//		}catch(Exception e){
+//			System.out.println("wrong!!!"+e.getMessage());
+//		}
+		
 		
 		//测试按关键字查询
 //		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
