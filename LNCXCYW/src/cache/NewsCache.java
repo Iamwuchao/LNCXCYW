@@ -69,7 +69,7 @@ public class NewsCache implements LeftCycle<String>{
 	}
 	
 	/*
-	 * 获取新闻栏目的新闻列表 ［fromIndex,toIndex]
+	 * 获取新闻栏目的新闻列表 ［fromIndex,toIndex],下标从零开始
 	 * 
 	 */
 	public LinkedList<News> getNewCacheList(String category,int fromIndex,int toIndex){
@@ -79,15 +79,24 @@ public class NewsCache implements LeftCycle<String>{
 		LinkedList<News> list = new LinkedList<News>();
 		
 		if(!cacheMap.containsKey(category)) return list;
-		
-		Iterator<News> iter = (Iterator<News>) (cacheMap.get(category)).iterator();
-		int index=0;
-		while(iter.hasNext()){
-			News news = iter.next();
-			if(index>=fromIndex&& index<=toIndex){
-					list.add(news);
-			} 
-			index++;
+		ConcurrentLinkedDeque<News> newsList = cacheMap.get(category);
+		if(fromIndex < newsList.size()){
+			Iterator<News> iter = (Iterator<News>) (newsList).iterator();
+			int index=0;
+			while(iter.hasNext()){
+				News news = iter.next();
+				if(index>=fromIndex&& index<=toIndex){
+						list.add(news);
+				} 
+				index++;
+			}
+		}
+        if(newsList.size() < toIndex){
+			NewsDao newsDao = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+			List<News> temList = newsDao.getNewsSubListOrderByDate(newsList.size(), toIndex+1 - newsList.size());
+			for(News news:temList){
+				list.add(news);
+			}
 		}
 		return list;
 	}

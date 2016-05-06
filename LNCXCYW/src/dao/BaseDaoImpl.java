@@ -59,6 +59,7 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 		session.delete(entity);
 		tx.commit();
 		}catch(Exception e){
+			tx.rollback();
 			return false;
 		}finally{
 			session.close();

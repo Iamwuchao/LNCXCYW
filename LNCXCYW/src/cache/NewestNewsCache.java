@@ -14,6 +14,7 @@ public class NewestNewsCache implements LeftCycle<News>{
 	private ConcurrentLinkedDeque<News> cacheNewsList = new ConcurrentLinkedDeque<News>();
 	private AtomicInteger MAX_CACHE = new AtomicInteger(10);
 	private AtomicBoolean isInited = new AtomicBoolean(false);
+	
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
@@ -28,22 +29,35 @@ public class NewestNewsCache implements LeftCycle<News>{
 	@Override
 	public void destory() {
 		// TODO Auto-generated method stub
-		
+		if(isInited.compareAndSet(true, false)){
+			if(cacheNewsList!=null){
+				cacheNewsList.clear();
+			}
+		}
 	}
 	
 	
 	
-	public List<News> getNewestNewsList(int start,int count){
-		Iterator<News> iter = cacheNewsList.iterator();
-		int fromIndex=start,toIndex=start+count;
+	public List<News> getNewestNewsList(int fromIndex,int toIndex){
 		int index=0;
 		List<News> list = new LinkedList<News>();
-		while(iter.hasNext()){
-			News news = iter.next();
-			if(index>=fromIndex&& index<=toIndex){
-					list.add(news);
+		if(fromIndex > toIndex) return list;
+		if(fromIndex < cacheNewsList.size()){
+			Iterator<News> iter = cacheNewsList.iterator();
+			while(iter.hasNext()){
+				News news = iter.next();
+				if(index>=fromIndex&& index<=toIndex){
+						list.add(news);
+				}
+				index++;
 			}
-			index++;
+		}
+		if(toIndex >= cacheNewsList.size()){
+			NewsDao newsDao = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+			List<News> temlist = newsDao.getNewsSubListOrderByDate(cacheNewsList.size(), toIndex + 1 - cacheNewsList.size());
+			for(News tem:temlist){
+				list.add(tem);
+			}
 		}
 		return list;
 	}
@@ -57,7 +71,10 @@ public class NewestNewsCache implements LeftCycle<News>{
 	@Override
 	public void update(News t) {
 		// TODO Auto-generated method stub
-		
+		while(cacheNewsList.size() >= this.MAX_CACHE.get()){
+			cacheNewsList.removeLast();
+		}
+		cacheNewsList.addFirst(t);
 	}
 
 }

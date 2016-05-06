@@ -1,7 +1,7 @@
 package cache;
 
 public class PictureNewsCache implements LeftCycle{
-
+    
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
