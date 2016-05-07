@@ -38,8 +38,6 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		String address=PathInfo.ROOTPATH.getValue()+news.getNews_address();
 		Transaction trans=session.beginTransaction();
 		
-		util.FileOperate.deleteFile(address);
-		
 		try{
 			session.delete(news);
 			trans.commit();
@@ -52,6 +50,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			System.out.println("session close");
 			session.close();
 		}
+		util.FileOperate.deleteFile(address);
 	}
 	
 	
