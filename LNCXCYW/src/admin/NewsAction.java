@@ -161,7 +161,7 @@ public class NewsAction extends PageGetBaseAction{
 		
 		System.out.println(list);
 		System.out.println(newsList);
-		list = Cache.getNewestNewsList(8);
+		list = Cache.getNewestNewsList(10);
 		System.out.println(list);
 		
 		
