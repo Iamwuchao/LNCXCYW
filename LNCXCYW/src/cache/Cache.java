@@ -55,9 +55,9 @@ public class Cache {
 		return cache.newestNews.getNewestNewsList(fromIndex, toIndex);
 	}
 	public static List<News> getNewestNewsList(int count){
-		LinkedList<News> list = new LinkedList<News>();
+		List<News> list = new LinkedList<News>();
 		if(count>0){
-			
+			list = cache.newestNews.getNewestNewsList(0,count-1);
 		}
 		return list;
 	}

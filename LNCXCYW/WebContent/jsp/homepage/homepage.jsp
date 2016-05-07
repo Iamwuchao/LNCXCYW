@@ -13,9 +13,9 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
-                    <img src="/images/test1.jpg" alt="">
+                    <img src="<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>" alt="">
                     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
+                      <h4><s:property value="%{newsMap.get('图片新闻').get(0).newsTile}"/></h4>
                     </div>
                   </div>
                   <div class="item" style="background:url(./images/test2.jpg);background-size:340px 300px">
@@ -161,7 +161,7 @@
 	         	</ul>
 	         </div>
 	         <div class="clear"></div>
-	          <div id="con_two_1" style="display: block;">
+	          <div id="con_two_1" class="test" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="newsMap.get('政策规章')" var="i" status="index"> 

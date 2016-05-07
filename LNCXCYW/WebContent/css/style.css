@@ -51,7 +51,7 @@ input,select{ font-size:12px; vertical-align:middle;}
     cursor: pointer;
 }
 
-.nav_all li:hover{
+.nav_all li a:hover{
 	cursor: pointer;
 	background:url(../images/lihoverbg.png) repeat right top;
 }
@@ -70,8 +70,10 @@ input,select{ font-size:12px; vertical-align:middle;}
     margin: 0px;
     line-height:25px; 
 }
-
-.list1 ul li:hover{
+.test{
+	
+}
+ .test li:hover {
 	list-style-image:url("../images/li.gif");
 }
 

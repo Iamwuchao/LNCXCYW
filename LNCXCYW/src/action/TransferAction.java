@@ -75,6 +75,13 @@ public class TransferAction extends ActionSupport{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
+		List<News> list = Cache.getNewestNewsList(10);
+		if(list ==null || list.size()<1){
+			System.out.println("why ###################");
+		}
+		for(News tem:list){
+			System.out.println(tem.getNewsTile());
+		}
 		return ActionSupport.SUCCESS;
 	}
 }
