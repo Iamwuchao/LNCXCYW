@@ -34,9 +34,8 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		}catch(Exception e){
 			throw new Exception("wrong id!");
 		}
-		String address=PathInfo.ROOTPATH.getValue()+news.getNews_address();
-		Transaction trans=session.beginTransaction();
 		
+		Transaction trans=session.beginTransaction();
 		try{
 			session.delete(news);
 			trans.commit();
@@ -49,6 +48,8 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			System.out.println("session close");
 			session.close();
 		}
+		
+		String address=PathInfo.ROOTPATH.getValue()+news.getNews_address();
 		util.FileOperate.deleteFile(address);
 	}
 	

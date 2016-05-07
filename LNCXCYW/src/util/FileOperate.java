@@ -12,8 +12,6 @@ public class FileOperate {
 		if(file.isFile()&&file.exists()){
 			file.delete();
 			System.out.println("ok");
-		}else{
-			throw new Exception("file does not exist!");
 		}
 	}
 	
