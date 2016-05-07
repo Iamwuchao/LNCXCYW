@@ -3,7 +3,6 @@ package dao;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -124,17 +123,24 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * @throws Exception
 	 */
 	public static void newsSave(String title, String author, String content, String category) throws Exception{
-		String newcontent = "";
-		newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
-		//System.out.println("#########################");
-		//System.out.println(newcontent);
-		
 		String address;
-		try{
-			address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,newcontent);
-		}catch(Exception e){
-			throw new Exception("JspToHTML false!");
+		
+		if(category.equals("图片新闻")){
+			System.out.println("图片新闻");
+			address=util.FileOperate.getPictrueAddress(content);
+			if(address==null){
+				throw new Exception("get pictrue false!");
+			}
+		}else{
+			String newcontent=JspToHTML.getJspOutput("/jsp/third/third_page.jsp");
+			try{
+				address=util.JspToHTML.writeHTML(PathInfo.NEWSPATH,newcontent);
+			}catch(Exception e){
+				throw new Exception("JspToHTML false!");
+			}
 		}
+		
+		
 		NewsCategory newsCategory=Cache.getNewsCategorybyName(category);
 		newsCategory.setNewscategory(category);
 		Date date=new Date(new java.util.Date().getTime()); 

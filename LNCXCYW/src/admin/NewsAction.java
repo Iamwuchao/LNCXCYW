@@ -47,39 +47,6 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsAdd() {
 		System.out.println("newsAdd:");
 		categoryList=Cache.getNewsCategoryList();
-		
-		
-		//测试新闻删除
-//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-//		try{
-//			dao.deleteNewsByIde(7590);
-//		}catch(Exception e){
-//			System.out.println("wrong!!!"+e.getMessage());
-//		}
-		
-		
-		//测试按关键字查询
-//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-//		List<News> list=dao.getNewsListByKeyword("开发者");
-//		System.out.println(list);
-		
-		
-		
-		
-		//测试按日期查询
-//		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-//		Calendar cal=Calendar.getInstance();
-//		cal.set(2016, 2, 2);
-//		Date start=new Date(cal.getTime().getTime());
-//		cal.set(2016, 5, 5);
-//		Date end=new Date(cal.getTime().getTime());
-//		System.out.println(start+""+end);
-//		try{
-//			dao.getNewsListByDate(start, end);
-//		}catch(Exception e){
-//			System.out.println("查询失败！  日期不对");
-//		}
-		
 		return SUCCESS;
 	}
 	/**
@@ -150,8 +117,7 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsSubmit() throws Exception {
 		status="0";
 		System.out.print("newsSubmit: ");
-		System.out.println(title+""+category+""+author);
-		
+		System.out.println(title+""+category+""+author);		
 		try{
 			dao.NewsDao.newsSave(title, author, content, category);
 		}catch(Exception e){
