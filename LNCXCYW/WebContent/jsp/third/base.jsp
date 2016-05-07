@@ -56,7 +56,9 @@
 			<div class="inner-top">
 			<p>每日推荐</p>
 				<div class="deep-inner-top">
-				
+					<layout:block name="eve_push">
+						
+					</layout:block>
 				</div>
 			</div>
 

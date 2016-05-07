@@ -8,6 +8,7 @@ import org.hibernate.Session;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import cache.Cache;
 import mode.News;
 import util.SingletonSessionFactory;
 
@@ -31,6 +32,8 @@ public class NewsShowAction {
 			Criteria q=session.createCriteria(News.class);
 			
 			news_list=q.list();
+			/*List<News> list = Cache.getNewestNewsList(10);
+			System.out.println(list);*/
 			for(News m:news_list)
 				System.out.println(m.getNewsTile()+"  "+m.getAuthor());
 			System.out.println("test");

@@ -30,6 +30,15 @@ public class NewsAction extends PageGetBaseAction{
 	private String content;
 	public String news_list_html;
 	private List<News> newsList;
+	private List<News> list;
+	public List<News> getList() {
+		return list;
+	}
+
+	public void setList(List<News> list) {
+		this.list = list;
+	}
+
 	private List<String> categoryList;
 	
 	private java.util.Date startDate;
@@ -134,15 +143,28 @@ public class NewsAction extends PageGetBaseAction{
 	@SuppressWarnings("unchecked")
 	public String newsList() throws Exception{
 		System.out.println("newsList: "+category);
+		Session session1 = SingletonSessionFactory.getSession();
+		Criteria q1 = session1.createCriteria(News.class);
+		list = q1.list();
 		if(category==null){//获取所有新闻
 			Session session=SingletonSessionFactory.getSession();
 			Criteria q=session.createCriteria(News.class);
+			/*list=q.list();*/
 			newsList=q.list();
+			
 			session.close();
 		}else{//根据参数获取对应类别
 			newsList=Cache.getNewsList(category, 0, 200);
 			newsList=makeCurrentPageList(newsList, 10);
-		}		
+		}
+		/*List<News> list = Cache.getNewestNewsList(10);*/
+		
+		System.out.println(list);
+		System.out.println(newsList);
+		list = Cache.getNewestNewsList(8);
+		System.out.println(list);
+		
+		
 		return ActionSupport.SUCCESS;
 		
 	}
