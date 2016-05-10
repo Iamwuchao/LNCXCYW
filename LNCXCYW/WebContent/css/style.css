@@ -51,7 +51,7 @@ input,select{ font-size:12px; vertical-align:middle;}
     cursor: pointer;
 }
 
-.nav_all li a:hover{
+.nav_all li:hover{
 	cursor: pointer;
 	background:url(../images/lihoverbg.png) repeat right top;
 }
@@ -203,7 +203,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con3 ul li{
 	background:url(../images/libg.png) no-repeat right top;
 	height:50px;
-	font:16px 微软雅黑;
+	font:18px 微软雅黑;
 	color:#FFFFFF;
 	cursor:pointer;
 }

@@ -93,7 +93,8 @@ public class NewsCache implements LeftCycle<String>{
 		}
         if(newsList.size() < toIndex){
 			NewsDao newsDao = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-			List<News> temList = newsDao.getNewsSubListOrderByDate(newsList.size(), toIndex+1 - newsList.size());
+			NewsCategory newsCategory = Cache.getNewsCategorybyName(category);
+			List<News> temList = newsDao.getNewsSubListOrderByDate(newsCategory, newsList.size(), toIndex);
 			for(News news:temList){
 				list.add(news);
 			}

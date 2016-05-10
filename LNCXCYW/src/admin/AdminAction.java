@@ -15,7 +15,10 @@ import dao.UserDaoImpl;
 import mode.NewsCategory;
 import mode.User;
 import mode.UserAuthority;
+import util.Password;
 import util.SingletonSessionFactory;
+import util.mail.MailSenderInfo;
+import util.mail.SimpleMailSender;
 
 public class AdminAction {
 private String username;
@@ -114,6 +117,73 @@ public String login(){
 	
 	return ActionSupport.SUCCESS;
 }
+/**
+ * 找回密码
+ * @return
+ */
+public String findPassword(){
+	System.out.println(email);
+	UserDaoImpl dao = new UserDaoImpl();
+	try{
+		List<User> userList = dao.findUserByEmail(email);
+		if(userList ==null || userList.size()==0){
+			this.register_status = "该邮箱未被注册";
+			return "success";
+		}
+		User user = userList.get(0);
+		String newPass = Password.getNewPassword();
+		user.setPassword(newPass);
+		dao.updateUserInfo(user);
+		//发送邮件
+		
+			MailSenderInfo mailInfo = new MailSenderInfo();  
+		    mailInfo.setMailServerHost("smtp.163.com");  
+		    mailInfo.setMailServerPort("25");  
+		    mailInfo.setValidate(true);  
+		    mailInfo.setUserName("wutongshu0325@163.com"); // 实际发送者  1
+		    mailInfo.setPassword("123456lu");// 您的邮箱密码  
+		    mailInfo.setFromAddress("wutongshu0325@163.com"); // 设置发送人邮箱地址 和1处相同 
+		    mailInfo.setToAddress(email); // 设置接受者邮箱地址  
+		    mailInfo.setSubject("找回密码");  
+		    mailInfo.setContent("您好辽宁省大学生创新创业网，您的密码已重新设置为："+newPass);  
+		    // 这个类主要来发送邮件  
+		    SimpleMailSender sms = new SimpleMailSender();  
+		    sms.sendTextMail(mailInfo); // 发送文体格式  
+//		    sms.sendHtmlMail(mailInfo); // 发送html格式 
+		    this.register_status = "ok";		
+	}
+	catch(Exception e){
+		e.printStackTrace();
+		this.register_status = "操作失败";
+	}
+	return "success";
+}
+/**
+ * 发送邮件
+ */
+public void sendEmail(){
+	// 这个类主要是设置邮件  
+    MailSenderInfo mailInfo = new MailSenderInfo();  
+    mailInfo.setMailServerHost("smtp.163.com");  
+    mailInfo.setMailServerPort("25");  
+    mailInfo.setValidate(true);  
+    mailInfo.setUserName("wutongshu0325@163.com"); // 实际发送者  1
+    mailInfo.setPassword("123456lu");// 您的邮箱密码  
+    mailInfo.setFromAddress("wutongshu0325@163.com"); // 设置发送人邮箱地址 和1处相同 
+    mailInfo.setToAddress("wutongshu1993@qq.com"); // 设置接受者邮箱地址  
+    mailInfo.setSubject("么么么么哒");  
+    mailInfo.setContent("设置邮箱内容<b>h6啊啊啊啊么么哒</b>");  
+    // 这个类主要来发送邮件  
+    SimpleMailSender sms = new SimpleMailSender();  
+    sms.sendTextMail(mailInfo); // 发送文体格式  
+    sms.sendHtmlMail(mailInfo); // 发送html格式  
+}
+//public static void main(String[] args){
+//	UserDaoImpl dao = new UserDaoImpl();
+//	User user = dao.findUserByEmail("510719804@qq.com").get(0);
+//	user.setUserName("Hui");
+//	dao.updateUserInfo(user);
+//}
 public String execute(){
 	return "success";
 }

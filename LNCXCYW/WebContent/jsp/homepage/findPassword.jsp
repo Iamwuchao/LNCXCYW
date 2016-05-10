@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登录页面</title>
+<title>找回密码</title>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"> --%>
 <script type='text/javascript' src="/js/base/jquery-2.1.4.min.js"></script>
 </head>
@@ -22,31 +22,22 @@
 
 	<div class="form-group"
 		style="margin-left: 35%; margin-right: 35%; padding-top: 3%; padding-bottom: 5%; background-color:">
-		<form action="" method="POST" style="position: relative; left: 20%">
+		<form action="" method="POST" style="position: relative;  left: 20%"">
 
 
 
-			<div class="h2">辽宁省创新创业网登录</div>
+			<div class="h2">请输入邮箱地址：</div>
 			<br>
 			<div class="form-group" >
-				<label for="email">用户名</label> <input style="width: 60%"
-					type="text" class="form-control" name="email" id="email"  placeholder="邮箱">
+				<label for="email"></label> <input style="width: 60%"
+					type="text" class="form-control" name="email" id="email" onblur="checkEmail()" placeholder="邮箱">
 			</div>
 
-			<div class="form-group">
-				<label for="password">密码</label> <input style="width: 60%"
-					type="password" class="form-control" name="password" id="password"
-					placeholder="密码">
-			</div>
 			
-			<div class="form-group">
-			<a href="./findPassword.jsp">忘记密码</a>
-			<a href="./regist.jsp" style=" margin-left: 33%">立即注册</a>
-			</div>
 			<div class="form-group">
 				
 					<button type="button" class="btn btn-primary" id="login"
-				style="width: 60%" >登录</button>
+				style="width: 60%" >确定</button>
 			</div>
 
 			<!-- <button type="reset" class="btn btn-primary" id=reset
@@ -61,14 +52,12 @@
 
 </body>
 <script type="text/javascript">
+
 $(document).on("click","#login", function (){
   //alert("5");
-	if(checkPassword() && checkEmail()){
+	if(checkEmail()){
   var email = $("#email").val();
-    var password = $("#password").val();
-  alert(email+password);
     var params={
-    		password : password,
     		email : email,
     }
     
@@ -77,7 +66,7 @@ $(document).on("click","#login", function (){
 //	   alert($("#phoneNumber").val());
     
     $.ajax({
-      url: '/login_handle',
+      url: '/findPassword',
       type: 'post',
       dataType: 'json',
       data: params,
@@ -87,22 +76,6 @@ $(document).on("click","#login", function (){
 	}
 
 }); 
-
-
-
-
-function checkPassword(){
-	var password=$('#password').val();
-	if(password=="")
-		{
-			alert("不能为空");
-			$('#password').focus();
-			return false;
-		}
-	return true;
-}
-
-
 
 function checkEmail(){
 	var email = $("#email").val();
@@ -117,20 +90,12 @@ function checkEmail(){
 function loginCallback(data)
 {   
 	//alert(99); 	
-	if(data.register_status == "0")
+	if(data.register_status == "ok")
 	{    		
-		alert("普通管理员登陆成功");
-		window.location.href = "/jsp/admin/admin.jsp";
+		alert("邮箱已发送到该邮箱");
+		window.location.href = "/jsp/homepage/login.jsp";
 	}
-	else if(data.register_status == "1")
-		{
-		alert("用户名或密码错误");
-		}
-	else if(data.register_status == "3")
-	{
-		alert("超级管理员登陆成功");
-		window.location.href = "/jsp/super_admin/admin.jsp";
-	}
+	
 	else  
 		{
 		alert("error with status：" + data.register_status);
@@ -138,7 +103,6 @@ function loginCallback(data)
 
 	
 }
-
 
 
 </script>

@@ -55,7 +55,7 @@
 		<div class="content-right">
 			<div class="inner-top">
 			<p>每日推荐</p>
-				<div class="deep-inner-top">
+				<div class="deep-inner-top recommend">
 					<layout:block name="eve_push">
 						
 					</layout:block>
@@ -66,13 +66,19 @@
 			<p>焦点图片</p>
 				<div class="deep-inner-bottom">
 					<div class="left">
-							<img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
-							<img class="two" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+						<layout:block name="focus_left_picture">
+							
+						</layout:block>
+							<!--  <img class="one" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">
+							<img class="two" src="/images/Desert.jpg" alt="无法显示图片" width="165.5px" height="155px">-->
 					</div>
 					
 					<div class="right">
-						<img class="one" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
-						<img class="two" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
+					<layout:block name="focus_right_picture">
+							
+						</layout:block>
+					 <!--  	<img class="one" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px">
+						<img class="two" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px"> -->
 					</div>
 					
 				</div>

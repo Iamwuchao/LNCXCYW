@@ -22,6 +22,11 @@
 			<result name="success" type="json">
 			</result>
 		</action>
+		<!--找回密码  -->
+		<action name="findPassword" class="admin.AdminAction" method="findPassword">
+		<result name="success" type="json">
+			</result>
+		</action>
 	</package>
 	<package name="user_request" namespace="/admin/user_request"
 		extends="AdminDefault">

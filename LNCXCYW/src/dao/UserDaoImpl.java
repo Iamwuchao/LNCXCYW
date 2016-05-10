@@ -78,6 +78,17 @@ if (ret>0) {
 }
 	return false;
 }
+public void updateUserInfo(User user){
+	Session session = getSession();
+	Transaction trans = session.beginTransaction();
+	user.setAvaliable(user.getAvaliable());
+	user.setMail(user.getMail());
+	user.setUserName(user.getUserName());
+	session.update(user);
+	trans.commit();
+	session.close();
+	
+}
 public List<User> listUsers(){
 	List<User> list;
 	Session session = getSession();

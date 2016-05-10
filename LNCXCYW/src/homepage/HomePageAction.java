@@ -47,14 +47,15 @@ public class HomePageAction extends ActionSupport{
 		if(toIndex-fromIndex>MAX) return ERROR;
 	//	newsList = new LinkedList<News>();
 		for(String category:orderOfCategory){
-			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex);
+			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
+			for(News tem:temList){
+				System.out.println(tem.getCategory().getNewscategory()+"  "+tem.getNewsTile());
+			}
 			newsMap.put(category, temList);
 		}
 		for(String category:orderOfCategory){
 			List<News> list = newsMap.get(category);
-			for(News tem:list){
-				System.out.println(tem.getCategory().getNewscategory()+"  "+tem.getNewsTile());
-			}
+			
 		}
 		//System.out.println("newsList.size()"+"   "+newsList.size());
 		return SUCCESS;

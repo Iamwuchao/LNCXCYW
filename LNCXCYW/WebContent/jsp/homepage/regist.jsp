@@ -62,7 +62,7 @@
 	  <br><br>
 	  <div class="form-group col-lg-offset-5">
 	  	<label for="fullName">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-	  	<input type="text" class="form-control" name="email" id="email" onblur="checkEmail()" value="" placeholder="">	
+	  	<input type="text" class="form-control" name="email" id="email" onblur="checkEmail()" value="" placeholder="请填写有效邮箱">	
 	  </div>
 	  <div class="form-group">
 	  	<span style="color:red" id="email_msg">*</span>

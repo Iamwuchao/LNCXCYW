@@ -31,6 +31,16 @@ public class NewsAction extends PageGetBaseAction{
 	public String news_list_html;
 	private List<News> newsList;
 	private List<News> list;
+	private List<News> pictureNewsList;
+	
+	public List<News> getPictureNewsList() {
+		return pictureNewsList;
+	}
+
+	public void setPictureNewsList(List<News> pictureNewsList) {
+		this.pictureNewsList = pictureNewsList;
+	}
+
 	public List<News> getList() {
 		return list;
 	}
@@ -119,6 +129,7 @@ public class NewsAction extends PageGetBaseAction{
 		
 		return SUCCESS;
 	}
+	
 	/*
 	 * 提交新闻
 	 */
@@ -157,11 +168,11 @@ public class NewsAction extends PageGetBaseAction{
 			newsList=Cache.getNewsList(category, 0, 200);
 			newsList=makeCurrentPageList(newsList, 10);
 		}
-		/*List<News> list = Cache.getNewestNewsList(10);*/
-		
+		list = Cache.getNewestNewsList(12);
+		pictureNewsList = Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
-		System.out.println(newsList);
-		list = Cache.getNewestNewsList(10);
+		//System.out.println(newsList);
+	//	list = Cache.getNewestNewsList(10);
 		System.out.println(list);
 		
 		
@@ -176,7 +187,7 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsPage(){
 		System.out.println("newsPage:"+category);
 		newsList=Cache.getNewsList(category, 0, 200);
-		newsList=makeCurrentPageList(newsList, 10);
+		newsList=makeCurrentPageList(newsList, 12);
 		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
 		return ActionSupport.SUCCESS;
 		

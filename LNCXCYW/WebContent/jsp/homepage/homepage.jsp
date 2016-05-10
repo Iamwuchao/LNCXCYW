@@ -14,21 +14,21 @@
                 <div class="carousel-inner">
                   <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
                     <img src="<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>" alt="">
-                    <div class="carousel-caption">
+                  <!--   <div class="carousel-caption">
                       <h4><s:property value="%{newsMap.get('图片新闻').get(0).newsTile}"/></h4>
-                    </div>
+                    </div>--> 
                   </div>
                   <div class="item" style="background:url(./images/test2.jpg);background-size:340px 300px">
-                    <img src="/images/test2.jpg" alt="">
-                    <div class="carousel-caption">
+                    <img src="<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>" alt="">
+                  <!--    <div class="carousel-caption">
                       <h4>Second Thumbnail label</h4>
-                    </div>
+                    </div>-->
                   </div>
                   <div class="item" style="background:url(./images/test3.jpg);background-size:340px 300px">
-                    <img src="/images/test3.jpg" alt="">
-                    <div class="carousel-caption">
+                   <img src="<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>" alt="">
+                 <!--    <div class="carousel-caption">
                       <h4>Third Thumbnail label</h4>
-                    </div>
+                    </div>--> 
                   </div>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -139,12 +139,12 @@
 		<!-- 第一行第三块 -->
      <div class="con3">
         <ul class = "list-group">
-        	<li class="list-group-item">我要对接项目</li>
-        	<li class="list-group-item">创新创业活动日程表</li>
-        	<li class="list-group-item">创新创业改革实施方案</li>
-        	<li class="list-group-item">创新创业教育基地</li>
-        	<li class="list-group-item">创新创业选育基地</li>
-        	<li class="list-group-item">创新创业试点专业</li>
+        	<li class="list-group-item" ><div style="margin-left:40px ">我要对接项目</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px">创新创业活动日程表</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px">创新创业改革实施方案</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px">创新创业教育基地</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px">创新创业选育基地</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px">创新创业试点专业</div></li>
         </ul>
       </div>
    </div>
