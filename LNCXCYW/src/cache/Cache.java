@@ -69,6 +69,9 @@ public class Cache {
 		return cache.examPaper.getAllExamPaper();
 	}
 	
+	public static ExamPaper getExamPaper(String description){
+		return cache.examPaper.getExamPaper(description);
+	}
 	public static void clear(){
 		cache.categoryCache.destory();
 		cache.newsCache.destory();
