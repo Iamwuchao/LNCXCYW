@@ -25,6 +25,7 @@ import dao.BaseDao;
 import dao.DaoFactory;
 import dao.NewsCategoryDao;
 import dao.NewsDao;
+import mode.ExamPaper;
 import mode.News;
 import mode.NewsCategory;
 
@@ -75,12 +76,16 @@ public class TransferAction extends ActionSupport{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		List<News> list = Cache.getNewestNewsList(10);
+	/*	List<News> list = Cache.getNewestNewsList(10);
 		if(list ==null || list.size()<1){
 			System.out.println("why ###################");
 		}
 		for(News tem:list){
 			System.out.println(tem.getNewsTile());
+		}*/
+		List<ExamPaper> list = Cache.getAllExamPaper();
+		for(ExamPaper tem:list){
+			System.out.println(tem.getId()+" "+tem.getDescription());
 		}
 		return ActionSupport.SUCCESS;
 	}

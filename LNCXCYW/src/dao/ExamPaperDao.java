@@ -13,7 +13,7 @@ public class ExamPaperDao extends BaseDaoImpl <ExamPaper,Integer>{
 	public List<ExamPaper> getAllExamPaper(){
 		Session session = this.getSession();
 		Criteria crit = session.createCriteria(ExamPaper.class);
-		crit.addOrder(Order.asc("categoryId"));
+		crit.addOrder(Order.asc("id"));
 		@SuppressWarnings("unchecked")
 		List<ExamPaper> list = crit.list();
 		session.close();

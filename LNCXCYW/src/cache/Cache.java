@@ -3,6 +3,7 @@ package cache;
 import java.util.LinkedList;
 import java.util.List;
 
+import mode.ExamPaper;
 import mode.News;
 import mode.NewsCategory;
 
@@ -10,6 +11,7 @@ public class Cache {
 	private NewCategoryCache categoryCache;//新闻栏目缓存
 	private NewsCache newsCache;//新闻列表缓存 各个栏目
 	private NewestNewsCache newestNews;//最新新闻列表缓存
+	private ExamPaperCache examPaper = new ExamPaperCache();
 	private static final Cache cache = new Cache();
 	
 	//初始化各个缓存
@@ -54,12 +56,17 @@ public class Cache {
 	public static List<News> getNewestNewsList(int fromIndex,int toIndex){
 		return cache.newestNews.getNewestNewsList(fromIndex, toIndex);
 	}
+	
 	public static List<News> getNewestNewsList(int count){
 		List<News> list = new LinkedList<News>();
 		if(count>0){
 			list = cache.newestNews.getNewestNewsList(0,count-1);
 		}
 		return list;
+	}
+	
+	public static List<ExamPaper> getAllExamPaper(){
+		return cache.examPaper.getAllExamPaper();
 	}
 	
 	public static void clear(){

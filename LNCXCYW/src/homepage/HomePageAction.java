@@ -48,9 +48,9 @@ public class HomePageAction extends ActionSupport{
 	//	newsList = new LinkedList<News>();
 		for(String category:orderOfCategory){
 			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
-			for(News tem:temList){
+		/*	for(News tem:temList){
 				System.out.println(tem.getCategory().getNewscategory()+"  "+tem.getNewsTile());
-			}
+			}*/
 			newsMap.put(category, temList);
 		}
 		for(String category:orderOfCategory){
