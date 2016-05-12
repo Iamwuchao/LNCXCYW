@@ -5,34 +5,55 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import cache.Cache;
 import dao.DaoFactory;
 import dao.ExamOptionDao;
 import dao.ExamTitleDao;
 import mode.ExamOption;
+import mode.ExamPaper;
 import mode.ExamTitle;
 
 public class ExamManageAction {
 	private String status;
 	private String title;
 	private String category;
+	private List<String> categoryList;
 	private List<String> optionList;
 	private List<Integer> checkList;
+	
+	
+	
+	/*
+	 * 添加试题
+	 */
+	public String examAdd(){
+		List<ExamPaper> paperList=Cache.getAllExamPaper();
+		categoryList.clear();
+		for(ExamPaper paper: paperList){
+			categoryList.add(paper.getDescription());
+		}
+		System.out.println(categoryList);
+		
+		return ActionSupport.SUCCESS;
+	}
+	
+	
 	
 	/*
 	 * 添加一道题
 	 * 
-	 * 标题
-	 * 选项
-	 * 权值
-	 * 类型
+	 * 标题title
+	 * 选项optionList
+	 * 权值checkList
+	 * 类型category
 	 */
 	public String examTitleAdd(){
 		System.out.println("examTitleAdd: "+title+category+optionList+checkList);
 		status="0";
 		ExamTitle etitle=new ExamTitle();
 		etitle.setEmTitle(title);
-		//类别
-		
+		ExamPaper examPaper=Cache.getExamPaper(category);
+		etitle.setEmPaper(examPaper);
 		
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
 		if(!dao.save(etitle)){
