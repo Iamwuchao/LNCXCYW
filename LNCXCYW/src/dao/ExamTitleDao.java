@@ -23,4 +23,8 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		List list = criteria.list();
 		return list;
 	}
+	
+	public boolean addExamTitle(ExamTitle examtitle){
+		return this.save(examtitle);
+	}
 }
