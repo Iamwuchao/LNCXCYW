@@ -68,15 +68,22 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	}
 
 	@Override
-	public void saveAll(Collection<T> entities) {
+	public boolean saveAll(List<T> entities) {
 		// TODO Auto-generated method stub
+		boolean result = true;
 		Session session = getSession();
 		Transaction tx = session.beginTransaction();
-		for(Object ob:entities){
-			session.save(ob);
+		try{
+			for(Object ob:entities){
+				session.save(ob);
+			}
+			tx.commit();
+		}catch(Exception e){
+			tx.rollback();
+			result = false;
 		}
-		tx.commit();
 		session.close();
+		return result;
 	}
 
 	@Override

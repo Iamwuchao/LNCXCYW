@@ -36,5 +36,8 @@
 	<!--  	<mapping class="mode.Role"/>-->
 		<mapping class="mode.User"/>
 		<mapping class="mode.UserAuthority"/>
+		<mapping class="mode.ExamOption"/>
+		<mapping class="mode.ExamTitle"/>
+		<mapping class="mode.ExamPaper"/>
     </session-factory>
 </hibernate-configuration>

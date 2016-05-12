@@ -19,7 +19,7 @@ import util.PageGetBaseAction;
 import util.SingletonSessionFactory;
 
 public class NewsAction extends PageGetBaseAction{
-	/**
+	/*
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
