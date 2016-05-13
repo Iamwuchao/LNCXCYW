@@ -31,4 +31,19 @@ public class ExamDao {
 		ExamTitleDao  etd = (ExamTitleDao) DaoFactory.getDaoByName(ExamTitleDao.class);
 		return etd.addAllExamTitle(titles);
 	}
+	
+	public List<Integer> getAllExamTitleId(ExamPaper paper){
+		ExamTitleDao  etd = (ExamTitleDao) DaoFactory.getDaoByName(ExamTitleDao.class);
+		return etd.getAllTitleId(paper);
+	}
+	
+	public ExamTitle getExamTitleById(int id){
+		ExamTitleDao  etd = (ExamTitleDao) DaoFactory.getDaoByName(ExamTitleDao.class);
+		return (ExamTitle) etd.findById("emTitleId",id);
+	}
+	
+	public List<ExamOption> getExamOptionsOfTitle(ExamTitle title){
+		ExamOptionDao eod = (ExamOptionDao) DaoFactory.getDaoByName(ExamOptionDao.class);
+		return eod.getAllExamOption(title);
+	}
 }

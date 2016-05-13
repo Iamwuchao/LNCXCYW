@@ -1,8 +1,10 @@
 package dao;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -26,5 +28,14 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 	
 	public boolean addExamTitle(ExamTitle examtitle){
 		return this.save(examtitle);
+	}
+	
+	public List<Integer> getAllTitleId(ExamPaper paper){
+		Session session = this.getSession();
+		String hql = "select emTitleId from ExamTitle where emPaper=?";
+		Query query = session.createQuery(hql);
+		query.setParameter(0, paper);
+		List<Integer> result = query.list();
+		return result;
 	}
 }

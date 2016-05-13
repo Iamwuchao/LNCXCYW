@@ -87,11 +87,11 @@ public class BaseDaoImpl<T,PK> implements BaseDao<T,PK>{
 	}
 
 	@Override
-	public List<T> findById(Object pk) {
+	public List<T> findById(String pkname,Object pk) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		Criteria crit = session.createCriteria(classType);
-		crit.add(Restrictions.eq("id", pk));
+		crit.add(Restrictions.eq(pkname, pk));
 		List<T> list = crit.list();
 		session.close();
 		return list;
