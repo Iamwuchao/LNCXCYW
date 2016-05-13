@@ -11,7 +11,7 @@
 	   <s:if test="#session.user.role==1">
 	    <a href="/admin/user_request/" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;管理员审核</span></a>
 	    <a href="/admin/user_authority/" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;权限管理</span></a>
-	    <a href="/jsp/admin/examManage.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;试卷管理</span></a>
+	    <a href="/examManage" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;试卷管理</span></a>
 	    </s:if>
 	    <!-- <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon-th">&nbsp;新闻审核</span></a> -->
 	    <a href="#" class="menu-button-middle"><span class="glyphicon glyphicon-list-alt">&nbsp;下载中心</span></a>

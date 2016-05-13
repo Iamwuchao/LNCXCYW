@@ -32,9 +32,15 @@
 	}
 </style>
 <!-- 添加的题目的类型 -->
-		<%-- <s:select list="paperCategoryList" id="paperCategoryList"
+		 <select id="categoryListSel" name="categoryList"> 
+			<s:iterator value="categoryList" id="categoryList" var="i">
+			<option value=<s:property value="#i"  />><s:property value="#i"  /></option>		
+			</s:iterator>
+				
+		</select>
+		<%-- <s:select list="categoryList" id="categoryList" name="categoryList"
 			listValue="category" listKey="paperCategoryList.categoryId"
-			theme="simple"></s:select> --%>
+			theme="simple"></s:select>  --%>
 		<!-- Button trigger modal -->
 <button type="button" id="addExam" class="btn btn-primary btn-lg">添加题目</button>
 
@@ -58,10 +64,10 @@
 			
 			<div style="display:none" class="option">
 			 	<div class="form-inline form-group toc optionContent" id="optionLine">
-			  		<input type="checkbox" class="optionCheck">
+			  		<!-- <input type="checkbox" class="optionCheck"> -->
 			    	<label for="optionInput">选项:</label>
 			    	<textarea class="form-control optionInput" id="optionInput" rows="2" cols="100" placeholder="选项内容"></textarea>
-			    	<input type="text"  class="form-control" placeholder="请填入该选项的权值" value="5" >
+			    	<input type="text"  class="form-control optionCheck" placeholder="请填入该选项的权值" value="5" id="optionCheck" >
 			    	<button type="button" class="btn btn-primary" id="optionRemove"> 移除</button>
 			 	</div>
 			 </div>
@@ -123,7 +129,7 @@
 		
 		var params = getParams();
 		$.ajax({
-			url : 'training_examInsert',
+			url : 'examTitleAdd',
 			type : 'post',
 			dataType : 'json',
 			data : params,
@@ -133,7 +139,7 @@
 	}
 	
 	function emInsertCallback(data){
-		if(data.trStatus == "1") {
+		if(data.status == "1") {
 			$(document).find("#examTableDiv").html(data.exam_table);
 			$('#emModal').css("display","none");
 			alert("插入成功！ ");
@@ -279,18 +285,28 @@
 		
 		var findList = document.getElementsByClassName("optionContent");
 		var checkList = new Array();
-		for(var i = 0; i < findList.length; ++ i)
+		
+	 	$(".optionContent #optionCheck").each(function(){
+	 		checkList.push($(this).val());
+		})
+		 
+		/* for(var i = 0; i < findList.length; ++ i)
 		{
-			var temp = findList[i].getElementsByClassName("optionCheck")[0].checked;
+			
+			alert("9999000");
+			var temp = findList[i].getElementsByClassName("optionCheck")[0].val();
+			alert("temp is");
 			checkList.push(temp);
-		}
+		} */
+		
+		
 		/* 试卷类型 */
-		paperCatogery = $("#paperCategoryList option:selected").val();
+		paperCatogery = $("#categoryListSel option:selected").val();
 		var params = {
-				"emTitle" : emTextarea,
+				"title" : emTextarea,
 				"optionList" : optionList,
 				"checkList" : checkList,
-				"paperCatogery":paperCatogery
+				"category":paperCatogery
 		};
 		return params;
 

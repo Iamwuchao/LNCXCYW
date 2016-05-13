@@ -20,6 +20,8 @@ public class ExamManageAction {
 	private List<String> categoryList;
 	private List<String> optionList;
 	private List<Integer> checkList;
+	//返回的数据
+	private String exam_table;
 	
 	
 	
@@ -27,8 +29,10 @@ public class ExamManageAction {
 	 * 添加试题
 	 */
 	public String examAdd(){
+		System.out.println("###############");
+		System.out.println("ExamManageAction.examAdd()");
 		List<ExamPaper> paperList=Cache.getAllExamPaper();
-		categoryList.clear();
+		categoryList = new ArrayList<>();
 		for(ExamPaper paper: paperList){
 			categoryList.add(paper.getDescription());
 		}
@@ -57,7 +61,7 @@ public class ExamManageAction {
 		
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
 		if(!dao.save(etitle)){
-			status="1";
+//			status="0";
 			System.out.println("插入题目失败！");
 			return ActionSupport.SUCCESS;
 		};
@@ -74,10 +78,12 @@ public class ExamManageAction {
 		
 		ExamOptionDao dao2=(ExamOptionDao)DaoFactory.getDaoByName(ExamOptionDao.class);
 		if(!dao2.saveAll(options)){
-			status="1";
+//			status="1";
 			System.out.println("插入选项失败！");
 			return ActionSupport.SUCCESS;
 		};
+		status = "1";
+		exam_table = util.JspToHTML.getJspOutput("/jsp/admin/widgets/examManageTable.jsp");
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -122,6 +128,30 @@ public class ExamManageAction {
 
 	public void setCheckList(List<Integer> checkList) {
 		this.checkList = checkList;
+	}
+
+
+
+	public List<String> getCategoryList() {
+		return categoryList;
+	}
+
+
+
+	public void setCategoryList(List<String> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+
+
+	public String getExam_table() {
+		return exam_table;
+	}
+
+
+
+	public void setExam_table(String exam_table) {
+		this.exam_table = exam_table;
 	}
 	
 }
