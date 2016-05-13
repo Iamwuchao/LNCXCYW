@@ -4,8 +4,18 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="exam" namespace="/" extends="Default">
+		
 		<action name="getExamPaper" class="exam.ExamAction" method="getExamPaper">
 			<result>/jsp/homepage/homepage.jsp</result> 
 		</action>
+		
+		<action name="examManage" class="exam.ExamManageAction" method="examAdd">
+			<result name="success">/jsp/admin/examManage.jsp</result>
+		</action>
+		
+		<action name="examTitleAdd" class="exam.ExamManageAction" method="examTitleAdd">
+		<result name="success" type="json"></result>
+		</action>
+		
 	</package>
 </struts>
