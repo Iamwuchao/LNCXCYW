@@ -70,7 +70,7 @@ public class ExamManageAction {
 		for(int i=0; i<optionList.size(); i++){
 			ExamOption eoption=new ExamOption();
 			eoption.setEmTitle(etitle);
-			eoption.setEmStrID("A"+i);
+			eoption.setEmStrID(String.valueOf((char)('A'+i)));
 			eoption.setEmOption(optionList.get(i));
 			eoption.setEmOptionWeight(checkList.get(i));
 			options.add(eoption);
