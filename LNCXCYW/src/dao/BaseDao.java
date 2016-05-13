@@ -16,7 +16,7 @@ public interface BaseDao<T,PK> {
 	 	boolean save(T entity);
 	  	boolean update(T entity);
 	  	boolean delete(T entity);
-	  	List<T> findById(PK pk);
+	  	List<T> findById(String pkname,PK pk);
 	  	List<T> findPagination(Criteria query,int start, int end);
 		boolean saveAll(List<T> entities);
 }
