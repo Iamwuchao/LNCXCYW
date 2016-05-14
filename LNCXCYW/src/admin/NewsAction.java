@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -32,7 +33,26 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> newsList;
 	private List<News> list;
 	private List<News> pictureNewsList;
+	private String news_address;
+	private List<News> addressList;
 	
+
+	public List<News> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<News> addressList) {
+		this.addressList = addressList;
+	}
+
+	public String getNews_address() {
+		return news_address;
+	}
+
+	public void setNews_address(String news_address) {
+		this.news_address = news_address;
+	}
+
 	public List<News> getPictureNewsList() {
 		return pictureNewsList;
 	}
@@ -179,6 +199,27 @@ public class NewsAction extends PageGetBaseAction{
 		return ActionSupport.SUCCESS;
 		
 	}
+	
+	public String pictureNews() throws Exception{
+		System.out.println("newsList: "+category);
+		Session session1 = SingletonSessionFactory.getSession();
+		Criteria q1 = session1.createCriteria(News.class);
+		list = q1.list();
+		
+		list = Cache.getNewestNewsList(12);
+		pictureNewsList = Cache.getNewsList("图片新闻", 0, 3);
+		System.out.println(list);
+		System.out.println(news_address);
+		//图片新闻
+		Session session2 = SingletonSessionFactory.getSession();
+		addressList = session2.createCriteria(News.class).add(Restrictions.eq("news_address", news_address)).list();
+		System.out.println(news_address);
+		System.out.println(addressList);
+		return ActionSupport.SUCCESS;
+		
+	}
+	
+	
 	
 	/*
 	 * 获取新闻分页
