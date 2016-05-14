@@ -194,7 +194,7 @@
 		$("#exam_form").attr("titleId", $(tr).attr("titleId"));
 		$(optionList).each(function(){
 			
-			var isRight = $(this).attr("isRight");
+			var isRight = $(this).attr("isRight");//每个选项的权值
 			addOption();
 			var cntOption = $(".optionContent:last");
 			$(cntOption).find(".optionInput").val($(this).attr("optionText"));			
@@ -233,7 +233,7 @@
 	}
 	
 	function editTitleCallBack(data){
-		if(data.trStatus == "1") {
+		if(data.status == "1") {
 			$(document).find("#examTableDiv").html(data.exam_table);
 			alert("更改成功！ ");
 		}

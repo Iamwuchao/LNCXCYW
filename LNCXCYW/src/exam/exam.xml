@@ -14,7 +14,9 @@
 		</action>
 		
 		<action name="examTitleAdd" class="exam.ExamManageAction" method="examTitleAdd">
-		<result name="success" type="json"></result>
+		<result name="success" type="json">
+		<param name="includeProperties">*</param>   
+		</result>
 		</action>
 		
 	</package>

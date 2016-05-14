@@ -3,6 +3,9 @@ package exam;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
@@ -22,8 +25,8 @@ public class ExamManageAction {
 	private List<Integer> checkList;
 	//返回的数据
 	private String exam_table;
-	
-	
+	private List<List<ExamOption> > qoption = new ArrayList<List<ExamOption>>();
+	private List<ExamTitle> qtitle = new ArrayList<>();
 	
 	/*
 	 * 添加试题
@@ -83,10 +86,42 @@ public class ExamManageAction {
 			return ActionSupport.SUCCESS;
 		};
 		status = "1";
+		
+		//插入成功以后将题目和选项提出来显示在页面
+		 qtitle = dao.getAllExamTitle(examPaper);
+		
+		 qoption.clear();
+		for ( ExamTitle title : qtitle) {
+			qoption.add(dao2.getAllExamOption(title)) ;
+		}
 		exam_table = util.JspToHTML.getJspOutput("/jsp/admin/widgets/examManageTable.jsp");
 		return ActionSupport.SUCCESS;
 	}
 	
+	public List<List<ExamOption>> getQoption() {
+		return qoption;
+	}
+
+
+
+	public void setQoption(List<List<ExamOption>> qoption) {
+		this.qoption = qoption;
+	}
+
+
+
+	public List<ExamTitle> getQtitle() {
+		return qtitle;
+	}
+
+
+
+	public void setQtitle(List<ExamTitle> qtitle) {
+		this.qtitle = qtitle;
+	}
+
+
+
 	/*
 	 * getters and setters
 	 */
