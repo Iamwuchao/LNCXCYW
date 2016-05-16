@@ -7,6 +7,8 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/css/style02.css">
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<!-- <script src="/jquery/jquery.min.js"></script> -->
+	<script src="/js/base/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <div class="main">

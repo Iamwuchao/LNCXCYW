@@ -22,7 +22,16 @@
 			<param name="includeProperties">status,news_list_html</param>
 		</result>
 	</action>
-	
+	<action name="picture_news" class="admin.NewsAction" method="pictureNews">
+		<result name="success">
+			/jsp/third/picture_page.jsp
+		</result>
+	</action>
+	<!-- <action name="picture_address" class="admin.NewsAction" method="pictureNews">
+		<result name="success" type="json">
+			<param name="includeProperties">news_address</param>
+		</result>
+	</action> -->
 	
 </package>
 </struts>

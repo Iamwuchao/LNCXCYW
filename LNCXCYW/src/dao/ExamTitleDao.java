@@ -16,10 +16,17 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		return this.saveAll(list);
 	}
 	
+//	public List<ExamTitle> getAllExamTitle(ExamPaper paper){
+//		Session session = getSession();
+//		Criteria criteria=session.createCriteria(News.class);
+//		criteria.add(Restrictions.eq("emPaper_id",paper.getId()));
+//		List list = criteria.list();
+//		return list;
+//	}
 	public List<ExamTitle> getAllExamTitle(ExamPaper paper){
 		Session session = getSession();
-		Criteria criteria=session.createCriteria(News.class);
-		criteria.add(Restrictions.eq("emPaper_id",paper.getId()));
+		Criteria criteria=session.createCriteria(ExamTitle.class);
+		criteria.add(Restrictions.eq("emPaper",paper));
 		List list = criteria.list();
 		session.close();
 		return list;
