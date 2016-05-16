@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import mode.ExamOption;
@@ -39,11 +40,18 @@ public class ExamDao {
 	
 	public ExamTitle getExamTitleById(int id){
 		ExamTitleDao  etd = (ExamTitleDao) DaoFactory.getDaoByName(ExamTitleDao.class);
-		return (ExamTitle) etd.findById("emTitleId",id);
+		return etd.getExamTitleById(id);
+		/*List<ExamTitle> list =  etd.findById("emTitleId",id);
+		if(list!=null && list.size() >0 ) return list.get(0);
+		else return null;*/
 	}
 	
 	public List<ExamOption> getExamOptionsOfTitle(ExamTitle title){
 		ExamOptionDao eod = (ExamOptionDao) DaoFactory.getDaoByName(ExamOptionDao.class);
+		if(title!=null)
 		return eod.getAllExamOption(title);
+		else{
+			return new LinkedList<ExamOption>();
+		}
 	}
 }

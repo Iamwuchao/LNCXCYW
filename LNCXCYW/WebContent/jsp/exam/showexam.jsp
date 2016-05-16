@@ -5,20 +5,20 @@
 			<div id="exCont" class="panel panel-default"  >
 				<div class="panel-body ">
 				
-	  			<s:iterator var="i" begin="0" end="examTitleList.size()-1" step="1"  >
-					<ul class="exam_margin well" titleId=<s:property value="examTitleList.get(#i).emId" /> >
+	  			<s:iterator var="i" begin="0" end="listOftitle.size()-1" step="1"  >
+					<ul class="exam_margin well" titleId=<s:property value="listOftitle.get(#i).emId" /> >
 						<li class="margin_liTitle">
 							<span><s:property value="#i + 1"/>.&nbsp;</span>
-							<s:property value="examTitleList.get(#i).emTitle" escape="false"/>
+							<s:property value="listOftitle.get(#i).emTitle" escape="false"/>
 						</li>
 						
-						<s:iterator var = "j" begin = "0" end = "examOptionList.get(#i).size() - 1">
+						<s:iterator var = "j" begin = "0" end = "optionsOfTitle.get(#i).size() - 1">
 							<li>
-								<div opId=<s:property value="examOptionList.get(#i).get(#j).emId" /> 
+								<div opId=<s:property value="optionsOfTitle.get(#i).get(#j).emId" /> 
 								     class="opToback">
 										<input type="checkbox" class="checks checkOption "/>
 									<span class="">&nbsp;<s:property value="intToChar(#j)" />&nbsp;</span>
-									<s:property value="examOptionList.get(#i).get(#j).emOption" />								
+									<s:property value="optionsOfTitle.get(#i).get(#j).emOption" />								
 								</div>
 							</li>
 							

@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -14,7 +13,6 @@ import mode.News;
 
 public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 	public boolean addAllExamTitle(List<ExamTitle> list){
-		
 		return this.saveAll(list);
 	}
 	
@@ -23,11 +21,24 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		Criteria criteria=session.createCriteria(News.class);
 		criteria.add(Restrictions.eq("emPaper_id",paper.getId()));
 		List list = criteria.list();
+		session.close();
 		return list;
 	}
 	
 	public boolean addExamTitle(ExamTitle examtitle){
 		return this.save(examtitle);
+	}
+	
+	public ExamTitle getExamTitleById(Integer id){
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(ExamTitle.class);
+		criteria.add(Restrictions.idEq(id));
+		List<ExamTitle> list = criteria.list();
+		if(list!=null && list.size() > 0){
+			return list.get(0);
+		}
+		session.close();
+		return null;
 	}
 	
 	public List<Integer> getAllTitleId(ExamPaper paper){
@@ -36,6 +47,7 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		Query query = session.createQuery(hql);
 		query.setParameter(0, paper);
 		List<Integer> result = query.list();
+		session.close();
 		return result;
 	}
 }

@@ -739,8 +739,8 @@
       		<div id="fourth_con3"  class="conblue">
       			<div id="fourth_con2" class="name">
 			  		<ul style="width:100%;height:36px;overflow:hidden">
-		         		<a href="#" target="_blank"><li id="ten1" onmouseover="setTabsnow('ten',1,2)" class="curnews">创新创业导师</li></a>
-		         		<li id="ten2" onmouseover="setTabsnow('ten',2,2)" >素质测评</li>
+		         		<a href="/second_page?category=创新创业导师" target="_blank"><li id="ten1" onmouseover="setTabsnow('ten',1,2)" class="curnews">创新创业导师</li></a>
+		         		<a href="/getAllExamPape.action" target="_blank"><li id="ten2" onmouseover="setTabsnow('ten',2,2)" >素质测评</li></a>
 		         	</ul>
 		  		</div>
 		  	<div class="clear"></div>

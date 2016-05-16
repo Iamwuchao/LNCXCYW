@@ -23,7 +23,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	/*
 	 * 删除新闻
 	 */
-	public void deleteNewsByIde(int id) throws Exception{
+	public void deleteNewsById(int id) throws Exception{
 		System.out.println("deleteNewsById: "+id);
 		Session session=getSession();
 		News news = null;

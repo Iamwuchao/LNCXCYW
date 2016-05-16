@@ -17,7 +17,8 @@ public class ExamAction extends ActionSupport{
 	private int countOftitle;//抽取该测试类型题目数量
 	private List<ExamTitle> listOftitle;//存储抽取的试卷
 	private List<List<ExamOption>> optionsOfTitle;//题目的选项列表
-
+	                                              //答题记录
+	private List<ExamPaper> examPaperList;//所有试题类型的列表
 	public String getPaperName() {
 		return paperName;
 	}
@@ -42,7 +43,6 @@ public class ExamAction extends ActionSupport{
 		this.listOftitle = listOftitle;
 	}
 	
-	
 	public List<List<ExamOption>> getOptionsOfTitle() {
 		return optionsOfTitle;
 	}
@@ -60,6 +60,7 @@ public class ExamAction extends ActionSupport{
 		if(exampaper!=null){
 			int count = countOftitle>0?countOftitle:ExamInfo.EXAMINFO.COUNTOFEXAMPAPER;
 			exam = ExamUtil.getExam(exampaper, count);
+			
 			listOftitle = exam.getAllExamTitle();
 			HashMap<ExamTitle, List<ExamOption>> map = exam.getTotalExam();
 			for(ExamTitle title:listOftitle){
@@ -67,6 +68,20 @@ public class ExamAction extends ActionSupport{
 			}
 		}
 		return SUCCESS;
+	}
+	
+	public String getAllExamPaper(){
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		examPaperList = Cache.getAllExamPaper();
+		for(ExamPaper tem:examPaperList){
+			System.out.println("paper "+tem.getDescription());
+		}
+		return SUCCESS;
+	}
+	
+	public String judgingPaper(){
+		return paperName;
 	}
 	
 }

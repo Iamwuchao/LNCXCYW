@@ -18,9 +18,11 @@ public class ExamOptionDao extends BaseDaoImpl <ExamOption,Integer>{
 	
 	public List<ExamOption> getAllExamOption(ExamTitle et){
 		Session session = getSession();
-		Criteria criteria=session.createCriteria(News.class);
-		criteria.add(Restrictions.eq("emTitle_emTitleId",et.getEmTitleId()));
-		List list = criteria.list();
+		Criteria criteria=session.createCriteria(ExamOption.class);
+		
+		criteria.add(Restrictions.eq("emTitle.emTitleId",et.getEmTitleId()));
+		List<ExamOption> list = criteria.list();
+		session.close();
 		return list;
 	}
 	

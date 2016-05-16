@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+/*
+ * 记录所有的试题类型
+ */
 
 @Entity
 public class ExamPaper {

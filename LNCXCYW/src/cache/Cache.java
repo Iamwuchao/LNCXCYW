@@ -11,7 +11,7 @@ public class Cache {
 	private NewCategoryCache categoryCache;//新闻栏目缓存
 	private NewsCache newsCache;//新闻列表缓存 各个栏目
 	private NewestNewsCache newestNews;//最新新闻列表缓存
-	private ExamPaperCache examPaper = new ExamPaperCache();
+	private ExamCache examCache = new ExamCache();//考试试卷缓存
 	private static final Cache cache = new Cache();
 	
 	//初始化各个缓存
@@ -66,11 +66,11 @@ public class Cache {
 	}
 	
 	public static List<ExamPaper> getAllExamPaper(){
-		return cache.examPaper.getAllExamPaper();
+		return cache.examCache.getAllExamPaper();
 	}
 	
 	public static ExamPaper getExamPaper(String description){
-		return cache.examPaper.getExamPaper(description);
+		return cache.examCache.getExamPaper(description);
 	}
 	public static void clear(){
 		cache.categoryCache.destory();

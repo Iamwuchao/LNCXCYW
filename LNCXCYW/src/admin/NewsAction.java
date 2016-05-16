@@ -121,7 +121,7 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.println(newsId);
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		try{
-			dao.deleteNewsByIde(newsId);
+			dao.deleteNewsById(newsId);
 			status = "success";
 		}catch(Exception e){
 			System.out.println("wrong!!!"+e.getMessage());

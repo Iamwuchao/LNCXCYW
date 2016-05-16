@@ -14,8 +14,15 @@
 		</action>
 		
 		<action name="examTitleAdd" class="exam.ExamManageAction" method="examTitleAdd">
-		<result name="success" type="json"></result>
+			<result name="success" type="json"></result>
 		</action>
 		
+		<action name="showExam" class="exam.ExamAction" method="getExamPaper">
+			<result name="success">/jsp/exam/showexam.jsp</result>
+		</action>
+		
+		<action name = "getAllExamPaper" class="exam.ExamAction" method="getAllExamPaper">
+			<result name="success">/jsp/exam/chooseExam.jsp</result>
+		</action>
 	</package>
 </struts>
