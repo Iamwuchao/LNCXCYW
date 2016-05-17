@@ -24,7 +24,7 @@ public class NewsAction extends PageGetBaseAction{
 	private String content;
 	public String news_list_html;
 	private List<News> newsList;
-
+	private List<String> categoryList;
 	
 
 	private java.util.Date startDate;
@@ -42,7 +42,7 @@ public class NewsAction extends PageGetBaseAction{
 	 */
 	public String newsAdd() {
 		System.out.println("newsAdd:");
-		Cache.getNewsCategoryList();
+		categoryList=Cache.getNewsCategoryList();
 		return SUCCESS;
 	}
 	
@@ -214,6 +214,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public List<String> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<String> categoryList) {
+		this.categoryList = categoryList;
 	}
 
 	
