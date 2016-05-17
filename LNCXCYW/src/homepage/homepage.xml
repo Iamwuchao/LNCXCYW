@@ -10,23 +10,24 @@
 		<result name="success">/jsp/homepage/homepage.jsp</result>   
 	</action>
 	
-	<action name="second_page" class="admin.NewsAction" method="newsList">
+	<action name="second_page" class="homepage.NewsAction" method="newsList">
 		<result name="success">
 			/jsp/third/second_page.jsp
 		</result>
 	</action>
 	
-	
-	<action name="news_page" class="admin.NewsAction" method="newsPage">
+	<action name="news_page" class="homepage.NewsAction" method="newsPage">
     	<result name="success" type="json">
 			<param name="includeProperties">status,news_list_html</param>
 		</result>
 	</action>
-	<action name="picture_news" class="admin.NewsAction" method="pictureNews">
+	
+	<action name="picture_news" class="homepage.NewsAction" method="pictureNews">
 		<result name="success">
 			/jsp/third/picture_page.jsp
 		</result>
 	</action>
+	
 	<!-- <action name="picture_address" class="admin.NewsAction" method="pictureNews">
 		<result name="success" type="json">
 			<param name="includeProperties">news_address</param>
