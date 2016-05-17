@@ -5,6 +5,7 @@ package admin;
 import java.sql.Date;
 import java.util.List;
 
+
 import cache.Cache;
 import dao.DaoFactory;
 import dao.NewsDao;
@@ -23,6 +24,9 @@ public class NewsAction extends PageGetBaseAction{
 	private String content;
 	public String news_list_html;
 	private List<News> newsList;
+
+	
+
 	private java.util.Date startDate;
 	private java.util.Date endDate;
 	private String keyWords;
@@ -128,69 +132,89 @@ public class NewsAction extends PageGetBaseAction{
 	/*
 	 * getters and setters
 	 */
-	
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public String getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
+
 	public String getNews_list_html() {
 		return news_list_html;
 	}
+
 	public void setNews_list_html(String news_list_html) {
 		this.news_list_html = news_list_html;
 	}
+
 	public List<News> getNewsList() {
 		return newsList;
 	}
+
 	public void setNewsList(List<News> newsList) {
 		this.newsList = newsList;
 	}
+
 	public java.util.Date getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(java.util.Date startDate) {
 		this.startDate = startDate;
 	}
+
 	public java.util.Date getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(java.util.Date endDate) {
 		this.endDate = endDate;
 	}
+
 	public String getKeyWords() {
 		return keyWords;
 	}
+
 	public void setKeyWords(String keyWords) {
 		this.keyWords = keyWords;
 	}
+
 	public int getNewsId() {
 		return newsId;
 	}
+
 	public void setNewsId(int newsId) {
 		this.newsId = newsId;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	
 }

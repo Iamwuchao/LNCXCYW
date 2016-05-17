@@ -1,5 +1,6 @@
 package cache;
 import java.util.Iterator;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -9,6 +10,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import dao.DaoFactory;
 import dao.NewsDao;
 import mode.News;
+/*
+ * 该类主要用于缓存每日推荐的新闻列表，保存最新的新闻，不分栏目
+ */
 public class NewestNewsCache implements LeftCycle<News>{
 	
 	private ConcurrentLinkedDeque<News> cacheNewsList = new ConcurrentLinkedDeque<News>();

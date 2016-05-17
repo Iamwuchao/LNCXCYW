@@ -8,7 +8,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import dao.DaoFactory;
 import dao.NewsCategoryDao;
 import mode.NewsCategory;
-
+/*
+ * 该类主要用于缓存新闻栏目列表
+ */
 public class NewCategoryCache implements LeftCycle<NewsCategory>{
 	private ConcurrentHashMap<String,NewsCategory> map;
 	private AtomicBoolean isinited = new AtomicBoolean(false);
