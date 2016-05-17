@@ -76,7 +76,7 @@
   </filter-mapping> -->
   <filter>
   <filter-name>login</filter-name>
-  <filter-class>admin.LoginFilter</filter-class>
+  <filter-class>filter.LoginFilter</filter-class>
   </filter>
   <filter-mapping>
   <filter-name>login</filter-name>

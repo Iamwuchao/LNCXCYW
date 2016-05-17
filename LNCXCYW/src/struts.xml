@@ -23,13 +23,6 @@
        		<result>/jsp/admin/news_manage.jsp</result>
        </action> 
        
-
-       <action name="regist" class="homepage.AdminAction" method="regist">
-        <result name="success" type="json">
-        </result> 
-       </action>
-
-       
     </package>
     <package name="AdminDefault" extends="Default">	
 	</package>
