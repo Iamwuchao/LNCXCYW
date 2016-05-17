@@ -55,6 +55,24 @@ public class ExamAction extends BasePageInfoAction{
 		this.optionsOfTitle = optionsOfTitle;
 	}
 
+	
+	
+	public List<Integer> getAnswerList() {
+		return answerList;
+	}
+
+	public List<ExamPaper> getExamPaperList() {
+		return examPaperList;
+	}
+
+	public void setAnswerList(List<Integer> answerList) {
+		this.answerList = answerList;
+	}
+
+	public void setExamPaperList(List<ExamPaper> examPaperList) {
+		this.examPaperList = examPaperList;
+	}
+
 	//获取制定类型的试卷
 	public String getExamPaper(){
 		ExamPaper exampaper = null;
