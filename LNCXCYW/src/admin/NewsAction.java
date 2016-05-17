@@ -9,6 +9,8 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import GlobalInfo.HomePageInfo;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
@@ -36,6 +38,10 @@ public class NewsAction extends PageGetBaseAction{
 	private String news_address;
 	private List<News> addressList;
 	
+	public NewsAction(){
+		pictureNewsList = Cache.getNewestNewsList(HomePageInfo.HOMEPAGEINFO.getNewestNewsCount());//初始化焦点图片新闻
+		list = Cache.getNewsList("图片新闻", 0, 3);//初始化每日推荐新闻列表
+	}
 
 	public List<News> getAddressList() {
 		return addressList;
