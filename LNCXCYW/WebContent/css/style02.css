@@ -201,8 +201,9 @@ ul li {
 .inner-top{
 	position: absolute;
 	top: 0;
-	width:401px;
-	height: 422px;
+	right:0;
+	width:280px;
+	height: 400px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 	
@@ -245,8 +246,9 @@ ul li {
 .inner-bottom{
 	position: absolute;
 	top:442px;
-	width: 401px;
-	height: 414px;
+	right:0;
+	width: 280px;
+	height: 350px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 }
@@ -301,12 +303,12 @@ ul li {
 .inner-bottom .left{
 	float:left;
 	margin:0;
-	width:165.5px;
+	width:115px;
 }
 .inner-bottom .right{
 	float:right;
 	margin-left:20px;
-	width:165.5px;
+	width:115px;
 }
 .inner-bottom .one{
 	margin:0 20px 20px 0;
