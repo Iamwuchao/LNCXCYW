@@ -1,20 +1,18 @@
 package homepage;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-
-import GlobalInfo.HomePageInfo;
-
+import GlobalInfo.NewsPageInfo;
 import com.opensymphony.xwork2.ActionSupport;
-
 import cache.Cache;
 import mode.News;
 
-
 public class HomePageAction extends ActionSupport{
-	//private List<News> newsList;
-	//private List<String> newsCategoryList;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private final static int MAX = 100; 
 	private int newsCount;
 	private HashMap<String,List<News>> newsMap;
@@ -39,25 +37,18 @@ public class HomePageAction extends ActionSupport{
 		this.newsCount = newsCount;
 	}
 	
+	/*
+	 * 获取首页各个栏目的新闻列表，使用map存储
+	 */
 	public String getHomePageNewsMap(){
-		//getAllNewsCategoryList();
 		int fromIndex=0;
-		int toIndex = HomePageInfo.HOMEPAGEINFO.getNewsCountOfCategory();
+		int toIndex = NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory();
 		newsMap = new HashMap<String,List<News>>();
 		if(toIndex-fromIndex>MAX) return ERROR;
-	//	newsList = new LinkedList<News>();
 		for(String category:orderOfCategory){
 			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
-		/*	for(News tem:temList){
-				System.out.println(tem.getCategory().getNewscategory()+"  "+tem.getNewsTile());
-			}*/
 			newsMap.put(category, temList);
 		}
-		for(String category:orderOfCategory){
-			List<News> list = newsMap.get(category);
-			
-		}
-		//System.out.println("newsList.size()"+"   "+newsList.size());
 		return SUCCESS;
 	}
 	

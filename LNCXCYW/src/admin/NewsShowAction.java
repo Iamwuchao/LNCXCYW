@@ -1,6 +1,5 @@
 package admin;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -8,7 +7,6 @@ import org.hibernate.Session;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import cache.Cache;
 import mode.News;
 import util.SingletonSessionFactory;
 

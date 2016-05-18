@@ -2,13 +2,13 @@
 <layout:override name="news_content">
 <div class="mycontent">  
 		<div id="chooseExam">
-			<table>
+			<table class="table table-bordered">
 				<s:iterator value="examPaperList" var="i" status="index">
 					<tr class="row" id=<s:property value="#i.id"/> >
 						<%-- <td> <s:property value="#index.count"/> </td> --%>
 						<td> <s:property value="#i.description"/> </td>
 						<td>
-							<button type="button" class="btn btn-primary btn-sm ensure-button">确定</button>
+							<a href="/showExam?paperName=<s:property value="#i.description"/>"><button type="button" class="btn btn-primary btn-sm ensure-button">确定</button></a>
 						</td>
 					</tr>	
 				</s:iterator>

@@ -20,6 +20,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	public NewsDao(){
 		super.setClass(News.class);
 	}
+	
 	/*
 	 * 删除新闻
 	 */

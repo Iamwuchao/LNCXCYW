@@ -3,7 +3,7 @@ package baseaction;
 import java.util.List;
 
 import mode.News;
-import GlobalInfo.HomePageInfo;
+import GlobalInfo.NewsPageInfo;
 import cache.Cache;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -16,8 +16,8 @@ public class BasePageInfoAction extends ActionSupport{
 	private List<News> newestNewsList;//每日推荐新闻列表
 	
 	public BasePageInfoAction(){
-		newestNewsList = Cache.getNewestNewsList(HomePageInfo.HOMEPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
-		pictureNewsList = Cache.getNewsList("图片新闻", 0, 3);//初始化焦点图片新闻
+		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
 	}
 
 	public List<News> getPictureNewsList() {

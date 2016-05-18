@@ -64,6 +64,20 @@ public class Exam{
 		return true;
 	}
 	
+	public boolean addAllExamOptions(ExamTitle title,List<ExamOption> optionsList){
+		if(title == null|| optionsList==null || optionsList.isEmpty()) return false;
+		else if(setOfTitle.contains(title)){
+			
+			//检测选项是否属于这个题目
+			for(ExamOption option:optionsList){
+				if(!title.equals(option.getEmTitle())) return false;
+			}
+			totalPaper.put(title, optionsList);
+			return true;
+		}
+		else return false;
+	}
+	
 	/*
 	 * 获取整个试卷内容,得到totalPaper
 	 */

@@ -6,6 +6,8 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import GlobalInfo.NewsPageInfo;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
@@ -26,8 +28,16 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> list;
 	private String news_address;
 	private List<News> addressList;
+	private List<News> newestNewsList;//每日推荐的新闻列表
+	private List<News> pictureNewsList;//焦点图片新闻列表
 	
-	
+	/*
+	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了,这个构造函数不要删
+	 */
+	public NewsAction(){
+		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		pictureNewsList = Cache.getNewsList("图片新闻", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
+	}
 	
 	@SuppressWarnings("unchecked")
 	public String pictureNews() throws Exception{
@@ -150,4 +160,22 @@ public class NewsAction extends PageGetBaseAction{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public List<News> getNewestNewsList() {
+		return newestNewsList;
+	}
+
+	public List<News> getPictureNewsList() {
+		return pictureNewsList;
+	}
+
+	public void setNewestNewsList(List<News> newestNewsList) {
+		this.newestNewsList = newestNewsList;
+	}
+
+	public void setPictureNewsList(List<News> pictureNewsList) {
+		this.pictureNewsList = pictureNewsList;
+	}
+	
+	
 }

@@ -7,8 +7,6 @@ import GlobalInfo.ExamInfo;
 import baseaction.BasePageInfoAction;
 import cache.Cache;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
@@ -16,6 +14,8 @@ import mode.ExamTitle;
  * 该类主要对应于用户进行素质测评 相关的action
  */
 public class ExamAction extends BasePageInfoAction{
+	
+	private static final long serialVersionUID = 1L;
 	private String paperName;//表明是哪一个试卷
 	private int countOftitle;//抽取该测试类型题目数量
 	private List<ExamTitle> listOftitle;//存储抽取的试卷
@@ -73,7 +73,7 @@ public class ExamAction extends BasePageInfoAction{
 		this.examPaperList = examPaperList;
 	}
 
-	//获取制定类型的试卷
+	//获取指定类型的试卷
 	public String getExamPaper(){
 		ExamPaper exampaper = null;
 		Exam exam = null;
@@ -82,6 +82,8 @@ public class ExamAction extends BasePageInfoAction{
 		}
 		if(exampaper!=null){
 			int count = countOftitle>0?countOftitle:ExamInfo.EXAMINFO.COUNTOFEXAMPAPER;
+			
+			//获取试卷
 			exam = ExamUtil.getExam(exampaper, count);
 			
 			listOftitle = exam.getAllExamTitle();
@@ -95,12 +97,10 @@ public class ExamAction extends BasePageInfoAction{
 	
 	//获取所有试卷类型，对应于choosePaperAction
 	public String getAllExamPaper(){
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		examPaperList = Cache.getAllExamPaper();
-		for(ExamPaper tem:examPaperList){
+	/*	for(ExamPaper tem:examPaperList){
 			System.out.println("paper "+tem.getDescription());
-		}
+		}*/
 		return SUCCESS;
 	}
 	

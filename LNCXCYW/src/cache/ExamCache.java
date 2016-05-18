@@ -14,10 +14,10 @@ import exam.Exam;
 import exam.ExamUtil;
 
 public class ExamCache{
-	private final ConcurrentHashMap<ExamPaper,ArrayList<Exam>> hashmap = new ConcurrentHashMap<ExamPaper,ArrayList<Exam>>();
+	private final ConcurrentHashMap<ExamPaper,ArrayList<Exam>> examMap = new ConcurrentHashMap<ExamPaper,ArrayList<Exam>>();
 	private final LinkedList<ExamPaper> queue = new LinkedList<ExamPaper>();
 	
-	private final HashMap<String,ExamPaper> hashMap = new HashMap<String,ExamPaper>();
+	private final HashMap<String,ExamPaper> paperMap = new HashMap<String,ExamPaper>();
 	private final int countOfExamPaper = 5;
 	
 	ExamCache(){
@@ -25,7 +25,7 @@ public class ExamCache{
 		List<ExamPaper> list = epd.getAllExamPaper();
 		for(ExamPaper tem:list){
 			queue.add(tem);
-			hashMap.put(tem.getDescription(), tem);
+			paperMap.put(tem.getDescription(), tem);
 		}
 		
 		for(ExamPaper paper:list){
@@ -34,13 +34,13 @@ public class ExamCache{
 				Exam exam = ExamUtil.getExam(paper, ExamInfo.EXAMINFO.COUNTOFEXAMPAPER);
 				cachePaper.add(exam);
 			}
-			hashmap.put(paper, cachePaper);
+			examMap.put(paper, cachePaper);
 		}
 	}
 	
 	Exam getExam(ExamPaper paper,int index){
 		if(paper!=null && index>0){
-			List<Exam> list = hashmap.get(paper);
+			List<Exam> list = examMap.get(paper);
 			if(index<list.size()){
 				return list.get(index);
 			}
@@ -59,6 +59,6 @@ public class ExamCache{
 	}
 	
 	public ExamPaper getExamPaper(String description){
-		return hashMap.get(description);
+		return paperMap.get(description);
 	}
 }

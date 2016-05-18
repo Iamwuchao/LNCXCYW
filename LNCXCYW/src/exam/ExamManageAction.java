@@ -2,10 +2,6 @@ package exam;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;

@@ -54,17 +54,27 @@ public class ExamUtil {
 		return list;
 	}
 	
+	/*
+	 * 生成一张指定类型，指定题目数量的试卷
+	 */
 	public static Exam getExam(ExamPaper paper,int countOfTitle){
 		if(paper==null || countOfTitle<=0) return null;
-		Exam newExam = new Exam(paper);
+		
+		Exam newExam = new Exam(paper);//创建新试卷
+		
 		ExamDao ed = new ExamDao();
+		
+		//获取该类型的全部题目ID
 		List<Integer> allTitleId = ed.getAllExamTitleId(paper);
 		ArrayList<Integer> allTitleIdArray = new ArrayList<Integer>(allTitleId);
+		
 		System.out.println("#####################################");
 		System.out.println("ExamUtil allTitleIdArray size is "+allTitleIdArray.size());
 		if(countOfTitle < allTitleIdArray.size()) countOfTitle = allTitleIdArray.size();
+		
+		//随机抽取题目，获取随机题目的列表
 		List<Integer> randomNumbers = RNG(allTitleIdArray.size(),countOfTitle);
-		LinkedList<ExamTitle> titleList = new LinkedList<ExamTitle>();
+		
 		for(int index:randomNumbers){
 			System.out.println("find ExamUtil "+"ExamTitleId "+allTitleIdArray.get(index));
 			ExamTitle title = ed.getExamTitleById(allTitleIdArray.get(index));
@@ -75,7 +85,8 @@ public class ExamUtil {
 				
 			}
 			newExam.addTitle(title);
-			List<ExamOption> options = ed.getExamOptionsOfTitle(title);
+			List<ExamOption> optionsList = ed.getExamOptionsOfTitle(title);
+			newExam.addAllExamOptions(title, optionsList);
 		}
 		return newExam;
 	}

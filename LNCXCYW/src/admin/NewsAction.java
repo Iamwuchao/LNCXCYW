@@ -6,6 +6,8 @@ import java.sql.Date;
 import java.util.List;
 
 
+
+import GlobalInfo.NewsPageInfo;
 import cache.Cache;
 import dao.DaoFactory;
 import dao.NewsDao;
@@ -32,8 +34,16 @@ public class NewsAction extends PageGetBaseAction{
 	private String keyWords;
 	private int newsId;//删除新闻的id
 	
-	
-	
+	private List<News> newestNewsList;//每日推荐的新闻列表
+	private List<News> pictureNewsList;//焦点图片新闻列表
+
+	/*
+	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了
+	 */
+	public NewsAction(){
+		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
+	}
 	
 	/**
 	 * 新闻添加
@@ -224,5 +234,22 @@ public class NewsAction extends PageGetBaseAction{
 		this.categoryList = categoryList;
 	}
 
+	public List<News> getNewestNewsList() {
+		return newestNewsList;
+	}
+
+	public List<News> getPictureNewsList() {
+		return pictureNewsList;
+	}
+
+	public void setNewestNewsList(List<News> newestNewsList) {
+		this.newestNewsList = newestNewsList;
+	}
+
+	public void setPictureNewsList(List<News> pictureNewsList) {
+		this.pictureNewsList = pictureNewsList;
+	}
+
+	
 	
 }
