@@ -2,8 +2,8 @@
 <layout:override name="news_content">
 
 <div>  
-	<p style="text-align:center; font-weight:bold;font-size:16px; font-family:'微软雅黑';">标题：<s:property value="#i.newsTile"/></p>	
-	<p style="text-align:right; color:grey; font-size:12px;">作者：<s:property value="#i.author"/></p>	
+	<p style="text-align:center; font-weight:bold;font-size:16px; font-family:'微软雅黑';">标题：<s:property value="%{addressList.get(0).newsTile}"/></p>	
+	<p style="text-align:right; color:grey; font-size:12px;">作者：<s:property value="%{addressList.get(0).author}"/></p>	
 </div>
 
 
