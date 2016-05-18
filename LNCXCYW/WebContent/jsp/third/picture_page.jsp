@@ -1,5 +1,12 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 <layout:override name="news_content">
+
+<div>  
+	<p style="text-align:center; font-weight:bold;font-size:16px; font-family:'微软雅黑';">标题：<s:property value="#i.newsTile"/></p>	
+	<p style="text-align:right; color:grey; font-size:12px;">作者：<s:property value="#i.author"/></p>	
+</div>
+
+
 <div class="mycontent" id="paginationTableDiv">  
 	<div class="inner" style="margin-top:-35px; margin-left:-10px">
 		<a href="<s:property value="#i.news_address" />">
