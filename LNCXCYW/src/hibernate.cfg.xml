@@ -39,5 +39,6 @@
 		<mapping class="mode.ExamOption"/>
 		<mapping class="mode.ExamTitle"/>
 		<mapping class="mode.ExamPaper"/>
+		<mapping class="mode.ExamEvalution"/>
     </session-factory>
 </hibernate-configuration>

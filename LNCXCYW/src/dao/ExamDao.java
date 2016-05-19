@@ -3,6 +3,7 @@ package dao;
 import java.util.LinkedList;
 import java.util.List;
 
+import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
@@ -53,5 +54,11 @@ public class ExamDao {
 		else{
 			return new LinkedList<ExamOption>();
 		}
+	}
+	
+	public List<ExamEvalution> getAllExamEvalutionByPaper(ExamPaper paper){
+		if(paper == null) return new LinkedList<ExamEvalution>();
+		ExamEvalutionDao eed = (ExamEvalutionDao) DaoFactory.getDaoByName(ExamEvalutionDao.class);
+		return eed.getExamEvalutionByPaper(paper);
 	}
 }

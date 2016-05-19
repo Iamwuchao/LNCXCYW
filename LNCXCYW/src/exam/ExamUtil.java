@@ -2,12 +2,12 @@ package exam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 import dao.ExamDao;
+import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
@@ -64,26 +64,29 @@ public class ExamUtil {
 		
 		ExamDao ed = new ExamDao();
 		
+		
+		//获取该试卷的所有评价标准
+		List<ExamEvalution> examEvalutionList = ed.getAllExamEvalutionByPaper(paper);
+		newExam.addAllExamEvalution(examEvalutionList);
+		
 		//获取该类型的全部题目ID
 		List<Integer> allTitleId = ed.getAllExamTitleId(paper);
 		ArrayList<Integer> allTitleIdArray = new ArrayList<Integer>(allTitleId);
 		
-		System.out.println("#####################################");
-		System.out.println("ExamUtil allTitleIdArray size is "+allTitleIdArray.size());
 		if(countOfTitle < allTitleIdArray.size()) countOfTitle = allTitleIdArray.size();
 		
 		//随机抽取题目，获取随机题目的列表
 		List<Integer> randomNumbers = RNG(allTitleIdArray.size(),countOfTitle);
 		
 		for(int index:randomNumbers){
-			System.out.println("find ExamUtil "+"ExamTitleId "+allTitleIdArray.get(index));
+		//	System.out.println("find ExamUtil "+"ExamTitleId "+allTitleIdArray.get(index));
 			ExamTitle title = ed.getExamTitleById(allTitleIdArray.get(index));
-			if(title!=null)
+		/*	if(title!=null)
 			System.out.println("Exam Util 70 title "+title.getEmTitle());
 			else{
 				System.out.println("Exam Util 70 title "+" title is null");
 				
-			}
+			}*/
 			newExam.addTitle(title);
 			List<ExamOption> optionsList = ed.getExamOptionsOfTitle(title);
 			newExam.addAllExamOptions(title, optionsList);

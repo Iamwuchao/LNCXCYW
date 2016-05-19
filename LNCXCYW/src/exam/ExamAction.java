@@ -15,6 +15,7 @@ import org.apache.struts2.ServletActionContext;
 
 import baseaction.BasePageInfoAction;
 import cache.Cache;
+import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
@@ -148,7 +149,14 @@ public class ExamAction extends BasePageInfoAction {
 				}
 			}
 		}
-		System.out.println("sum "+sum);
+		List<ExamEvalution> examEvalutionList = exam.getAllExamEvalution();
+		for(ExamEvalution ee:examEvalutionList){
+			if(ee.getLowScore()<=sum && sum<=ee.getHighScore()){
+				this.evaluate = ee.getDescription();
+				System.out.println(this.evaluate);
+				break;
+			}
+		}
 		return SUCCESS;
 	}
 }

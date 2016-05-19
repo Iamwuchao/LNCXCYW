@@ -5,15 +5,20 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
 
+
+//封装一个试卷类
 public class Exam{
-	private ExamPaper paper;
-	private LinkedList<ExamTitle> listOftitle;
+	private ExamPaper paper;//试卷类，表明该试卷的类型
+	private LinkedList<ExamTitle> listOftitle;//题目列表
 	private HashSet<ExamTitle> setOfTitle;
 	private HashMap<ExamTitle,List<ExamOption>> totalPaper;
+	private LinkedList<ExamEvalution> evalutionList;//保存评价标准
+	
 	public Exam(ExamPaper paper){
 		totalPaper = new HashMap<ExamTitle,List<ExamOption>>();
 		setOfTitle = new HashSet<ExamTitle>();
@@ -92,5 +97,22 @@ public class Exam{
 	
 	public List<ExamTitle> getAllExamTitle(){
 		return this.listOftitle;
+	}
+	
+	//获取所有的评价规则
+	public List<ExamEvalution> getAllExamEvalution(){
+		return this.evalutionList;
+	}
+	
+	public boolean addAllExamEvalution(List<ExamEvalution> examEvalutionList){
+		for(ExamEvalution ee : examEvalutionList){
+			//如果有不属于这个试卷的评价标准，直接返回false
+			if(ee.getExamPaper().getId() != paper.getId()) return false;
+		}
+		
+		for(ExamEvalution ee : examEvalutionList){
+			evalutionList.add(ee);
+		}
+		return true;
 	}
 }
