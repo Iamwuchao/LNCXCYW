@@ -12,6 +12,10 @@ import com.opensymphony.xwork2.ActionSupport;
  * 页面上需要有焦点图片和每日推荐内容的action可以继承该类
  */
 public class BasePageInfoAction extends ActionSupport{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 962221283628610701L;
 	private List<News> pictureNewsList;//焦点图片新闻列表
 	private List<News> newestNewsList;//每日推荐新闻列表
 	

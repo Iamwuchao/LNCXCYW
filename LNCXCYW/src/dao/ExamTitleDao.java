@@ -27,7 +27,7 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		Session session = getSession();
 		Criteria criteria=session.createCriteria(ExamTitle.class);
 		criteria.add(Restrictions.eq("emPaper",paper));
-		List list = criteria.list();
+		List<ExamTitle> list = criteria.list();
 		session.close();
 		return list;
 	}

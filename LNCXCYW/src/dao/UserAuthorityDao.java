@@ -52,7 +52,6 @@ public class UserAuthorityDao extends BaseDaoImpl<UserAuthority, Integer>{
 			userAuthority.setCategory(category);
 			save(userAuthority);
 			session.close();
-			
 		}
 	}
 	

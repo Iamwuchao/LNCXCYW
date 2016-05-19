@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import mode.ExamOption;
 import mode.ExamTitle;
-import mode.News;
 
 public class ExamOptionDao extends BaseDaoImpl <ExamOption,Integer>{
 	public ExamOptionDao(){

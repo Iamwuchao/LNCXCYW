@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -12,7 +11,7 @@ public interface BaseDao<T,PK> {
 	/*
 	 * 返回函数是否执行成功 如果中间出现异常可选择向上抛出
 	 */
-		void setClass(Class classType);
+		void setClass(Class<?> classType);
 	 	boolean save(T entity);
 	  	boolean update(T entity);
 	  	boolean delete(T entity);

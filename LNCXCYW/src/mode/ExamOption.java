@@ -14,7 +14,6 @@ import org.hibernate.annotations.FetchMode;
  *该类用于存储一道题的一个选项 
  */
 
-
 @Entity
 public class ExamOption {
 	@Id

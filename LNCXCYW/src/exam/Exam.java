@@ -17,13 +17,14 @@ public class Exam{
 	public Exam(ExamPaper paper){
 		totalPaper = new HashMap<ExamTitle,List<ExamOption>>();
 		setOfTitle = new HashSet<ExamTitle>();
+		listOftitle = new LinkedList<ExamTitle>();
 		if(paper!=null)
 			this.paper = paper;
 	}
 	
 	public boolean addTitle(ExamTitle title){
 		if(title==null) return false;
-		if(!title.getEmPaper().equals(this.paper)) return false;
+		if(title.getEmPaper().getId() != this.paper.getId()) return false;
 		if(!setOfTitle.contains(title)){
 			listOftitle.add(title);
 			setOfTitle.add(title);
@@ -38,7 +39,7 @@ public class Exam{
 		}
 		else{
 			for(ExamTitle title:listOfTitle){
-				if(title.getEmPaper().equals(this.paper))
+				if(title.getEmPaper().getId() == this.paper.getId())
 					addTitle(title);
 				else return false;
 			}
@@ -51,7 +52,7 @@ public class Exam{
 	 */
 	public boolean addExamOption(ExamTitle title,ExamOption examOption){
 		if(title == null|| examOption==null) return false;
-		if(!examOption.getEmTitle().equals(title)) return false;
+		if(examOption.getEmTitle().getEmTitleId() != title.getEmTitleId()) return false;
 		if(this.setOfTitle.contains(title)){
 			List<ExamOption> list = this.totalPaper.get(title);
 			list.add(examOption);
@@ -70,7 +71,7 @@ public class Exam{
 			
 			//检测选项是否属于这个题目
 			for(ExamOption option:optionsList){
-				if(!title.equals(option.getEmTitle())) return false;
+				if(title.getEmTitleId() != option.getEmTitle().getEmTitleId()) return false;
 			}
 			totalPaper.put(title, optionsList);
 			return true;

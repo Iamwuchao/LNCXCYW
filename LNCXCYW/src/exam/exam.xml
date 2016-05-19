@@ -21,10 +21,16 @@
 		
 		<action name="showExam" class="exam.ExamAction" method="getExamPaper">
 			<result name="success">/jsp/exam/showexam.jsp</result>
+			<result name="error">/jsp/homepage/homepage.jsp</result>
 		</action>
 		
 		<action name = "getAllExamPaper" class="exam.ExamAction" method="getAllExamPaper">
 			<result name="success">/jsp/exam/chooseExam.jsp</result>
 		</action>
+		
+		<action name="judgingPaper" class="exam.ExamAction" method="judgingPaper">
+			<result name="success" type="json">evaluate</result>
+		</action>
+		
 	</package>
 </struts>

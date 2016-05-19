@@ -19,7 +19,7 @@ public class ExamCache{
 	
 	private final HashMap<String,ExamPaper> paperMap = new HashMap<String,ExamPaper>();
 	private final int countOfExamPaper = 5;
-	
+
 	ExamCache(){
 		ExamPaperDao epd = (ExamPaperDao) DaoFactory.getDaoByName(ExamPaperDao.class);
 		List<ExamPaper> list = epd.getAllExamPaper();
@@ -39,12 +39,20 @@ public class ExamCache{
 	}
 	
 	Exam getExam(ExamPaper paper,int index){
-		if(paper!=null && index>0){
+		System.out.println("index "+index);
+		if(paper!=null && index>=0){
 			List<Exam> list = examMap.get(paper);
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+			for(Exam exam:list){
+				System.out.println("paperId  "+exam.getExamPaper().getId());
+			}
+			System.out.println("#############################");
 			if(index<list.size()){
 				return list.get(index);
 			}
+			System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 		}
+		System.out.println("************************************");
 		return null;
 	}
 	
@@ -60,5 +68,9 @@ public class ExamCache{
 	
 	public ExamPaper getExamPaper(String description){
 		return paperMap.get(description);
+	}
+	
+	public int getCountOfExamPaper(){
+		return this.countOfExamPaper;
 	}
 }

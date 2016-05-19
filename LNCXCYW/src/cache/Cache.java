@@ -2,7 +2,9 @@ package cache;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
+import exam.Exam;
 import mode.ExamPaper;
 import mode.News;
 import mode.NewsCategory;
@@ -67,6 +69,13 @@ public class Cache {
 	
 	public static List<ExamPaper> getAllExamPaper(){
 		return cache.examCache.getAllExamPaper();
+	}
+	
+	public static Exam getExamByPaperRandom(ExamPaper paper){
+		int range = cache.examCache.getCountOfExamPaper();
+		Random random = new Random(System.currentTimeMillis());
+		int index = random.nextInt(range);
+		return cache.examCache.getExam(paper, index);
 	}
 	
 	public static ExamPaper getExamPaper(String description){
