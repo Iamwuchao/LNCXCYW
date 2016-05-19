@@ -30,6 +30,7 @@ public class UserAuthorityDao extends BaseDaoImpl<UserAuthority, Integer>{
 		userAuthorities.setUserAuthoritiyList(list);
 //		userAuthorities.setAuthorityArray(authorityArray);
 //	}
+		session.close();
 	return userAuthorities;
 }
 	public void addAuthorityForUser(User user, NewsCategory category){
@@ -41,6 +42,7 @@ public class UserAuthorityDao extends BaseDaoImpl<UserAuthority, Integer>{
 				.list();
 		//用户已经有了该权限
 		if (list.size()>0) {
+			session.close();
 			return;
 		}
 		//如果用户没有改权限，则给用户增加该权限
@@ -73,6 +75,7 @@ public class UserAuthorityDao extends BaseDaoImpl<UserAuthority, Integer>{
 		}
 		//
 		else {
+			session.close();
 			return;
 		}
 	

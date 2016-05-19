@@ -18,6 +18,7 @@ public List<User> findUserByEmail(String email){
 	Session session = getSession();
 	Criteria criteria = session.createCriteria(User.class);
 	list = criteria.add(Restrictions.eq("mail", email)).list();
+	session.close();
 	return list;
 }
 
@@ -27,6 +28,7 @@ public List<User> findUserByEmailAndPass(String email,String pass){
 	Criteria criteria = session.createCriteria(User.class);
 	list = criteria.add(Restrictions.eq("mail", email))
 			.add(Restrictions.eq("password", pass)).list();
+	session.close();
 	return list;
 }
 public List<User> findAvaliableUser(String email,String pass){
@@ -36,6 +38,7 @@ public List<User> findAvaliableUser(String email,String pass){
 	list = criteria.add(Restrictions.eq("mail", email))
 			.add(Restrictions.eq("password", pass))
 			.add(Restrictions.eq("avaliable", true)).list();
+	session.close();
 	return list;
 }
 public List<User> findAvaliableSuperUser(String email,String pass){
@@ -46,6 +49,7 @@ public List<User> findAvaliableSuperUser(String email,String pass){
 			.add(Restrictions.eq("password", pass))
 			.add(Restrictions.eq("avaliable", true))
 			.add(Restrictions.eq("role", 1)).list();
+	session.close();
 	return list;
 }
 /**
@@ -57,6 +61,7 @@ public List<User> listUserIsTreated(boolean isAvaliable){
 	Session session = getSession();
 	Criteria criteria = session.createCriteria(User.class);
 	list = criteria.add(Restrictions.eq("avaliable", isAvaliable)).list();
+	session.close();
 	return list;
 }
 /**
@@ -73,6 +78,7 @@ public boolean updateUserIsAvaliable(int id, boolean isAvaliable){
 Query q=session.createQuery(hql);
 int ret = q.executeUpdate();
 trans.commit();
+session.close();
 if (ret>0) {
 	return true;
 }
