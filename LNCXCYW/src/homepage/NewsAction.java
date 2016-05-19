@@ -1,6 +1,7 @@
 package homepage;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -76,7 +77,16 @@ public class NewsAction extends PageGetBaseAction{
 			
 			session.close();
 		}else{//根据参数获取对应类别
-			newsList=Cache.getNewsList(category, 0, 200);
+			Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
+			if(map.containsKey(category)){
+				List<String> list=map.get(category);
+				for(String cate:list){
+					System.out.println(cate);
+					newsList.addAll(Cache.getNewsList(cate, 0, 200));
+				}
+			}else{
+				newsList=Cache.getNewsList(category, 0, 200);
+			}
 			newsList=makeCurrentPageList(newsList, 10);
 		}
 		list = Cache.getNewestNewsList(12);
