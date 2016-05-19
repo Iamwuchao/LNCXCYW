@@ -4,7 +4,7 @@
 		<th style="display:none;">编号</th>
 		<th>题目</th>
 		<th>选项</th>
-		<!-- <th>操作</th> -->
+		<!--  <th>操作</th> -->
 	</tr>
 	
 	<%--   <s:iterator value="qtitle" var="i"  begin="0" end="qtitle.size()-1" step="1"> --%>
@@ -28,10 +28,10 @@
 				</s:iterator>
 			</td>
 			
-			<!-- <td>
+			 <!-- <td>
 				<button type="button" class="btn btn-success edit">编辑</button>&nbsp;&nbsp;
 				<button type="button" class="btn btn-danger delete">删除</button>
-			</td> -->
+			</td>  -->
 		</tr>
 	</s:iterator>  
   	

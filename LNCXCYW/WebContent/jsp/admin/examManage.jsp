@@ -198,7 +198,7 @@
 			addOption();
 			var cntOption = $(".optionContent:last");
 			$(cntOption).find(".optionInput").val($(this).attr("optionText"));			
-			if(isRight == "true")
+			/* if(isRight == "true")
 			{				
 				
 				$(cntOption).find(".optionCheck").attr("checked",true);
@@ -206,7 +206,7 @@
 			else
 			{
 				$(cntOption).find(".optionCheck").attr("checked",false);
-			}
+			} */
 		})
 		$('#emModal').css("display","block");
 		
@@ -277,7 +277,8 @@
 	function getParams()
 	{
 		//var emTextarea = $("#titleInput .editor").html();
-		var emTextarea = UE.getEditor('editor').getContent();
+		//var emTextarea = UE.getEditor('editor').getContent();
+		var emTextarea = UE.getEditor('editor').getContentTxt();
 		var optionList = new Array();
 		$(".optionContent #optionInput").each(function(){
 			optionList.push($(this).val());
