@@ -42,7 +42,9 @@ public class ExamTitleDao extends BaseDaoImpl <ExamTitle,Integer>{
 		criteria.add(Restrictions.idEq(id));
 		List<ExamTitle> list = criteria.list();
 		if(list!=null && list.size() > 0){
-			return list.get(0);
+			ExamTitle tile = list.get(0);
+			session.close();
+			return tile;
 		}
 		session.close();
 		return null;

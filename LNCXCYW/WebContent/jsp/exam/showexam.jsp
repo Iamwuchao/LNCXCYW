@@ -68,9 +68,6 @@ function myonclick(){
 			checkedOptionList.push(cid);
 		}		
 	}
-	for(var j=0;j<checkedOptionList.length;++j){
-		console.log(checkedOptionList[j]);
-	}
 	$.ajax({
 		url : 'judgingPaper',
 		type : 'post',
