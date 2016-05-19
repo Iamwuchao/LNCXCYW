@@ -33,6 +33,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			criteria.add(Restrictions.eq("id", id));
 			news=(News)criteria.list().get(0);
 		}catch(Exception e){
+			session.close();
 			throw new Exception("wrong id!");
 		}
 		
@@ -97,6 +98,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		Criteria criteria=session.createCriteria(News.class);
 		criteria.add(Restrictions.between("date", start, end));
 		re=criteria.list();
+		session.close();
 		return re;
 	}
 	
@@ -111,6 +113,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		Criteria criteria=session.createCriteria(News.class);
 		criteria.add(Restrictions.like("newsTile", "%"+keyword+"%"));
 		re=criteria.list();
+		session.close();
 		return re;
 	}
 	
