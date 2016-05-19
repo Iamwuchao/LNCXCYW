@@ -19,6 +19,17 @@
 			</result>
 		</action>
 		
+		<action name="examPreshow" class="exam.ExamManageAction" method="examPreShow">
+			<result name="success" type="json">
+				<param name="includeProperties">*</param>   
+			</result>
+		</action>
+		
+		<action name="examEvaAdd" class="exam.ExamManageAction" method="examEvaAdd" >
+			<result name="success" type="json">
+				<param name="includeProperties">*</param>   
+			</result>
+		</action>
 		<action name="showExam" class="exam.ExamAction" method="getExamPaper">
 			<result name="success">/jsp/exam/showexam.jsp</result>
 			<result name="error">/jsp/homepage/homepage.jsp</result>

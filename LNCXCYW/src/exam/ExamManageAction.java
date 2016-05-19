@@ -6,8 +6,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
 import dao.DaoFactory;
+import dao.ExamEvalutionDao;
 import dao.ExamOptionDao;
 import dao.ExamTitleDao;
+import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
@@ -24,6 +26,11 @@ public class ExamManageAction {
 	private List<List<ExamOption> > qoption = new ArrayList<List<ExamOption>>();
 	private List<ExamTitle> qtitle = new ArrayList<>();
 	
+	
+	//试卷评价相关变量
+	private List<Integer> emEvaLowList;
+	private List<Integer> emEvaHighList;
+	private List<String> emEvaDesList;
 	/*
 	 * 添加试题
 	 */
@@ -93,7 +100,47 @@ public class ExamManageAction {
 		exam_table = util.JspToHTML.getJspOutput("/jsp/admin/widgets/examManageTable.jsp");
 		return ActionSupport.SUCCESS;
 	}
+	/**
+	 * 试卷评价插入
+	 * @return
+	 */
+	public String examEvaAdd(){
+		ExamPaper examPaper=Cache.getExamPaper(category);
+		ExamEvalutionDao examEvaDao = new ExamEvalutionDao();
+		for(int i=0;i<emEvaDesList.size();i++){
+			ExamEvalution evalution = new ExamEvalution();
+			evalution.setDescription(emEvaDesList.get(i));
+			evalution.setExamPaper(examPaper);
+			evalution.setHighScore(emEvaHighList.get(i));
+			evalution.setLowScore(emEvaLowList.get(i));
+			examEvaDao.save(evalution);
+		}
+		
+		
+		
+		 status="3";
+		 return ActionSupport.SUCCESS;
+	 }
 	
+	/**
+	 * 试卷预览
+	 * @return
+	 */
+	public String examPreShow(){
+		
+		ExamPaper examPaper=Cache.getExamPaper(category);
+		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
+		//插入成功以后将题目和选项提出来显示在页面
+		 qtitle = dao.getAllExamTitle(examPaper);
+		 ExamOptionDao dao2=(ExamOptionDao)DaoFactory.getDaoByName(ExamOptionDao.class);
+		 for ( ExamTitle title : qtitle) {
+				qoption.add(dao2.getAllExamOption(title)) ;
+			}
+		exam_table = util.JspToHTML.getJspOutput("/jsp/admin/widgets/examManageTable.jsp");
+		status="2";
+		return ActionSupport.SUCCESS;
+	}
+	 
 	public List<List<ExamOption>> getQoption() {
 		return qoption;
 	}
@@ -183,6 +230,42 @@ public class ExamManageAction {
 
 	public void setExam_table(String exam_table) {
 		this.exam_table = exam_table;
+	}
+
+
+
+	public List<Integer> getEmEvaLowList() {
+		return emEvaLowList;
+	}
+
+
+
+	public void setEmEvaLowList(List<Integer> emEvaLowList) {
+		this.emEvaLowList = emEvaLowList;
+	}
+
+
+
+	public List<Integer> getEmEvaHighList() {
+		return emEvaHighList;
+	}
+
+
+
+	public void setEmEvaHighList(List<Integer> emEvaHighList) {
+		this.emEvaHighList = emEvaHighList;
+	}
+
+
+
+	public List<String> getEmEvaDesList() {
+		return emEvaDesList;
+	}
+
+
+
+	public void setEmEvaDesList(List<String> emEvaDesList) {
+		this.emEvaDesList = emEvaDesList;
 	}
 	
 }

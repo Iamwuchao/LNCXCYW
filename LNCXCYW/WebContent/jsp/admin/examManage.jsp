@@ -43,14 +43,15 @@
 			theme="simple"></s:select>  --%>
 		<!-- Button trigger modal -->
 <button type="button" id="addExam" class="btn btn-primary btn-lg">添加题目</button>
-
+<button type="button" id="addExamEva" class="btn btn-primary btn-lg">添加试卷评判标准</button>
+<button type="button" id="showExam" class="btn btn-primary btn-lg">题目预览</button>
 <!-- 文本编辑框 -->
 <div id="emModal" style="display:none;">
 	<div class="modal-header">
     	<h2 class="modal-title" id="myModalLabel">添加题目</h2>
 	</div>
 	
-	<div class="modal-body">
+	<div class="modal-body"align="center">
 		<b>题目描述 </b>
 		<form id="exam_form" titleId>
 			<div id="titleInput">
@@ -60,7 +61,7 @@
 			
 			<br/>
 			
-			<span style="color:red">请勾选正确选项</span>
+			<!-- <span style="color:red">请勾选正确选项</span> -->
 			
 			<div style="display:none" class="option">
 			 	<div class="form-inline form-group toc optionContent" id="optionLine">
@@ -85,17 +86,52 @@
 
 
 
-<br/>
+<!-- 添加试卷评判标准文本编辑框 -->
+<div id="emEvaModal" style="display:none;">
+	<div class="modal-header">
+    	<h2 class="modal-title" id="myEvaModalLabel">添加试卷评判标准</h2>
+	</div>
+	
+	<div class="modal-body"align="center">
+		
+		<form id="examEva_form" >
+			
+			<br/>
+			
+			
+			
+			<div style="display:none" class="evaOption">
+			 	<div class="form-inline form-group toc evaOptionContent" id="evaOptionLine">
+			  		<!-- <input type="checkbox" class="optionCheck"> -->
+			    	<label for="evaOptionInput">评判标准:</label>
+			    	<textarea class="form-control evaOptionInput" id="evaOptionInput" rows="3" cols="80" placeholder="评价描述"></textarea>
+			    	<input type="number"  class="form-control evaLowCheck" placeholder="分数段下限"  id="evaLowCheck" >
+			    	<input type="number"  class="form-control evaHighCheck" placeholder="分数段上限"  id="evaHighCheck" >
+			    	<button type="button" class="btn btn-primary" id="evaOptionRemove"> 移除</button>
+			 	</div>
+			 </div>
+			<br>
+		</form>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" id="addEvaOption">添加选项</button>
+    	<button type="button" class="btn btn-default" id="closeEva" data-dismiss="modal">关闭</button>
+    	<button type="button" class="btn btn-primary" id="examEvaInsert" >保存</button>
+	</div>
+</div>
 
 <br/>
 
-<div id="examTableDiv">
+<br/>
+
+<div id="examTableDiv"  style="display:none;">
 	<%@ include file="/jsp/admin/widgets/examManageTable.jsp" %>
 </div>
 
 
 <script type='text/javascript' src="/js/base/bootstrap-wysiwyg.js"></script>
-
+<!-- <script type="text/javascript" src="/jsp/admin/examManage.js"></script> -->
 <script>
 	
 
@@ -141,8 +177,24 @@
 	function emInsertCallback(data){
 		if(data.status == "1") {
 			$(document).find("#examTableDiv").html(data.exam_table);
+			$('#examTableDiv').css("display","inline");
 			$('#emModal').css("display","none");
 			alert("插入成功！ ");
+		}
+		else if(data.status == "2") {
+			$(document).find("#examTableDiv").html(data.exam_table);
+			$('#examTableDiv').css("display","inline");
+			$('#emModal').css("display","none");
+			
+			//alert("插入成功！ ");
+		}
+		else if(data.status == "3") {
+			/* $(document).find("#examTableDiv").html(data.exam_table);
+			$('#examTableDiv').css("display","inline"); */
+			$('#emModal').css("display","none");
+			$('#emEvaModal').css("display","none");
+			
+			alert("评价标准插入成功！ ");
 		}
 	}
 	
@@ -235,6 +287,7 @@
 	function editTitleCallBack(data){
 		if(data.status == "1") {
 			$(document).find("#examTableDiv").html(data.exam_table);
+			$('#examTableDiv').css("display","inline");
 			alert("更改成功！ ");
 		}
 	}
@@ -258,6 +311,7 @@
 	
 	
 	$(document).on("click","#addExam",function(){
+		$('#emEvaModal').css("display","none");
 		$('#emModal').css('display','block');
 		$('#emModal').find(".modal-title").html("新增题目");
 		clearModal();
@@ -313,7 +367,116 @@
 
 	}
 	
+
 	
+	
+	
+	/**
+	 * 与试卷评判部分有关的js
+	 */
+	var evaOptionHtml = $(".evaOption").html();
+	
+	$(".evaOption").remove();
+	//清除编辑评价所有内容
+	function clear(){
+		$(".evaOptionContent").each(function(){
+			$(this).remove();
+		})}
+	//新增分数段评价
+	function addEvaOption(){
+		//alert(evaOptionHtml);
+		
+			$("#examEva_form").append(evaOptionHtml);
+		}
+	//将当前的分数段编辑移除
+	$(document).on("click","#evaOptionRemove",function(){
+		$(this).parents("#evaOptionLine").remove();
+	})
+	//试卷评价插入
+	function insertEva(){
+		var params = getEvaParams();
+		$.ajax({
+			url:'examEvaAdd',
+			type:'post',
+			dataType:'json',
+			data:params,
+			traditional:true,
+			success:emInsertCallback
+		});
+	}
+	//插入试卷评价成功的回调函数
+	function emEvaInsertCallback(data){
+		if(data.status == "1") {
+			//$(document).find("#examTableDiv").html(data.exam_table);
+			$('#emEvaModal').css("display","none");
+			alert("插入成功！ ");
+		}
+	}
+	//点击“关闭”
+	$(document).on("click","#closeEva",function(){
+		clear();
+		$('#emEvaModal').css("display","none");
+	})
+	//添加分数段
+	$(document).on("click","#addEvaOption",addEvaOption);
+	//添加试卷评判标准
+	$(document).on("click","#addExamEva",function(){
+		$('#examTableDiv').css("display","none");
+		$('#emModal').css('display','none');
+		$('#emEvaModal').css('display','block');
+		$('#emEvaModal').find(".modal-title").html("添加试卷评判标准");
+		clear();
+	})
+	//“保存”
+	$(document).on("click", "#examEvaInsert", function(){
+			var judge = $('#emEvaModal').find(".modal-title").html();
+			if(judge == "编辑试卷评判标准")
+			{
+				//editTitle();
+			}
+			else insertEva();
+		})
+
+	function getEvaParams(){
+		var emEvaDesList = new Array();
+		var emEvaLowList = new Array();
+		var emEvaHighList = new Array();
+		var paperCatogery = $("#categoryListSel option:selected").val();
+		$(".evaOptionContent #evaOptionInput").each(function(){
+			emEvaDesList.push($(this).val());
+		})
+		$(".evaOptionContent #evaLowCheck").each(function(){
+			emEvaLowList.push($(this).val());
+		})
+		$(".evaOptionContent #evaHighCheck").each(function(){
+			emEvaHighList.push($(this).val());
+		})
+		var params = {
+			"emEvaDesList": emEvaDesList,
+			"emEvaLowList":emEvaLowList,
+			"emEvaHighList":emEvaHighList,
+			"category":paperCatogery
+		};
+		return params;
+		
+	}
+	
+	
+	/* 题目预览 */
+	$(document).on("click","#showExam",function(){
+		var paperCatogery = $("#categoryListSel option:selected").val();
+		alert(paperCatogery);
+		$.ajax({
+			url : 'examPreshow',
+			type : 'post',
+			dataType : 'json',
+			data : {
+				category:paperCatogery
+			},
+			traditional : true,
+			success : emInsertCallback
+		});
+	})
 </script>
 
 		
@@ -321,6 +484,5 @@
 	 </div>  
 
 </layout:override>
-
 
 <%@ include file="/jsp/basepages/menu_base.jsp" %>
