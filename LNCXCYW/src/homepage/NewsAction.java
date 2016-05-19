@@ -1,5 +1,6 @@
 package homepage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -79,6 +80,7 @@ public class NewsAction extends PageGetBaseAction{
 		}else{//根据参数获取对应类别
 			Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
 			if(map.containsKey(category)){
+				newsList=new ArrayList<News>();
 				List<String> list=map.get(category);
 				for(String cate:list){
 					System.out.println(cate);

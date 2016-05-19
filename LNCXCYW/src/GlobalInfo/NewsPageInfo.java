@@ -21,7 +21,7 @@ public enum NewsPageInfo {
 	@SuppressWarnings("serial")
 	private final Map<String, List<String>> map=new HashMap<String, List<String>>(){
 		{
-			put("创新创业咨询", new ArrayList<String>(Arrays.asList(zixun)));
+			put("创新创业资讯", new ArrayList<String>(Arrays.asList(zixun)));
 			put("创新创业训练", new ArrayList<String>(Arrays.asList(xunlian)));
 			put("创新创业竞赛", new ArrayList<String>(Arrays.asList(jingsai)));
 			put("创新创业资源", new ArrayList<String>(Arrays.asList(ziyuan)));
