@@ -78,17 +78,7 @@ public class NewsAction extends PageGetBaseAction{
 			
 			session.close();
 		}else{//根据参数获取对应类别
-			Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
-			if(map.containsKey(category)){
-				newsList=new ArrayList<News>();
-				List<String> list=map.get(category);
-				for(String cate:list){
-					System.out.println(cate);
-					newsList.addAll(Cache.getNewsList(cate, 0, 200));
-				}
-			}else{
-				newsList=Cache.getNewsList(category, 0, 200);
-			}
+			newsList=getNewsListByCategory(category, 0, 200);
 			newsList=makeCurrentPageList(newsList, 10);
 		}
 		list = Cache.getNewestNewsList(12);
@@ -109,14 +99,33 @@ public class NewsAction extends PageGetBaseAction{
 	@SuppressWarnings("unchecked")
 	public String newsPage(){
 		System.out.println("newsPage:"+category);
-		newsList=Cache.getNewsList(category, 0, 200);
+		newsList=getNewsListByCategory(category, 0, 200);
 		newsList=makeCurrentPageList(newsList, 12);
 		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
 		return ActionSupport.SUCCESS;
-		
 	}
 
-	
+	/*
+	 * 获取新闻分类
+	 * 
+	 * 由于分类加了大类，category不能直接用
+	 * 用来替代之前的 Cache.getNewsList(category, start, end)
+	 */
+	private static List<News> getNewsListByCategory(String category, int start, int end){
+		Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
+		List<News> re;
+		if(map.containsKey(category)){
+			re=new ArrayList<News>();
+			List<String> list=map.get(category);
+			for(String cate:list){
+				System.out.println(cate);
+				re.addAll(Cache.getNewsList(cate, start, end));
+			}
+		}else{
+			re=Cache.getNewsList(category, start, end);
+		}
+		return re;
+	}
 	
 	/*
 	 * getters and setters
