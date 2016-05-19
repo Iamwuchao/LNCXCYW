@@ -66,7 +66,7 @@ $(document).on("click","#login", function (){
 	if(checkPassword() && checkEmail()){
   var email = $("#email").val();
     var password = $("#password").val();
-  alert(email+password);
+  //alert(email+password);
     var params={
     		password : password,
     		email : email,
@@ -96,7 +96,7 @@ function checkPassword(){
 	if(password=="")
 		{
 			alert("不能为空");
-			$('#password').focus();
+			//$('#password').focus();
 			return false;
 		}
 	return true;
@@ -109,7 +109,7 @@ function checkEmail(){
 	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
 	if(!reg.test(email)){
 		alert("请填入有效的邮箱");
-		 $("#email").focus();
+		// $("#email").focus();
 		return false;
 	}
 	return true;
