@@ -23,6 +23,7 @@ public class Exam{
 		totalPaper = new HashMap<ExamTitle,List<ExamOption>>();
 		setOfTitle = new HashSet<ExamTitle>();
 		listOftitle = new LinkedList<ExamTitle>();
+		evalutionList = new LinkedList<ExamEvalution>();
 		if(paper!=null)
 			this.paper = paper;
 	}

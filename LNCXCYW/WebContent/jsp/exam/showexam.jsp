@@ -11,18 +11,19 @@
 							<span><s:property value="#i + 1"/>.&nbsp;
 							<s:property value="listOftitle.get(#i).emTitle" escape="false"/></span>
 						</li>
-						
-						<s:iterator var = "j" begin = "0" end = "optionsOfTitle.get(#i).size() - 1">
-							<li>
-								<div opId=<s:property value="optionsOfTitle.get(#i).get(#j).emId" /> 
-								     class="opToback">
-										<input id="<s:property value='optionsOfTitle.get(#i).get(#j).emOpId'/>" type="checkbox" class="checks checkOption "/>
-									<span class="">&nbsp;<s:property value="intToChar(#j)" />&nbsp;</span>
-									<s:property value="optionsOfTitle.get(#i).get(#j).emOption" />								
-								</div>
-							</li>
-						</s:iterator>
-
+							<s:iterator var = "j" begin = "0" end = "optionsOfTitle.get(#i).size() - 1">
+								<li>
+									<div opId=<s:property value="optionsOfTitle.get(#i).get(#j).emId" /> 
+									     class="opToback">
+										<input id="<s:property value='optionsOfTitle.get(#i).get(#j).emOpId'/>" 
+										name="<s:property value='#i'/>" 
+										type="radio"
+										 class="checks checkOption "/> 	
+										<span class="">&nbsp;<s:property value="optionsOfTitle.get(#i).get(#j).emStrID" />&nbsp;</span>
+										<s:property value="optionsOfTitle.get(#i).get(#j).emOption" />								
+									</div>
+								</li>
+							</s:iterator>
 					</dl>
 				</s:iterator>
 				<div class="center-block" style="max-width:300px;">
@@ -79,8 +80,10 @@ function myonclick(){
 	});
 }
 
-function checkChangeCallback(){
-	alert("success");
+function checkChangeCallback(date){
+	//alert(date.evaluate);
+	var newcontent = "<p>"+date.evaluate+"</p>";
+	document.getElementById("exCont").innerHTML = newcontent;
 }
 
 function checkerror(){

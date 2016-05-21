@@ -149,6 +149,7 @@ public class ExamAction extends BasePageInfoAction {
 				}
 			}
 		}
+		
 		List<ExamEvalution> examEvalutionList = exam.getAllExamEvalution();
 		for(ExamEvalution ee:examEvalutionList){
 			if(ee.getLowScore()<=sum && sum<=ee.getHighScore()){
