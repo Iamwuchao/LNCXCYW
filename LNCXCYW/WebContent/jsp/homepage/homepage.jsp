@@ -382,8 +382,8 @@
   		<div id="third_con1" style=" margin-right: 10px" class="congray">
 	  		<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="five1" onmouseover="setTabsnow('five',1,2)" class="curnews">创新训练</li></a>
-	         		<li id="five2" onmouseover="setTabsnow('five',2,2)" >创业实践</li>
+	         		<a href="/second_page?category=创新训练" target="_blank"><li id="five1" onmouseover="setTabsnow('five',1,2)" class="curnews">创新训练</li></a>
+	         		<a href="/second_page?category=创业实践" target="_blank"><li id="five2" onmouseover="setTabsnow('five',2,2)" >创业实践</li></a>
 	         	</ul>
 	         </div>
 	         <div class="clear"></div>
@@ -452,8 +452,8 @@
 	        <div id="third_con2" style=" margin-right: 10px" class="conblue">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="six1" onmouseover="setTabsnow('six',1,2)" class="curnews">创新创业年会</li></a>
-	         		<li id="six2" onmouseover="setTabsnow('six',2,2)" >优秀创新创业作品</li>
+	         		<a href="/second_page?category=创新创业年会" target="_blank"><li id="six1" onmouseover="setTabsnow('six',1,2)" class="curnews">创新创业年会</li></a>
+	         		<a href="/second_page?category=优秀创新创业作品" target="_blank"><li id="six2" onmouseover="setTabsnow('six',2,2)" >优秀创新创业作品</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -523,8 +523,8 @@
 	        <div id="third_con3" class="congray">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">创新创业典型</li></a>
-	         		<li id="seven2" onmouseover="setTabsnow('seven',2,2)" >他山之石</li>
+	         		<a href="/second_page?category=创新创业典型" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">创新创业典型</li></a>
+	         		<a href="/second_page?category=他山之石" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >他山之石</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -598,8 +598,8 @@
        		<div id="fourth_con1" style=" margin-right: 10px" class="conblue">
        			<div id="fourth_con2" class="name">
 		  		<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="eight1" onmouseover="setTabsnow('eight',1,2)" class="curnews">创新创业培训</li></a>
-	         		<li id="eight2" onmouseover="setTabsnow('eight',2,2)" >创新创业理论</li>
+	         		<a href="/second_page?category=创新创业培训" target="_blank"><li id="eight1" onmouseover="setTabsnow('eight',1,2)" class="curnews">创新创业培训</li></a>
+	         		<a href="/second_page?category=创新创业理论" target="_blank"><li id="eight2" onmouseover="setTabsnow('eight',2,2)" >创新创业理论</li></a>
 	         	</ul>
 		  	</div>
 		  	<div class="clear"></div>
@@ -669,8 +669,8 @@
 		 	<div id="fourth_con2" style="margin-right:10px" class="congray">
 		 		 	<div id="fourth_con2" class="name">
 		  		<ul style="width:100%;height:36px;overflow:hidden">
-	         		<a href="#" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业教材</li></a>
-	         		<li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业课程</li>
+	         		<a href="/second_page?category=创新创业教材" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业教材</li></a>
+	         		<a href="/second_page?category=创新创业课程" target="_blank"><li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业课程</li></a>
 	         	</ul>
 		  	</div>
 		  	<div class="clear"></div>
