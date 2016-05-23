@@ -62,7 +62,7 @@ public class ExamManageAction {
 		status="0";
 		ExamTitle etitle=new ExamTitle();
 		etitle.setEmTitle(title);
-		ExamPaper examPaper=Cache.getExamPaper(category);
+		ExamPaper examPaper=Cache.getExamPaperByName(category);
 		etitle.setEmPaper(examPaper);
 		
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
@@ -105,7 +105,7 @@ public class ExamManageAction {
 	 * @return
 	 */
 	public String examEvaAdd(){
-		ExamPaper examPaper=Cache.getExamPaper(category);
+		ExamPaper examPaper=Cache.getExamPaperByName(category);
 		ExamEvalutionDao examEvaDao = new ExamEvalutionDao();
 		for(int i=0;i<emEvaDesList.size();i++){
 			ExamEvalution evalution = new ExamEvalution();
@@ -128,7 +128,7 @@ public class ExamManageAction {
 	 */
 	public String examPreShow(){
 		
-		ExamPaper examPaper=Cache.getExamPaper(category);
+		ExamPaper examPaper=Cache.getExamPaperByName(category);
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
 		//插入成功以后将题目和选项提出来显示在页面
 		 qtitle = dao.getAllExamTitle(examPaper);

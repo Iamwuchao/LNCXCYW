@@ -1,10 +1,15 @@
 package homepage;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+
 import GlobalInfo.NewsPageInfo;
+
 import com.opensymphony.xwork2.ActionSupport;
+
 import cache.Cache;
+import mode.ExamPaper;
 import mode.News;
 
 public class HomePageAction extends ActionSupport{
@@ -49,7 +54,27 @@ public class HomePageAction extends ActionSupport{
 			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
 			newsMap.put(category, temList);
 		}
+		
+		List<News> szcpList = initSuzhiceping();
+		//special 素质测评
+		newsMap.put("素质测评", szcpList);
+
 		return SUCCESS;
+	}
+	
+	//初始化素质测评模块
+	private List<News> initSuzhiceping(){
+		final String url = "/showExam?paperName=";
+		List<ExamPaper> paperList = Cache.getAllExamPaper();
+		LinkedList<News> szcpList = new LinkedList<News>();
+		for(ExamPaper paper:paperList){
+			News szcp = new News();
+			String address = url+paper.getName();
+			szcp.setNews_address(address);
+			szcp.setNewsTile(paper.getName());
+			szcpList.add(szcp);
+		}
+		return szcpList;
 	}
 	
 }

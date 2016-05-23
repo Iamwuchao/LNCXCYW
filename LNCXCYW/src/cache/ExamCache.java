@@ -66,8 +66,8 @@ public class ExamCache{
 		return newlist;
 	}
 	
-	public ExamPaper getExamPaper(String description){
-		return paperMap.get(description);
+	public ExamPaper getExamPaperByName(String name){
+		return paperMap.get(name);
 	}
 	
 	public int getCountOfExamPaper(){

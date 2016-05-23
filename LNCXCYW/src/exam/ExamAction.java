@@ -97,7 +97,7 @@ public class ExamAction extends BasePageInfoAction {
 		ExamPaper exampaper = null;
 		Exam exam = null;
 		if(paperName!=null){
-			exampaper = Cache.getExamPaper(paperName);
+			exampaper = Cache.getExamPaperByName(paperName);
 		}
 		if(exampaper!=null){
 			//获取试卷

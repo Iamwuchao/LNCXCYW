@@ -10,10 +10,10 @@ import mode.News;
 import mode.NewsCategory;
 
 public class Cache {
-	private NewCategoryCache categoryCache;//新闻栏目缓存
-	private NewsCache newsCache;//新闻列表缓存 各个栏目
-	private NewestNewsCache newestNews;//最新新闻列表缓存
-	private ExamCache examCache = new ExamCache();//考试试卷缓存
+	private final NewCategoryCache categoryCache;//新闻栏目缓存
+	private final NewsCache newsCache;//新闻列表缓存 各个栏目
+	private final NewestNewsCache newestNews;//最新新闻列表缓存
+	private final ExamCache examCache = new ExamCache();//考试试卷缓存
 	private static final Cache cache = new Cache();
 	
 	//初始化各个缓存
@@ -78,8 +78,8 @@ public class Cache {
 		return cache.examCache.getExam(paper, index);
 	}
 	
-	public static ExamPaper getExamPaper(String description){
-		return cache.examCache.getExamPaper(description);
+	public static ExamPaper getExamPaperByName(String name){
+		return cache.examCache.getExamPaperByName(name);
 	}
 	public static void clear(){
 		cache.categoryCache.destory();

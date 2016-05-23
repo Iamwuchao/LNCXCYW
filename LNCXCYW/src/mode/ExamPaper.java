@@ -15,6 +15,10 @@ public class ExamPaper {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;//试卷ID
 	
+	//试卷名称
+	@Column(length = 500)
+	private String name;//试卷名称
+	
 	@Column(length = 5000)//考题描述
 	private String description;
 	
@@ -33,4 +37,14 @@ public class ExamPaper {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }
