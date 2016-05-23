@@ -202,6 +202,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 }
 .con3 ul li{
 	background:url(../images/libg.png) no-repeat right top;
+	background-repeat: repeat;
 	height:50px;
 	font:18px 微软雅黑;
 	color:#FFFFFF;
@@ -246,7 +247,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .conblue .name ul li.curnews{
  
  color:#ffffff;
- background: url(../images/litabbg.png) no-repeat right top;
+ background: url(../images/litabbg.png) repeat right top;
 }
 
 .conblue .name ul li a{
@@ -283,7 +284,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .congray .name ul li.curnews{
  
  color:#ffffff;
- background: url(../images/splitterbar.png)repeat right top;
+ background: url(../images/libgchecked.png)repeat right top;
 }
 
 .congray .name ul li a{

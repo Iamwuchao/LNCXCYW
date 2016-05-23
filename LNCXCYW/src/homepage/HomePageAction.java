@@ -66,6 +66,7 @@ public class HomePageAction extends ActionSupport{
 	private List<News> initSuzhiceping(){
 		final String url = "/showExam?paperName=";
 		List<ExamPaper> paperList = Cache.getAllExamPaper();
+		System.out.println("paperList size "+paperList.size());
 		LinkedList<News> szcpList = new LinkedList<News>();
 		for(ExamPaper paper:paperList){
 			News szcp = new News();
