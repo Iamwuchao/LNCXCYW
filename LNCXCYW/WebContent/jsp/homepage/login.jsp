@@ -120,7 +120,7 @@ function loginCallback(data)
 	if(data.register_status == "0")
 	{    		
 		alert("普通管理员登陆成功");
-		window.location.href = "/jsp/admin/admin.jsp";
+		window.location.href = "/newsAdd";
 	}
 	else if(data.register_status == "1")
 		{
@@ -129,7 +129,7 @@ function loginCallback(data)
 	else if(data.register_status == "3")
 	{
 		alert("超级管理员登陆成功");
-		window.location.href = "/jsp/super_admin/admin.jsp";
+		window.location.href = "/newsAdd";
 	}
 	else  
 		{

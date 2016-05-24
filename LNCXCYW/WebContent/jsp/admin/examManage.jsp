@@ -44,6 +44,7 @@
 		<!-- Button trigger modal -->
 <button type="button" id="addExam" class="btn btn-primary btn-lg">添加题目</button>
 <button type="button" id="addExamEva" class="btn btn-primary btn-lg">添加试卷评判标准</button>
+<button type="button" id="addExamDesc" class="btn btn-primary btn-lg">添加试卷评判描述</button>
 <button type="button" id="showExam" class="btn btn-primary btn-lg">题目预览</button>
 <!-- 文本编辑框 -->
 <div id="emModal" style="display:none;">
@@ -121,6 +122,41 @@
 	</div>
 </div>
 
+
+<!-- 添加试卷描述文本编辑框 -->
+<div id="emEvaModal" style="display:none;">
+	<div class="modal-header">
+    	<h2 class="modal-title" id="myEvaModalLabel">添加试卷评判标准</h2>
+	</div>
+	
+	<div class="modal-body"align="center">
+		
+		<form id="examEva_form" >
+			
+			<br/>
+			
+			
+			
+			<div style="display:none" class="evaOption">
+			 	<div class="form-inline form-group toc evaOptionContent" id="evaOptionLine">
+			  		<!-- <input type="checkbox" class="optionCheck"> -->
+			    	<label for="evaOptionInput">评判标准:</label>
+			    	<textarea class="form-control evaOptionInput" id="evaOptionInput" rows="3" cols="80" placeholder="评价描述"></textarea>
+			    	<input type="number"  class="form-control evaLowCheck" placeholder="分数段下限"  id="evaLowCheck" >
+			    	<input type="number"  class="form-control evaHighCheck" placeholder="分数段上限"  id="evaHighCheck" >
+			    	<button type="button" class="btn btn-primary" id="evaOptionRemove"> 移除</button>
+			 	</div>
+			 </div>
+			<br>
+		</form>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" id="addEvaOption">添加选项</button>
+    	<button type="button" class="btn btn-default" id="closeEva" data-dismiss="modal">关闭</button>
+    	<button type="button" class="btn btn-primary" id="examEvaInsert" >保存</button>
+	</div>
+</div>
 <br/>
 
 <br/>

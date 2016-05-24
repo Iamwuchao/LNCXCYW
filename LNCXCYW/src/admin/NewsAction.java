@@ -36,7 +36,8 @@ public class NewsAction extends PageGetBaseAction{
 	
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
-
+	private String newsMessageTable;//返回给前台显示的的新闻HTML字符串
+	private String status;
 	/*
 	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了
 	 */
@@ -80,8 +81,9 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		System.out.println(newsList);
 		if (newsList.size()>0) {
+			status = "1";
 		}
-		JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
+		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
 		return SUCCESS;
 	}
 	
@@ -101,8 +103,9 @@ public class NewsAction extends PageGetBaseAction{
 			System.out.println("查询失败！  日期不对");
 		}
 		if (newsList.size()>0) {
+			status = "1";
 		}
-		JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
+		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
 		//System.out.println("RRRRRR$$$$$$$$$$$");
 		return SUCCESS;
 	}
@@ -256,6 +259,22 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setPictureNewsList(List<News> pictureNewsList) {
 		this.pictureNewsList = pictureNewsList;
+	}
+
+	public String getNewsMessageTable() {
+		return newsMessageTable;
+	}
+
+	public void setNewsMessageTable(String newsMessageTable) {
+		this.newsMessageTable = newsMessageTable;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	

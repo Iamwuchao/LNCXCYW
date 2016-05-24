@@ -5,7 +5,7 @@
 <layout:override name="menu_list">
 
 	 <div class="menu-list" style="height:820px"> 
-	 	<a href="news_classify.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-blackboard">&nbsp;新闻分类</span></a>
+	 	<!-- <a href="news_classify.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-blackboard">&nbsp;新闻分类</span></a> -->
 	    <a href="/newsAdd" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻添加</span></a>
 	      <a href="/jsp/admin/news_delete.jsp" class="menu-button-middle"><span class="glyphicon glyphicon-th-large">&nbsp;新闻删除</span></a>
 	   <s:if test="#session.user.role==1">
