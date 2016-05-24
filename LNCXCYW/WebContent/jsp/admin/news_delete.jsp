@@ -81,33 +81,12 @@ $("#news_search_by_time").click(function(){
 	}); 
 })
 
-$(".ensure-button").click(function() {
-	alert(0009);		
-	var newsId = $(this).closest("tr").attr("id");
-			alert(newsId);
 
-			$.ajax({
-				url : '/admin/news_manage/news_delete',
-				type : 'post',
-				dataType : 'json',
-				data : {
-					newsId : newsId
-				},
-				success : searchCallback,
-				error : errorSolution
-			}); 
-		})
 
 		function errorSolution(data){
 			alert("error");
 		}
-		function ensureCallBack(data) {
-			/* if (data.strValue == "success") {
-				var t = $("#" + data.userId);
-				$("#" + data.userId).remove();
-			} else*/
-				alert("something wrong!!"); 
-		}
+		
 function searchCallback(data) {
 	if(data.status == "1"){
 		

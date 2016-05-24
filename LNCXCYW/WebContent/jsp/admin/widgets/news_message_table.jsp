@@ -59,6 +59,7 @@
 						alert("error");
 					}
 					function ensureCallBack(data) {
+						alert(999999);
 						if (data.status == "success") {
 							var t = $("#" + data.newsId);
 							$("#" + data.newsId).remove();
