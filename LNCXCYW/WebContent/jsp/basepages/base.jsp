@@ -22,7 +22,7 @@
 <div class="splitterbars">
       <ul class="f_left">
       <a onclick="javascript:window.external.addFavorite('http://www.baidu.com','辽宁省大学生创新创业网')" 
-      href="http://www.localhost:8080.cn">加入收藏 </a>|<a  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.localhost:8080');" href="http://www.localhost:8080">设为首页</a>
+      href="http://localhost:8080/">加入收藏 </a>|<a  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.localhost:8080');" href="http://www.localhost:8080">设为首页</a>
       </ul>
 </div>
 <div class="logobox">
@@ -33,7 +33,7 @@
 <div class="splitterbars"></div>
 <div class="nav">
 <ul class="nav_all" >
-<li><a href="/">首页</a></li>
+<li><a href="http://localhost:8080">首页</a></li>
 <li><a href="/second_page?category=创新创业资讯">创新创业资讯</a></li>
 <li><a href="/second_page?category=创新创业训练">创新创业训练</a></li>
 <li><a href="/second_page?category=创新创业竞赛">创新创业竞赛</a></li>
