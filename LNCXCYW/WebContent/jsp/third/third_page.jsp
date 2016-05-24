@@ -3,8 +3,8 @@
 
 
 <div>  
-	<p>标题：<s:property value="title"/></p>	
-	<p>作者：<s:property value="author"/></p>	
+	<p style="text-align:center; font-weight:bold;font-size:16px; font-family:'微软雅黑';">标题：<s:property value="title"/></p>	
+	<p style="text-align:right; color:grey; font-size:12px;">作者：<s:property value="author"/></p>	
 </div>
 
 
