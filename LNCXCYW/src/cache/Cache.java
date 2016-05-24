@@ -35,6 +35,7 @@ public class Cache {
 	
 	public static void updateNews(String newsCategory,News news) throws Exception{
 		cache.newsCache.add(newsCategory,news);
+		cache.newestNews.update(news);
 	}
 	
 	public static void updateNewsCategory(NewsCategory oldCategory,NewsCategory newCategory){
