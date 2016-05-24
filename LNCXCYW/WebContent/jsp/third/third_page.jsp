@@ -1,5 +1,13 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 <layout:override name="news_content">
+
+
+<div>  
+	<p>标题：<s:property value="title"/></p>	
+	<p>作者：<s:property value="author"/></p>	
+</div>
+
+
 <div class="mycontent">  
 	<s:property escape="false" value="content"/>			
 </div>

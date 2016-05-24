@@ -53,14 +53,14 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsAdd() {
 		System.out.println("newsAdd:");
 		categoryList=Cache.getNewsCategoryList();
-		System.out.println(categoryList);
+		//System.out.println(categoryList);
 		for(int i=0; i<categoryList.size(); i++){
 			if(categoryList.get(i).equals("素质测评")){
 				categoryList.remove(i);
 				break;
 			}			
 		}
-		System.out.println(categoryList);
+		//System.out.println(categoryList);
 		return SUCCESS;
 	}
 	
