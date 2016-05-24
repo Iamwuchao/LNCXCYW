@@ -8,6 +8,7 @@ import cache.Cache;
 import dao.DaoFactory;
 import dao.ExamEvalutionDao;
 import dao.ExamOptionDao;
+import dao.ExamPaperDao;
 import dao.ExamTitleDao;
 import mode.ExamEvalution;
 import mode.ExamOption;
@@ -31,6 +32,10 @@ public class ExamManageAction {
 	private List<Integer> emEvaLowList;
 	private List<Integer> emEvaHighList;
 	private List<String> emEvaDesList;
+	
+	//添加书卷
+	private String paperNameInput;
+	private String paperDescInput;//试卷描述
 	/*
 	 * 添加试题
 	 */
@@ -40,7 +45,7 @@ public class ExamManageAction {
 		List<ExamPaper> paperList=Cache.getAllExamPaper();
 		categoryList = new ArrayList<>();
 		for(ExamPaper paper: paperList){
-			categoryList.add(paper.getDescription());
+			categoryList.add(paper.getName());
 		}
 		System.out.println(categoryList);
 		
@@ -121,6 +126,26 @@ public class ExamManageAction {
 		 status="3";
 		 return ActionSupport.SUCCESS;
 	 }
+	/**
+	 * 插入试题及试题描述
+	 * @return
+	 */
+	public String examPaperAdd(){
+		System.out.println("++++######"+paperNameInput+paperDescInput);
+		ExamPaperDao dao = new ExamPaperDao();
+		ExamPaper examPaper = new ExamPaper();
+		examPaper.setName(paperNameInput);
+		examPaper.setDescription(paperDescInput);
+		dao.addExamPaper(examPaper);
+		status="4";
+//		List<ExamPaper> paperList=Cache.getAllExamPaper();
+		List<ExamPaper> paperList=dao.getAllExamPaper();
+		categoryList = new ArrayList<>();
+		for(ExamPaper paper: paperList){
+			categoryList.add(paper.getName());
+		}
+		return ActionSupport.SUCCESS;
+	}
 	
 	/**
 	 * 试卷预览
@@ -266,6 +291,30 @@ public class ExamManageAction {
 
 	public void setEmEvaDesList(List<String> emEvaDesList) {
 		this.emEvaDesList = emEvaDesList;
+	}
+
+
+
+	public String getPaperNameInput() {
+		return paperNameInput;
+	}
+
+
+
+	public void setPaperNameInput(String paperNameInput) {
+		this.paperNameInput = paperNameInput;
+	}
+
+
+
+	public String getPaperDescInput() {
+		return paperDescInput;
+	}
+
+
+
+	public void setPaperDescInput(String paperDescInput) {
+		this.paperDescInput = paperDescInput;
 	}
 	
 }

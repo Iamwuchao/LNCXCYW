@@ -42,9 +42,9 @@
 			listValue="category" listKey="paperCategoryList.categoryId"
 			theme="simple"></s:select>  --%>
 		<!-- Button trigger modal -->
+		<button type="button" id="addExamPaper" class="btn btn-primary btn-lg">添加试卷</button>
 <button type="button" id="addExam" class="btn btn-primary btn-lg">添加题目</button>
 <button type="button" id="addExamEva" class="btn btn-primary btn-lg">添加试卷评判标准</button>
-<button type="button" id="addExamDesc" class="btn btn-primary btn-lg">添加试卷评判描述</button>
 <button type="button" id="showExam" class="btn btn-primary btn-lg">题目预览</button>
 <!-- 文本编辑框 -->
 <div id="emModal" style="display:none;">
@@ -123,28 +123,30 @@
 </div>
 
 
-<!-- 添加试卷描述文本编辑框 -->
-<div id="emEvaModal" style="display:none;">
+<!-- 添加试卷 及添加描述文本编辑框 -->
+<div id="emPaperModal" style="display:none;">
 	<div class="modal-header">
-    	<h2 class="modal-title" id="myEvaModalLabel">添加试卷评判标准</h2>
+    	<h2 class="modal-title" id="myEvaModalLabel">添加试卷</h2>
 	</div>
 	
 	<div class="modal-body"align="center">
 		
-		<form id="examEva_form" >
+		<form id="examPaper_form" >
 			
 			<br/>
 			
 			
 			
-			<div style="display:none" class="evaOption">
+			<div style="display:block" class=emPaper>
 			 	<div class="form-inline form-group toc evaOptionContent" id="evaOptionLine">
 			  		<!-- <input type="checkbox" class="optionCheck"> -->
-			    	<label for="evaOptionInput">评判标准:</label>
-			    	<textarea class="form-control evaOptionInput" id="evaOptionInput" rows="3" cols="80" placeholder="评价描述"></textarea>
-			    	<input type="number"  class="form-control evaLowCheck" placeholder="分数段下限"  id="evaLowCheck" >
-			    	<input type="number"  class="form-control evaHighCheck" placeholder="分数段上限"  id="evaHighCheck" >
-			    	<button type="button" class="btn btn-primary" id="evaOptionRemove"> 移除</button>
+			    	<label for="paperNameInput">试卷名称:</label>
+			    	<input type="text" class="form-control paperNameInput" style="width: 520px" id="paperNameInput"  placeholder="试卷名称"/>
+			    	<br>	
+			    	<br>
+			    	<label for="paperDescInput">试卷描述:</label>
+			    	<textarea class="form-control paperDescInput" id="paperDescInput" rows="3" cols="80" placeholder="试卷描述"></textarea>
+			    	<!-- <button type="button" class="btn btn-primary" id="evaOptionRemove"> 移除</button> -->
 			 	</div>
 			 </div>
 			<br>
@@ -152,9 +154,9 @@
 	</div>
 
 	<div class="modal-footer">
-		<button type="button" class="btn btn-primary" id="addEvaOption">添加选项</button>
-    	<button type="button" class="btn btn-default" id="closeEva" data-dismiss="modal">关闭</button>
-    	<button type="button" class="btn btn-primary" id="examEvaInsert" >保存</button>
+		<!-- <button type="button" class="btn btn-primary" id="addPaper">添加试卷</button> -->
+    	<button type="button" class="btn btn-default" id="closePaper" data-dismiss="modal">关闭</button>
+    	<button type="button" class="btn btn-primary" id="examPaperInsert" >保存</button>
 	</div>
 </div>
 <br/>
@@ -232,6 +234,18 @@
 			
 			alert("评价标准插入成功！ ");
 		}
+		else if(data.status == "4") {
+			/* $(document).find("#examTableDiv").html(data.exam_table);
+			$('#examTableDiv').css("display","inline"); */
+			$('#emModal').css("display","none");
+			$('#emEvaModal').css("display","none");
+			$('#emPaperModal').css('display','none');
+			alert("试卷插入成功！ ");
+			location.reload();
+		}
+	}
+	function error(data){
+		alert("error"+data);
 	}
 	
 	//delete
@@ -513,6 +527,52 @@
 			success : emInsertCallback
 		});
 	})
+	
+	
+	/**
+ * 添加试卷和试卷描述部分
+ */
+/**
+ * 按下添加试卷按钮以后，让模态框显示出来
+ */
+$(document).on("click","#addExamPaper",function(){
+		$('#examTableDiv').css("display","none");
+		$('#emModal').css('display','none');
+		$('#emEvaModal').css('display','none');
+		$('#emPaperModal').css('display','block');
+		$('#emPaperModal').find(".modal-title").html("添加试卷");
+		//clear();
+	})
+	//“保存试卷”
+	$(document).on("click", "#examPaperInsert", function(){
+			var judge = $('#emPaperModal').find(".modal-title").html();
+			if(judge == "编辑试卷评判标准")
+			{
+				//editTitle();
+			}
+			else insertPaper();
+		})
+		
+	//试卷插入
+	function insertPaper(){
+	var paperNameInput = $("#paperNameInput").val();
+	var paperDescInput = $("#paperDescInput").val();
+	alert(paperDescInput+" "+paperNameInput);
+	var params = getEvaParams();
+		$.ajax({
+			url:'examPaperAdd',
+			type:'post',
+			dataType:'json',
+			data:{
+				"paperNameInput":paperNameInput,
+				"paperDescInput":paperDescInput
+			},
+			traditional:true,
+			success:emInsertCallback,
+			error:error
+		});
+	}
+	
 </script>
 
 		

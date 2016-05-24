@@ -19,6 +19,12 @@
 			</result>
 		</action>
 		
+		<action name="examPaperAdd" class="exam.ExamManageAction" method="examPaperAdd">
+			<result name="success" type="json">
+				<param name="includeProperties">*</param>   
+			</result>
+		</action>
+		
 		<action name="examPreshow" class="exam.ExamManageAction" method="examPreShow">
 			<result name="success" type="json">
 				<param name="includeProperties">*</param>   
