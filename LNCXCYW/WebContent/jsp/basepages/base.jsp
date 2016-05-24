@@ -33,7 +33,7 @@
 <div class="splitterbars"></div>
 <div class="nav">
 <ul class="nav_all" >
-<li><a href="http://localhost:8080">首页</a></li>
+<li><a href="/">首页</a></li>
 <li><a href="/second_page?category=创新创业资讯">创新创业资讯</a></li>
 <li><a href="/second_page?category=创新创业训练">创新创业训练</a></li>
 <li><a href="/second_page?category=创新创业竞赛">创新创业竞赛</a></li>
