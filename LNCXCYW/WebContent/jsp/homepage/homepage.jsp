@@ -13,19 +13,25 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
+                    <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>">
                     <img src="<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>" alt="">
+                    </a>
                   <!--   <div class="carousel-caption">
                       <h4><s:property value="%{newsMap.get('图片新闻').get(0).newsTile}"/></h4>
                     </div>--> 
                   </div>
                   <div class="item" style="background:url(./images/test2.jpg);background-size:340px 300px">
-                    <img src="<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>" alt="">
+                     <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>">
+                   	 	<img src="<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>" alt="">
+                    </a>
                   <!--    <div class="carousel-caption">
                       <h4>Second Thumbnail label</h4>
                     </div>-->
                   </div>
                   <div class="item" style="background:url(./images/test3.jpg);background-size:340px 300px">
-                   <img src="<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>" alt="">
+                   <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>">
+                   		<img src="<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>" alt="">
+                   	</a>
                  <!--    <div class="carousel-caption">
                       <h4>Third Thumbnail label</h4>
                     </div>--> 
