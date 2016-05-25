@@ -37,14 +37,14 @@ input,select{ font-size:12px; vertical-align:middle;}
 .logo a{ color:#898989;}
 .nav {
 	width:1024px;
-	height:50px;
+	height:66px;
 	margin:0 auto;
 	background-color:#195591;
 }
 
 .nav_all li {
     width: 146px;
-    height: 50px;
+    height: 66px;
     float: left;
     display: inline;
     text-align: center;
