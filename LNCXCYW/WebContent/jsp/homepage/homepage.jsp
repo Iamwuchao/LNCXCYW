@@ -57,8 +57,8 @@
 						<s:iterator value="%{newsMap.get('通知公告')}" var="i" status="index">
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-						        	<s:property value="#i.getNewsTile()"/>
-						        </a>   
+						        	●&nbsp;<s:property value="#i.getNewsTile()"/>
+						        </a>  
 							</li>
 						</s:iterator>
 					</ul>
@@ -87,7 +87,7 @@
 						<s:iterator value="newsMap['工作动态']" var="i" status="index"> 
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-					        		<s:property value="#i.getNewsTile()"/>
+					        		●&nbsp;<s:property value="#i.getNewsTile()"/>
 					        	</a> 
 							</li>
 						</s:iterator>
@@ -117,7 +117,7 @@
 						<s:iterator value="newsMap['高校动态']" var="i" status="index"> 
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-					        		<s:property value="#i.getNewsTile()"/>
+					        		●&nbsp;<s:property value="#i.getNewsTile()"/>
 					        	</a>
 							</li>
 						</s:iterator>
@@ -173,7 +173,7 @@
 							<s:iterator value="newsMap.get('政策规章')" var="i" status="index"> 
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a> 
 								</li>
 							</s:iterator>
@@ -205,7 +205,7 @@
 							<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a>
 								</li>
 							</s:iterator>
@@ -245,7 +245,7 @@
 							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a> 
 								</li>
 							</s:iterator>
@@ -275,7 +275,7 @@
 							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a>
 								</li>
 							</s:iterator>
@@ -316,7 +316,7 @@
 							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a>
 								</li>
 							</s:iterator>
@@ -346,7 +346,7 @@
 						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        <s:property value="#i.getNewsTile()"/>
+							        ●&nbsp;<s:property value="#i.getNewsTile()"/>
 							    </a>
 							</li>
 						</s:iterator>
@@ -399,7 +399,7 @@
 							<s:iterator value="%{newsMap.get('创新训练')}" var="i" status="index">    
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	<s:property value="#i.getNewsTile()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							    	</a>
 								</li>
 							</s:iterator>
@@ -429,7 +429,7 @@
 					<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index">     
 						<li>
 							<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     <s:property value="#i.getNewsTile()"/>
+							     ●&nbsp;<s:property value="#i.getNewsTile()"/>
 							</a>
 						</li>
 					</s:iterator>
@@ -469,7 +469,7 @@
 							<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index">     
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -499,7 +499,7 @@
 								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			<s:property value="#i.getNewsTile()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -540,7 +540,7 @@
 							<s:iterator value="newsMap['创新创业典型']" var="i" status="index">      
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -570,7 +570,7 @@
 								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			<s:property value="#i.getNewsTile()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -615,7 +615,7 @@
 							<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index">     
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -645,7 +645,7 @@
 								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index">    
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			<s:property value="#i.getNewsTile()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -686,7 +686,7 @@
 							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -716,7 +716,7 @@
 								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			<s:property value="#i.getNewsTile()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -756,7 +756,7 @@
 							<s:iterator value="%{newsMap.get('创新创业导师')}" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -786,7 +786,7 @@
 							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index">
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		<s:property value="#i.getNewsTile()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
