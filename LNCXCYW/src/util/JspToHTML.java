@@ -40,7 +40,20 @@ public class JspToHTML {
 		return wrapperResponse.getContent();
 	}
 
-	
+	//去除
+	private static  String filterChar(String newsContent){
+		if(newsContent == null || newsContent.length() < 1) return "";
+		StringBuilder sb = new StringBuilder();
+		int length = newsContent.length();
+		boolean flag = false;
+		for(int i=0;i<length;i++){
+			if(flag || newsContent.charAt(i)=='<'){
+				flag = true;
+				sb.append(newsContent.charAt(i));
+			}
+		}
+		return sb.toString();
+	}
 	
 	public static String writeHTML(PathInfo pathinfo,String newsContent) throws IOException{
 		long time = System.currentTimeMillis();
@@ -62,8 +75,9 @@ public class JspToHTML {
 		//	Charset cs = Charset.forName("utf-8");
 		//	ByteBuffer bb = cs.encode(newContent);
 			//while(bb.hasRemaining())
-			System.out.println(newsContent);
-				fileOutputStream.writeUTF(newsContent);
+			String newsContentByFilter = filterChar(newsContent);
+			System.out.println(newsContentByFilter);
+			fileOutputStream.writeUTF(newsContentByFilter);
 			System.out.println("hehe");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
