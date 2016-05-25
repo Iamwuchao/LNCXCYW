@@ -160,12 +160,11 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con2 .list1 ul li{
 	list-style:circle;
 	line-height:25px;
-	
+	width:250px;
 }
 
 .list1 a{
 	display:block;
-	display:inline;
 	width:100%;
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -173,6 +172,13 @@ input,select{ font-size:12px; vertical-align:middle;}
 	white-space:nowrap;
 	color:black;
 }
+
+.list1 span{
+position: relative;
+top:-22px;
+left:250px;
+}
+
 .list1 a:hover{
 	color:#06f;
 }

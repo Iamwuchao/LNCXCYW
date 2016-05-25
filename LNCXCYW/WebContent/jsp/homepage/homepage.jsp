@@ -57,9 +57,9 @@
 						<s:iterator value="%{newsMap.get('通知公告')}" var="i" status="index">
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-						        	●&nbsp;<s:property value="#i.getNewsTile()"/>
-						        </a><span>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/></span> 
-							</li>
+						        	&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
+						        </a>
+							</li><span><s:property value="#i.getDate().toString()"/></span> 
 						</s:iterator>
 					</ul>
 					<%-- <table width="100%" cellspacing="0" cellpadding="0">
