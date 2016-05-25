@@ -42,12 +42,12 @@
       </div>
               
        <!-- 第一行 第二块 -->
-      <div class="con2" style="width:400px">
+      <div class="con2" >
          <div class="name">
          	<ul style="width:100%;height:36px;overflow:hidden">
-         		<a href="/second_page?category=通知公告" onclick="" target="_blank"><li id="one1" onmouseover="setTabsnow('one',1,3)" style="width:130px" class="curnews">通知公告</li></a>
-         		<a href="/second_page?category=工作动态" onclick="" target="_blank"><li id="one2" onmouseover="setTabsnow('one',2,3)" style="width:130px">工作动态</li></a>
-         		<a href="/second_page?category=高校动态" onclick="" target="_blank"><li id="one3" onmouseover="setTabsnow('one',3,3)" style="width:130px">高校动态</li></a>
+         		<a href="/second_page?category=通知公告" onclick="" target="_blank"><li id="one1" onmouseover="setTabsnow('one',1,3)"  class="curnews">通知公告</li></a>
+         		<a href="/second_page?category=工作动态" onclick="" target="_blank"><li id="one2" onmouseover="setTabsnow('one',2,3)" >工作动态</li></a>
+         		<a href="/second_page?category=高校动态" onclick="" target="_blank"><li id="one3" onmouseover="setTabsnow('one',3,3)" >高校动态</li></a>
          	</ul>
          </div>
          <div class="clear"></div>
@@ -143,7 +143,7 @@
      </div>
 	
 		<!-- 第一行第三块 -->
-     <div class="con3" style="width:270px;float:right">
+     <div class="con3" style="float:right">
         <ul class = "list-group">
         	<li class="list-group-item" ><div style="margin-left:40px ">我要对接项目</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业活动日程表</div></li>
