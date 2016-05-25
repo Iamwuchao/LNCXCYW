@@ -69,7 +69,7 @@ public class NewCategoryCache implements LeftCycle<NewsCategory>{
 		}
 	}
 
-
+	
 	@Override
 	public void registe(Cache cache) {
 		// TODO Auto-generated method stub

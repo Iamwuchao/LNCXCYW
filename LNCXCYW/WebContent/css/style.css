@@ -165,6 +165,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .list1 a{
 	display:block;
+	display:inline;
 	width:100%;
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -198,7 +199,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con3 {
     width: 335px;
     float: left;
-    height: 300px;
+    height: 250px;
     display: inline;
     margin-top:10px;
 }
@@ -208,7 +209,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con3 ul li{
 	background:url(../images/libg.png) no-repeat right top;
 	background-repeat: repeat;
-	height:41px;
+	height:42px;
 	font:18px 微软雅黑;
 	color:#FFFFFF;
 	cursor:pointer;

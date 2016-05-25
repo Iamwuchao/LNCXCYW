@@ -86,4 +86,9 @@ public class Cache {
 		cache.categoryCache.destory();
 		cache.newsCache.destory();
 	}
+	
+	public static void remove(String newsCategory,News news){
+		cache.newsCache.remove(newsCategory, news);
+		cache.newestNews.remove(news);
+	}
 }

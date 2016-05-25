@@ -81,4 +81,7 @@ public class NewestNewsCache implements LeftCycle<News>{
 		cacheNewsList.addFirst(t);
 	}
 
+	public void remove(News t){
+		cacheNewsList.remove(t);
+	}
 }

@@ -123,6 +123,12 @@ public class NewsCache implements LeftCycle<String>{
 		queue.addFirst(news);
 	}
 
+	public void remove(String category,News news){
+		ConcurrentLinkedDeque<News> list = cacheMap.get(category);
+		if(list == null || list.size()<1) return ;
+		list.remove(news);
+	}
+	
 	@Override
 	public void registe(Cache cache) {
 		// TODO Auto-generated method stub
