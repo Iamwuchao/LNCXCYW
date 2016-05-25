@@ -59,9 +59,10 @@
 						alert("error");
 					}
 					function ensureCallBack(data) {
-						alert(999999);
+						
 						if (data.status == "success") {
 							var t = $("#" + data.newsId);
+							alert("删除成功");
 							$("#" + data.newsId).remove();
 						} else
 							alert("something wrong!!"); 
