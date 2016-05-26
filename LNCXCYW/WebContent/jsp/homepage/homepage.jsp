@@ -145,7 +145,7 @@
 		<!-- 第一行第三块 -->
      <div class="con3" style="float:right">
         <ul class = "list-group">
-        	<li class="list-group-item" ><div style="margin-left:40px ">我要对接项目</div></li>
+        	<li class="list-group-item" ><div style="margin-left:40px "><img alt="" src="/images/djxm.png"/>我要对接项目</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业活动日程表</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业改革实施方案</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业教育基地</div></li>
