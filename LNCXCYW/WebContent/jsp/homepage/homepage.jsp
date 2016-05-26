@@ -4,7 +4,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <layout:override name="base_content">
- <div id="first_con"  class="con" style="height:335px" >
+ <div id="first_con"  class="con" >
      <div id="myCarousel"  class="con1 carousel slide">
                 <ol class="carousel-indicators">
                   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -57,9 +57,9 @@
 						<s:iterator value="%{newsMap.get('通知公告')}" var="i" status="index">
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-						        	&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
-						        </a>
-							</li><span><s:property value="#i.getDate().toString()"/></span> 
+						        	●&nbsp;<s:property value="#i.getNewsTile()"/>
+						        </a>  
+							</li>
 						</s:iterator>
 					</ul>
 					<%-- <table width="100%" cellspacing="0" cellpadding="0">
@@ -87,7 +87,7 @@
 						<s:iterator value="newsMap['工作动态']" var="i" status="index"> 
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-					        		&nbsp;●&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/><span>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/></span>
+					        		●&nbsp;<s:property value="#i.getNewsTile()"/>
 					        	</a> 
 							</li>
 						</s:iterator>
@@ -117,7 +117,7 @@
 						<s:iterator value="newsMap['高校动态']" var="i" status="index"> 
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-					        		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+					        		●&nbsp;<s:property value="#i.getNewsTile()"/>
 					        	</a>
 							</li>
 						</s:iterator>
@@ -145,7 +145,7 @@
 		<!-- 第一行第三块 -->
      <div class="con3" style="float:right">
         <ul class = "list-group">
-        	<li class="list-group-item" ><div style="margin-left:40px "><img alt="" src="/images/djxm.png"/>我要对接项目</div></li>
+        	<li class="list-group-item" ><div style="margin-left:40px ">我要对接项目</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业活动日程表</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业改革实施方案</div></li>
         	<li class="list-group-item"><div style="margin-left:40px">创新创业教育基地</div></li>
@@ -173,7 +173,7 @@
 							<s:iterator value="newsMap.get('政策规章')" var="i" status="index"> 
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a> 
 								</li>
 							</s:iterator>
@@ -199,13 +199,13 @@
 					</div>
 	  		 </div>
 	  		 
-	  		 <div id="con_two_2" style="display: none;">
+	  		 <div id="con_two_2" style="display:  none;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a>
 								</li>
 							</s:iterator>
@@ -245,7 +245,7 @@
 							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a> 
 								</li>
 							</s:iterator>
@@ -269,13 +269,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
-		  		  <div id="con_three_2" style="display: none;">
+		  		  <div id="con_three_2" style="display:  none;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							        </a>
 								</li>
 							</s:iterator>
@@ -340,13 +340,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
-				<div id="con_four_2" style="display: none">
+				<div id="con_four_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 					<ul>
 						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        ●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        ●&nbsp;<s:property value="#i.getNewsTile()"/>
 							    </a>
 							</li>
 						</s:iterator>
@@ -399,7 +399,7 @@
 							<s:iterator value="%{newsMap.get('创新训练')}" var="i" status="index">    
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							        	●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							        	●&nbsp;<s:property value="#i.getNewsTile()"/>
 							    	</a>
 								</li>
 							</s:iterator>
@@ -423,13 +423,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 			</div>
-			<div id="con_five_2" style="display: none;">
+			<div id="con_five_2" style="display:  none;">
 	         <div class="list1" style="padding-top: 15px">
 				<ul>
 					<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index">     
 						<li>
 							<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     ●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     ●&nbsp;<s:property value="#i.getNewsTile()"/>
 							</a>
 						</li>
 					</s:iterator>
@@ -469,7 +469,7 @@
 							<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index">     
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -493,13 +493,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
-				<div id="con_six_2" style="display: none;">
+				<div id="con_six_2" style="display:  none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -540,7 +540,7 @@
 							<s:iterator value="newsMap['创新创业典型']" var="i" status="index">      
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -570,7 +570,7 @@
 								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -615,7 +615,7 @@
 							<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index">     
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -639,13 +639,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_eight_2" style="display: none;">
+       		<div id="con_eight_2" style="display:  none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index">    
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -686,7 +686,7 @@
 							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>
@@ -710,13 +710,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_nine_2" style="display: none;">
+       		<div id="con_nine_2" style="display:  none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     			●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     			●&nbsp;<s:property value="#i.getNewsTile()"/>
 										</a>
 									</li>
 								</s:iterator>
@@ -780,13 +780,13 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_ten_2" style="display: none;">
+       		<div id="con_ten_2" style="display:  none;">
        		<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index">
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
-							     		●&nbsp;<s:property value="#i.getNewsTile()"/>&nbsp;&nbsp;<s:property value="#i.getDate().toString()"/>
+							     		●&nbsp;<s:property value="#i.getNewsTile()"/>
 									</a>
 								</li>
 							</s:iterator>

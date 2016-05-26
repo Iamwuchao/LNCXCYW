@@ -9,12 +9,12 @@ html       { padding:0;}
 
 input,select{ font-size:12px; vertical-align:middle;}
 
-.logobox{ width:1024px; height: 171px; margin:0 auto; background: #f6f6f6;}
+.logobox{ width:1024px; height: 105px; margin:0 auto; background: #f6f6f6;}
 .logo{
  width:1003px;
- height:171px;
+ height:105px;
  background-color:#f6f6f6;
- background:url(../images/title.jpg);
+ background:url(../images/title.png);
  margin:0 auto;
  text-align:right;
  font:12px 微软雅黑;
@@ -23,7 +23,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .splitterbars{
  width:1024px;
- height:15px;
+ height:30px;
  background-color:#f6f6f6;
  background:url(../images/splitterbar.png);
  margin:0 auto;
@@ -37,14 +37,14 @@ input,select{ font-size:12px; vertical-align:middle;}
 .logo a{ color:#898989;}
 .nav {
 	width:1024px;
-	height:60px;
+	height:50px;
 	margin:0 auto;
 	background-color:#195591;
 }
 
 .nav_all li {
     width: 146px;
-    height: 60px;
+    height: 50px;
     float: left;
     display: inline;
     text-align: center;
@@ -160,7 +160,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con2 .list1 ul li{
 	list-style:circle;
 	line-height:25px;
-	width:250px;
+	
 }
 
 .list1 a{
@@ -172,13 +172,6 @@ input,select{ font-size:12px; vertical-align:middle;}
 	white-space:nowrap;
 	color:black;
 }
-
-.list1 span{
-position: relative;
-top:-22px;
-left:250px;
-}
-
 .list1 a:hover{
 	color:#06f;
 }
@@ -205,7 +198,7 @@ left:250px;
 .con3 {
     width: 335px;
     float: left;
-    height: 250px;
+    height: 300px;
     display: inline;
     margin-top:10px;
 }
@@ -215,7 +208,7 @@ left:250px;
 .con3 ul li{
 	background:url(../images/libg.png) no-repeat right top;
 	background-repeat: repeat;
-	height:42px;
+	height:41px;
 	font:18px 微软雅黑;
 	color:#FFFFFF;
 	cursor:pointer;
