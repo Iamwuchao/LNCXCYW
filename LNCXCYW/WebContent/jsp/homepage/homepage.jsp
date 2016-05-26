@@ -81,7 +81,7 @@
 				</div>
 		</div>
 		
-		<div id="con_one_2" style="display: block;">
+		<div id="con_one_2" style="display: none;">
 			<div class="list1" style="padding-top: 15px">
 					<ul>
 						<s:iterator value="newsMap['工作动态']" var="i" status="index"> 
@@ -110,7 +110,7 @@
 			</div>
 		</div>
 		
-		<div id="con_one_3" style="display: block;">
+		<div id="con_one_3" style="display: none;">
 			<div class="list1" style="padding-top: 15px">
 			
 					<ul>

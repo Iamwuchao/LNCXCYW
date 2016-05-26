@@ -47,7 +47,7 @@ input,select{
 }
 .logo{
  width:1003px;
- height:105px;
+ height:171px;
  background-color:#f6f6f6;
  background:url(../images/title.jpg);
  margin:0 auto;
@@ -79,7 +79,7 @@ input,select{
 }
 .nav {
 	width:1024px;
-	height:50px;
+	height:60px;
 	margin:0 auto;
 	background-color:#195591;
 }

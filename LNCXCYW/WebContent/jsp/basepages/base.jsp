@@ -20,10 +20,10 @@
 <body>
 
 <div class="splitterbars">
-      <ul class="f_left">
+    <!--    <ul class="f_left">
       <a onclick="javascript:window.external.addFavorite('http://www.baidu.com','辽宁省大学生创新创业网')" 
       href="http://localhost:8080/">加入收藏 </a>|<a  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.localhost:8080');" href="http://www.localhost:8080">设为首页</a>
-      </ul>
+      </ul>-->
 </div>
 <div class="logobox">
 <div class="logo">

@@ -9,10 +9,10 @@ html       { padding:0;}
 
 input,select{ font-size:12px; vertical-align:middle;}
 
-.logobox{ width:1024px; height: 105px; margin:0 auto; background: #f6f6f6;}
+.logobox{ width:1024px; height: 171px; margin:0 auto; background: #f6f6f6;}
 .logo{
  width:1003px;
- height:105px;
+ height:171px;
  background-color:#f6f6f6;
  background:url(../images/title.jpg);
  margin:0 auto;
@@ -23,7 +23,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .splitterbars{
  width:1024px;
- height:30px;
+ height:15px;
  background-color:#f6f6f6;
  background:url(../images/splitterbar.png);
  margin:0 auto;
@@ -37,14 +37,14 @@ input,select{ font-size:12px; vertical-align:middle;}
 .logo a{ color:#898989;}
 .nav {
 	width:1024px;
-	height:66px;
+	height:60px;
 	margin:0 auto;
 	background-color:#195591;
 }
 
 .nav_all li {
     width: 146px;
-    height: 66px;
+    height: 60px;
     float: left;
     display: inline;
     text-align: center;
