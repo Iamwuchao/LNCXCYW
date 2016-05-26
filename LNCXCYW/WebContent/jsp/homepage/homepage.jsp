@@ -199,7 +199,7 @@
 					</div>
 	  		 </div>
 	  		 
-	  		 <div id="con_two_2" style="display: block;">
+	  		 <div id="con_two_2" style="display: none;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index">  
@@ -269,7 +269,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 						</div>
 		  		 </div>
-		  		  <div id="con_three_2" style="display: block;">
+		  		  <div id="con_three_2" style="display: none;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
@@ -340,7 +340,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
-				<div id="con_four_2" style="display: block;">
+				<div id="con_four_2" style="display: none">
 		         <div class="list1" style="padding-top: 15px">
 					<ul>
 						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
@@ -423,7 +423,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 			</div>
-			<div id="con_five_2" style="display: block;">
+			<div id="con_five_2" style="display: none;">
 	         <div class="list1" style="padding-top: 15px">
 				<ul>
 					<s:iterator value="%{newsMap.get('创业实践')}" var="i" status="index">     
@@ -493,7 +493,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
-				<div id="con_six_2" style="display: block;">
+				<div id="con_six_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index">     
@@ -564,7 +564,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
 				</div>
-				<div id="con_seven_2" style="display: block;">
+				<div id="con_seven_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
@@ -639,7 +639,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_eight_2" style="display: block;">
+       		<div id="con_eight_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index">    
@@ -710,7 +710,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_nine_2" style="display: block;">
+       		<div id="con_nine_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
 								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
@@ -780,7 +780,7 @@
 						</tbody></table><!--#endeditable--></ul> --%>
 					</div>
        		</div>
-       		<div id="con_ten_2" style="display: block;">
+       		<div id="con_ten_2" style="display: none;">
        		<div class="list1" style="padding-top: 15px">
 						<ul>
 							<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index">
