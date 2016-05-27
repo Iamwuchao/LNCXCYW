@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title></title>
-	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<link rel="stylesheet" type="text/css" href="/css/style02.css">
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" />
 	<!-- <script src="/jquery/jquery.min.js"></script> -->

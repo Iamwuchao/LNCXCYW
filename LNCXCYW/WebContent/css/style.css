@@ -9,7 +9,7 @@ html       { padding:0;}
 
 input,select{ font-size:12px; vertical-align:middle;}
 
-.logobox{ width:1024px; height: 105px; margin:0 auto; background: #f6f6f6;}
+.logobox{ width:1024px; margin:0 auto; background: #f6f6f6;}
 .logo{
  width:1003px;
  height:105px;
@@ -72,7 +72,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .con {
     width: 1024px;
-    height:370px;
+    height:250px;
     margin: 0 auto;
     margin-top: 10px;
 }
@@ -88,7 +88,6 @@ input,select{ font-size:12px; vertical-align:middle;}
     float: left;
     display: inline;
     margin-right: 10px;
-    margin-top:10px;
     height: 250px;
     overflow: hidden;
 }
@@ -122,11 +121,10 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 
 .con2 {
-    width: 333px;
+    width: 366px;
     float: left;
     display: inline;
     margin-right: 10px;
-    margin-top:10px;
     height: 250px;
     overflow: hidden;
 }
@@ -137,7 +135,7 @@ input,select{ font-size:12px; vertical-align:middle;}
  border-bottom:1px solid #7e7e7e;
 }
 .con2 .name ul li{
- width:111px;
+ width:122px;
  height:36px;
  float:left;
  display:inline;
@@ -160,11 +158,13 @@ input,select{ font-size:12px; vertical-align:middle;}
 .con2 .list1 ul li{
 	list-style:circle;
 	line-height:25px;
-	
+	background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px;
 }
+.list1 li{
+	background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px;
 
+}
 .list1 a{
-	display:block;
 	width:100%;
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -196,14 +196,14 @@ input,select{ font-size:12px; vertical-align:middle;}
 }
 
 .con3 {
-    width: 335px;
+    width: 300px;
     float: left;
-    height: 300px;
+    height: 250px;
     display: inline;
-    margin-top:10px;
+    
 }
 .con3 ul{
-	height: 300px;
+	height: 250px;
 }
 .con3 ul li{
 	background:url(../images/libg.png) no-repeat right top;
@@ -216,8 +216,8 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .con3 ul li:hover{
 	background:url(../images/lihoverbg.png) repeat right top;
-	height:50px;
-	font:16px 微软雅黑;
+	height:41px;
+	font:18px 微软雅黑;
 	color:#FFFFFF;
 	cursor:pointer;
 }
