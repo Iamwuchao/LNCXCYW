@@ -162,7 +162,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 }
 .list1 li{
 	background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px;
-
+	line-height: 25px;
 }
 .list1 a{
 	width:100%;
