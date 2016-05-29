@@ -120,13 +120,27 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	/*
 	 * 更新点击量
 	 */
+	@SuppressWarnings("unchecked")
 	public void increaseClick(String url){
 		Session session=getSession();
 		Criteria criteria=session.createCriteria(News.class);
 		criteria.add(Restrictions.eq("news_address", url));
-		News news=(News)criteria.list().get(0);
-		System.out.println(news.getNews_address());
-				
+		List<News> list=criteria.list();
+		if(list.isEmpty()){
+			return;
+		}
+		News news=list.get(0);
+		news.setClickNum(news.getClickNum()+1);
+		Transaction trans=session.beginTransaction();
+		try{
+			session.update(news);
+			trans.commit();
+		}catch(Exception e){
+			System.out.println("点击量跟新失败！"+e.getMessage());
+		}finally{
+			session.close();
+		}		
+		
 	}
 	
 	
