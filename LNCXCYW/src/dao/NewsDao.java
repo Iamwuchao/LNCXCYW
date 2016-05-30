@@ -141,6 +141,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			session.close();
 		}		
 		
+		Cache.updateHotestNews(news);//更新缓存
 	}
 	
 	

@@ -102,7 +102,7 @@ public class News {
 	}
 	
 	public String toString(){
-		return this.newsId+":"+this.newsTile;
+		return this.newsId+":"+this.newsTile+" "+this.clickNum;
 	}
 	
 }

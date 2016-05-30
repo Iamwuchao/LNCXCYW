@@ -13,6 +13,7 @@ public class Cache {
 	private final NewCategoryCache categoryCache;//新闻栏目缓存
 	private final NewsCache newsCache;//新闻列表缓存 各个栏目
 	private final NewestNewsCache newestNews;//最新新闻列表缓存
+	private final HotestNewsCache hotestNews;//点击量对高新闻列表缓存
 	private final ExamCache examCache = new ExamCache();//考试试卷缓存
 	private static final Cache cache = new Cache();
 	
@@ -21,9 +22,11 @@ public class Cache {
 		categoryCache = new NewCategoryCache();
 		newsCache = new NewsCache();
 		newestNews = new NewestNewsCache();
+		hotestNews = new HotestNewsCache();
 		categoryCache.init();
 		newsCache.init();
 		newestNews.init();
+		hotestNews.init();
 	}
 	
 	/*
@@ -36,6 +39,10 @@ public class Cache {
 	public static void updateNews(String newsCategory,News news) throws Exception{
 		cache.newsCache.add(newsCategory,news);
 		cache.newestNews.update(news);
+	}
+	
+	public static void updateHotestNews(News news){//更新点击量新闻排行榜
+		cache.hotestNews.update(news);
 	}
 	
 	public static void updateNewsCategory(NewsCategory oldCategory,NewsCategory newCategory){
@@ -67,6 +74,10 @@ public class Cache {
 		}
 		return list;
 	}
+	
+	public static List<News> getHotestNewsList(){//获取点击量最高的新闻列表
+		return cache.hotestNews.getHotestNewsList();
+	}	
 	
 	public static List<ExamPaper> getAllExamPaper(){
 		return cache.examCache.getAllExamPaper();
