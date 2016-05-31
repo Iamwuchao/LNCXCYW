@@ -347,9 +347,7 @@ input,select{ font-size:12px; vertical-align:middle;}
  	box-sizing: border-box;
 }
 .foot li{
-
-	list-style:none;
-	
+	list-style-type:none;
 }
 .foot a{
 	display:inline-block;
@@ -371,6 +369,8 @@ input,select{ font-size:12px; vertical-align:middle;}
 	width:100%;
 	margin:0 auto;
 	text-align: center;
+	padding:0;
+	zoom:1;
 }
 .foot li{
 	margin-top:20px;
