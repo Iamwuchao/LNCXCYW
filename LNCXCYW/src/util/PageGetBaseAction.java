@@ -27,6 +27,7 @@ public class PageGetBaseAction extends ActionSupport  {
 	//total_num:元素的总数，元素的条数从0开始计数
 	private static int getTotalPageNum(int page_size, int total_num)
 	{
+		//System.out.println("page_size: "+page_size+"total_num"+total_num);
 		int ans = total_num / page_size;
 		if(total_num % page_size > 0) ans ++;
 		return ans;
@@ -71,6 +72,7 @@ public class PageGetBaseAction extends ActionSupport  {
 	// 根据l 所表示整体List返回页大小为page_size并且页码为this.currentPageNum 的List
 	public List makeCurrentPageList(List l, int page_size)
 	{
+		System.out.println("makeCurrentPageList:");
 		this.totalPageNum = getTotalPageNum(page_size, l.size());
 		int[] res = getPageRange(currentPageNum, page_size, l.size());
 		if(this.getIsAjaxTransmission())

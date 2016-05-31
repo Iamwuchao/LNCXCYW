@@ -69,7 +69,7 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.println("newsList: "+category);
 		Session session1 = SingletonSessionFactory.getSession();
 		Criteria q1 = session1.createCriteria(News.class);
-		list = q1.list();
+		list = q1.list();//这个list代表每日推荐新闻列表
 		if(category==null){//获取所有新闻
 			Session session=SingletonSessionFactory.getSession();
 			Criteria q=session.createCriteria(News.class);
@@ -79,13 +79,12 @@ public class NewsAction extends PageGetBaseAction{
 			session.close();
 		}else{//根据参数获取对应类别
 			newsList=getNewsListByCategory(category, 0, 200);
-			newsList=makeCurrentPageList(newsList, 10);
+			newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		}
-		list = Cache.getNewestNewsList(12);
+		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
 		Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
 		//System.out.println(newsList);
-		//list = Cache.getNewestNewsList(10);
 		System.out.println(list);
 		return ActionSupport.SUCCESS;
 		
@@ -100,7 +99,7 @@ public class NewsAction extends PageGetBaseAction{
 	public String newsPage(){
 		System.out.println("newsPage:"+category);
 		newsList=getNewsListByCategory(category, 0, 200);
-		newsList=makeCurrentPageList(newsList, 12);
+		newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
 		return ActionSupport.SUCCESS;
 	}
@@ -118,7 +117,7 @@ public class NewsAction extends PageGetBaseAction{
 			re=new ArrayList<News>();
 			List<String> list=map.get(category);
 			for(String cate:list){
-				System.out.println(cate);
+				//System.out.println(cate);
 				re.addAll(Cache.getNewsList(cate, start, end));
 			}
 		}else{
