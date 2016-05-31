@@ -343,5 +343,41 @@ input,select{ font-size:12px; vertical-align:middle;}
 	background-color:#f6f6f6;
  	background:url(../images/foot.png);
  	margin:0 auto;
- 	text-align:right;
+ 	/* text-align:right; */
+ 	box-sizing: border-box;
 }
+.foot li{
+
+	list-style:none;
+	
+}
+.foot a{
+	display:inline-block;
+	margin-left:30px;
+	margin-top:10px;
+	color:black;
+	font-family:"微软雅黑";
+	font-size:16px;
+	font-weight:bold;
+}
+.foot .title{
+	color:rgb(25,85,145);
+	text-decoration:underline;
+}
+.foot .title:hover{
+	cursor: pointer;
+}
+.foot ul{
+	width:100%;
+	margin:0 auto;
+	text-align: center;
+}
+.foot li{
+	margin-top:20px;
+	margin-right:60px;
+	display:inline-block;
+}
+.foot li:last-child{
+	margin-right:0;
+}
+

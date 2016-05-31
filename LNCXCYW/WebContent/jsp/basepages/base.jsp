@@ -52,6 +52,13 @@
 <div id="bigDiver" class="bigDivider">
 		</div>
 		<div id="foot" class="foot">
+			<a class="title" href="#">相关链接</a>
+			<ul>
+				<li><a href="http://www.lnen.cn/zwgk/jgsz/lnsjyt/index.shtml">辽宁省教育厅</a></li>
+				<li><a href="http://project.upln.cn/">辽宁省本科教育网</a></li>
+				<li><a href="http://www.lnen.cn/zwgk/jgsz/lnsjyt/index.shtml">辽宁省教育厅</a></li>
+				<li><a href="http://project.upln.cn/">辽宁省本科教育网</a></li>
+			</ul>
 		</div>
 </body>
 </html>

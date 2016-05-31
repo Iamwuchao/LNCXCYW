@@ -1,7 +1,6 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
 <div class="mycontent">  
-	<div class="inner">
 		<ul>
 			<s:iterator value="newsList" var="i" status="index">	
 				<li>
@@ -11,5 +10,4 @@
 				</li>
 			</s:iterator>
 		</ul>
-	</div>
 </div>
