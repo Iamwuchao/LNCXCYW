@@ -125,7 +125,7 @@ ul li {
 
 }
 .content-left{
-	width: 55%;
+	width: 700px;
 	min-height:1024px;
     /*float: left;*/
    	margin: 0 ;
@@ -182,7 +182,7 @@ ul li {
 	line-height:30px;
 }
 .content-right{
-	width: 40%;
+	width:300px;
 	float: right;
 	/*height:880px;*/
 	position: relative;

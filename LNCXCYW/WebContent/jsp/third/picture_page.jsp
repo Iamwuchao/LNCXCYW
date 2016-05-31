@@ -8,7 +8,7 @@
 
 
 <div class="mycontent" id="paginationTableDiv">  
-	<div class="inner" style="margin-top:-35px; margin-left:-10px">
+	<div style="margin-top:-35px; margin-left:-10px">
 		<a href="<s:property value="#i.news_address" />">
 			
 			<img alt="<s:property value="%{addressList.get(0).newsTile}"/>" src="<s:property value="%{addressList.get(0).news_address}"/>" style="width:600px; height:620px;  margin-top:17px; ">
