@@ -375,9 +375,9 @@
        <!-- 大块分隔行   三大链接 后面其实还有四大链接 我就是喜欢这么叫 呵呵 -->
        <div id="bigThree" class="bigThree">
 	      <ul> 	
-	      		<li style="margin-right:10px">创新创业训练计划项目管理平台</li>
-	       		<li style="margin-right:10px">创新创业项目推荐</li>
-	       		<li >创新创业竞赛平台</li>
+	      		<a href="http://218.24.106.9/index.php"><li style="margin-right:10px">创新创业训练计划项目管理系统</li></a>
+	       		<a href=""><li style="margin-right:10px">省大创年会项目评审系统</li></a>
+	       		<a href="http://dasai.upln.cn/index.php?m=yp"><li >创新创业竞赛管理系统</li></a>
 	       	</ul>
        </div>
        
