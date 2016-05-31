@@ -16,7 +16,7 @@ public class MyStrutsFilter extends StrutsPrepareAndExecuteFilter{
         String url = request.getRequestURI();         
         //System.out.println(url);         
         if (url.contains("/UEditor/")) {             
-            System.out.println("使用自定义过滤器");             
+            //System.out.println("使用自定义过滤器");             
             chain.doFilter(req, res);         
         }else{             
             //System.out.println("使用默认过滤器");             
