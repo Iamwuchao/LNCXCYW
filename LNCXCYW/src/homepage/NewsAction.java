@@ -1,6 +1,7 @@
 package homepage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ public class NewsAction extends PageGetBaseAction{
 	public String news_list_html;
 	private List<News> newsList;
 	private List<News> list;
+	private List<News> clickList;
 	private String news_address;
 	private List<News> addressList;
 	private List<News> newestNewsList;//每日推荐的新闻列表
@@ -48,7 +50,10 @@ public class NewsAction extends PageGetBaseAction{
 		Criteria q1 = session1.createCriteria(News.class);
 		list = q1.list();
 		
-		list = Cache.getNewestNewsList(12);
+		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
+		clickList=new ArrayList<News>(list);
+		Collections.reverse(clickList);
+		
 		Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
 		System.out.println(news_address);
@@ -82,6 +87,10 @@ public class NewsAction extends PageGetBaseAction{
 			newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		}
 		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
+		
+		clickList=new ArrayList<News>(list);
+		Collections.reverse(clickList);
+		
 		Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
 		//System.out.println(newsList);
@@ -195,6 +204,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setPictureNewsList(List<News> pictureNewsList) {
 		this.pictureNewsList = pictureNewsList;
+	}
+
+	public List<News> getClickList() {
+		return clickList;
+	}
+
+	public void setClickList(List<News> clickList) {
+		this.clickList = clickList;
 	}
 	
 	
