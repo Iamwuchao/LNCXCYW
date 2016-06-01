@@ -14,6 +14,8 @@ import GlobalInfo.NewsPageInfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
+import dao.DaoFactory;
+import dao.NewsDao;
 import mode.News;
 import util.JspToHTML;
 import util.PageGetBaseAction;
@@ -35,6 +37,16 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
 	
+	private String keyWords;
+	
+	public String getKeyWords() {
+		return keyWords;
+	}
+
+	public void setKeyWords(String keyWords) {
+		this.keyWords = keyWords;
+	}
+
 	/*
 	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了,这个构造函数不要删
 	 */
@@ -111,6 +123,24 @@ public class NewsAction extends PageGetBaseAction{
 		newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
 		return ActionSupport.SUCCESS;
+	}
+	
+	public String newsSearchByTitle(){
+		System.out.println("NewsAction.newsSearchByTitle()");
+		System.out.println(keyWords+"keyOoo");
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		try{
+			newsList=dao.getNewsListByKeyword(keyWords);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println(newsList);
+//		if (newsList.size()>0) {
+//			status = "1";
+//		}
+//		newsMessageTable = JspToHTML.getJspOutput("/jsp/admin/widgets/news_message_table.jsp");
+		return SUCCESS;
 	}
 
 	/*

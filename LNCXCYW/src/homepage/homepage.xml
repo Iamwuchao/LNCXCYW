@@ -34,5 +34,12 @@
 		</result>
 	</action> -->
 	
+	<action name="news_search_by_title" class="homepage.NewsAction"
+			method="newsSearchByTitle">
+			<result name="success" >
+				/jsp/third/search_result.jsp
+			</result>
+		</action>
+	
 </package>
 </struts>

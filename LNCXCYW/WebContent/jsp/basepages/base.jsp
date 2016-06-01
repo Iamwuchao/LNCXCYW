@@ -29,7 +29,17 @@
 <div class="logobox">
 <div class="logo">
 	<img src="/images/2Dcode.jpg"  height="60px" width="60px"/>
-	<span>&nbsp;&nbsp;&nbsp;<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a></span> 
+	
+            
+          
+	<span>
+	<!-- <form action="" method="post" > -->
+	<input type="text" class="" placeholder="Search..." name="keyWords" id="keyWords">
+	
+	<button id="news_search_by_title" type="button">搜索</button>
+	
+	&nbsp;&nbsp;&nbsp;<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a></span>
+	<!-- </form>  -->
 </div>
 <div class="splitterbars"></div>
 <div class="nav">
@@ -62,3 +72,15 @@
 		</div>
 </body>
 </html>
+<script>
+$("#news_search_by_title").click(function(){
+	var keyWords = $("#keyWords").val();
+	alert(keyWords)
+// 	window.location.href = "http://baidu.com"
+	window.location.href = "/news_search_by_title?keyWords="+keyWords;
+	return ;
+	
+	
+})
+
+</script>
