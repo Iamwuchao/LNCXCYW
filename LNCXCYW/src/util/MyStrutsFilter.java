@@ -19,7 +19,10 @@ public class MyStrutsFilter extends StrutsPrepareAndExecuteFilter{
             //System.out.println("使用自定义过滤器");             
             chain.doFilter(req, res);         
         }else{             
-            //System.out.println("使用默认过滤器");             
+            //System.out.println("使用默认过滤器");      
+        	if(url.contains("/news/")){
+        		util.MyUtil.updateClick(url);
+        	}
             super.doFilter(req, res, chain);         
         } 
     }

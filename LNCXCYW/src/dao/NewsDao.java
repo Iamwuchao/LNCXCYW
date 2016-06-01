@@ -116,7 +116,17 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		session.close();
 		return re;
 	}
-	
+	/*
+	 * 
+	 */
+	public void increaseClick(String url){
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(News.class);
+		criteria.add(Restrictions.eq("news_address", url));
+		News news=(News)criteria.list().get(0);
+		System.out.println(news.getNews_address());
+				
+	}
 	
 	
 	/**
