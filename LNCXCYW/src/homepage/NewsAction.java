@@ -136,6 +136,31 @@ public class NewsAction extends PageGetBaseAction{
 			e.printStackTrace();
 		}
 		System.out.println(newsList);
+		
+		Session session1 = SingletonSessionFactory.getSession();
+		Criteria q1 = session1.createCriteria(News.class);
+		list = q1.list();//这个list代表每日推荐新闻列表
+		if(category==null){//获取所有新闻
+			Session session=SingletonSessionFactory.getSession();
+			Criteria q=session.createCriteria(News.class);
+			/*list=q.list();*/
+			//newsList=q.list();
+			
+			session.close();
+		}else{//根据参数获取对应类别
+			//newsList=getNewsListByCategory(category, 0, 200);
+			//newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
+		}
+		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
+		
+		clickList=new ArrayList<News>(list);
+		Collections.reverse(clickList);
+		
+		Cache.getNewsList("图片新闻", 0, 3);
+		System.out.println(list);
+		//System.out.println(newsList);
+		System.out.println(list);
+		
 //		if (newsList.size()>0) {
 //			status = "1";
 //		}
