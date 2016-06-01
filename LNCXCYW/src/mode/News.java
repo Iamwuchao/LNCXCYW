@@ -23,6 +23,8 @@ public class News {
 	private Date date;
 	private String author;
 	private NewsCategory category;
+	private long clickNum;
+	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -64,7 +66,17 @@ public class News {
 		return author;
 	}
 	
-	
+	@Column
+	public long getClickNum() {
+		return clickNum;
+	}
+
+	@Column
+	public void setClickNum(long clickNum) {
+		this.clickNum = clickNum;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	public NewsCategory getCategory() {

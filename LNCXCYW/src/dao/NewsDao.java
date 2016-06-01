@@ -116,8 +116,9 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		session.close();
 		return re;
 	}
+	
 	/*
-	 * 
+	 * 更新点击量
 	 */
 	public void increaseClick(String url){
 		Session session=getSession();
@@ -166,6 +167,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		news.setNews_address(address);
 		news.setDate(date);
 		news.setCategory(newsCategory);
+		news.setClickNum(0);
 	
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		if(!dao.save(news)){
