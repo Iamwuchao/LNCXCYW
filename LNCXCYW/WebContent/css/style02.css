@@ -73,8 +73,30 @@ input,select{
 	display:block; 
 	padding:13px 0 0 0;
 }
-.logo a{ 
-	color:#898989;
+.logo img{
+	margin-top:25px;
+	margin-right:10px;
+}
+.logo a{
+	font-size:16px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	color:black;
+}
+.logo .regist{
+	position:relative;
+	right:90px;
+	bottom:60px;
+}
+.logo .search{
+	position:relative;
+	bottom:50px;
+	right:90px;
+}
+.logo .news_search_by_title{
+	background-image:url("../images/search.png");
+	width:24px;
+	height:24px;
 }
 .nav {
 	width:1024px;
@@ -125,7 +147,7 @@ ul li {
 
 }
 .content-left{
-	width: 700px;
+	width: 650px;
 	min-height:1024px;
     /*float: left;*/
    	margin: 0 ;
@@ -140,8 +162,9 @@ ul li {
 }
 .content-left .inner{
 	/*margin: 10px 10px;*/
+	margin-top:-30px;
 	padding: 10px 20px;
-	border-top: 4px solid rgb(25,85,145);
+	border-top: 5px solid rgb(25,85,145);
 	border-left:1px solid rgb(25,85,145);
 	border-right:1px solid rgb(25,85,145);
 	border-bottom:1px solid rgb(25,85,145);
@@ -182,7 +205,7 @@ ul li {
 	line-height:30px;
 }
 .content-right{
-	width:300px;
+	width:350px;
 	float: right;
 	/*height:880px;*/
 	position: relative;
@@ -193,6 +216,7 @@ ul li {
 	margin-right: 10px;
 	/*padding: 60px 10px 10px 150px;*/
 	box-sizing:border-box;
+	min-height:1250px;
 	/*background-color: #195591;*/
 /*.content-right table{
 
@@ -206,7 +230,7 @@ ul li {
 	position: absolute;
 	top: 0;
 	right:0;
-	width:280px;
+	width:350px;
 	height: 400px;
 	background-color:rgb(25,85,145);
 	text-align:center;
@@ -249,9 +273,9 @@ ul li {
 }*/
 .inner-bottom{
 	position: absolute;
-	top:442px;
+	top:432px;
 	right:0;
-	width: 280px;
+	width: 350px;
 	height: 350px;
 	background-color:rgb(25,85,145);
 	text-align:center;
@@ -272,6 +296,31 @@ ul li {
 	bottom:5px;
 	background-color: #fff;
 
+}
+.inner-hot{
+	position: absolute;
+	top: 812px;
+	right:0;
+	width:350px;
+	height: 400px;
+	background-color:rgb(25,85,145);
+	text-align:center;
+}
+.inner-hot p{
+	font-weight:bold;
+	color:#fff;
+	font-size: 25px;
+	display: block;
+	padding: 20px;
+}
+.deep-inner-hot{
+	padding:10px;
+	position:absolute;
+	top:55px;
+	left:5px;
+	right:5px;
+	bottom:5px;
+	background-color: #fff;
 }
 .bottom-wrap{
 	width: 100%;
@@ -307,12 +356,12 @@ ul li {
 .inner-bottom .left{
 	float:left;
 	margin:0;
-	width:115px;
+	width:130px;
 }
 .inner-bottom .right{
 	float:right;
 	margin-left:20px;
-	width:115px;
+	width:130px;
 }
 .inner-bottom .one{
 	margin:0 20px 20px 0;

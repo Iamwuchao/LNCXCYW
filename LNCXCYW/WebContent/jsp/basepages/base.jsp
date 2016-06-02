@@ -28,17 +28,23 @@
 </div>
 <div class="logobox">
 <div class="logo">
-	<img src="/images/2Dcode.jpg"  height="60px" width="60px"/>
+	<img src="/images/2Dcode.jpg"  height="60px" width="60px" />
 	
             
           
-	<span>
+	<!-- <span> -->
 	<!-- <form action="" method="post" > -->
-	<input type="text" class="" placeholder="Search..." name="keyWords" id="keyWords">
 	
-	<button id="news_search_by_title" type="button">搜索</button>
 	
-	&nbsp;&nbsp;&nbsp;<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a></span>
+	<div class="regist">
+		<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a>
+	</div>
+	<div class="search">
+		<input type="text" class="" placeholder="站内搜索" name="keyWords" id="keyWords">
+	
+		<button id="news_search_by_title" type="button">搜索</button>
+	</div>
+	<!-- </span> -->
 	<!-- </form>  -->
 </div>
 <div class="splitterbars"></div>

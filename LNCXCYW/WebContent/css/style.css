@@ -19,8 +19,33 @@ input,select{ font-size:12px; vertical-align:middle;}
  text-align:right;
  font:12px 微软雅黑;
  line-height:20px;
-}
 
+}
+.logo img{
+	margin-top:25px;
+	margin-right:10px;
+}
+.logo a{
+	font-size:16px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	color:black;
+}
+.logo .regist{
+	position:relative;
+	right:90px;
+	bottom:60px;
+}
+.logo .search{
+	position:relative;
+	bottom:50px;
+	right:90px;
+}
+.logo .news_search_by_title{
+	background-image:url("../images/search.png");
+	width:24px;
+	height:24px;
+}
 .splitterbars{
  width:1024px;
  height:30px;
@@ -34,7 +59,6 @@ input,select{ font-size:12px; vertical-align:middle;}
 }
 .splitterbars a{color:#FFFFFF}
 .logo span{  display:block; padding:13px 0 0 0;}
-.logo a{ color:#898989;}
 .nav {
 	width:1024px;
 	height:50px;
