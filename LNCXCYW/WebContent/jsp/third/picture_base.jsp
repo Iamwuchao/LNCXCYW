@@ -21,7 +21,17 @@
 
 	<div class="logobox">
 		<div class="logo">
-			<span>&nbsp;&nbsp;&nbsp;<a href="http://en.dlut.edu.cn" target="_blank">ENGLISH</a></span> 
+			<img src="/images/2Dcode.jpg"  height="60px" width="60px"/>
+			<!-- <span>&nbsp;&nbsp;&nbsp;<a href="http://en.dlut.edu.cn" target="_blank">ENGLISH</a></span> -->
+	
+			<div class="regist">
+				<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a>
+			</div>
+			<div class="search">
+				<input type="text" class="" placeholder="站内搜索" name="keyWords" id="keyWords">
+	
+				<button id="news_search_by_title" type="button">搜索</button>
+			</div> 
 		</div>
 		<div class="splitterbars"></div>
 		<div class="nav">
@@ -83,6 +93,14 @@
 						<img class="two" alt="图片无法显示" src="/images/Desert.jpg" width="165.5px" height="155px"> -->
 					</div>
 					
+				</div>
+			</div>
+			<div class="inner-hot">
+				<p>排行榜</p>
+				<div class="deep-inner-hot">
+					<layout:block name="hot_news">
+						
+					</layout:block>
 				</div>
 			</div>
 		</div>	

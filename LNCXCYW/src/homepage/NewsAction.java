@@ -36,7 +36,16 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> addressList;
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
+	private List<News> hotestNewsList;//排行榜新闻列表
 	
+	public List<News> getHotestNewsList() {
+		return hotestNewsList;
+	}
+
+	public void setHotestNewsList(List<News> hotestNewsList) {
+		this.hotestNewsList = hotestNewsList;
+	}
+
 	private String keyWords;
 	
 	public String getKeyWords() {
@@ -53,6 +62,7 @@ public class NewsAction extends PageGetBaseAction{
 	public NewsAction(){
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
 		pictureNewsList = Cache.getNewsList("图片新闻", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
+		hotestNewsList = newestNewsList;
 	}
 	
 	@SuppressWarnings("unchecked")

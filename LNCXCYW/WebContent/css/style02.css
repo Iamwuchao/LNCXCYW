@@ -322,6 +322,12 @@ ul li {
 	bottom:5px;
 	background-color: #fff;
 }
+.deep-inner-hot li{
+	text-align:left;
+	list-style: disc;
+	line-height: 25px;
+	font-size: 13px;
+}
 .bottom-wrap{
 	width: 100%;
 	clear: both;

@@ -3,8 +3,8 @@
 
 
 <div>  
-	<p style="text-align:center; font-weight:bold;font-size:16px; font-family:'微软雅黑';">标题：<s:property value="title"/></p>	
-	<p style="text-align:right; color:grey; font-size:12px;">作者：<s:property value="author"/></p>	
+	<p style="text-align:center; font-weight:bold;font-size:20px; font-family:'微软雅黑'; color:#06c;text-shadow:1px 1px 1px #c1e0ff;"><s:property value="title"/></p>	
+	<p style="text-align:center; color:grey; font-size:12px;">作者：<s:property value="author"/></p>	
 </div>
 
 
@@ -32,5 +32,17 @@
 <layout:override name="focus_right_picture">
 	   <a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(2).news_address}"/>"><img class="one" src="<s:property value="%{pictureNewsList.get(2).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(2).newsTile}"/>" width="130px" height="120px"></a>
        <a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(3).news_address}"/>"><img class="two" src="<s:property value="%{pictureNewsList.get(3).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(3).newsTile}"/>" width="130px" height="120px"></a>
+</layout:override>
+
+<layout:override name="hot_news">
+	<ul>
+		<s:iterator value="hotestNewsList" var="i" status="index">
+			<li>
+				<a href="<s:property value="#i.news_address" />">
+					<s:property value="#i.newsTile" />
+				</a>
+			</li>
+		</s:iterator>
+	</ul>
 </layout:override>
 <%@ include file="base.jsp" %>
