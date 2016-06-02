@@ -105,7 +105,7 @@
 			</div>
 			<div class="inner-hot">
 				<p>排行榜</p>
-				<div class="deep-inner-hot">
+				<div class="deep-inner-hot recommend">
 					<layout:block name="hot_news">
 						
 					</layout:block>
