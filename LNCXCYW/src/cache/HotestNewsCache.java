@@ -1,6 +1,7 @@
 package cache;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import mode.News;
@@ -8,7 +9,7 @@ import mode.News;
 public class HotestNewsCache implements LeftCycle<News> {
 	
 	private final int LIST_SIZE=10;
-	private List<News> hotestList=new ArrayList<News>(LIST_SIZE);
+	private List<News> hotestList=Collections.synchronizedList(new ArrayList<News>(LIST_SIZE));
 	
 	
 	private void heapAdjust(){//维护一个小顶堆
