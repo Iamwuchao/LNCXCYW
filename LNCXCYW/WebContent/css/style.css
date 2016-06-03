@@ -286,64 +286,96 @@ input,select{ font-size:12px; vertical-align:middle;}
  border-bottom:1px solid #7e7e7e;
 }
 .conblue .name ul li{
- width:166px;
- height:36px;
- float:left;
- display:inline;
- font:14px 微软雅黑;
- line-height:36px;
- text-align:center;
- color:#292929;
+ 	width:166px;
+ 	height:36px;
+ 	float:left;
+ 	display:inline;
+ 	font:14px 微软雅黑;
+ 	line-height:36px;
+ 	text-align:center;
+ 	color:#292929;
  
- cursor:pointer;
+ 	cursor:pointer;
 }
 
 .conblue .name ul li.curnews{
- 
- color:#ffffff;
- background: url(../images/litabbg.png) repeat right top;
+ 	color:#ffffff;
+ 	background: url(../images/litabbg.png) repeat right top;
 }
 
 .conblue .name ul li a{
- color:#ffffff;
+ 	color:#ffffff;
 }
-
-.congray {
+.congrey {
     width: 333px;
     float: left;
     display: inline;
-   
+    height: 280px;
+    overflow: hidden;
+}
+
+.congrey .name{
+ width:100%;
+ height:36px;
+ border-bottom:1px solid #7e7e7e;
+}
+.congrey .name ul li{
+ 	width:166px;
+ 	height:36px;
+ 	float:left;
+ 	display:inline;
+ 	font:14px 微软雅黑;
+ 	line-height:36px;
+ 	text-align:center;
+ 	color:#292929;
+ 
+ 	cursor:pointer;
+}
+
+.congrey .name ul li.curnews{
+ 	color:#ffffff;
+ 	background: url(../images/libgchecked.png) repeat right top;
+}
+
+.congrey .name ul li a{
+ 	color:#ffffff;
+}
+
+/* .congray {
+    width: 333px;
+    float: left;
+    display: inline;
     height: 280px;
     overflow: hidden;
 }
 
 .congray .name{
- width:100%;
- height:36px;
- border-bottom:1px solid #7e7e7e;
+	width:100%;
+ 	height:36px;
+ 	border-bottom:1px solid #7e7e7e;
 }
 .congray .name ul li{
- width:166px;
- height:36px;
- float:left;
- display:inline;
- font:14px 微软雅黑;
- line-height:36px;
- text-align:center;
- color:#292929;
+ 	width:166px;
+ 	height:36px;
+ 	float:left;
+ 	display:inline;
+ 	font:14px 微软雅黑;
+ 	line-height:36px;
+ 	text-align:center;
+ 	color:#292929;
  
- cursor:pointer;
+ 	cursor:pointer;
 }
 
 .congray .name ul li.curnews{
  
- color:#ffffff;
+ color:#fff;
  background: url(../images/libgchecked.png)repeat right top;
 }
 
 .congray .name ul li a{
- color:#ffffff;
-}
+ color:#fff;
+} */
 
 .Absolute-Center {  
   width: 50%;  

@@ -38,7 +38,7 @@
        <!-- 第一行 第二块 -->
       <div class="con2" >
          <div class="name">
-         	<ul style="width:100%;height:36px;overflow:hidden">
+         	<ul style="width:100%;height:36px;/* overflow:hidden */">
          		<a href="/second_page?category=通知公告" onclick="" target="_blank"><li id="one1" onmouseover="setTabsnow('one',1,3)"  class="curnews">通知公告</li></a>
          		<a href="/second_page?category=工作动态" onclick="" target="_blank"><li id="one2" onmouseover="setTabsnow('one',2,3)" >工作动态</li></a>
          		<a href="/second_page?category=高校动态" onclick="" target="_blank"><li id="one3" onmouseover="setTabsnow('one',3,3)" >高校动态</li></a>
@@ -108,7 +108,7 @@
   		<!-- 第二行 第一块  -->
   		<div id="second_con1" style=" margin-right: 10px" class="conblue">
 	  		<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=政策规章" target="_blank"><li id="two1" onmouseover="setTabsnow('two',1,2)" class="curnews">政策规章</li></a>
 	         		<a href="/second_page?category=创新创业资讯" target="_blank"><li id="two2" onmouseover="setTabsnow('two',2,2)" >创新创业资讯</li></a>
 	         	</ul>
@@ -143,9 +143,9 @@
 	  		 </div>
   		</div>
         	<!-- 第二行 第二块 -->
-	        <div id="second_con2" style=" margin-right: 10px" class="congray">
+	        <div id="second_con2" style=" margin-right: 10px" class="congrey">
 	        	<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=项目推介" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">项目推介</li></a>
 	         		<a href="/second_page?category=企业需求" target="_blank"><li id="three2" onmouseover="setTabsnow('three',2,2)" >企业需求</li></a>
 	         	</ul>
@@ -182,7 +182,7 @@
 	        <!-- 第二行 第三块 -->
 	        <div id="second_con3" class="conblue">
 	        	<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=教指委工作动态" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">教指委工作动态</li></a>
 	         		<a href="/second_page?category=高校创新创业教育季报" target="_blank"><li id="four2" onmouseover="setTabsnow('four',2,2)" >高校创新创业教育季报</li></a>
 	         	</ul>
@@ -240,9 +240,9 @@
        <!-- 第三列 三个新闻框 -->
        <div id="third_con" class="connews">
   		<!-- 第三行 第一块  -->
-  		<div id="third_con1" style=" margin-right: 10px" class="congray">
+  		<div id="third_con1" style=" margin-right: 10px" class="congrey">
 	  		<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;">
 	         		<a href="/second_page?category=创新训练" target="_blank"><li id="five1" onmouseover="setTabsnow('five',1,2)" class="curnews">创新训练</li></a>
 	         		<a href="/second_page?category=创业实践" target="_blank"><li id="five2" onmouseover="setTabsnow('five',2,2)" >创业实践</li></a>
 	         	</ul>
@@ -278,7 +278,7 @@
         	<!-- 第三行 第二块 -->
 	        <div id="third_con2" style=" margin-right: 10px" class="conblue">
 	        	<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;">
 	         		<a href="/second_page?category=创新创业年会" target="_blank"><li id="six1" onmouseover="setTabsnow('six',1,2)" class="curnews">创新创业年会</li></a>
 	         		<a href="/second_page?category=优秀创新创业作品" target="_blank"><li id="six2" onmouseover="setTabsnow('six',2,2)" >优秀创新创业作品</li></a>
 	         	</ul>
@@ -314,9 +314,9 @@
 	        </div>
 	        
 	        <!-- 第三行 第三块 -->
-	        <div id="third_con3" class="congray">
+	        <div id="third_con3" class="congrey">
 	        	<div class="name">
-	         	<ul style="width:100%;height:36px;overflow:hidden">
+	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=创新创业典型" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">创新创业典型</li></a>
 	         		<a href="/second_page?category=他山之石" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >他山之石</li></a>
 	         	</ul>
@@ -359,7 +359,7 @@
        		<!-- 创新创业培训  第一个新闻兰 -->
        		<div id="fourth_con1" style=" margin-right: 10px" class="conblue">
        			<div id="fourth_con2" class="name">
-		  		<ul style="width:100%;height:36px;overflow:hidden">
+		  		<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=创新创业培训" target="_blank"><li id="eight1" onmouseover="setTabsnow('eight',1,2)" class="curnews">创新创业培训</li></a>
 	         		<a href="/second_page?category=创新创业理论" target="_blank"><li id="eight2" onmouseover="setTabsnow('eight',2,2)" >创新创业理论</li></a>
 	         	</ul>
@@ -394,9 +394,9 @@
        		</div>
 		  	
 		  	<!-- 创新创业教材  第二个新闻栏 -->
-		 	<div id="fourth_con2" style="margin-right:10px" class="congray">
+		 	<div id="fourth_con2" style="margin-right:10px" class="congrey">
 		 		 	<div id="fourth_con2" class="name">
-		  		<ul style="width:100%;height:36px;overflow:hidden">
+		  		<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=创新创业教材" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业教材</li></a>
 	         		<a href="/second_page?category=创新创业课程" target="_blank"><li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业课程</li></a>
 	         	</ul>
@@ -433,7 +433,7 @@
       		<!-- 第三个新闻栏 为何这么多！！！！ -->
       		<div id="fourth_con3"  class="conblue">
       			<div id="fourth_con2" class="name">
-			  		<ul style="width:100%;height:36px;overflow:hidden">
+			  		<ul style="width:100%;height:36px;/* overflow:hidden */">
 		         		<a href="/second_page?category=创新创业导师" target="_blank"><li id="ten1" onmouseover="setTabsnow('ten',1,2)" class="curnews">创新创业导师</li></a>
 		         		<a href="/getAllExamPaper.action" target="_blank"><li id="ten2" onmouseover="setTabsnow('ten',2,2)" >素质测评</li></a>
 		         	</ul>
