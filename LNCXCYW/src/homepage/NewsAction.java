@@ -67,20 +67,17 @@ public class NewsAction extends PageGetBaseAction{
 	
 	@SuppressWarnings("unchecked")
 	public String pictureNews() throws Exception{
-		System.out.println("newsList: "+category);
-		Session session1 = SingletonSessionFactory.getSession();
-		Criteria q1 = session1.createCriteria(News.class);
-		list = q1.list();
+		System.out.println("pictureNews: ");
 		
 		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
 		hotestNewsList=Cache.getHotestNewsList();		
-		
 		Cache.getNewsList("图片新闻", 0, 3);
-		System.out.println(list);
-		System.out.println(news_address);
+		
+		
 		//图片新闻
 		Session session2 = SingletonSessionFactory.getSession();
 		addressList = session2.createCriteria(News.class).add(Restrictions.eq("news_address", news_address)).list();
+		session2.close();
 		System.out.println(news_address);
 		System.out.println(addressList);
 		return ActionSupport.SUCCESS;
@@ -132,6 +129,7 @@ public class NewsAction extends PageGetBaseAction{
 		return ActionSupport.SUCCESS;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String newsSearchByTitle(){
 		System.out.println("NewsAction.newsSearchByTitle()");
 		System.out.println(keyWords+"keyOoo");
@@ -148,12 +146,7 @@ public class NewsAction extends PageGetBaseAction{
 		Criteria q1 = session1.createCriteria(News.class);
 		list = q1.list();//这个list代表每日推荐新闻列表
 		if(category==null){//获取所有新闻
-			Session session=SingletonSessionFactory.getSession();
-			Criteria q=session.createCriteria(News.class);
-			/*list=q.list();*/
-			//newsList=q.list();
 			
-			session.close();
 		}else{//根据参数获取对应类别
 			//newsList=getNewsListByCategory(category, 0, 200);
 			//newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
