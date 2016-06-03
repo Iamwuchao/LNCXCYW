@@ -66,7 +66,6 @@ public class HotestNewsCache implements LeftCycle<News> {
 			hotestList.set(0, news);
 			heapAdjust();
 		}		
-		System.out.println(hotestList);
 	}
 	
 	

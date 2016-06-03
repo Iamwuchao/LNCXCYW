@@ -68,9 +68,7 @@
 			<div class="inner-top">
 			<p>每日推荐</p>
 				<div class="deep-inner-top recommend">
-					<layout:block name="eve_push">
-						
-					</layout:block>
+					<%@ include file="/jsp/third/even_push.jsp" %>
 				</div>
 			</div>
 
@@ -96,11 +94,10 @@
 				</div>
 			</div>
 			<div class="inner-hot">
+			<!-- 为啥有这么多base页面 -->
 				<p>排行榜</p>
-				<div class="deep-inner-hot">
-					<layout:block name="hot_news">
-						
-					</layout:block>
+				<div class="deep-inner-hot recommend">
+					<%@ include file="/jsp/third/hotest_news.jsp" %>
 				</div>
 			</div>
 		</div>	

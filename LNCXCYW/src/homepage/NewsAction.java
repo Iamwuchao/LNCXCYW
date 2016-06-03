@@ -62,7 +62,7 @@ public class NewsAction extends PageGetBaseAction{
 	public NewsAction(){
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
 		pictureNewsList = Cache.getNewsList("图片新闻", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
-		hotestNewsList = newestNewsList;
+		hotestNewsList=Cache.getHotestNewsList();	
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -73,8 +73,7 @@ public class NewsAction extends PageGetBaseAction{
 		list = q1.list();
 		
 		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
-		clickList=new ArrayList<News>(list);
-		Collections.reverse(clickList);
+		hotestNewsList=Cache.getHotestNewsList();		
 		
 		Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
@@ -110,9 +109,7 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		list = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
 		
-		clickList=new ArrayList<News>(list);
-		Collections.reverse(clickList);
-		
+		hotestNewsList=Cache.getHotestNewsList();		
 		Cache.getNewsList("图片新闻", 0, 3);
 		System.out.println(list);
 		//System.out.println(newsList);
