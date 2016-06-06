@@ -8,7 +8,7 @@
 						<a href="<s:property value="#i.news_address" />">
 							<s:property value="#i.newsTile" />
 						</a>
-						<span style="float:right"><s:property value="#i.date"/></span>
+						<%-- <span style="float:right"><s:property value="#i.date"/></span> --%>
 					</li>
 			</s:iterator>
 		</ul>
