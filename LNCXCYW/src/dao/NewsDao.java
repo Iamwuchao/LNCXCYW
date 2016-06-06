@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
@@ -116,6 +117,22 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		session.close();
 		return re;
 	}
+	
+	/*
+	 * 按点击量查询
+	 */
+	@SuppressWarnings("unchecked")
+	public List<News> getNewsListByClick(int n){
+		System.out.println("getNewsListByClick:");
+		List<News> re;
+		Session session=getSession();
+		Query q=session.createQuery("from News news order by news.clickNum desc");
+		re=q.list();
+		session.close();
+		int len=re.size()>n? n:re.size();		
+		return re.subList(0, len);
+	}
+	
 	
 	/*
 	 * 更新点击量

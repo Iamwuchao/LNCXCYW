@@ -4,12 +4,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import dao.DaoFactory;
+import dao.NewsDao;
 import mode.News;
 
 public class HotestNewsCache implements LeftCycle<News> {
 	
 	private final int LIST_SIZE=10;
 	private List<News> hotestList=Collections.synchronizedList(new ArrayList<News>(LIST_SIZE));
+	
+	
+	@Override
+	public void init() {
+		System.out.println("hotestList init:");
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		hotestList=dao.getNewsListByClick(10);
+		heapAdjust();
+		System.out.println(hotestList);
+		
+	}
+	
 	
 	
 	private void heapAdjust(){//维护一个小顶堆
@@ -73,14 +87,7 @@ public class HotestNewsCache implements LeftCycle<News> {
 		return hotestList;
 	}
 	
-	
-	
-	
-	@Override
-	public void init() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public void destory() {
