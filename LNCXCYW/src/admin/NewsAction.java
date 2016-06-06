@@ -36,6 +36,7 @@ public class NewsAction extends PageGetBaseAction{
 	
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
+	private List<News> hotestNewsList;//排行榜新闻列表
 	private String newsMessageTable;//返回给前台显示的的新闻HTML字符串
 	private String status;
 	/*
@@ -44,6 +45,7 @@ public class NewsAction extends PageGetBaseAction{
 	public NewsAction(){
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
 		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
+		hotestNewsList=Cache.getHotestNewsList();	
 	}
 	
 	/**
@@ -276,6 +278,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public List<News> getHotestNewsList() {
+		return hotestNewsList;
+	}
+
+	public void setHotestNewsList(List<News> hotestNewsList) {
+		this.hotestNewsList = hotestNewsList;
 	}
 
 	

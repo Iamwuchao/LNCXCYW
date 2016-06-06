@@ -1,5 +1,4 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
-
 	<ul>
 		<s:iterator value="hotestNewsList" var="i" status="index">
 			<li>
