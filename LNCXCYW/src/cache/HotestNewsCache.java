@@ -1,7 +1,6 @@
 package cache;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import dao.DaoFactory;
@@ -11,19 +10,18 @@ import mode.News;
 public class HotestNewsCache implements LeftCycle<News> {
 	
 	private final int LIST_SIZE=10;
-	private List<News> hotestList=Collections.synchronizedList(new ArrayList<News>(LIST_SIZE));
+	private volatile List<News> hotestList;
+	private final Object writeLock=new Object();
 	
 	
 	@Override
 	public void init() {
 		System.out.println("hotestList init:");
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-		hotestList=dao.getNewsListByClick(10);
-		heapAdjust();
-		System.out.println(hotestList);
-		
-	}
-	
+		List<News> re=dao.getNewsListByClick(10);
+		hotestList=new ArrayList<News>(re);
+		heapAdjust();	
+	}	
 	
 	
 	private void heapAdjust(){//维护一个小顶堆
@@ -52,39 +50,41 @@ public class HotestNewsCache implements LeftCycle<News> {
 					right=left+1;
 				}
 			}			
-		}		
+		}	
+		System.out.println(hotestList);
 	}
 	
 	
 	@Override
 	public void update(News news) {
 		System.out.println("hotestList update:");
-		System.out.println(hotestList);
-		for(News n: hotestList){//先判断对应的新闻是不是已经在排行榜中了
-			if(n.getNews_address().equals(news.getNews_address())){//如果已经存在了，直接更新点击量，然后维护堆的性质
-				n.setClickNum(n.getClickNum()+1);
+		synchronized(writeLock){
+			for(News n: hotestList){//先判断对应的新闻是不是已经在排行榜中了
+				if(n.getNews_address().equals(news.getNews_address())){//如果已经存在了，直接更新点击量，然后维护堆的性质
+					n.setClickNum(n.getClickNum()+1);
+					heapAdjust();
+					return ;
+				}
+			}
+			
+			//如果没有出现过，进行下一步判断		
+			if(hotestList.size()<LIST_SIZE){
+				hotestList.add(news);
 				heapAdjust();
 				return ;
 			}
+			
+			if(news.getClickNum()>hotestList.get(0).getClickNum()){
+				hotestList.set(0, news);
+				heapAdjust();
+			}	
 		}
-		
-		//如果没有出现过，进行下一步判断		
-		if(hotestList.size()<LIST_SIZE){
-			hotestList.add(news);
-			heapAdjust();
-			return ;
-		}
-		
-		if(news.getClickNum()>hotestList.get(0).getClickNum()){
-			System.out.println("dayu"+news.getClickNum()+" "+hotestList.get(0).getClickNum());
-			hotestList.set(0, news);
-			heapAdjust();
-		}		
+			
 	}
 	
 	
 	public List<News> getHotestNewsList(){		
-		return hotestList;
+		return new ArrayList<News>(hotestList);
 	}
 	
 

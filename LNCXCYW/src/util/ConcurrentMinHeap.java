@@ -8,20 +8,14 @@ import mode.News;
 
 
 public class ConcurrentMinHeap {
-	private volatile ArrayList<News> heap;
+	private volatile List<News> heap;
 	private final int HEAP_SIZE=10;
 	private final Object writeLock=new Object();
 	
-	public ConcurrentMinHeap(){
-		heap=new ArrayList<News>(HEAP_SIZE);
-	}
-	
-	
-	public News getMin(){
-		if(heap==null||heap.size()<1){
-			return null;
-		}
-		return heap.get(0);
+	public ConcurrentMinHeap(ArrayList<News> list){
+		this.heap=new ArrayList<News>(list);
+		heapAdjust();
+		System.out.println(heap);
 	}
 	
 	public List<News> getAll(){
@@ -55,10 +49,11 @@ public class ConcurrentMinHeap {
 				}
 			}			
 		}	
+		System.out.println(heap);
 	}
 	
 	public void update(News news){
-		System.out.println("update:");
+		System.out.println("hoteatList update:");
 		synchronized(writeLock){
 			for(News n: heap){//先判断对应的新闻是不是已经在排行榜中了
 				if(n.getNews_address().equals(news.getNews_address())){//如果已经存在了，直接更新点击量，然后维护堆的性质
