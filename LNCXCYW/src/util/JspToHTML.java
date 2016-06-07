@@ -1,10 +1,10 @@
 package util;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -68,26 +68,24 @@ public class JspToHTML {
 			parent.mkdirs();
 		}
 		String url = PathInfo.ROOTURL.getValue()+ temUrl + fileName;
-		RandomAccessFile fileOutputStream = null;
+		
+		
+		BufferedWriter writer=null;		
 		try {
-			fileOutputStream = new RandomAccessFile(file,"rws");
-			//System.out.println(newsContent);
-		//	Charset cs = Charset.forName("utf-8");
-		//	ByteBuffer bb = cs.encode(newContent);
-			//while(bb.hasRemaining())
+			writer=new BufferedWriter(new FileWriter(file));
 			String newsContentByFilter = filterChar(newsContent);
 			System.out.println(newsContentByFilter);
-			fileOutputStream.writeUTF(newsContentByFilter);
+			writer.write(newsContentByFilter);
+			writer.close();
+			
 			System.out.println("hehe");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			throw new FileNotFoundException("failed to create a html file ");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			throw new IOException("failed to write HTML FIle ");
 		}finally{
-			if(fileOutputStream!=null){
-				fileOutputStream.close();
+			if(writer!=null){
+				writer.close();
 			}
 		}
 		return url;
