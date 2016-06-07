@@ -3,6 +3,7 @@ package admin;
 
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -24,6 +25,7 @@ public class NewsAction extends PageGetBaseAction{
 	private String category;
 	private String author;
 	private String content;
+	private String date;
 	public String news_list_html;
 	private List<News> newsList;
 	private List<String> categoryList;
@@ -139,7 +141,10 @@ public class NewsAction extends PageGetBaseAction{
 	 */
 	public String newsSubmit() throws Exception {
 		System.out.print("newsSubmit: ");
-		System.out.println(title+""+category+""+author);		
+		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
+		date=formatter.format(new java.util.Date());
+		System.out.println(title+""+category+""+author+""+date);	
+		
 		try{
 			dao.NewsDao.newsSave(title, author, content, category);
 		}catch(Exception e){
@@ -286,6 +291,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setHotestNewsList(List<News> hotestNewsList) {
 		this.hotestNewsList = hotestNewsList;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	
