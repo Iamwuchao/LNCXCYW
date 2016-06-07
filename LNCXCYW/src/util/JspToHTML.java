@@ -3,8 +3,11 @@ package util;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -72,10 +75,11 @@ public class JspToHTML {
 		
 		BufferedWriter writer=null;		
 		try {
-			writer=new BufferedWriter(new FileWriter(file));
-			String newsContentByFilter = filterChar(newsContent);
+			writer=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file),"utf-8")); 
+			
+			String newsContentByFilter = filterChar(newsContent);			
 			System.out.println(newsContentByFilter);
-			writer.write(newsContentByFilter);
+			writer.write(new String(newsContentByFilter.getBytes("utf8"),"utf-8"));
 			writer.close();
 			
 			System.out.println("hehe");
