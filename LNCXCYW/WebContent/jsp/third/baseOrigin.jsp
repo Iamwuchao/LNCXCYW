@@ -116,29 +116,8 @@
 		<div id="bigDiver" class="bigDivider">
 		</div>
 		<div id="foot" class="foot">
-			<a class="title" href="#">相关链接</a>
-			<ul>
-				<li><a href="http://new.lnen.cn/">辽宁省教育厅</a></li>
-				<li><a href="http://www.upln.cn/">辽宁省本科教育网</a></li>
-				<li><a href="http://chuangxin.dlut.edu.cn/">大连理工大学创新创业学院</a></li>
-				<li><a href="http://www.upln.cn/">辽宁省本科教育网</a></li>
-			</ul>
-		</div>
 		</div>
 	</div>
-
+</div>
 </body>
-<script>
-$("#news_search_by_title").click(function(){
-	/* alert(99); */
-	var keyWords = $("#keyWords").val();
-	/* alert(keyWords) */
-// 	window.location.href = "http://baidu.com"
-	window.location.href = "/news_search_by_title?keyWords="+keyWords;
-	return ;
-	
-	
-})
-
-</script>
 </html>

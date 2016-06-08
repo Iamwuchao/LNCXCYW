@@ -384,7 +384,9 @@ ul li {
 	height:150px;
 	background-color:#f6f6f6;
  	background:url(../images/foot.png);
- 	text-align:right;
+ 	/* text-align:right; */
+ 	margin:0 auto;
+ 	box-sizing:border-box;
 }
 /*  .inner-bottom .deep-inner-bottom{
 	position:relative;
@@ -421,4 +423,33 @@ ul li {
 	 margin-top:20px;
 	 color:#06c;
 	text-shadow:1px 1px 1px #c1e0ff;
+}
+/* 三级页面底部链接 */
+.foot .title {
+color: rgb(25,85,145);
+text-decoration: underline;
+}
+.foot a {
+display: inline-block;
+margin-left: 30px;
+margin-top: 10px;
+color: black;
+font-family: "微软雅黑";
+font-size: 16px;
+font-weight: bold;
+}
+.foot ul {
+width: 100%;
+margin: 0 auto;
+text-align: center;
+padding: 0;
+zoom: 1;
+}
+.foot li {
+margin-top: 20px;
+margin-right: 60px;
+display: inline-block;
+}
+.foot li {
+list-style-type: none;
 }
