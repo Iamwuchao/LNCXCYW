@@ -15,6 +15,13 @@
 		分类
 		<s:select lable="test" list="categoryList" name="category"></s:select>  
 	</div>
+
+	<div>
+		来源
+		<input type="text" id="source"> 
+	</div>		
+
+	
 	<div>
 		作者
 		<input type="text" id="author"> 
@@ -34,6 +41,7 @@
 </div>
 <script>
 	function test(){
+		
 		var test = $("#category").val();
 		var arr = [];
         arr.push("使用editor.getContent()方法可以获得编辑器的内容");
@@ -46,8 +54,9 @@
 		var title = $("#title").val();
 		var category = $("#category").val();
 		var author = $("#author").val();
+		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
-		//alert(title+" "+classify+" "+author+" "+content);
+		//alert(title+" "+author+" "+content+" "+source);
 		
 		$.ajax({
 			url : '/newsSubmit',
@@ -57,6 +66,7 @@
 				"title" : title,
 				"category" : category,
 				"author" : author,
+				"source" : source,
 				"content" : content,
 			},
 			success : submitCallback

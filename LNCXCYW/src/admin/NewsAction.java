@@ -24,6 +24,7 @@ public class NewsAction extends PageGetBaseAction{
 	private String title;
 	private String category;
 	private String author;
+	private String source;
 	private String content;
 	private String date;
 	public String news_list_html;
@@ -143,7 +144,7 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.print("newsSubmit: ");
 		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
 		date=formatter.format(new java.util.Date());
-		System.out.println(title+""+category+""+author+""+date);	
+		System.out.println(title+""+source+""+category+""+author+""+date);	
 		
 		try{
 			dao.NewsDao.newsSave(title, author, content, category);
@@ -299,6 +300,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
 	}
 
 	
