@@ -3,7 +3,7 @@
 
 
 <div>  
-	<p style="text-align:center; font-weight:bold;font-size:20px; line-height:32px;font-family:'微软雅黑';margin-top:20px; color:#06c;text-shadow:1px 1px 1px #c1e0ff;"><s:property value="title"/></p>	
+	<p class="left_title" style=""><s:property value="title"/></p>	
 	<p style="text-align:center; color:grey; font-size:12px;">作者：<s:property value="author"/>&nbsp;&nbsp;&nbsp;&nbsp;时间：<s:property value="date"/></p>	
 </div>
 

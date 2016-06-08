@@ -412,3 +412,13 @@ ul li {
 .inner-bottom .two{
 	margin:0 0 20px 0;
 }
+.con .content-left .inner .left_title{
+	text-align:center;
+	 font-weight:bold;
+	 font-size:20px; 
+	 line-height:32px;
+	 font-family:'微软雅黑';
+	 margin-top:20px;
+	 color:#06c;
+	text-shadow:1px 1px 1px #c1e0ff;
+}
