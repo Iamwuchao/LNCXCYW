@@ -12,9 +12,9 @@ ul li{
 	
 }
 
-ul li a{
+/* ul li a{
 	font-size:large;
-}
+} */
 
 .recommend a{
 	width:100%;
@@ -257,7 +257,9 @@ ul li {
 .deep-inner-top li{
 	text-align:left;
 	list-style: disc;
-	line-height: 25px;
+	/* line-height: 25px;
+	font-size: 13px; */
+	line-height: 22px;
 	font-size: 13px;
 }
 /*.content-right2{
