@@ -92,12 +92,12 @@
 		<!-- 第一行第三块 -->
      <div class="con3" style="float:right">
         <ul class = "list-group">
-        	<li class="list-group-item"><div style="margin-left:40px ">我要对接项目</div></li>
-        	<li class="list-group-item"><div style="margin-left:40px">创新创业活动日程表</div></li>
-        	<li class="list-group-item"><div style="margin-left:40px">创新创业改革实施方案</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业教育基地'">我要对接项目</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业活动日程表'">创新创业活动日程表</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业改革实施方案'">创新创业改革实施方案</div></li>
         	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业教育基地'">创新创业教育基地</div></li>
-        	<li class="list-group-item"><div style="margin-left:40px">创新创业选育基地</div></li>
-        	<li class="list-group-item"><div style="margin-left:40px">创新创业试点专业</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业选育基地'">创新创业选育基地</div></li>
+        	<li class="list-group-item"><div style="margin-left:40px" onclick="window.location.href= '/second_page?category=创新创业试点专业'">创新创业试点专业</div></li>
         </ul>
       </div>
    </div>

@@ -35,6 +35,7 @@
 		<mapping class="mode.NewsCategory"/>
 	<!--  	<mapping class="mode.Role"/>-->
 		<mapping class="mode.User"/>
+		<mapping class="mode.Links"/>
 		<mapping class="mode.UserAuthority"/>
 		<mapping class="mode.ExamOption"/>
 		<mapping class="mode.ExamTitle"/>

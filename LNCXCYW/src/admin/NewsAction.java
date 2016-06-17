@@ -61,7 +61,7 @@ public class NewsAction extends PageGetBaseAction{
 		categoryList=Cache.getNewsCategoryList();
 		//System.out.println(categoryList);
 		for(int i=0; i<categoryList.size(); i++){
-			if(categoryList.get(i).equals("素质测评")){
+			if(categoryList.get(i).equals("素质测评")||categoryList.get(i).equals("企业需求")||categoryList.get(i).equals("项目推介")){
 				categoryList.remove(i);
 				break;
 			}			
@@ -147,7 +147,7 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.println(title+""+source+""+category+""+author+""+date);	
 		
 		try{
-			dao.NewsDao.newsSave(title, author, content, category);
+			dao.NewsDao.newsSave(title, author, content, category, 2);//保存新闻的时候直接通过，不用审核
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			return SUCCESS;
@@ -156,7 +156,25 @@ public class NewsAction extends PageGetBaseAction{
 		return SUCCESS;
 	}
 	
-	
+	/**
+	 * 提交对接项目
+	 * @return
+	 */
+	public String projectSubmit(){
+		System.out.println("projectSubmit");
+		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
+		date=formatter.format(new java.util.Date());
+		System.out.println(title+""+source+""+category+""+author+""+date);	
+		
+		try{
+			dao.NewsDao.newsSave(title, author, content, category, 0);//保存项目，初始状态为0，即未处理
+		}catch(Exception e){
+			System.out.println("error:"+e.getMessage());
+			return SUCCESS;
+		}
+		System.out.println("save");		
+		return SUCCESS;
+	}
 
 	
 	/*

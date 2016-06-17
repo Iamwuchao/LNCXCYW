@@ -24,7 +24,18 @@ public class News {
 	private String author;
 	private NewsCategory category;
 	private long clickNum;
+	//isPassed： 0 未处理； 1 不通过；2 通过
+    @Column(columnDefinition="INT default 0", nullable=false)
+	private int isPassed;
 	
+    
+	public int getIsPassed() {
+		return isPassed;
+	}
+
+	public void setIsPassed(int isPassed) {
+		this.isPassed = isPassed;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

@@ -170,7 +170,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * @param category
 	 * @throws Exception
 	 */
-	public static void newsSave(String title, String author, String content, String category) throws Exception{
+	public static void newsSave(String title, String author, String content, String category, int isPassed) throws Exception{
 		String address;
 		
 		if(category.equals("图片新闻")){
@@ -200,6 +200,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		news.setDate(date);
 		news.setCategory(newsCategory);
 		news.setClickNum(0);
+		news.setIsPassed(isPassed);
 	
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		if(!dao.save(news)){
