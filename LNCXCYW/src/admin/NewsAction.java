@@ -40,6 +40,7 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
 	private List<News> hotestNewsList;//排行榜新闻列表
+	private List<News> projectList;//对接项目列表
 	private String newsMessageTable;//返回给前台显示的的新闻HTML字符串
 	private String status;
 	/*
@@ -50,6 +51,18 @@ public class NewsAction extends PageGetBaseAction{
 		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
 		hotestNewsList=Cache.getHotestNewsList();	
 	}
+	
+	
+	public String projectManage() {
+		System.out.println("getProjectList:");
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		projectList=dao.getUnhandledProject();	
+		
+		projectList=Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		System.out.println(projectList);
+		return SUCCESS;
+	}
+	
 	
 	/**
 	 * 新闻添加
@@ -176,158 +189,205 @@ public class NewsAction extends PageGetBaseAction{
 		return SUCCESS;
 	}
 
-	
 	/*
 	 * getters and setters
 	 */
+	
 	public String getTitle() {
 		return title;
 	}
+
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+
 	public String getCategory() {
 		return category;
 	}
+
 
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
+
 	public String getAuthor() {
 		return author;
 	}
+
 
 	public void setAuthor(String author) {
 		this.author = author;
 	}
 
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public String getNews_list_html() {
-		return news_list_html;
-	}
-
-	public void setNews_list_html(String news_list_html) {
-		this.news_list_html = news_list_html;
-	}
-
-	public List<News> getNewsList() {
-		return newsList;
-	}
-
-	public void setNewsList(List<News> newsList) {
-		this.newsList = newsList;
-	}
-
-	public java.util.Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(java.util.Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public java.util.Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(java.util.Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public String getKeyWords() {
-		return keyWords;
-	}
-
-	public void setKeyWords(String keyWords) {
-		this.keyWords = keyWords;
-	}
-
-	public int getNewsId() {
-		return newsId;
-	}
-
-	public void setNewsId(int newsId) {
-		this.newsId = newsId;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public List<String> getCategoryList() {
-		return categoryList;
-	}
-
-	public void setCategoryList(List<String> categoryList) {
-		this.categoryList = categoryList;
-	}
-
-	public List<News> getNewestNewsList() {
-		return newestNewsList;
-	}
-
-	public List<News> getPictureNewsList() {
-		return pictureNewsList;
-	}
-
-	public void setNewestNewsList(List<News> newestNewsList) {
-		this.newestNewsList = newestNewsList;
-	}
-
-	public void setPictureNewsList(List<News> pictureNewsList) {
-		this.pictureNewsList = pictureNewsList;
-	}
-
-	public String getNewsMessageTable() {
-		return newsMessageTable;
-	}
-
-	public void setNewsMessageTable(String newsMessageTable) {
-		this.newsMessageTable = newsMessageTable;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public List<News> getHotestNewsList() {
-		return hotestNewsList;
-	}
-
-	public void setHotestNewsList(List<News> hotestNewsList) {
-		this.hotestNewsList = hotestNewsList;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 
 	public String getSource() {
 		return source;
 	}
 
+
 	public void setSource(String source) {
 		this.source = source;
 	}
 
+
+	public String getContent() {
+		return content;
+	}
+
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public String getNews_list_html() {
+		return news_list_html;
+	}
+
+
+	public void setNews_list_html(String news_list_html) {
+		this.news_list_html = news_list_html;
+	}
+
+
+	public List<News> getNewsList() {
+		return newsList;
+	}
+
+
+	public void setNewsList(List<News> newsList) {
+		this.newsList = newsList;
+	}
+
+
+	public List<String> getCategoryList() {
+		return categoryList;
+	}
+
+
+	public void setCategoryList(List<String> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+
+	public java.util.Date getStartDate() {
+		return startDate;
+	}
+
+
+	public void setStartDate(java.util.Date startDate) {
+		this.startDate = startDate;
+	}
+
+
+	public java.util.Date getEndDate() {
+		return endDate;
+	}
+
+
+	public void setEndDate(java.util.Date endDate) {
+		this.endDate = endDate;
+	}
+
+
+	public String getKeyWords() {
+		return keyWords;
+	}
+
+
+	public void setKeyWords(String keyWords) {
+		this.keyWords = keyWords;
+	}
+
+
+	public int getNewsId() {
+		return newsId;
+	}
+
+
+	public void setNewsId(int newsId) {
+		this.newsId = newsId;
+	}
+
+
+	public List<News> getNewestNewsList() {
+		return newestNewsList;
+	}
+
+
+	public void setNewestNewsList(List<News> newestNewsList) {
+		this.newestNewsList = newestNewsList;
+	}
+
+
+	public List<News> getPictureNewsList() {
+		return pictureNewsList;
+	}
+
+
+	public void setPictureNewsList(List<News> pictureNewsList) {
+		this.pictureNewsList = pictureNewsList;
+	}
+
+
+	public List<News> getHotestNewsList() {
+		return hotestNewsList;
+	}
+
+
+	public void setHotestNewsList(List<News> hotestNewsList) {
+		this.hotestNewsList = hotestNewsList;
+	}
+
+
+	public String getNewsMessageTable() {
+		return newsMessageTable;
+	}
+
+
+	public void setNewsMessageTable(String newsMessageTable) {
+		this.newsMessageTable = newsMessageTable;
+	}
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	public List<News> getProjectList() {
+		return projectList;
+	}
+
+
+	public void setProjectList(List<News> projectList) {
+		this.projectList = projectList;
+	}
+
+
 	
-	
+
 }

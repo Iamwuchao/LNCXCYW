@@ -28,9 +28,27 @@
 			</result>
 		</action>
 	</package>
-	<package name="user_request" namespace="/admin/user_request"
-		extends="AdminDefault">
+	
+	
+	<package name="project_manage" namespace="/admin/project_manage" extends="AdminDefault">	
+		<action name="">
+			<result name="success" type="redirect">unhandled</result>
+		</action>
 
+ 		<action name="unhandled"  class="admin.NewsAction" method="projectManage">
+			<result>
+				/jsp/admin/widgets/unhandled_project.jsp
+			</result>
+		</action>
+		<action name="handled" class="admin.NewsAction" method="newsAdd">
+			<result>
+				/jsp/admin/widgets/handled_project.jsp
+			</result>
+		</action>
+	
+	</package>
+	
+	<package name="user_request" namespace="/admin/user_request" extends="AdminDefault">
 		<action name="">
 			<result name="success" type="redirect">untreated</result>
 		</action>
@@ -63,7 +81,7 @@
 		</action>
 
 	</package>
-
+	
 	<package name="user_authority" namespace="/admin/user_authority"
 		extends="AdminDefault">
 		<action name="">

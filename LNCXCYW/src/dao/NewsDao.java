@@ -84,6 +84,18 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	}
 	
 	/*
+	 * 获取未处理的对接项目
+	 */
+	public List<News> getUnhandledProject(){
+		Session session=getSession();
+		Criteria criteria = session.createCriteria(News.class);
+		criteria.add(Restrictions.eq("isPassed", 0));
+		@SuppressWarnings("unchecked")
+		List<News> result=criteria.list();
+		return result;
+	}
+	
+	/*
 	 * 按时间范围查询新闻
 	 * 
 	 * sql.Date
@@ -168,6 +180,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * @param author
 	 * @param content
 	 * @param category
+	 * @param isPassed: 0 未处理； 1 不通过；2 通过
 	 * @throws Exception
 	 */
 	public static void newsSave(String title, String author, String content, String category, int isPassed) throws Exception{
