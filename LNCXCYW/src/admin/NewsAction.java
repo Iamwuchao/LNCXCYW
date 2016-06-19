@@ -47,6 +47,7 @@ public class NewsAction extends PageGetBaseAction{
 	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了
 	 */
 	public NewsAction(){
+		System.out.println("构造函数");
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
 		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
 		hotestNewsList=Cache.getHotestNewsList();	
@@ -76,7 +77,6 @@ public class NewsAction extends PageGetBaseAction{
 		for(int i=0; i<categoryList.size(); i++){
 			if(categoryList.get(i).equals("素质测评")||categoryList.get(i).equals("企业需求")||categoryList.get(i).equals("项目推介")){
 				categoryList.remove(i);
-				break;
 			}			
 		}
 		//System.out.println(categoryList);
@@ -158,9 +158,13 @@ public class NewsAction extends PageGetBaseAction{
 		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
 		date=formatter.format(new java.util.Date());
 		System.out.println(title+""+source+""+category+""+author+""+date);	
+		int isPassed=2;
+		if(category.equals("项目推介")||category.equals("企业需求")){
+			isPassed=0;
+		}
 		
 		try{
-			dao.NewsDao.newsSave(title, author, content, category, 2);//保存新闻的时候直接通过，不用审核
+			dao.NewsDao.newsSave(title, author, content, category, isPassed);//保存新闻的时候直接通过，不用审核
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			return SUCCESS;

@@ -18,9 +18,9 @@
 	</div>
 	<div>
 		分类		
-		<select class="judge" name="category">
-			<option value="0">项目推介</option>
-			<option value="1">企业需求</option>
+		<select class="judge" id="category">
+			<option value="项目推介">项目推介</option>
+			<option value="企业需求">企业需求</option>
 		</select>
 	</div>
 
@@ -53,7 +53,7 @@
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
-		alert(title+" "+author+" "+content+" "+source);
+		alert(category);
 	}
  
 	function submit(){

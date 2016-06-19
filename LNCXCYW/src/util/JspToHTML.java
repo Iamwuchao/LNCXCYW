@@ -76,7 +76,7 @@ public class JspToHTML {
 		try {
 			writer=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file),"utf-8")); 
 			String newsContentByFilter = filterChar(newsContent);			
-			System.out.println(newsContentByFilter);
+			//System.out.println(newsContentByFilter);
 			writer.write(newsContentByFilter);
 			writer.close();
 			
