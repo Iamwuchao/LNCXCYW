@@ -33,9 +33,9 @@ public class NewsCache implements LeftCycle<String>{
 		// TODO Auto-generated method stub
 		if(isInited.compareAndSet(false, true)){
 			cacheMap = new HashMap<String,ConcurrentLinkedDeque<News>>();
-			 NewsCategoryDao dao = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
-			 List<NewsCategory> newsCategorylist = (List<NewsCategory>) dao.getAll();
-			 NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+			NewsCategoryDao dao = (NewsCategoryDao) DaoFactory.getDaoByName(NewsCategoryDao.class);
+			List<NewsCategory> newsCategorylist = (List<NewsCategory>) dao.getAll();
+			NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 			for(NewsCategory category:newsCategorylist){
 				List<News> list = nd.getNewsSubListOrderByDate(category, 0, MAX_CACHE.get());
 				System.out.println("init news cache"+"  "+category.getNewscategory()+"  "+list.size());

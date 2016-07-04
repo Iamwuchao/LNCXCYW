@@ -6,19 +6,7 @@
 <struts>
     <package name="Default" namespace="/" extends="json-default,struts-default ">
     <default-action-ref name="homepage"></default-action-ref>
-       <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
-			<result name="success">
-				/jsp/super_admin/news_add.jsp
-			</result>
-		</action> 
-              
-       <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
-       		<result name="success" type="json">
-       			<param name="includeProperties">status</param>
-       		</result>
-       </action>   
-       
-		
+
 		<action name="fd">
        		<result>/jsp/admin/news_manage.jsp</result>
        </action> 
@@ -33,4 +21,5 @@
 	 <include file="/homepage/homepage.xml"/>
 	<include file="/admin/admin.xml"/>
 	<include file="/exam/exam.xml"></include>
+	<include file="/user/user.xml"></include>
 </struts>

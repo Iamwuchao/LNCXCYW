@@ -6,7 +6,7 @@
 
 	<div class="menu-list" style="height: 820px">
 		
-		<a href="/newsAdd" class="menu-button-middle">
+		<a href="/admin/newsAdd" class="menu-button-middle">
 			<span class="glyphicon glyphicon-th-large">&nbsp;新闻添加</span>
 		</a> 
 		<a href="/jsp/admin/news_delete.jsp" class="menu-button-middle">

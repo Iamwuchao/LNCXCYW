@@ -7,6 +7,20 @@
 <struts>
 	<package name="admin" namespace="/" extends="AdminDefault">
 
+       <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
+			<result name="success">
+				/jsp/super_admin/news_add.jsp
+			</result>
+		</action> 
+              
+       <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
+       		<result name="success" type="json">
+       			<param name="includeProperties">status</param>
+       		</result>
+       </action>  
+       
+       
+       
 		<action name="regist" class="admin.AdminAction" method="regist">
 			<result name="success" type="json">
 			</result>
@@ -28,6 +42,24 @@
 			</result>
 		</action>
 	</package>
+	
+	
+	<package name="project" namespace="/admin/project" extends="AdminDefault">
+	
+		<action name="add" class="admin.NewsAction" method="newsAdd">
+			<result name="success">
+				/jsp/user/project_add.jsp
+			</result>
+		</action>
+		
+		<action name="newsAdd" class="admin.NewsAction" method="newsAdd">
+			<result name="success">
+				/jsp/user/project_add.jsp
+			</result>
+		</action> 
+
+	</package>
+
 	
 	
 	<package name="project_manage" namespace="/admin/project_manage" extends="AdminDefault">	
