@@ -218,11 +218,11 @@
        </div>
        
 
-	<div class="nav">
+	<div class="nav" style="background-color:#fff">
 		<ul class="nav_three_all">
-			<li style="margin-right:14px"><a href="http://59.46.92.105:9000/">创新创业训练计划项目管理系统</a></li>
-			<li style="margin-right:14px"><a href="/">省大创年会项目评审系统</a></li>
-			<li><a href="http://dasai.upln.cn/index.php?m=yp">创新创业竞赛管理系统</a></li>
+			<li style="margin-right:14px; background-color:#195591;"><a href="http://59.46.92.105:9000/">创新创业训练计划项目管理系统</a></li>
+			<li style="margin-right:14px; background-color:#195591;"><a href="/">省大创年会项目评审系统</a></li>
+			<li style="background-color:#195591"><a href="http://dasai.upln.cn/index.php?m=yp">创新创业竞赛管理系统</a></li>
 		</ul>
 	</div>
 	

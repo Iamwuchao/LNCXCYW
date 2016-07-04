@@ -85,7 +85,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 	width:332px;
 	height:50px;
 	float:left;
-	display:inline;
+	display:inline-block;
 	text-align:center;
 	cursor:pointer;
 }

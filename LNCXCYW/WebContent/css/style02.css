@@ -407,13 +407,14 @@ ul li {
 } */ 
 .inner-bottom .left{
 	float:left;
-	margin:0;
-	width:130px;
+	margin-top:20px;
+	width:140px;
 }
 .inner-bottom .right{
 	float:right;
+	margin-top:20px;
 	margin-left:20px;
-	width:130px;
+	width:140px;
 }
 .inner-bottom .one{
 	margin:0 20px 20px 0;
