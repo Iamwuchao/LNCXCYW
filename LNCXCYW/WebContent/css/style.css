@@ -214,6 +214,7 @@ input,select{ font-size:12px; vertical-align:middle;}
 	line-height: 25px;
 }
 .list1 a{
+	display:block;
 	width:100%;
 	overflow:hidden;
 	text-overflow:ellipsis;

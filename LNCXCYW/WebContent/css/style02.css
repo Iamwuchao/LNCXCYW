@@ -257,11 +257,18 @@ ul li {
 .deep-inner-top li{
 	text-align:left;
 	list-style: disc;
-	/* line-height: 25px;
-	font-size: 13px; */
 	line-height: 22px;
 	font-size: 13px;
+	/* width:320px; 
+	text-overflow:ellipsis; */
 }
+.deep-inner-top li a{
+	display:block;
+	width:320px; 
+	padding-right:20px;
+	text-overflow:ellipsis;  
+}
+
 /*.content-right2{
 	width: 45%;
 	float: right;

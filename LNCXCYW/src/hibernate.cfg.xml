@@ -7,9 +7,9 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
 <!-- 		部署的服务器使用本地数据库 -->
-       <property name="connection.url"> jdbc:mysql://192.168.2.119:3306/lncxcyw?autoReconnect=true&amp;autoReconnectForPools=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property>
+       <!-- <property name="connection.url"> jdbc:mysql://192.168.2.119:3306/lncxcyw?autoReconnect=true&amp;autoReconnectForPools=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property> -->
         
-	<!-- <property name="connection.url"> jdbc:mysql://localhost:3306/lncxcyw?autoReconnect=true&amp;autoReconnectForPools=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property> -->
+	<property name="connection.url"> jdbc:mysql://localhost:3306/lncxcyw?autoReconnect=true&amp;autoReconnectForPools=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property> 
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
 <!--         <property name="format_sql">true</property> -->

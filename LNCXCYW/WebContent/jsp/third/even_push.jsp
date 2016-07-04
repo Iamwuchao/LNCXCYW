@@ -2,7 +2,7 @@
 	<ul>
 		<s:iterator value="newestNewsList" var="i" status="index">
 			<li>
-				<a href="<s:property value="#i.news_address" />" style="font-size:12px;">
+				<a href="<s:property value="#i.news_address" />" title=<s:property value="#i.newsTile" />>
 					<s:property value="#i.newsTile" />
 				</a>
 			</li>

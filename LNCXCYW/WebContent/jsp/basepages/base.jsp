@@ -37,7 +37,12 @@
 	
 	
 	<div class="regist">
+	<s:if test="#session.user!=null">
+	<a href="/newsAdd"><s:property value="#session.user.userName"/> &nbsp欢迎您</a>
+	</s:if>
+	<s:else>
 		<a href="/jsp/homepage/login.jsp" target="_blank">登录&nbsp;|&nbsp;</a><a href="/jsp/homepage/regist.jsp" target="_blank">注册</a>
+	</s:else>
 	</div>
 	<div class="search">
 		<input type="text" class="" placeholder="站内搜索" name="keyWords" id="keyWords">
