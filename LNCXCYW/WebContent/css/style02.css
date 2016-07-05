@@ -255,18 +255,23 @@ ul li {
 	
 }
 .deep-inner-top li{
+	/* float:left;
+	width:200px; */ 
 	text-align:left;
 	list-style: disc;
 	line-height: 22px;
 	font-size: 13px;
-	/* width:320px; 
-	text-overflow:ellipsis; */
+	text-overflow:ellipsis;
+	background: url(/images/li.png) no-repeat -7px;
+	/* background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px; */
 }
-.deep-inner-top li a{
+.deep-inner-top li a, .deep-inner-hot li a{
+	list-style: disc;
 	display:block;
 	width:320px; 
-	padding-right:20px;
-	text-overflow:ellipsis;  
+	padding-left:10px;
+	/* padding-right:20px; */
+	text-overflow:ellipsis;   
 }
 
 /*.content-right2{
@@ -339,7 +344,10 @@ ul li {
 	list-style: disc;
 	line-height: 25px;
 	font-size: 13px;
+	background: url(/images/li.png) no-repeat -7px;
 }
+
+
 /* .inner-hot{
 	position: absolute;
 	top: 812px;
