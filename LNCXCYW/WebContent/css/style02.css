@@ -230,7 +230,7 @@ ul li {
 	top: 0;
 	right:0;
 	width:350px;
-	height: 400px;
+	height: 370px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 	
@@ -259,10 +259,10 @@ ul li {
 	width:200px; */ 
 	text-align:left;
 	list-style: disc;
-	line-height: 22px;
-	font-size: 13px;
+	line-height: 25px;
+	font-size: 14px;
 	text-overflow:ellipsis;
-	background: url(/images/li.png) no-repeat -7px;
+	background: url(/images/li3.png) no-repeat -9px;
 	/* background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px; */
 }
 .deep-inner-top li a, .deep-inner-hot li a{
@@ -315,7 +315,7 @@ ul li {
 	top: 812px;
 	right:0;
 	width:350px;
-	height: 400px;
+	height: 370px;
 	background-color:rgb(25,85,145);
 	text-align:center;
 	
@@ -343,8 +343,8 @@ ul li {
 	text-align:left;
 	list-style: disc;
 	line-height: 25px;
-	font-size: 13px;
-	background: url(/images/li.png) no-repeat -7px;
+	font-size: 14px;
+	background: url(/images/li3.png) no-repeat -9px;
 }
 
 
