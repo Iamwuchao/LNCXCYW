@@ -53,17 +53,12 @@
 	<!-- </form>  -->
 </div>
 <div class="splitterbars"></div>
-<div class="nav">
-<ul class="nav_all" >
-<li><a href="/">首页</a></li>
-<li><a href="/second_page?category=创新创业资讯">创新创业资讯</a></li>
-<li><a href="/second_page?category=创新创业训练">创新创业训练</a></li>
-<li><a href="/second_page?category=创新创业竞赛">创新创业竞赛</a></li>
-<li><a href="/second_page?category=创新创业资源">创新创业资源</a></li>
-<li><a href="/second_page?category=创新创业成果">创新创业成果</a></li>
-<li><a href="/second_page?category=资料下载">资料下载</a></li>
-</ul>
-</div>
+	<div class="nav">
+		<ul class="nav_all" >
+			<li><a href="/">首页</a></li>
+			<li><a href="/second_page?category=资料下载">资料下载</a></li>
+		</ul>
+	</div>
 </div>
 <div id="content">
 	<layout:block name="base_content">
@@ -71,16 +66,11 @@
 	</layout:block>
 </div>
 <div id="bigDiver" class="bigDivider">
-		</div>
-		<div id="foot" class="foot">
-			<a class="title" href="#">相关链接</a>
-			<ul>
-				<li><a href="http://new.lnen.cn/">辽宁省教育厅</a></li>
-				<li><a href="http://www.upln.cn/">辽宁省本科教育网</a></li>
-				<li><a href="http://chuangxin.dlut.edu.cn/">大连理工大学创新创业学院</a></li>
-				<li><a href="http://www.upln.cn/">辽宁省本科教育网</a></li>
-			</ul>
-		</div>
+</div>
+
+<div ><!-- 相关连接  直接引用-->
+	<%@ include file="/jsp/base/widgets/link.jsp" %>
+</div>
 </body>
 </html>
 <script>

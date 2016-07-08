@@ -106,8 +106,13 @@
 	<div class="bottom-wrap">
 		<div id="bigDiver" class="bigDivider">
 		</div>
-		<div id="foot" class="foot">
+		
+		
+		<div ><!-- 相关连接  直接引用-->
+			<%@ include file="/jsp/base/widgets/link.jsp" %>
 		</div>
+		
+		
 	</div>
 </div>
 </body>

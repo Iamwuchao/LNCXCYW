@@ -6,8 +6,6 @@
 
 <struts>
 	<package name="user" namespace="/" extends="AdminDefault">
-
-
 		<action name="project">
 			<result>
 				/jsp/user/project_add.jsp
