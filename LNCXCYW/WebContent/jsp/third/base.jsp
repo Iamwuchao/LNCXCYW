@@ -14,9 +14,12 @@
 
 <body>
 	<div class="main">
-		<div>
-			<%@ include file="/jsp/base/widgets/top_bar.jsp"%>
-		</div>
+		<layout:block name="top">
+			<div>
+				<%@ include file="/jsp/base/widgets/top_bar.jsp"%>
+			</div>
+		</layout:block>
+		
 
 		<div class="con">
 			<div class="content-left">
@@ -37,7 +40,7 @@
 				<div class="inner-top">
 					<p>每日推荐</p>
 					<div class="deep-inner-top recommend">
-						<%@ include file="/jsp/third/even_push.jsp"%>
+						<%@ include file="/jsp/third/widgets/even_push.jsp"%>
 					</div>
 				</div>
 
@@ -57,7 +60,7 @@
 				<div class="inner-hot">
 					<p>排行榜</p>
 					<div class="deep-inner-hot recommend">
-						<%@ include file="/jsp/third/hotest_news.jsp"%>
+						<%@ include file="/jsp/third/widgets/hotest_news.jsp"%>
 					</div>
 				</div>
 			</div>

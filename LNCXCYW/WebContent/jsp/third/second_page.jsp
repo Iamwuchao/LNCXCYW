@@ -1,5 +1,5 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
-<layout:override name="news_content">.
+<layout:override name="news_content">
 
 <div class="mycontent" id="paginationTableDiv">  
 	<ul>
