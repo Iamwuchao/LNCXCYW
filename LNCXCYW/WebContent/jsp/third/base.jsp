@@ -45,12 +45,12 @@
 					<p>焦点图片</p>
 					<div class="deep-inner-bottom">
 						<div class="left">
-							<layout:block name="focus_left_picture">
-							</layout:block>							
+							<a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(0).news_address}"/>"><img class="one" src="<s:property value="%{pictureNewsList.get(0).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(0).newsTile}"/>" width="140px" height="105px"></a>
+      						<a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(1).news_address}"/>"><img class="two" src="<s:property value="%{pictureNewsList.get(1).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(1).newsTile}"/>" width="140px" height="105px"></a>					
 						</div>
 						<div class="right">
-							<layout:block name="focus_right_picture">
-							</layout:block>			
+							<a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(2).news_address}"/>"><img class="one" src="<s:property value="%{pictureNewsList.get(2).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(2).newsTile}"/>" width="140px" height="105px"></a>
+       						<a id="pic" href="/picture_news?news_address=<s:property value="%{pictureNewsList.get(3).news_address}"/>"><img class="two" src="<s:property value="%{pictureNewsList.get(3).news_address}"/>" alt="<s:property value="%{pictureNewsList.get(3).newsTile}"/>" width="140px" height="105px"></a>	
 						</div>
 					</div>
 				</div>
