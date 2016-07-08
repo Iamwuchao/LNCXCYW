@@ -56,6 +56,11 @@
 	<div class="nav">
 		<ul class="nav_all" >
 			<li><a href="/">首页</a></li>
+			<li><a href="/second_page?category=创新创业资讯">创新创业资讯</a></li>
+			<li><a href="/second_page?category=创新创业训练">创新创业训练</a></li>
+			<li><a href="/second_page?category=创新创业竞赛">创新创业竞赛</a></li>
+			<li><a href="/second_page?category=创新创业资源">创新创业资源</a></li>
+			<li><a href="/second_page?category=创新创业成果">创新创业成果</a></li>
 			<li><a href="/second_page?category=资料下载">资料下载</a></li>
 		</ul>
 	</div>
