@@ -9,10 +9,10 @@
 		<a href="/user/projectAdd" class="menu-button-middle">
 			<span class="glyphicon glyphicon-th-large">&nbsp;项目提交</span>
 		</a> 
-		<a href="/jsp/admin/news_delete.jsp" class="menu-button-middle">
+		<a href="/user/projectManage" class="menu-button-middle">
 			<span class="glyphicon glyphicon-th-large">&nbsp;项目管理</span>
 		</a>
-		<a href="#" class="menu-button-middle">
+		<a href="/user/information" class="menu-button-middle">
 			<span class="glyphicon glyphicon glyphicon-user">&nbsp;个人信息</span></a>
 	</div>
 

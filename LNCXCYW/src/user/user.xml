@@ -6,13 +6,23 @@
 
 <struts>
 	<package name="user" namespace="/" extends="AdminDefault">
-		<action name="projectAdd" class="admin.NewsAction" method="newsAdd">
+		<action name="projectAdd" class="user.UserAction" method="projectAdd">
 			<result name="success">
 				/jsp/user/project_add.jsp
 			</result>
 		</action> 
  
-
+		<action name="projectManage" class="user.UserAction" method="projectManage">
+			<result name="success">
+				/jsp/user/project_manage.jsp
+			</result>
+		</action> 
+		
+		<action name="information" class="user.UserAction" method="information">
+			<result name="success">
+				/jsp/user/information.jsp
+			</result>
+		</action> 
 
 	</package>
 	
