@@ -16,7 +16,7 @@
 		</result>
 	</action>
 	
-	<action name="second_page2" class="homepage.NewsAction" method="newsList">
+	<action name="second_page2" class="homepage.NewsAction" method="newsList_Big">
 		<result name="success">
 			/jsp/third/second_page_big.jsp
 		</result>

@@ -1,6 +1,7 @@
 package homepage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +32,7 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> newsList;
 	private String news_address;
 	private List<News> addressList;
+	private Map<String, List<News>> newsMap;
 	private List<News> newestNewsList;//每日推荐的新闻列表
 	private List<News> pictureNewsList;//焦点图片新闻列表
 	private List<News> hotestNewsList;//排行榜新闻列表
@@ -106,6 +108,23 @@ public class NewsAction extends PageGetBaseAction{
 		
 	}
 	
+	/*
+	 * 获取大类新闻列表
+	 */
+	public String newsList_Big(){
+		Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
+		Map<String, List<News>> re=new HashMap<String, List<News>>();		
+		if(map.containsKey(category)){
+			List<String> list=map.get(category);
+			for(String cate:list){
+				re.put(cate, new ArrayList<News>(Cache.getNewsList(cate, 0, 20)));
+			}
+		}		
+		System.out.println(re);
+		newsMap=re;
+		return ActionSupport.SUCCESS;
+	}
+	
 	
 	
 	/*
@@ -161,6 +180,12 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		return re;
 	}
+	
+	
+	
+	
+	
+	
 	
 	/*
 	 * getters and setters
@@ -223,6 +248,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setPictureNewsList(List<News> pictureNewsList) {
 		this.pictureNewsList = pictureNewsList;
+	}
+
+	public Map<String, List<News>> getNewsMap() {
+		return newsMap;
+	}
+
+	public void setNewsMap(Map<String, List<News>> newsMap) {
+		this.newsMap = newsMap;
 	}
 
 }
