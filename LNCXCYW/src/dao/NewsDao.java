@@ -183,7 +183,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * @param isPassed: 0 未处理； 1 不通过；2 通过
 	 * @throws Exception
 	 */
-	public static void newsSave(String title, String author, String content, String category, int isPassed) throws Exception{
+	public static void newsSave(String title, String author, int authorId, String content, String category, int isPassed) throws Exception{
 		String address;
 		
 		if(category.equals("图片新闻")){
@@ -208,6 +208,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		
 		News news=new News();		
 		news.setAuthor(author);
+		news.setAuthorId(authorId);
 		news.setNewsTile(title);
 		news.setNews_address(address);
 		news.setDate(date);

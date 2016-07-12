@@ -24,6 +24,7 @@ public class NewsAction extends PageGetBaseAction{
 	private String title;
 	private String category;
 	private String author;
+	private int authorId;
 	private String source;
 	private String content;
 	private String date;
@@ -164,7 +165,7 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		
 		try{
-			dao.NewsDao.newsSave(title, author, content, category, isPassed);//保存新闻的时候直接通过，不用审核
+			dao.NewsDao.newsSave(title, author, authorId, content, category, isPassed);//保存新闻的时候直接通过，不用审核
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			return SUCCESS;
@@ -173,25 +174,6 @@ public class NewsAction extends PageGetBaseAction{
 		return SUCCESS;
 	}
 	
-	/**
-	 * 提交对接项目
-	 * @return
-	 */
-	public String projectSubmit(){
-		System.out.println("projectSubmit");
-		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
-		date=formatter.format(new java.util.Date());
-		System.out.println(title+""+source+""+category+""+author+""+date);	
-		
-		try{
-			dao.NewsDao.newsSave(title, author, content, category, 0);//保存项目，初始状态为0，即未处理
-		}catch(Exception e){
-			System.out.println("error:"+e.getMessage());
-			return SUCCESS;
-		}
-		System.out.println("save");		
-		return SUCCESS;
-	}
 
 	/*
 	 * getters and setters
@@ -389,6 +371,16 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setProjectList(List<News> projectList) {
 		this.projectList = projectList;
+	}
+
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
 
 

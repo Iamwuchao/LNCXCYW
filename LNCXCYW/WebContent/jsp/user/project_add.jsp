@@ -3,7 +3,12 @@
 <layout:override name="main_content">
 
 <div class="mycontent">  
-		
+	<a href="#"></a>
+	
+	<div id="authorId" value=<s:property value="#session.user.userId"/>></div>
+	
+	
+	
 	<br>
 	<br>
 	<br>
@@ -51,7 +56,8 @@
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
-		alert(category);
+		var authorId = document.getElementById("authorId").getAttribute('value');
+		alert(uathorId);
 	}
  
 	function submit(){
@@ -60,6 +66,7 @@
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
+		var authorId = document.getElementById("authorId").getAttribute('value');
 		//alert(title+" "+author+" "+content+" "+source);
 		
 		$.ajax({
@@ -70,6 +77,7 @@
 				"title" : title,
 				"category" : category,
 				"author" : author,
+				"authorId" : authorId,
 				"source" : source,
 				"content" : content,
 			},

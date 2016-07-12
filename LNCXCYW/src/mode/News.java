@@ -22,6 +22,7 @@ public class News {
 	private String news_content;
 	private Date date;
 	private String author;
+	private int authorId;
 	private NewsCategory category;
 	private long clickNum;
 	//isPassed： 0 未处理； 1 不通过；2 通过
@@ -60,6 +61,11 @@ public class News {
 	@Column
 	public String getNewsTile() {
 		return newsTile;
+	}
+	
+	@Column
+	public int getAuthorId() {
+		return authorId;
 	}
 	
 	@Column
@@ -114,6 +120,10 @@ public class News {
 	
 	public String toString(){
 		return this.newsId+":"+this.newsTile+" "+this.clickNum;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
 	
 }
