@@ -40,9 +40,14 @@
 							</td>
 							
 							<td>
- 								<s:select list="categories" listValue="newscategory" 
+							<select id="sel">
+ 								<s:iterator value="categories" var="a" status="index" >
+ 								<option value="<s:property value="#a.categoryId" />"><s:property value="#a.newscategory" /></option>	
+ 								</s:iterator>
+ 							</select>
+ 								<%-- <s:select list="categories" listValue="newscategory" 
 									listKey="categoryId"  theme="simple" id="sel" name="selected">
-								</s:select> 
+								</s:select>  --%>
 							</td>
 									
 							<td>
@@ -61,7 +66,11 @@
 	<script>
 		$(".ensure-button").click(function() {
 			var id = $(this).closest("tr").attr("id");
-			var selected = $("#sel option:selected").val();
+			//var select = $("#sel");
+			var select = document.getElementById("sel");
+			var index = select.selectedIndex;
+			/* var selected = $("#sel option:selected").val(); */
+			var selected = select[index].value;
 			alert(selected);
 			//alert(id);
 			//var isPass=$('#judge').find("option:selected").val();
