@@ -318,7 +318,7 @@
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
 	         		<a href="/second_page?category=创新创业典型" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">创新创业典型</li></a>
-	         		<a href="/second_page?category=他山之石" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >他山之石</li></a>
+	         		<a href="/second_page?category=创新创业竞赛" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >创新创业竞赛</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
@@ -339,7 +339,7 @@
 				<div id="con_seven_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
-								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
+								<s:iterator value="%{newsMap.get('创新创业竞赛')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							     			&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
