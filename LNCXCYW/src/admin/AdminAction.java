@@ -59,7 +59,15 @@ public String getRegister_status() {
 public void setRegister_status(String register_status) {
 	this.register_status = register_status;
 }
-
+/**
+ * 退出登录
+ * @return
+ */
+public String logout(){
+	Map session = ActionContext.getContext().getSession();
+	session.remove("user");
+	return ActionSupport.SUCCESS;
+}
 public String regist(){
 	System.out.println(username);
 	System.out.println(password);

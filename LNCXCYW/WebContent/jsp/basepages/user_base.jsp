@@ -50,7 +50,7 @@
             <li><a href="#">Settings</a></li> -->
              <%-- <li><a href="#"><%=((User)request.getSession().getAttribute("user")).getUserName() %> 欢迎您</a></li> --%>
           <li><a href="#"><s:property value="#session.user.userName"/>欢迎您</a></li> 
-            <li><a href="#">退出</a></li>
+            <li><a href="/logout">退出</a></li>
           </ul>
           <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

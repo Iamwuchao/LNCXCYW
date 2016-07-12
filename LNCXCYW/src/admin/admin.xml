@@ -6,7 +6,12 @@
 
 <struts>
 	<package name="admin" namespace="/" extends="AdminDefault">
-
+<!-- 退出登录 -->
+       <action name="logout" class="admin.AdminAction" method="logout">
+       <result>
+       		/jsp/homepage/homepage.jsp
+       </result>
+       </action>
        <action name="newsAdd" class="admin.NewsAction" method="newsAdd">
 			<result name="success">
 				/jsp/super_admin/news_add.jsp
@@ -27,7 +32,7 @@
 		</action>
 
 		<action name="login" class="admin.AdminAction">
-			<result>
+			<result >
 				/jsp/homepage/login.jsp
 			</result>
 		</action>
