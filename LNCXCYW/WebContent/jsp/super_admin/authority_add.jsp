@@ -40,7 +40,7 @@
 							</td>
 							
 							<td>
-							<select id="sel">
+							<select id="sel<s:property value="#i.user.userId"/>">
  								<s:iterator value="categories" var="a" status="index" >
  								<option value="<s:property value="#a.categoryId" />"><s:property value="#a.newscategory" /></option>	
  								</s:iterator>
@@ -67,7 +67,7 @@
 		$(".ensure-button").click(function() {
 			var id = $(this).closest("tr").attr("id");
 			//var select = $("#sel");
-			var select = document.getElementById("sel");
+			var select = document.getElementById("sel"+id);
 			var index = select.selectedIndex;
 			/* var selected = $("#sel option:selected").val(); */
 			var selected = select[index].value;

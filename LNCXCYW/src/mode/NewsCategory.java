@@ -29,6 +29,8 @@ public class NewsCategory {
 	public void setNewscategory(String newscategory) {
 		this.newscategory = newscategory;
 	}
-	
+	public String toString(){
+		return "categoryId:"+categoryId+" newscategory:"+newscategory;
+	} 
 	
 }

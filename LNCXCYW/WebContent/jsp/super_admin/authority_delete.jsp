@@ -32,13 +32,16 @@
 							<td><s:property value="#i.user.mail" /></td>
 							 <td>
 							
+							 <select id="sel<s:property value="#i.user.userId"/>">
+ 								<s:iterator value="#i.userAuthoritiyList" var="a" status="index" >
+ 								<option value="<s:property value="#a.category.categoryId" />"><s:property value="#a.category.newscategory" /></option>	
+ 								</s:iterator>
+ 							</select>
 							
-							
-							
-								<s:select list="#i.userAuthoritiyList" 
+								<%-- <s:select list="#i.userAuthoritiyList" 
 	 									 listValue="category.newscategory" 
  	 									listKey="category.categoryId" theme="simple" id="sel" name="selected"> 
-	 							</s:select> 
+	 							</s:select>  --%>
 							</td> 
 							
 						
@@ -59,7 +62,11 @@
 	<script>
 		$(".ensure-button").click(function() {
 			var id = $(this).closest("tr").attr("id");
-			var selected = $("#sel option:selected").val();
+			var select = document.getElementById("sel"+id);
+			var index = select.selectedIndex;
+			/* var selected = $("#sel option:selected").val(); */
+			var selected = select[index].value;
+			/* var selected = $("#sel option:selected").val(); */
 			alert(selected);
 			//alert(id);
 			//var isPass=$('#judge').find("option:selected").val();
