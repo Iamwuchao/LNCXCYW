@@ -16,6 +16,12 @@
 		</result>
 	</action>
 	
+	<action name="second_page2" class="homepage.NewsAction" method="newsList">
+		<result name="success">
+			/jsp/third/second_page_big.jsp
+		</result>
+	</action>
+	
 	<action name="news_page" class="homepage.NewsAction" method="newsPage">
     	<result name="success" type="json">
 			<param name="includeProperties">status,news_list_html</param>
