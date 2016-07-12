@@ -24,6 +24,8 @@ public void setUserAuthoritiyList(List<UserAuthority> userAuthoritiyList) {
 	this.userAuthoritiyList = userAuthoritiyList;
 }
 
-
+public String toString(){
+	return "user:"+user.getUserId()+" list:"+userAuthoritiyList;
+}
 
 }

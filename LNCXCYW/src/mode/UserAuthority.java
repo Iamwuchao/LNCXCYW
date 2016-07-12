@@ -46,5 +46,7 @@ public class UserAuthority {
 		this.category = category;
 	}
 	
-	
+	public String toString(){
+		return category.getNewscategory();
+	}
 }

@@ -28,6 +28,7 @@ public class UserAuthorityDao extends BaseDaoImpl<UserAuthority, Integer>{
 //		userAuthorities = new UserAuthorities();
 		userAuthorities.setUser(user);
 		userAuthorities.setUserAuthoritiyList(list);
+		System.out.println(userAuthorities);
 //		userAuthorities.setAuthorityArray(authorityArray);
 //	}
 		session.close();
