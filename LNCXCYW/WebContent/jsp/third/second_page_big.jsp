@@ -2,19 +2,36 @@
 <layout:override name="news_content">
 
 <div class="mycontent" id="paginationTableDiv">  
-	<ul>
-		<s:iterator value="newsList" var="i" status="index">	
-			<li>
-				<a href="<s:property value="#i.news_address" />">
-					<s:property value="#i.newsTile" />
-				</a>
-			</li>
-		</s:iterator>
-	</ul>
+	<p style="font-weight:bold;">高校基地情况</p>
+	<div style="margin:20px 10px; border-bottom:1px solid rgb(25,85,145); padding:0 20px;">
+		<ul>
+			<s:iterator value="%{newsMap.get('创新创业教育基地_高校基地情况')}" var="i" status="index">	
+				<li>
+					<a href="<s:property value="#i.getNews_address()" />">
+						<s:property value="#i.getNewsTile()" />
+					</a>
+				</li>
+			</s:iterator>
+		</ul>
+	</div>
+	
+	<p style="font-weight:bold;">高校政策文件</p>
+	<div style="margin:20px 10px;  padding:0 20px;">
+		<ul>
+			<s:iterator value="%{newsMap.get('创新创业教育基地_政策文件')}" var="i" status="index">
+				<li>
+					<a href="<s:property value="#i.getNews_address()" />">
+						<s:property value="#i.getNewsTile()" />
+					</a>
+				</li>
+			</s:iterator>
+		</ul>
+	</div>
+	
 </div>
 
 <!-- 为了使用分页，include如下jsp -->
-<%@ include file="/jsp/base/widgets/pagination.jsp" %>
+<%-- <%@ include file="/jsp/base/widgets/pagination.jsp" %> --%>
 
 </layout:override>
 
