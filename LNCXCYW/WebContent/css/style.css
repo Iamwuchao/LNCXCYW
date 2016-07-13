@@ -205,13 +205,16 @@ input,select{ font-size:12px; vertical-align:middle;}
  color:#ffffff;
 }
 .con2 .list1 ul li{
-	list-style:circle;
-	line-height:25px;
+	/* list-style:circle; */
+	list-style:none;
+	height:25px;
+	/* line-height:25px; */
 	background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px;
 }
 .list1 li{
 	background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px;
-	line-height: 25px;
+	/* line-height: 25px; */
+	height:25px;
 }
 .list1 a{
 	display:block;
