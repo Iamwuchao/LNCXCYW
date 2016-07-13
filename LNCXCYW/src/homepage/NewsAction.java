@@ -117,7 +117,7 @@ public class NewsAction extends PageGetBaseAction{
 		if(map.containsKey(category)){
 			List<String> list=map.get(category);
 			for(String cate:list){
-				re.put(cate, new ArrayList<News>(Cache.getNewsList(cate, 0, 20)));
+				re.put(cate, new ArrayList<News>(Cache.getNewsList(cate, 0, 16)));
 			}
 		}		
 		System.out.println(re);
