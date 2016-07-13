@@ -1,7 +1,9 @@
 package homepage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -113,14 +115,15 @@ public class NewsAction extends PageGetBaseAction{
 	 */
 	public String newsList_Big(){
 		Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
-		Map<String, List<News>> re=new HashMap<String, List<News>>();		
+		System.out.println(map);
+		Map<String, List<News>> re=new LinkedHashMap<String, List<News>>();		
 		if(map.containsKey(category)){
 			List<String> list=map.get(category);
 			for(String cate:list){
 				re.put(cate, new ArrayList<News>(Cache.getNewsList(cate, 0, 10)));
 			}
 		}		
-		System.out.println(re);
+		//System.out.println(re);
 		newsMap=re;
 		return ActionSupport.SUCCESS;
 	}
