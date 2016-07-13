@@ -10,6 +10,7 @@
 					<a href="<s:property value="#i.getNews_address()" />">
 						<s:property value="#i.getNewsTile()" />
 					</a>
+					<p style="display:inline-block; font-size:12px; color:grey; float:right;"><s:property value="date"/></p>
 				</li>
 			</s:iterator>
 		</ul>
@@ -23,6 +24,7 @@
 					<a href="<s:property value="#i.getNews_address()" />">
 						<s:property value="#i.getNewsTile()" />
 					</a>
+					<p style="display:inline-block; font-size:12px; color:grey; float:right;"><s:property value="date"/></p>
 				</li>
 			</s:iterator>
 		</ul>

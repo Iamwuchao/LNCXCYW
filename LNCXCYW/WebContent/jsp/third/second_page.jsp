@@ -8,6 +8,7 @@
 				<a href="<s:property value="#i.news_address" />">
 					<s:property value="#i.newsTile" />
 				</a>
+				<p style="display:inline-block; font-size:12px; color:grey; float:right;"><s:property value="date"/></p>
 			</li>
 		</s:iterator>
 	</ul>
