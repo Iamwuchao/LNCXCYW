@@ -4,15 +4,22 @@ package admin;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
+import org.apache.struts2.ServletActionContext;
 
 import GlobalInfo.NewsPageInfo;
 import cache.Cache;
 import dao.DaoFactory;
 import dao.NewsDao;
+import dao.UserAuthorityDao;
 import mode.News;
+import mode.User;
+import mode.UserAuthorities;
+import mode.UserAuthority;
 import util.JspToHTML;
 import util.PageGetBaseAction;
 
@@ -73,13 +80,18 @@ public class NewsAction extends PageGetBaseAction{
 	 */
 	public String newsAdd() {
 		System.out.println("newsAdd:");
-		categoryList=Cache.getNewsCategoryList();
-		//System.out.println(categoryList);
-		for(int i=0; i<categoryList.size(); i++){
-			if(categoryList.get(i).equals("素质测评")||categoryList.get(i).equals("企业需求")||categoryList.get(i).equals("项目推介")){
-				categoryList.remove(i);
-			}			
-		}
+		//获取当前登录的用户
+		HttpSession session=ServletActionContext.getRequest().getSession();
+		User nowUser=(User)session.getAttribute("user");
+		//System.out.println(nowUser.getMail());
+		
+		//查找对应的权限
+		UserAuthorityDao authorityDao = new UserAuthorityDao();
+		UserAuthorities uAuthorities = authorityDao.showAuthoritiesByUser(nowUser);
+		categoryList=new ArrayList<String>();
+		for(UserAuthority L: uAuthorities.getUserAuthoritiyList()){
+			categoryList.add(L.getCategory().getNewscategory());
+		}			
 		//System.out.println(categoryList);
 		return SUCCESS;
 	}
@@ -382,6 +394,7 @@ public class NewsAction extends PageGetBaseAction{
 	public void setAuthorId(int authorId) {
 		this.authorId = authorId;
 	}
+
 
 
 	

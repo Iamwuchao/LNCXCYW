@@ -17,6 +17,14 @@ public class User {
 	private String userName;
 	private String mail;
 	private String password;
+	private String school;
+	private String college;
+	private String studentName;
+	private String studentId;
+	private String phoneNumber;
+	private String company;
+	private String address;
+	
 	private int role;
 	private boolean avaliable;
 	@Id
@@ -49,6 +57,82 @@ public class User {
 	@Column(name="avaliable" ,columnDefinition="BOOLEAN DEFAULT false")
 	public boolean getAvaliable() {
 		return avaliable;
+	}
+	
+	
+	
+	
+	@Column
+	public String getSchool() {
+		return school;
+	}
+	
+	@Column
+	public String getCollege() {
+		return college;
+	}
+	
+	@Column
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	@Column
+	public String getStudentId() {
+		return studentId;
+	}
+	
+	@Column
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	@Column
+	public String getCompany() {
+		return company;
+	}
+	
+	@Column
+	public String getAddress() {
+		return address;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public void setCollege(String college) {
+		this.college = college;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public void setAvaliable(boolean avaliable) {
