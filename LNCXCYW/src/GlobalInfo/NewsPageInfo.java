@@ -11,12 +11,13 @@ public enum NewsPageInfo {
 	private final int newsCountOfCategory = 10;//每个栏目的新闻数目
 	private final int newestNewsCount = 10;//每日推荐新闻数目
 	private final int pictureNewsCount = 4;//焦点图片新闻数目
-	String[] zixun={"通知公告", "工作动态","高校动态","政策规章","创新创业资讯","教指委工作动态"};
-	String[] xunlian={"创新训练", "创业实践","创新创业培训"};
-	String[] jingsai={"创新创业年会"};
-	String[] ziyuan={"项目推介", "企业需求","高校创新创业教育季报","他山之石","创新创业理论","创新创业教材","创新创业课程","创新创业导师"};
-	String[] chengguo={"优秀创新创业作品", "创新创业典型"};
+	String[] zixun={"政策规章", "创新创业资讯","他山之石"};
+	String[] xunlian={"创新创业训练计划", "创新创业年会"};
+	String[] jingsai={"创新创业竞赛", "优秀创新创业作品"};
+	String[] ziyuan={"创新创业培训", "创新创业理论","创新创业导师"};
+	String[] chengguo={"创新创业教材及课程", "创新创业典型"};
 	String[] jiaoyujidi={"创新创业教育基地_政策文件", "创新创业教育基地_高校基地情况"};
+	String[] xuanyujidi={"创新创业选育基地_政策文件", "创新创业选育基地_高校基地情况"};
 	
 	@SuppressWarnings("serial")
 	private final Map<String, List<String>> map=new HashMap<String, List<String>>(){
@@ -27,6 +28,7 @@ public enum NewsPageInfo {
 			put("创新创业资源", new ArrayList<String>(Arrays.asList(ziyuan)));
 			put("创新创业成果", new ArrayList<String>(Arrays.asList(chengguo)));
 			put("创新创业教育基地", new ArrayList<String>(Arrays.asList(jiaoyujidi)));
+			put("创新创业选育基地", new ArrayList<String>(Arrays.asList(xuanyujidi)));
 		}
 	};
 	
