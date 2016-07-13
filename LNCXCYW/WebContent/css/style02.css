@@ -169,6 +169,8 @@ ul li {
 	border-bottom:1px solid rgb(25,85,145);
 
 }
+
+
 .content-left li{
 	/* list-style: none; */
 	line-height: 30px;
@@ -186,6 +188,8 @@ ul li {
 	color: blue;
 	cursor: pointer;
 }
+
+
 .content-left time{
 	color: #888;
 	font-size: 14px;
@@ -244,9 +248,10 @@ ul li {
 	padding: 20px;
 }
 .deep-inner-top{
-	padding:20px;
+	padding-top:20px;
+	padding-left:5px;
 	position:absolute;
-	top:60px;
+	top:60px; 
 	bottom:5px;
 	left:5px;
 	right:5px;
@@ -254,23 +259,20 @@ ul li {
 	overflow:hidden;
 	
 }
-.deep-inner-top li{
-	/* float:left;
-	width:200px; */ 
+.deep-inner-top li{ 
+	height:25px;
 	text-align:left;
-	list-style: disc;
-	line-height: 25px;
+	list-style: none;
+	/* line-height: 25px; */
 	font-size: 14px;
-	text-overflow:ellipsis;
-	background: url(/images/li3.png) no-repeat -9px;
+	background: url(/images/li3.png) no-repeat -9px; 
 	/* background: url(http://i0.sinaimg.cn/home/main/index2013/0403/icon.png) no-repeat 0 -881px; */
 }
 .deep-inner-top li a, .deep-inner-hot li a{
-	list-style: disc;
 	display:block;
 	width:320px; 
-	padding-left:10px;
-	/* padding-right:20px; */
+	padding-left:10px; 
+	padding-right:20px; 
 	text-overflow:ellipsis;   
 }
 
@@ -329,7 +331,8 @@ ul li {
 	padding: 20px;
 }
 .deep-inner-hot{
-	padding:20px;
+	padding-top:20px;
+	padding-left:5px;
 	position:absolute;
 	top:60px;
 	bottom:5px;
@@ -341,10 +344,11 @@ ul li {
 }
 .deep-inner-hot li{
 	text-align:left;
-	list-style: disc;
-	line-height: 25px;
+	list-style: none; 
+	/* line-height: 25px; */
+	height:25px;
 	font-size: 14px;
-	background: url(/images/li3.png) no-repeat -9px;
+	 background: url(/images/li3.png) no-repeat -9px; 
 }
 
 
