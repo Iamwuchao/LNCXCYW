@@ -35,7 +35,7 @@
 							
 								<s:select list="#i.userAuthoritiyList" 
 	 									id="userAuthoritiyList" listValue="category.newscategory" 
- 	 									listKey="category.categoryId" theme="simple"> 
+ 	 									listKey="category.categoryId" theme="simple" cssStyle="width:200px;"> 
 	 							</s:select> 
 							</td>
 							

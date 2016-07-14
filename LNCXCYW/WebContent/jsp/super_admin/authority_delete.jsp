@@ -32,7 +32,7 @@
 							<td><s:property value="#i.user.mail" /></td>
 							 <td>
 							
-							 <select id="sel<s:property value="#i.user.userId"/>">
+							 <select id="sel<s:property value="#i.user.userId"/>" style="width:200px;">
  								<s:iterator value="#i.userAuthoritiyList" var="a" status="index" >
  								<option value="<s:property value="#a.category.categoryId" />"><s:property value="#a.category.newscategory" /></option>	
  								</s:iterator>

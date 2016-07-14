@@ -1,12 +1,20 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
 <title>注册页面</title>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"> --%>
 <script type='text/javascript' src="/js/base/jquery-2.1.4.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 <body style="background: url(/images/a.jpg)">
 	<br>
@@ -19,7 +27,8 @@
 	<br>
 
 
-
+<div class="form-group"
+		style="margin-left: auto; margin-right: auto; padding-top: 3%; padding-bottom: 5%; background-color:">
 	
 	
 	<form class="form-inline" action="" method="POST" id="">
@@ -31,7 +40,7 @@
 	  <br>
 	  <div class="form-group col-lg-offset-5">
 	  	<label for="fullname">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
-	  	<input type="text" class="form-control" name="username" id="username" onblur="checkUserName()" value="" placeholder="您的真实姓名">	
+	  	<input type="text" class="form-control" name="username" id="username"  value="" placeholder="您的真实姓名">	
 	  </div>
 	  <div class="form-group">
 	  	<span style="color:red" id="userName_msg">*</span>
@@ -41,7 +50,7 @@
 	  
 	  <div class="form-group col-lg-offset-5">
 	  	<label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-	  	<input type="password" class="form-control" name="password" id="password" onblur="checkPassword()" value="" placeholder="">
+	  	<input type="password" class="form-control" name="password" id="password" value="" placeholder="">
 	  </div>
 	  <div class="form-group">
 	  	<span style="color:red" id="password_msg">*</span>
@@ -50,7 +59,7 @@
 	  <br><br>
 	  <div class="form-group col-lg-offset-5">
 	  	<label for="passwordAgain">确认密码</label>
-	  	<input type="password" class="form-control" id="passwordAgain" name="passwordAgain" onblur="confirmPassword()" value="" placeholder="">
+	  	<input type="password" class="form-control" id="passwordAgain" name="passwordAgain"  value="" placeholder="">
 	  </div>
 	  <div class="form-group">
 	  	<span style="color:red" id="confirm_msg">*</span>
@@ -62,7 +71,7 @@
 	  <br><br>
 	  <div class="form-group col-lg-offset-5">
 	  	<label for="fullName">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-	  	<input type="text" class="form-control" name="email" id="email" onblur="checkEmail()" value="" placeholder="请填写有效邮箱">	
+	  	<input type="text" class="form-control" name="email" id="email"  value="" placeholder="请填写有效邮箱">	
 	  </div>
 	  <div class="form-group">
 	  	<span style="color:red" id="email_msg">*</span>
@@ -76,6 +85,8 @@
 	  	<span style="color:red">(*为必填项)</span>
 	  </div> -->
 	  </form>
+	  </div>
+	  
  
 </body>
 <script >
@@ -85,7 +96,7 @@ $(document).on("click","#regist", function (){
 	confirmPassword();
 	checkEmail(); */
 	if(checkUserName() && checkPassword() && confirmPassword() && checkEmail()){
-	alert("4");
+	//alert("4");
 	var username = $("#username").val();
     var password = $("#password").val();
     var email = $("#email").val();
@@ -124,7 +135,7 @@ function  checkUserName(){
 		 {
 		 
 		$("#userName_msg").text("不能为空"); 
-		$("#username").focus();
+		//$("#username").focus();
 		return false;
 		 }
 	 else
@@ -155,7 +166,7 @@ function confirmPassword(){
 	if(!(password==passwordAgain))
 		{
 			$('#confirm_msg').text("两次密码不一致");
-			$('#passwordAgain').focus();
+		//	$('#passwordAgain').focus();
 			return false;
 		}
 	else

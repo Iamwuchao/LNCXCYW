@@ -31,7 +31,7 @@
 			<div class="h2">辽宁省创新创业网登录</div>
 			<br>
 			<div class="form-group" >
-				<label for="email">用户名</label> <input style="width: 60%"
+				<label for="email">邮箱</label> <input style="width: 60%"
 					type="text" class="form-control" name="email" id="email"  placeholder="邮箱">
 			</div>
 
@@ -42,8 +42,8 @@
 			</div>
 			
 			<div class="form-group">
-			<a href="./findPassword.jsp">忘记密码</a>
-			<a href="./regist.jsp" style=" margin-left: 33%">立即注册</a>
+			<a href="/jsp/homepage/findPassword.jsp">忘记密码</a>
+			<a href="/jsp/homepage/regist.jsp" style=" margin-left: 33%">立即注册</a>
 			</div>
 			<div class="form-group">
 				
