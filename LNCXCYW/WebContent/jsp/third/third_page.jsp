@@ -55,7 +55,7 @@
 </div>
 
 
-<div class="mycontent">  
+<div class="mycontent" style="overflow:hidden;">  
 	<s:property escape="false" value="content"/>			
 </div>
 </layout:override>
