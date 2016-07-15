@@ -169,16 +169,9 @@ public class NewsAction extends PageGetBaseAction{
 	private static List<News> getNewsListByCategory(String category, int start, int end){
 		Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
 		List<News> re;
-		if(map.containsKey(category)){
-			re=new ArrayList<News>();
-			List<String> list=map.get(category);
-			for(String cate:list){
-				//System.out.println(cate);
-				re.addAll(Cache.getNewsList(cate, start, end));
-			}
-		}else{
-			re=Cache.getNewsList(category, start, end);
-		}
+
+		re=Cache.getNewsList(category, start, end);
+		
 		return re;
 	}
 	

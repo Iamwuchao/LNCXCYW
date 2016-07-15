@@ -15,7 +15,7 @@ public enum NewsPageInfo {
 	String[] xunlian={"创新创业训练计划", "创新创业年会"};
 	String[] jingsai={"创新创业竞赛", "优秀创新创业作品"};
 	String[] ziyuan={"创新创业培训", "创新创业理论","创新创业导师"};
-	String[] chengguo={"创新创业教材及课程", "创新创业典型"};
+	String[] chengguo={"创新创业教材", "创新创业课程", "创新创业典型"};
 	String[] jiaoyujidi={"创新创业教育基地_政策文件", "创新创业教育基地_高校基地情况"};
 	String[] xuanyujidi={"创新创业选育基地_政策文件", "创新创业选育基地_高校基地情况"};
 	String[] gaigefangan={"创新创业改革实施方案_政策文件", "创新创业改革实施方案_高校情况"};
