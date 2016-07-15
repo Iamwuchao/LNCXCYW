@@ -81,7 +81,7 @@
         //,focus:false //初始化时，是否让编辑器获得焦点true或false
 
         //如果自定义，最好给p标签如下的行高，要不输入中文时，会有跳动感
-        //,initialStyle:'p{line-height:1em}'//编辑器层级的基数,可以用来改变字体等
+        ,initialStyle:'p{line-height:1em;font-family:微软雅黑,Microsoft YaHei}'//编辑器层级的基数,可以用来改变字体等
 
         //,iframeCssUrl: URL + '/themes/iframe.css' //给编辑器内部引入一个css文件
 
@@ -177,19 +177,19 @@
 
         //fontfamily
         //字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
-        //,'fontfamily':[
-        //    { label:'',name:'songti',val:'宋体,SimSun'},
-        //    { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
-        //    { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
-        //    { label:'',name:'heiti',val:'黑体, SimHei'},
-        //    { label:'',name:'lishu',val:'隶书, SimLi'},
-        //    { label:'',name:'andaleMono',val:'andale mono'},
-        //    { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
-        //    { label:'',name:'arialBlack',val:'arial black,avant garde'},
+        ,'fontfamily':[
+            { label:'',name:'songti',val:'宋体,SimSun'},
+            { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
+            { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
+            { label:'',name:'heiti',val:'黑体, SimHei'},
+            { label:'',name:'lishu',val:'隶书, SimLi'},
+            { label:'',name:'andaleMono',val:'andale mono'},
+            { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
+            { label:'',name:'arialBlack',val:'arial black,avant garde'},
         //    { label:'',name:'comicSansMs',val:'comic sans ms'},
         //    { label:'',name:'impact',val:'impact,chicago'},
         //    { label:'',name:'timesNewRoman',val:'times new roman'}
-        //]
+        ]
 
         //fontsize
         //字号
