@@ -11,7 +11,7 @@
                   <li data-target="#myCarousel" data-slide-to="1"></li>
                   <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="padding-top:10px;">
                   <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
                     <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>">
                     <img src="<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>" alt="">
