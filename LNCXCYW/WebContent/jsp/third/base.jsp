@@ -65,11 +65,12 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="bottom-wrap">
+		<br>
+		<br>
 			<div id="bigDiver" class="bigDivider"></div>
 			<div>
-				<!-- 相关连接  直接引用-->
 				<%@ include file="/jsp/base/widgets/link.jsp"%>
 			</div>
 		</div>

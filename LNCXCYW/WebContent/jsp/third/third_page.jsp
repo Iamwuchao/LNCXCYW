@@ -1,6 +1,5 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
-<!-- 因为要发新闻，不能有登录状态，所以重写 -->
 <layout:override name="top">
 
 <div class="splitterbars">
