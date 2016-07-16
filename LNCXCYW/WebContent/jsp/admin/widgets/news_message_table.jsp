@@ -1,4 +1,5 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
+
 <table class="classlist table table-bordered "
 				id="news_messeage_table">
 				<thead> 
@@ -16,7 +17,7 @@
 						<tr   id="<s:property value="#i.newsId"/>" >
 						
 						
-							<td><s:property value="#i.newsTile" /></td>
+							<td><a style="color:black;" href="<s:property value="#i.news_address" />"><s:property value="#i.newsTile" /></a></td>
 							<td><s:property value="#i.date" /></td>
 							 <td>
 							
