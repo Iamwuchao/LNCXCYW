@@ -46,5 +46,8 @@ public class ExamPaper {
 		this.name = name;
 	}
 	
+	public String toString(){
+		return this.id+":"+this.name+this.description;
+	}
 	
 }

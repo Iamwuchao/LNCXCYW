@@ -37,7 +37,7 @@ public class ExamManageAction {
 	private String paperNameInput;
 	private String paperDescInput;//试卷描述
 	/*
-	 * 添加试题
+	 * 添加试题,需要检验试题名字是否重复，原则上是不能重复
 	 */
 	public String examAdd(){
 		System.out.println("###############");
@@ -67,7 +67,8 @@ public class ExamManageAction {
 		status="0";
 		ExamTitle etitle=new ExamTitle();
 		etitle.setEmTitle(title);
-		ExamPaper examPaper=Cache.getExamPaperByName(category);
+//		ExamPaper examPaper=Cache.getExamPaperByName(category);
+		ExamPaper examPaper = new ExamPaperDao().getExamPaperByCategory(category);
 		etitle.setEmPaper(examPaper);
 		
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
@@ -110,7 +111,8 @@ public class ExamManageAction {
 	 * @return
 	 */
 	public String examEvaAdd(){
-		ExamPaper examPaper=Cache.getExamPaperByName(category);
+//		ExamPaper examPaper=Cache.getExamPaperByName(category);
+		ExamPaper examPaper = new ExamPaperDao().getExamPaperByCategory(category);
 		ExamEvalutionDao examEvaDao = new ExamEvalutionDao();
 		for(int i=0;i<emEvaDesList.size();i++){
 			ExamEvalution evalution = new ExamEvalution();
@@ -153,7 +155,8 @@ public class ExamManageAction {
 	 */
 	public String examPreShow(){
 		
-		ExamPaper examPaper=Cache.getExamPaperByName(category);
+//		ExamPaper examPaper=Cache.getExamPaperByName(category);
+		ExamPaper examPaper = new ExamPaperDao().getExamPaperByCategory(category);
 		ExamTitleDao dao=(ExamTitleDao)DaoFactory.getDaoByName(ExamTitleDao.class);
 		//插入成功以后将题目和选项提出来显示在页面
 		 qtitle = dao.getAllExamTitle(examPaper);

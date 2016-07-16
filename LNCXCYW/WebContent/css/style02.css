@@ -25,6 +25,11 @@ ul li{
 	white-space:nowrap;
 }
 
+
+/* 做试题的时候，试卷的显示 */
+#showexamCont li{
+	list-style:none;
+}
 .clear{
 	clear:both;
 }
