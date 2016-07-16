@@ -8,7 +8,7 @@
 	<package name="admin" namespace="/" extends="AdminDefault">
 <!-- 退出登录 -->
        <action name="logout" class="admin.AdminAction" method="logout">
-       <result>
+       <result name="success" type="redirect">
        		/jsp/homepage/homepage.jsp
        </result>
        </action>
