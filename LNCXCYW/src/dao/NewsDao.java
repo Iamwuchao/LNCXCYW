@@ -64,7 +64,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			Session session = getSession();
 			Criteria criteria = session.createCriteria(News.class);
 			criteria.add(Restrictions.eq("category.categoryId", category.getCategoryId()));
-			criteria.addOrder(Order.desc("date"));
+			criteria.addOrder(Order.desc("newsId"));
 			List<News> result = this.findPagination(criteria, start, count);
 			System.out.println("getNewsSubList "+result.size());
 			session.close();
