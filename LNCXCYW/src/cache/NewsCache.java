@@ -126,7 +126,12 @@ public class NewsCache implements LeftCycle<String>{
 	public void remove(String category,News news){
 		ConcurrentLinkedDeque<News> list = cacheMap.get(category);
 		if(list == null || list.size()<1) return ;
-		list.remove(news);
+		for(News temp: list){
+			if(temp.getNewsId()==news.getNewsId()){
+				System.out.println("news remove: "+list.remove(temp));
+			}
+		}
+		
 	}
 	
 	@Override

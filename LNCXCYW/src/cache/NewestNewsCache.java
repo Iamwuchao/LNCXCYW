@@ -82,6 +82,12 @@ public class NewestNewsCache implements LeftCycle<News>{
 	}
 
 	public void remove(News t){
-		cacheNewsList.remove(t);
+		for(News news: cacheNewsList){
+			if(news.getNewsId()==t.getNewsId()){
+				System.out.println("newest remove: "+cacheNewsList.remove(news));
+				break;
+			}
+		}
+		
 	}
 }

@@ -54,6 +54,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		
 		String address=PathInfo.ROOTPATH.getValue()+news.getNews_address();
 		util.FileOperate.deleteFile(address);
+		Cache.remove(news.getCategory().getNewscategory(), news);
 	}
 	
 	
