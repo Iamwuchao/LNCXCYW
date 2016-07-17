@@ -5,10 +5,9 @@
 			<table class="table table-bordered">
 				<s:iterator value="examPaperList" var="i" status="index">
 					<tr class="row" id=<s:property value="#i.id"/> >
-						<%-- <td> <s:property value="#index.count"/> </td> --%>
-						<td> <s:property value="#i.description"/> </td>
+						<td> <s:property value="#i.name"/> </td>
 						<td>
-							<a href="/showExam?paperName=<s:property value="#i.description"/>"><button type="button" class="btn btn-primary btn-sm ensure-button">确定</button></a>
+							<a href="/showExam?paperName=<s:property value="#i.name"/>"><button type="button" class="btn btn-primary btn-sm ensure-button">确定</button></a>
 						</td>
 					</tr>	
 				</s:iterator>
