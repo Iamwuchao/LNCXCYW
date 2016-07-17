@@ -138,6 +138,7 @@ public class ExamAction extends BasePageInfoAction {
 		HashSet<Integer> set = new HashSet<Integer>();//用于保存所有选中的选项的ID
 		set.addAll(checkedOptionList);
 		HashMap<ExamTitle,List<ExamOption>> map = exam.getTotalExam();
+		System.out.println("长度++++++："+map.size());
 		Set<ExamTitle> keySet =  map.keySet(); 
 		for(ExamTitle tem:keySet){
 			List<ExamOption> list = map.get(tem);

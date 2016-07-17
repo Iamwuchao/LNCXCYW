@@ -62,7 +62,9 @@ function myonclick(){
 	var checkedOptionList = new Array();
 	for(var i = 0; i < L.length; ++ i)
 	{
-		if($(L[i].checked))
+		/* if($(L[i].checked)) */
+		//alert($(L[i]).is(':checked'));
+			if($(L[i]).is(':checked'))
 		{
 			var cid = $(L[i]).attr("id");
 		//	console.log(cid);
@@ -82,7 +84,7 @@ function myonclick(){
 
 function checkChangeCallback(date){
 	//alert(date.evaluate);
-	var newcontent = "<p>"+date.evaluate+"</p>";
+	var newcontent = "<p>"+"测试结果为："+date.evaluate+"</p>";
 	document.getElementById("exCont").innerHTML = newcontent;
 }
 
