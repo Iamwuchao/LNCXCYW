@@ -29,6 +29,7 @@ public class NewsAction extends PageGetBaseAction{
 	private static final long serialVersionUID = 1L;
 	private String category;
 	public String news_list_html;
+	public String paginationTable;
 	private List<News> newsList;
 	private String news_address;
 	private List<News> addressList;
@@ -137,6 +138,7 @@ public class NewsAction extends PageGetBaseAction{
 		newsList=getNewsListByCategory(category, 0, 200);
 		newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		news_list_html = JspToHTML.getJspOutput("/jsp/third/secondPageTable.jsp");
+		paginationTable=JspToHTML.getJspOutput("/jsp/base/widgets/paginationTable.jsp");		
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -247,6 +249,14 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setNewsMap(Map<String, List<News>> newsMap) {
 		this.newsMap = newsMap;
+	}
+
+	public String getPaginationTable() {
+		return paginationTable;
+	}
+
+	public void setPaginationTable(String paginationTable) {
+		this.paginationTable = paginationTable;
 	}
 
 }

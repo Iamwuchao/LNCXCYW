@@ -3,13 +3,16 @@
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
 
+<div id="paginationDiv">
+	<%@ include file="/jsp/base/widgets/paginationTable.jsp" %>
+</div>
 
-<%@ include file="/jsp/base/widgets/paginationTable.jsp" %>
 
 
 <script type="text/javascript" src="/js/base/jquery-2.1.4.min.js" ></script>
 
 <script> 
+
 $(document).on("click","#firstPage",  function(){
 	sendRequestPage(1);
 });
@@ -44,8 +47,8 @@ function sendRequestPage(currentPageNum) {
 }
 
 function _requestPageCallback(data) {
-	//alert(data.paginationHtml);
 	$("#paginationTableDiv").html(data.news_list_html);
+	$("#paginationDiv").html(data.paginationTable);
 }
 
 function requesterror(data){

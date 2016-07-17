@@ -22,4 +22,6 @@
 	<include file="/admin/admin.xml"/>
 	<include file="/exam/exam.xml"></include>
 	<include file="/user/user.xml"></include>
+	
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
 </struts>

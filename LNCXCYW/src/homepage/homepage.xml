@@ -24,7 +24,7 @@
 	
 	<action name="news_page" class="homepage.NewsAction" method="newsPage">
     	<result name="success" type="json">
-			<param name="includeProperties">status,news_list_html</param>
+			<param name="includeProperties">status,news_list_html,paginationTable</param>
 		</result>
 	</action>
 	

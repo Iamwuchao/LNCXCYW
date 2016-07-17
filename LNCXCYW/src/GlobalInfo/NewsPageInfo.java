@@ -8,7 +8,7 @@ import java.util.Map;
 
 public enum NewsPageInfo {
 	NEWSPAGEINFO;
-	private final int newsCountOfCategory = 25;//每个栏目的新闻数目
+	private final int newsCountOfCategory = 10;//每个栏目的新闻数目
 	private final int newestNewsCount = 10;//每日推荐新闻数目
 	private final int pictureNewsCount = 4;//焦点图片新闻数目
 	String[] zixun={"政策规章", "创新创业资讯","他山之石"};

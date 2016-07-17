@@ -2,75 +2,51 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/jsp/basepages/taglib.jsp" %>
 
-<nav >
-  <ul class="pagination pagination-lg " >
-  	
-  	<li class="previous" id="firstPage"><a>首页</a></li>
-  	<s:if test="currentPageNum - 2 > 1"> 
-  	
-		<li>
-	      <a >
-	        <span aria-hidden="true">...</span>
-	      </a>
-	    </li>
-  	</s:if>
-  	
-  	<!-- 代替@@@max -->
-  	<s:if test="currentPageNum-2 > 1">
-  		<s:iterator  var="i" begin="currentPageNum - 2" end="currentPageNum - 1" step = "1" >
-  			<li> 
-				<a requestPageNum=<s:property value="i"/> class="page-link"><s:property value="i"/> </a>
-			</li>
-		</s:iterator>
-  	</s:if>
-  	<s:else>
-  		<s:iterator  var="i" begin="1" end="currentPageNum - 1" step = "1" >
-	  		<li> 
-				<a requestPageNum=<s:property value="i"/> class="page-link"><s:property value="i"/> </a>
-			</li>
-		</s:iterator>
-  	</s:else>
 
-<!-- 代替@@min -->
-
-	<s:if test="currentPageNum+2 < totalPageNum">
-		<s:iterator var="i"  begin="1" end="currentPageNum + 2" step = "1" >
-			<li>
-				<a requestPageNum=<s:property value="i"/> class="page-link"> <s:property value="i"/> </a>
-			</li>
-		</s:iterator>
-	</s:if>
-	<s:else>
-		<s:iterator var="i"  begin="currentPageNum " end="totalPageNum" step = "1" >
-			<li>
-				<a requestPageNum=<s:property value="i"/> class="page-link"> <s:property value="i"/> </a>
-			</li>
-		</s:iterator>
-	</s:else>
-	
-	
-	
- 	<s:if test="currentPageNum + 2 < totalPageNum"> 
-		<li>
-	      <a aria-label="Previous">
-	        ...
-	      </a>
-	    </li>
-  	</s:if>
-  	
-    
-    <li class="next" id="lastPage" totalPageNum=<s:property value="totalPageNum"/>><a >尾页 </a></li>
-	
-
-	
-	
-  </ul>
+<nav>
+	<ul class="pagination pagination-lg " >
+		<li class="previous" ><a>current: <s:property value="currentPageNum"/></a></li>
+		<li class="previous" ><a>total: <s:property value="totalPageNum"/></a></li>
+	</ul>
 </nav>
 
 
 
-
-
+<nav>
+	<ul class="pagination pagination-lg " >
+		<s:if test="totalPageNum < 7">
+			<s:iterator var="i" begin="1" end="totalPageNum" step="1">
+				<li>
+					<a requestPageNum=<s:property value="i"/> class="page-link"><s:property value="i"/></a>
+				</li>
+			</s:iterator> 
+		</s:if>
+		
+		<s:else>
+			<s:if test="currentPageNum <= 4">
+				<s:iterator var="i" begin="1" end="@@min(6, totalPageNum)" step="1">
+					<li><a requestPageNum=<s:property value="i"/> class="page-link"><s:property value="i"/></a></li>
+				</s:iterator> 
+				<s:if test="totalPageNum > 6">
+					<li><a requestPageNum=totalPageNum class="page-link">...<s:property value="totalPageNum"/></a></li>
+				</s:if>
+			</s:if>	
+			
+			<s:else>
+				<li><a requestPageNum=1 class="page-link">1...</a></li>
+				<s:iterator var="i" begin="currentPageNum - 2" end="@@min(currentPageNum + 2, totalPageNum)" step="1">
+					<li><a requestPageNum=<s:property value="i"/> class="page-link"><s:property value="i"/></a></li>
+				</s:iterator> 
+				
+				<s:if test="currentPageNum + 2 < totalPageNum">
+					<li><a requestPageNum=totalPageNum class="page-link">...<s:property value="totalPageNum"/></a></li>
+				</s:if>			
+			</s:else>		
+		</s:else>
+		
+		
+	</ul>
+</nav>
 
 
 
