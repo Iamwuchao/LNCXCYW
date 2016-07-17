@@ -49,7 +49,10 @@
     <welcome-file>http://localhost:8080/homepage/homepageGetNewsList.action</welcome-file>
    </welcome-file-list> 
    
-  
+<error-page>
+<error-code>404</error-code>
+<location>/jsp/third/404_page.jsp</location>
+</error-page>
   
  <!--   <filter>
         <filter-name>struts2</filter-name>

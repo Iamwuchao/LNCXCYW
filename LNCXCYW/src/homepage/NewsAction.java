@@ -167,11 +167,8 @@ public class NewsAction extends PageGetBaseAction{
 	 * 用来替代之前的 Cache.getNewsList(category, start, end)
 	 */
 	private static List<News> getNewsListByCategory(String category, int start, int end){
-		Map<String, List<String>> map=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getMap();
 		List<News> re;
-
 		re=Cache.getNewsList(category, start, end);
-		
 		return re;
 	}
 	
