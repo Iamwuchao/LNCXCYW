@@ -25,7 +25,7 @@ public class ExamCache{
 		List<ExamPaper> list = epd.getAllExamPaper();
 		for(ExamPaper tem:list){
 			queue.add(tem);
-			paperMap.put(tem.getDescription(), tem);
+			paperMap.put(tem.getName(), tem);
 		}
 		
 		for(ExamPaper paper:list){

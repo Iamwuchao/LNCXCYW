@@ -4,6 +4,7 @@
 		<div id="showexamCont">
 			<div id="exCont" class="panel panel-default"  >
 				<div class="panel-body ">
+				<p><s:property value="paperDescription" /></p>
 				
 	  			<s:iterator var="i" begin="0" end="listOftitle.size()-1" step="1"  >
 					<dl class="exam_margin well" titleId=<s:property value="listOftitle.get(#i).emId" /> >

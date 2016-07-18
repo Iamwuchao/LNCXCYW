@@ -33,6 +33,7 @@ public class ExamAction extends BasePageInfoAction {
 	private List<Integer> checkedOptionList;     //答题记录
 	private List<ExamPaper> examPaperList;//所有试题类型的列表
 	private String evaluate;//评价
+	private String paperDescription;
 	
 	private final String examKey = "exam";//exam存入session中后对应的键值
 	
@@ -90,6 +91,14 @@ public class ExamAction extends BasePageInfoAction {
 
 	public void setEvaluate(String evaluate) {
 		this.evaluate = evaluate;
+	}	
+	
+	public String getPaperDescription() {
+		return paperDescription;
+	}
+
+	public void setPaperDescription(String paperDescription) {
+		this.paperDescription = paperDescription;
 	}
 
 	//获取指定类型的试卷
@@ -99,11 +108,13 @@ public class ExamAction extends BasePageInfoAction {
 		if(paperName!=null){
 			exampaper = Cache.getExamPaperByName(paperName);
 		}
+		
 		if(exampaper!=null){
 			//获取试卷
 			System.out.println("HEHEHEHEHEHEHE");
 			System.out.println("exampaper is not null "+paperName);
 			exam = Cache.getExamByPaperRandom(exampaper);
+			paperDescription=exampaper.getDescription();
 			optionsOfTitle = new LinkedList<List<ExamOption>>();
 			if(exam!=null){
 				HttpServletRequest request = ServletActionContext.getRequest();
