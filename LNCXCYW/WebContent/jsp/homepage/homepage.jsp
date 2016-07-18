@@ -397,15 +397,15 @@
 		 	<div id="fourth_con2" style="margin-right:10px" class="congrey">
 		 		 	<div id="fourth_con2" class="name">
 		  		<ul style="width:100%;height:36px;/* overflow:hidden */">
-	         		<a href="/second_page?category=创新创业教材" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业教材</li></a>
-	         		<a href="/second_page?category=创新创业课程" target="_blank"><li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业课程</li></a>
+	         		<a href="/second_page?category=创新创业课程" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业课程</li></a>
+	         		<a href="/second_page?category=创新创业教材" target="_blank"><li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业教材</li></a>
 	         	</ul>
 		  	</div>
 		  	<div class="clear"></div>
        		<div id="con_nine_1">
        			<div class="list1" style="padding-top: 15px">
 						<ul>
-							<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
+							<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							     		&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -418,7 +418,7 @@
        		<div id="con_nine_2" style="display:  none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
-								<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
+								<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							     			&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
