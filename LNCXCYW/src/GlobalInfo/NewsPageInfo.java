@@ -19,6 +19,7 @@ public enum NewsPageInfo {
 	String[] jiaoyujidi={"创新创业教育基地_政策文件", "创新创业教育基地_高校基地情况"};
 	String[] xuanyujidi={"创新创业选育基地_政策文件", "创新创业选育基地_高校基地情况"};
 	String[] gaigefangan={"创新创业改革实施方案_政策文件", "创新创业改革实施方案_高校情况"};
+	String[] chuangyekecheng={"创新创业课程_政策文件", "创新创业课程"};
 	
 	@SuppressWarnings("serial")
 	private final Map<String, List<String>> map=new HashMap<String, List<String>>(){
@@ -31,6 +32,7 @@ public enum NewsPageInfo {
 			put("创新创业教育基地", new ArrayList<String>(Arrays.asList(jiaoyujidi)));
 			put("创新创业选育基地", new ArrayList<String>(Arrays.asList(xuanyujidi)));
 			put("创新创业改革实施方案", new ArrayList<String>(Arrays.asList(gaigefangan)));
+			put("创新创业课程", new ArrayList<String>(Arrays.asList(chuangyekecheng)));
 		}
 	};
 	
