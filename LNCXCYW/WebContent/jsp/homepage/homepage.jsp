@@ -146,15 +146,15 @@
 	        <div id="second_con2" style=" margin-right: 10px" class="congrey">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
-	         		<a href="/second_page?category=项目推介" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">项目推介</li></a>
-	         		<a href="/second_page?category=企业需求" target="_blank"><li id="three2" onmouseover="setTabsnow('three',2,2)" >企业需求</li></a>
+	         		<a href="/second_page?category=教指委工作动态" target="_blank"><li id="three1" onmouseover="setTabsnow('three',1,2)" class="curnews">教指委工作动态</li></a>
+	         		<a href="/second_page?category=高校创新创业教育季报" target="_blank"><li id="three2" onmouseover="setTabsnow('three',2,2)" >高校创新创业教育季报</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
 	         	 <div id="con_three_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
-							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index">   
+							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							        	&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -167,7 +167,7 @@
 		  		  <div id="con_three_2" style="display:  none;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
-							<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
+							<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							        	&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -183,15 +183,15 @@
 	        <div id="second_con3" class="conblue">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
-	         		<a href="/second_page?category=教指委工作动态" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">教指委工作动态</li></a>
-	         		<a href="/second_page?category=高校创新创业教育季报" target="_blank"><li id="four2" onmouseover="setTabsnow('four',2,2)" >高校创新创业教育季报</li></a>
+	         		<a href="/second_page?category=项目推介" target="_blank"><li id="four1" onmouseover="setTabsnow('four',1,2)" class="curnews">项目推介</li></a>
+	         		<a href="/second_page?category=企业需求" target="_blank"><li id="four2" onmouseover="setTabsnow('four',2,2)" >企业需求</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
 	         	 <div id="con_four_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
-							<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index">   
+							<s:iterator value="%{newsMap.get('项目推介')}" var="i" status="index">   
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							        	&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -204,7 +204,7 @@
 				<div id="con_four_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 					<ul>
-						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
+						<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
 							<li>
 								<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							        &nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -317,15 +317,15 @@
 	        <div id="third_con3" class="congrey">
 	        	<div class="name">
 	         	<ul style="width:100%;height:36px;/* overflow:hidden */">
-	         		<a href="/second_page?category=创新创业典型" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">创新创业典型</li></a>
-	         		<a href="/second_page?category=他山之石" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >他山之石</li></a>
+	         		<a href="/second_page?category=他山之石" target="_blank"><li id="seven1" onmouseover="setTabsnow('seven',1,2)" class="curnews">他山之石</li></a>
+	         		<a href="/second_page?category=创新创业典型" target="_blank"><li id="seven2" onmouseover="setTabsnow('seven',2,2)" >创新创业典型</li></a>
 	         	</ul>
 	         	</div>
 	         	<div class="clear"></div>
 	         	 <div id="con_seven_1" style="display: block;">
 					<div class="list1" style="padding-top: 15px">
 						<ul>
-							<s:iterator value="newsMap['创新创业典型']" var="i" status="index">      
+							<s:iterator value="newsMap['他山之石']" var="i" status="index">      
 								<li>
 									<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							     		&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
@@ -339,7 +339,7 @@
 				<div id="con_seven_2" style="display: none;">
 		         <div class="list1" style="padding-top: 15px">
 							<ul>
-								<s:iterator value="%{newsMap.get('他山之石')}" var="i" status="index">     
+								<s:iterator value="%{newsMap.get('创新创业典型')}" var="i" status="index">     
 									<li>
 										<a href="<s:property value="#i.getNews_address()"/>" class="c50257" title="<s:property value="#i.getNewsTile()"/>" target="_blank">
 							     			&nbsp;&nbsp;&nbsp;<s:property value="#i.getNewsTile()"/>
