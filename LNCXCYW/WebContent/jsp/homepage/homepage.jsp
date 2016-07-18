@@ -4,6 +4,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <layout:override name="base_content">
+
  <div id="first_con"  class="con" >
      <div id="myCarousel"  class="con1 carousel slide">
                 <ol class="carousel-indicators">
@@ -12,20 +13,23 @@
                   <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                  <div class="item active" style="background:url(./images/test1.jpg);background-size:340px 300px">
+                  <div class="item active" style="background-color:black; height:250px;">
                     <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>">
                     <img src="<s:property value="%{newsMap.get('图片新闻').get(0).news_address}"/>" alt="">
                     </a>
+                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;" ><s:property value="%{newsMap.get('图片新闻').get(0).newsTile}"/></p>
                   </div>
-                  <div class="item" style="background:url(./images/test2.jpg);background-size:340px 300px">
-                     <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>">
+                  <div class="item" style="background-color:black; height:250px;">
+                    <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>">
                    	 	<img src="<s:property value="%{newsMap.get('图片新闻').get(1).news_address}"/>" alt="">
                     </a>
+                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;" ><s:property value="%{newsMap.get('图片新闻').get(1).newsTile}"/></p>
                   </div>
-                  <div class="item" style="background:url(./images/test3.jpg);background-size:340px 300px">
+                  <div class="item" style="background-color:black; height:250px;">
                    <a id="pic" href="/picture_news?news_address=<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>">
                    		<img src="<s:property value="%{newsMap.get('图片新闻').get(2).news_address}"/>" alt="">
-                   	</a>
+                   </a>
+                   <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0; overflow:hidden;" ><s:property value="%{newsMap.get('图片新闻').get(2).newsTile}"/></p>
                  <!--    <div class="carousel-caption">
                       <h4>Third Thumbnail label</h4>
                     </div>--> 
