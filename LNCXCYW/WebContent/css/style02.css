@@ -207,7 +207,7 @@ ul li {
  	text-overflow: ellipsis;
  	white-space: nowrap;
  	 background: url(/images/li3.png) no-repeat -9px; 
- 	 padding-left:8px;
+ 	 padding-left:15px;
 }
 .content-left ul .newslist a:hover {
 	display:block;
@@ -216,8 +216,8 @@ ul li {
 	overflow: hidden;
 	text-overflow: ellipsis;
  	white-space: nowrap;
- 	background: url(/images/li.gif) no-repeat -5px; 
- 	 padding-left:8px;
+ 	background: url(/images/li.gif) no-repeat -2px; 
+ 	 padding-left:15px;
  	
 }
 .content-left time{
