@@ -401,7 +401,7 @@
 		 	<div id="fourth_con2" style="margin-right:10px" class="congrey">
 		 		 	<div id="fourth_con2" class="name">
 		  		<ul style="width:100%;height:36px;/* overflow:hidden */">
-	         		<a href="/second_page?category=创新创业课程" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业课程</li></a>
+	         		<a href="/second_page2?category=创新创业课程" target="_blank"><li id="nine1" onmouseover="setTabsnow('nine',1,2)" class="curnews">创新创业课程</li></a>
 	         		<a href="/second_page?category=创新创业教材" target="_blank"><li id="nine2" onmouseover="setTabsnow('nine',2,2)" >创新创业教材</li></a>
 	         	</ul>
 		  	</div>

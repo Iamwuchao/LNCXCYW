@@ -167,7 +167,7 @@ ul li {
 .content-left .inner{
 	/*margin: 10px 10px;*/
 	margin-top:-30px;
-	padding: 10px 20px;
+	padding: 10px 20px 10px 10px;
 	border-top: 5px solid rgb(25,85,145);
 	border-left:1px solid rgb(25,85,145);
 	border-right:1px solid rgb(25,85,145);
@@ -177,24 +177,49 @@ ul li {
 
 
 .content-left li{
-	/* list-style: none; */
-	line-height: 30px;
+	 list-style: none;
+	/* line-height: 30px; */
+	height:30px;
 }
+
+
 .content-left ul li:hover{
-	list-style-image:url("../images/li.gif");
+/* 	list-style-image:url("../images/li.gif"); */
 }
 .content-left a{
 	text-decoration: none;
 	color: black;
 	
 }
+
 .content-left a:hover{
 	text-decoration: underline;
 	color: blue;
 	cursor: pointer;
 }
 
-
+.content-left ul .newslist a {
+	display:block;
+	/* float:left; */
+	/* overflow:hidden; */
+	width:540px;
+	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ 	 background: url(/images/li3.png) no-repeat -9px; 
+ 	 padding-left:15px;
+}
+.content-left ul .newslist a:hover {
+	display:block;
+	/* overflow:hidden; */
+	width:540px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ 	background: url(/images/li.gif) no-repeat -2px; 
+ 	 padding-left:15px;
+ 	
+}
 .content-left time{
 	color: #888;
 	font-size: 14px;
