@@ -12,12 +12,6 @@
 		<a href="/jsp/admin/news_delete.jsp" class="menu-button-middle">
 			<span class="glyphicon glyphicon-th-large">&nbsp;新闻删除</span>
 		</a>
-		
-		<a href="/admin/pictureLink" class="menu-button-middle">
-			<span class="glyphicon glyphicon-th-large">&nbsp;图片新闻链接</span>
-		</a> 
-		
-		
 		<a href="/admin/project_manage/" class="menu-button-middle">
 			<span class="glyphicon glyphicon-th-large">&nbsp;对接项目审核</span>
 		</a>

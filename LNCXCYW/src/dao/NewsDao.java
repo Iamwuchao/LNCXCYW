@@ -184,11 +184,11 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	 * @param isPassed: 0 未处理； 1 不通过；2 通过
 	 * @throws Exception
 	 */
-	public static void newsSave(String title, String author, int authorId, String content, String category, int isPassed, String pictureLink) throws Exception{
+	public static void newsSave(String title, String author, int authorId, String content, String category, int isPassed) throws Exception{
 		String address;
 		
-		if(category.equals("图片新闻链接")){
-			System.out.println("图片新闻链接");
+		if(category.equals("图片新闻")){
+			System.out.println("图片新闻");
 			address=util.FileOperate.getPictrueAddress(content);
 			if(address==null){
 				throw new Exception("get pictrue false!");
@@ -201,18 +201,17 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 				throw new Exception("JspToHTML false!");
 			}
 		}
-		System.out.println("newsAdd::"+""+category);
+		
 		
 		NewsCategory newsCategory=Cache.getNewsCategorybyName(category);
 		newsCategory.setNewscategory(category);
 		Date date=new Date(new java.util.Date().getTime()); 
-		System.out.println("newsAdd::");
+		
 		News news=new News();		
 		news.setAuthor(author);
 		news.setAuthorId(authorId);
 		news.setNewsTile(title);
 		news.setNews_address(address);
-		news.setNews_content(pictureLink);
 		news.setDate(date);
 		news.setCategory(newsCategory);
 		news.setClickNum(0);

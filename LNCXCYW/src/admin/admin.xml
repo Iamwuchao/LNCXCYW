@@ -17,12 +17,6 @@
 				/jsp/super_admin/news_add.jsp
 			</result>
 		</action> 
-		
-       <action name="pictureLink" class="admin.NewsAction" method="pictureLink">
-			<result name="success">
-				/jsp/admin/pictureLink.jsp
-			</result>
-		</action> 
               
        <action name = "newsSubmit" class="admin.NewsAction" method="newsSubmit">
        		<result name="success" type="json">
