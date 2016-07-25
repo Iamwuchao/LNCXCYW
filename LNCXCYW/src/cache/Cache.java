@@ -38,7 +38,9 @@ public class Cache {
 	
 	public static void updateNews(String newsCategory,News news) throws Exception{
 		cache.newsCache.add(newsCategory,news);
-		cache.newestNews.update(news);
+		if(!newsCategory.equals("图片新闻链接")){//图片新闻链接不用加入每日推荐中
+			cache.newestNews.update(news);
+		}		
 	}
 	
 	public static void updateHotestNews(News news){//更新点击量新闻排行榜
