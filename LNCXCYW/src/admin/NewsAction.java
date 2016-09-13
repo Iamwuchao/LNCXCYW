@@ -35,6 +35,7 @@ public class NewsAction extends PageGetBaseAction{
 	private String source;
 	private String content;
 	private String date;
+	private String pictureLink;
 	public String news_list_html;
 	private List<News> newsList;
 	private List<String> categoryList;
@@ -93,6 +94,13 @@ public class NewsAction extends PageGetBaseAction{
 			categoryList.add(L.getCategory().getNewscategory());
 		}			
 		//System.out.println(categoryList);
+		return SUCCESS;
+	}
+	
+	
+	
+	public String pictureLink() {
+		System.out.println("pictureLink: ");
 		return SUCCESS;
 	}
 	
@@ -177,7 +185,7 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		
 		try{
-			dao.NewsDao.newsSave(title, author, authorId, content, category, isPassed);//保存新闻的时候直接通过，不用审核
+			dao.NewsDao.newsSave(title, author, authorId, content, category, isPassed, pictureLink);//保存新闻的时候直接通过，不用审核
 		}catch(Exception e){
 			System.out.println("error:"+e.getMessage());
 			return SUCCESS;
@@ -393,6 +401,16 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setAuthorId(int authorId) {
 		this.authorId = authorId;
+	}
+
+
+	public String getPictureLink() {
+		return pictureLink;
+	}
+
+
+	public void setPictureLink(String pictureLink) {
+		this.pictureLink = pictureLink;
 	}
 
 
