@@ -178,7 +178,7 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.print("newsSubmit: ");
 		SimpleDateFormat  formatter=new SimpleDateFormat("yyyy-MM-dd");
 		date=formatter.format(new java.util.Date());
-		System.out.println(title+""+source+""+category+""+author+""+date);	
+		System.out.println(authorId+" "+title+" "+source+" "+category+" "+author+" "+date);	
 		int isPassed=2;
 		if(category.equals("项目推介")||category.equals("企业需求")){
 			isPassed=0;

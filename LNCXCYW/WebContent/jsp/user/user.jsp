@@ -4,6 +4,7 @@
 
 <layout:override name="menu_list">
 
+	<div id="authorId" style="display: none"><s:property value="#session.user.userId"/></div> 
 	<div class="menu-list" style="height: 820px">
 		
 		<a href="/user/projectAdd" class="menu-button-middle">

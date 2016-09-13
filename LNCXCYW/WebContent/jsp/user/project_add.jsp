@@ -4,11 +4,11 @@
 
 <div class="mycontent">  
 	<a href="#"></a>
+	 
+ 	
+
 	
-	<div id="authorId" value=<s:property value="#session.user.userId"/>></div>
-	
-	
-	
+
 	<br>
 	<br>
 	<br>
@@ -56,8 +56,9 @@
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
-		var authorId = document.getElementById("authorId").getAttribute('value');
-		alert(uathorId);
+		var authorId = document.getElementById("authorId").innerText;
+
+		alert(authorId);
 	}
  
 	function submit(){
@@ -66,7 +67,7 @@
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();
-		var authorId = document.getElementById("authorId").getAttribute('value');
+		var authorId = document.getElementById("authorId").innerText;
 		//alert(title+" "+author+" "+content+" "+source);
 		
 		$.ajax({

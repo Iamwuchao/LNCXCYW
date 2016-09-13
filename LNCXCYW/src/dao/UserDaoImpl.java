@@ -13,6 +13,17 @@ import org.hibernate.criterion.Restrictions;
 import mode.User;
 
 public class UserDaoImpl extends BaseDaoImpl<User, Integer> {
+	
+public List<User> findUserById(int id){
+	List<User> list;
+	Session session = getSession();
+	Criteria criteria = session.createCriteria(User.class);
+	list = criteria.add(Restrictions.eq("userId", id)).list();
+	session.close();
+	return list;
+}
+	
+	
 public List<User> findUserByEmail(String email){
 	List<User> list;
 	Session session = getSession();

@@ -45,5 +45,6 @@ encoding//WebContent/jsp/user/information.jsp=UTF-8
 encoding//WebContent/jsp/user/project_add.jsp=UTF-8
 encoding//WebContent/jsp/user/project_manage.jsp=UTF-8
 encoding//WebContent/jsp/user/user.jsp=UTF-8
+encoding//WebContent/jsp/user/widgets/news_table.jsp=UTF-8
 encoding//src/dao/BaseDao.java=UTF-8
 encoding/<project>=UTF-8

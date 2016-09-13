@@ -8,41 +8,39 @@
 	<br>
 	<br> 
 	项目管理
+	<button onclick="myProject()">我的项目</button>
+	
+	<div id="news_table">
+		<%@ include file="/jsp/user/widgets/news_table.jsp" %>
+	</div>
 
-
-	<table class="classlist table table-bordered " id="news_messeage_table">
-		<thead>
-			<tr>
-				<th>标题</th>
-				<th>时间</th>
-				<th>分类</th>
-				<th>状态</th>
-				<th>删除</th>
-			</tr>
-		</thead>
-		<tbody>
-			<s:iterator value="newsList" var="i" status="index">
-				<tr id="<s:property value="#i.newsId"/>">
-
-<%-- 					<td><a style="color: black;" href="<s:property value="#i.news_address" />">
-						<s:property	value="#i.newsTile" /></a>
-					</td>						
-					<td><s:property value="#i.date" /></td>
-					<td>
-						<button type="button" class="btn btn-primary btn-sm ensure-button">删除</button>
-					</td> --%>
-					
-				</tr>
-			</s:iterator>
-		</tbody>
-	</table>
 		
 		
 </div>
 
 </layout:override>
 
+<script>
+	function myProject(){
+		var authorId = document.getElementById("authorId").innerText;
+		alert("id:"+authorId);
+	
+		$.ajax({
+			url : '/user/myProject',
+			type : 'post',
+			dataType : 'json',
+			data : {
+				"authorId" : authorId,
+			},
+			success : submitCallback
+		}); 
+	}
+	
+	
+	function submitCallback(data){
+		$("#news_table").html(data.newsMessageTable);
+	}
 
-
+</script>
 
 <%@ include file="/jsp/user/user.jsp" %>

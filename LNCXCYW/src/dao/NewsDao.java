@@ -97,6 +97,22 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	}
 	
 	/*
+	 * 按userID查询
+	 */
+	@SuppressWarnings("unchecked")
+	public List<News> getNewsListByID(int id){
+		System.out.println("getNewsListByID:");
+		List<News> re=new ArrayList<News>();
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(News.class);
+		criteria.add(Restrictions.eq("authorId", id));
+		re=criteria.list();
+		session.close();
+		return re;
+	}
+	
+	
+	/*
 	 * 按时间范围查询新闻
 	 * 
 	 * sql.Date
