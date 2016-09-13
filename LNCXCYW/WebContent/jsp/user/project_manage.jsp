@@ -6,10 +6,10 @@
 	<br>
 	<br>
 	<br>
-	<br> 
-	项目管理
+
 	<button onclick="myProject()">我的项目</button>
-	
+	<br> 
+	<br> 
 	<div id="news_table">
 		<%@ include file="/jsp/user/widgets/news_table.jsp" %>
 	</div>
@@ -23,7 +23,7 @@
 <script>
 	function myProject(){
 		var authorId = document.getElementById("authorId").innerText;
-		alert("id:"+authorId);
+		//alert("id:"+authorId);
 	
 		$.ajax({
 			url : '/user/myProject',
