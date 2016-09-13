@@ -62,7 +62,7 @@ public class NewsAction extends PageGetBaseAction{
 	public NewsAction(){
 		//更新每日推荐焦点图片和排行榜
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
-		pictureNewsList = Cache.getNewsList("图片新闻", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
+		pictureNewsList = Cache.getNewsList("图片新闻链接", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
 		hotestNewsList=Cache.getHotestNewsList();	
 	}
 	
