@@ -132,6 +132,30 @@ input,select{ font-size:12px; vertical-align:middle;}
     margin: 0 auto;
     margin-top: 10px;
 }
+.connews_img{
+	width: 1024px;
+    height:350px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+.connews_img .conblue{
+	border-top:3px solid #195591;
+	border-left:1px solid #195591;
+	border-right:1px solid #195591;
+	border-bottom:1px solid #195591;
+	height:340px;
+}
+.connews_img .conblue .name{
+	width:100%;
+ 	height:36px;
+ 	border:none;
+}
+.connews_img img{
+	width:320px;
+	height:240px;
+	margin-top:10px;
+}
 .con1 {
     width: 333px;
     float: left;
@@ -310,6 +334,12 @@ input,select{ font-size:12px; vertical-align:middle;}
 
 .conblue .name ul li a{
  	color:#ffffff;
+}
+.conblue img{
+	width:320px;
+	height:240px;
+	margin-left:6px;
+	margin-right:7px;
 }
 .congrey {
     width: 333px;
