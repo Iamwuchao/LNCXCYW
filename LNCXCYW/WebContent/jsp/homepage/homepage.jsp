@@ -14,10 +14,10 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active" style="background-color:black; height:250px;">
-                    <a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_content}"/>">
-                    <img src="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_address}"/>" alt="">
+                    <a id="pic" href="<s:property value="%{newsMap.get('高校动态链接').get(0).news_content}"/>">
+                    <img src="<s:property value="%{newsMap.get('高校动态链接').get(0).news_address}"/>" alt="">
                     </a>
-                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;margin-bottom:0;" ><s:property value="%{newsMap.get('图片新闻链接').get(0).newsTile}"/></p>
+                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;margin-bottom:0;" ><s:property value="%{newsMap.get('高校动态链接').get(0).newsTile}"/></p>
                   </div>
                   <div class="item" style="background-color:black; height:250px;">
                     <a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(1).news_content}"/>">

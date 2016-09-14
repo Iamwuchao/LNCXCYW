@@ -17,8 +17,10 @@
 		标题	<input type="text" id="title">
 	</div>
 	<br>
-
-	
+	<div>
+		分类	<s:select lable="test" list="{'图片新闻链接','高校动态链接','导师风采链接'}" name="category"></s:select> 
+	</div>
+	<br>
 	<div>
 		新闻链接	<input type="text" id="pictureLink"> 
 	</div>	
@@ -52,7 +54,8 @@
  
 	function submit(){
 		var title = $("#title").val();
-		var category = "图片新闻链接";
+		//var category = "图片新闻链接";
+		var category = $("#category").val();
 		var pictureLink = $("#pictureLink").val();
 		var content = UE.getEditor('editor').getContent();
 		//alert(title+" "+author+" "+content+" "+source);
