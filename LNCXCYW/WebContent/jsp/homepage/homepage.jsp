@@ -4,37 +4,25 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <layout:override name="base_content">
-	<div id="first_con" class="con">
-		<div id="myCarousel"  class="con1 carousel slide">
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			
-			<div class="carousel-inner">
-				<div class="item active" style="background-color:black; height:250px;">
-					<a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_content}"/>">
-                    	<img src="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_address}"/>" alt="">
-                    </a>
-                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;margin-bottom:0;" ><s:property value="%{newsMap.get('图片新闻链接').get(0).newsTile}"/></p>
-				</div>
-				<div class="item" style="background-color:black; height:250px;">
-					<a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(1).news_content}"/>">
+
 
  <div id="first_con"  class="con" >
      <div id="myCarousel"  class="con1 carousel slide">
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+     
+     	<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+			
+
+
                 <div class="carousel-inner">
                   <div class="item active" style="background-color:black; height:250px;">
-                    <a id="pic" href="<s:property value="%{newsMap.get('高校动态链接').get(0).news_content}"/>">
-                    <img src="<s:property value="%{newsMap.get('高校动态链接').get(0).news_address}"/>" alt="">
+                    <a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_content}"/>">
+                    <img src="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_address}"/>" alt="">
                     </a>
-                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;margin-bottom:0;" ><s:property value="%{newsMap.get('高校动态链接').get(0).newsTile}"/></p>
+                    <p style="text-align:center; line-height:20px; height:20px; width:100%; color:#fff; font-weight:bold; position:absolute; bottom:0;overflow:hidden;margin-bottom:0;" ><s:property value="%{newsMap.get('图片新闻链接').get(0).newsTile}"/></p>
                   </div>
                   <div class="item" style="background-color:black; height:250px;">
                     <a id="pic" href="<s:property value="%{newsMap.get('图片新闻链接').get(1).news_content}"/>">
@@ -242,7 +230,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('图片新闻链接').get(0).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('高校动态链接').get(0).news_address}"/>">
 			</div>
 		</div>
 		
@@ -253,7 +241,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('图片新闻链接').get(1).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('高校动态链接').get(1).news_address}"/>">
 			</div>
 		</div>
 		
@@ -264,7 +252,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('图片新闻链接').get(2).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('高校动态链接').get(2).news_address}"/>">
 			</div>
 		</div>
 	</div>
