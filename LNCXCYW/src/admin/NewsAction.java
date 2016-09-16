@@ -58,8 +58,9 @@ public class NewsAction extends PageGetBaseAction{
 	public NewsAction(){
 		System.out.println("构造函数");
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
-		pictureNewsList = Cache.getNewsList("图片新闻", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
+		pictureNewsList = Cache.getNewsList("图片新闻链接", 0, NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount());//初始化焦点图片新闻
 		hotestNewsList=Cache.getHotestNewsList();	
+		System.out.println(pictureNewsList);
 	}
 	
 	
