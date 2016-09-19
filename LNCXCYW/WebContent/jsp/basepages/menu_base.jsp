@@ -30,7 +30,7 @@
 			</a>
 			
 			<a href="/admin/pictureLink" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large">&nbsp;图片新闻链接</span>
+				<span class="glyphicon glyphicon-th-large">&nbsp;首页图片链接</span>
 			</a> 
 			
 			
