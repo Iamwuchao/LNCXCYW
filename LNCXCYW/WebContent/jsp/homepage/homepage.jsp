@@ -224,7 +224,7 @@
 	<!-- 第三行  新加的需求 -->
 	<div id="third_con" class="connews_img">
 		<!-- 第三行  第一块 -->
-		<div id="third_con1" style="margin-right:10px;" class="conblue">
+		<div id="third_con1" style="margin-right:10px;" class="con_img">
 			<div class="name">
 				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
 			</div>
@@ -235,7 +235,7 @@
 		</div>
 		
 		<!-- 第三行 第二块 -->
-		<div id="third_con2" style="margin-right:10px;" class="conblue">
+		<div id="third_con2" style="margin-right:10px;" class="con_img">
 			<div class="name">
 				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
 			</div>
@@ -246,13 +246,25 @@
 		</div>
 		
 		<!-- 第三行 第三块 -->
-		<div id="third_con3" class="conblue">
+		<div id="third_con3" style="margin-right:10px;" class="con_img">
 			<div class="name">
 				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
 			</div>
 			<div class="clear"></div>
 			<div >
 				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(2).news_address}"/>">
+				
+			</div>
+		</div>
+		
+		<!-- 第三行   第四块 -->
+		<div id="third_con3"  class="con_img">
+			<div class="name">
+				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
+			</div>
+			<div class="clear"></div>
+			<div >
+				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(3).news_address}"/>">
 			</div>
 		</div>
 	</div>
