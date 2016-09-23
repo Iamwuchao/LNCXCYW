@@ -113,16 +113,19 @@ public class ExamAction extends BasePageInfoAction {
 			//获取试卷
 			System.out.println("HEHEHEHEHEHEHE");
 			System.out.println("exampaper is not null "+paperName);
-			exam = Cache.getExamByPaperRandom(exampaper);
+			exam = Cache.getAllExamByPaper(exampaper);
+			
+			System.out.println(exam);	
+			
 			paperDescription=exampaper.getDescription();
 			optionsOfTitle = new LinkedList<List<ExamOption>>();
 			if(exam!=null){
 				HttpServletRequest request = ServletActionContext.getRequest();
 				HttpSession session = request.getSession();
 				session.setAttribute(examKey, exam);
-				listOftitle = exam.getAllExamTitle();
+				listOftitle = exam.getAllExamTitle();					
 				HashMap<ExamTitle, List<ExamOption>> map = exam.getTotalExam();
-				for(ExamTitle title:listOftitle){
+				for(ExamTitle title:listOftitle){					
 					optionsOfTitle.add(map.get(title));
 				}
 				return SUCCESS;

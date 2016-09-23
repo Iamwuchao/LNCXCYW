@@ -48,4 +48,7 @@ public class ExamTitle {
 		this.emPaper = emPaper;
 	}
 	
+	public String toString(){
+		return this.emTitle;
+	}
 }

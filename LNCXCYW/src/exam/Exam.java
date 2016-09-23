@@ -116,4 +116,12 @@ public class Exam{
 		}
 		return true;
 	}
+	
+	public String toString(){
+		System.out.print("exam: ");
+		for(ExamTitle title: this.getAllExamTitle()){
+			System.out.println(title);
+		}
+		return null;
+	}
 }

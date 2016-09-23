@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import GlobalInfo.ExamInfo;
 import dao.DaoFactory;
 import dao.ExamPaperDao;
 import mode.ExamPaper;
@@ -30,10 +29,8 @@ public class ExamCache{
 		
 		for(ExamPaper paper:list){
 			ArrayList<Exam> cachePaper= new ArrayList<Exam>();
-			for(int i=0;i<countOfExamPaper;i++){
-				Exam exam = ExamUtil.getExam(paper, ExamInfo.EXAMINFO.COUNTOFEXAMPAPER);
-				cachePaper.add(exam);
-			}
+			Exam exam = ExamUtil.getAllExam(paper);
+			cachePaper.add(exam);
 			examMap.put(paper, cachePaper);
 		}
 	}
@@ -43,8 +40,9 @@ public class ExamCache{
 		if(paper!=null && index>=0){
 			List<Exam> list = examMap.get(paper);
 			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-			for(Exam exam:list){
+			for(Exam exam:list){				
 				System.out.println("paperId  "+exam.getExamPaper().getId());
+				//System.out.println(exam);
 			}
 			System.out.println("#############################");
 			if(index<list.size()){

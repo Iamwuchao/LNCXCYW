@@ -92,6 +92,10 @@ public class Cache {
 		return cache.examCache.getExam(paper, index);
 	}
 	
+	public static Exam getAllExamByPaper(ExamPaper paper){
+		return cache.examCache.getExam(paper, 0);
+	}
+	
 	public static ExamPaper getExamPaperByName(String name){
 		return cache.examCache.getExamPaperByName(name);
 	}

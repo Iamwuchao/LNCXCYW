@@ -55,6 +55,37 @@ public class ExamUtil {
 	}
 	
 	/*
+	 * 生成一张指定类型，包含该类型所有的题目的试卷
+	 */
+	public static Exam getAllExam(ExamPaper paper){
+		if(paper==null) return null;
+		
+		Exam newExam = new Exam(paper);//创建新试卷
+		
+		ExamDao ed = new ExamDao();
+		
+		
+		//获取该试卷的所有评价标准
+		List<ExamEvalution> examEvalutionList = ed.getAllExamEvalutionByPaper(paper);
+		newExam.addAllExamEvalution(examEvalutionList);
+		
+		//获取该类型的全部题目ID
+		List<Integer> allTitleId = ed.getAllExamTitleId(paper);
+		ArrayList<Integer> allTitleIdArray = new ArrayList<Integer>(allTitleId);
+		System.out.println(allTitleIdArray);
+		
+		for(int index:allTitleIdArray){
+		//	System.out.println("find ExamUtil "+"ExamTitleId "+allTitleIdArray.get(index));
+			ExamTitle title = ed.getExamTitleById(index);
+			newExam.addTitle(title);
+			List<ExamOption> optionsList = ed.getExamOptionsOfTitle(title);
+			newExam.addAllExamOptions(title, optionsList);
+		}
+		return newExam;
+	}
+	
+	
+	/*
 	 * 生成一张指定类型，指定题目数量的试卷
 	 */
 	public static Exam getExam(ExamPaper paper,int countOfTitle){
