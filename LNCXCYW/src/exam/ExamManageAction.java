@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 
-import cache.Cache;
 import dao.DaoFactory;
 import dao.ExamEvalutionDao;
 import dao.ExamOptionDao;
@@ -42,7 +41,9 @@ public class ExamManageAction {
 	public String examAdd(){
 		System.out.println("###############");
 		System.out.println("ExamManageAction.examAdd()");
-		List<ExamPaper> paperList=Cache.getAllExamPaper();
+
+		ExamPaperDao dao = new ExamPaperDao();	
+		List<ExamPaper> paperList=dao.getAllExamPaper();
 		categoryList = new ArrayList<>();
 		for(ExamPaper paper: paperList){
 			categoryList.add(paper.getName());

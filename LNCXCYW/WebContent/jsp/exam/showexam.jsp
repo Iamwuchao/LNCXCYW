@@ -72,15 +72,19 @@ function myonclick(){
 			checkedOptionList.push(cid);
 		}		
 	}
-	$.ajax({
-		url : 'judgingPaper',
-		type : 'post',
-		dataType : 'json',
-		data : {'checkedOptionList':checkedOptionList},
-		traditional : true,
-		success : checkChangeCallback,
-		error:checkerror
-	});
+	if(checkedOptionList.length==0){
+		alert("您没有回答任何题目");
+	}else{
+		$.ajax({
+			url : 'judgingPaper',
+			type : 'post',
+			dataType : 'json',
+			data : {'checkedOptionList':checkedOptionList},
+			traditional : true,
+			success : checkChangeCallback,
+			error:checkerror
+		});
+	}	
 }
 
 function checkChangeCallback(date){

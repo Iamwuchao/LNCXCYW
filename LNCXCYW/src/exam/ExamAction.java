@@ -1,5 +1,6 @@
 package exam;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import baseaction.BasePageInfoAction;
-import cache.Cache;
+import dao.ExamDao;
+import dao.ExamPaperDao;
 import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
@@ -101,29 +103,51 @@ public class ExamAction extends BasePageInfoAction {
 		this.paperDescription = paperDescription;
 	}
 
+	
+	public Exam getExamByPaperName(ExamPaper exampaper){
+		System.out.println("createExam:");
+		Exam newExam = new Exam(exampaper);//创建新试卷
+		ExamDao ed = new ExamDao();
+		
+		//获取该试卷的所有评价标准
+		List<ExamEvalution> examEvalutionList = ed.getAllExamEvalutionByPaper(exampaper);
+		newExam.addAllExamEvalution(examEvalutionList);
+		
+		//获取该类型的全部题目ID
+		List<Integer> allTitleId = ed.getAllExamTitleId(exampaper);
+		ArrayList<Integer> allTitleIdArray = new ArrayList<Integer>(allTitleId);
+		
+		for(int index:allTitleIdArray){
+			ExamTitle title = ed.getExamTitleById(index);
+			newExam.addTitle(title);
+			List<ExamOption> optionsList = ed.getExamOptionsOfTitle(title);
+			newExam.addAllExamOptions(title, optionsList);
+		}		
+		return newExam;
+	}
+	
+	
 	//获取指定类型的试卷
 	public String getExamPaper(){
+		System.out.println("getExamPaper: "+paperName);
 		ExamPaper exampaper = null;
 		Exam exam = null;
 		if(paperName!=null){
-			exampaper = Cache.getExamPaperByName(paperName);
+			ExamPaperDao dao = new ExamPaperDao();
+			exampaper = dao.getExamPaperByCategory(paperName);
 		}
-		
 		if(exampaper!=null){
 			//获取试卷
-			System.out.println("HEHEHEHEHEHEHE");
 			System.out.println("exampaper is not null "+paperName);
-			exam = Cache.getAllExamByPaper(exampaper);
-			
-			System.out.println(exam);	
-			
+			exam = getExamByPaperName(exampaper);				
 			paperDescription=exampaper.getDescription();
 			optionsOfTitle = new LinkedList<List<ExamOption>>();
-			if(exam!=null){
+			if(exam!=null){				
 				HttpServletRequest request = ServletActionContext.getRequest();
 				HttpSession session = request.getSession();
+				System.out.println("examKey::"+examKey);
 				session.setAttribute(examKey, exam);
-				listOftitle = exam.getAllExamTitle();					
+				listOftitle = exam.getAllExamTitle();
 				HashMap<ExamTitle, List<ExamOption>> map = exam.getTotalExam();
 				for(ExamTitle title:listOftitle){					
 					optionsOfTitle.add(map.get(title));
@@ -136,10 +160,9 @@ public class ExamAction extends BasePageInfoAction {
 	
 	//获取所有试卷类型，对应于choosePaperAction
 	public String getAllExamPaper(){
-		examPaperList = Cache.getAllExamPaper();
-	/*	for(ExamPaper tem:examPaperList){
-			System.out.println("paper "+tem.getDescription());
-		}*/
+		System.out.println("getAllExamPaper: ");
+		ExamPaperDao dao = new ExamPaperDao();
+		examPaperList = dao.getAllExamPaper();
 		return SUCCESS;
 	}
 	
