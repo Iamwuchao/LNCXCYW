@@ -18,7 +18,7 @@
 	</div>
 	<br>
 	<div>
-		分类	<s:select lable="test" list="{'图片新闻链接','成果展示链接链接','创新创业资讯链接','项目推介链接'}" name="category"></s:select> 
+		分类	<s:select lable="test" list="{'图片新闻链接','成果展示链接','创新创业资讯链接','项目推介链接'}" name="category"></s:select> 
 	</div>
 	<br>
 	<div>

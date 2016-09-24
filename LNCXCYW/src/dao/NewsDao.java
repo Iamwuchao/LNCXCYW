@@ -203,7 +203,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	public static void newsSave(String title, String author, int authorId, String content, String category, int isPassed, String pictureLink) throws Exception{
 		String address;
 		
-		if(category.equals("图片新闻链接")||category.equals("高校动态链接")||category.equals("导师风采链接")){
+		if(category.equals("图片新闻链接")||category.equals("成果展示链接")||category.equals("创新创业资讯链接")||category.equals("项目推介链接")){
 			System.out.println(category);
 			address=util.FileOperate.getPictrueAddress(content);
 			if(address==null){
