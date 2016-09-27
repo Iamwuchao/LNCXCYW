@@ -113,7 +113,8 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 	public List<News> getNewsSubListOrderByDate(int start,int count){
 		Session session = getSession();
 		Criteria criteria = session.createCriteria(News.class);
-		criteria.addOrder(Order.desc("date"));
+		criteria.add(Restrictions.eq("isPassed", 2));
+		criteria.addOrder(Order.desc("newsId"));
 		List<News> result = this.findPagination(criteria, start, count);
 		session.close();
 		return result;

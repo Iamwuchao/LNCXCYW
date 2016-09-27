@@ -3,6 +3,7 @@ import java.util.Iterator;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -25,8 +26,15 @@ public class NewestNewsCache implements LeftCycle<News>{
 		if(isInited.get()) return;
 		if(isInited.compareAndSet(false, true)){
 			NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
-			List<News> temList = nd.getNewsSubListOrderByDate(0, MAX_CACHE.get());
+			List<News> temList = nd.getNewsSubListOrderByDate(0, MAX_CACHE.get());			
 			cacheNewsList.addAll(temList);
+			
+			Set<String> set=GlobalInfo.NewsPageInfo.NEWSPAGEINFO.getNoNewsetNewsUpdateset();
+			for(News news: cacheNewsList){
+				if(set.contains(news.getCategory().getNewscategory())){
+					cacheNewsList.remove(news);
+				}
+			}
 		}
 	}
 

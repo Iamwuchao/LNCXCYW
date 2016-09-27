@@ -121,18 +121,15 @@
 				
 				<div class="top">
 				<div class="nail" style="float:left">
-				
-				<img alt="" src="http://p1.ifengimg.com/a/2016_40/28033b1b1e07475.jpg"  class="">
-				
-				
+					<img alt="" src="<s:property value="%{newsMap.get('创新创业资讯链接').get(0).news_address}"/>"  class="">
 				</div>
 				
 				
 				<div class="nailText">
-				<a href="/second_page?category=政策规章" target="_blank">辽宁省教育厅办公室关于举办辽宁省第三届大学辽宁省教育厅办公室关于举办辽宁省第三届大学生创新创业大赛的通知辽宁省教育厅办公室关于举办辽宁省第三届大学生创新创业大赛的通知</a>
+					<a href="<s:property value="%{newsMap.get('创新创业资讯链接').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('创新创业资讯链接').get(0).newsTile}"/></a>
 				
 				</div>
-				</div>
+			</div>
 				
 				<div class="list1" style="padding-top: 5px">
 					<ul>
@@ -213,18 +210,15 @@
 				
 				<div class="top">
 				<div class="nail" style="float:left">
-				
-				<img alt="" src="http://p1.ifengimg.com/a/2016_40/28033b1b1e07475.jpg"  class="">
-				
-				
+					<img alt="" src="<s:property value="%{newsMap.get('项目推介链接').get(0).news_address}"/>"  class="">
 				</div>
 				
 				
 				<div class="nailText">
-				<a href="/second_page?category=政策规章" target="_blank">辽宁省教育厅办公室关于举办辽宁省第三届大学辽宁省教育厅办公室关于举办辽宁省第三届大学生创新创业大赛的通知辽宁省教育厅办公室关于举办辽宁省第三届大学生创新创业大赛的通知</a>
+					<a href="<s:property value="%{newsMap.get('项目推介').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('项目推介链接').get(0).newsTile}"/></a>
 				
 				</div>
-				</div>
+			</div>
 				
 				<div class="list1" style="padding-top: 5px">
 					<ul>
