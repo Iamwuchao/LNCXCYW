@@ -126,6 +126,7 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		Session session=getSession();
 		Criteria criteria = session.createCriteria(News.class);
 		criteria.add(Restrictions.eq("isPassed", 0));
+		criteria.addOrder(Order.desc("newsId"));
 		@SuppressWarnings("unchecked")
 		List<News> result=criteria.list();
 		return result;

@@ -73,7 +73,7 @@ h2 {
 							<textarea class="form-control optionInput" id="optionInput"
 								rows="2" cols="100" placeholder="选项内容"></textarea>
 							<input type="text" class="form-control optionCheck"
-								placeholder="请填入该选项的权值" value="5" id="optionCheck">
+								placeholder="请填入该选项的权值" value="0" id="optionCheck">
 							<button type="button" class="btn btn-primary" id="optionRemove">
 								移除</button>
 						</div>
