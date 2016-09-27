@@ -25,7 +25,7 @@ public class User {
 	private String company;
 	private String address;
 	
-	private int role;// 0:管理员  2:学生用户    3:企业用户
+	private int role;// 0:管理员  1:超级管理官  2:学生用户   3:企业用户
 	private boolean avaliable;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

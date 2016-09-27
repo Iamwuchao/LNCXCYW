@@ -7,7 +7,7 @@
 	 
  	
 
-	
+	<div id="authorId" ><s:property value="#session.user.role"/></div> 
 
 	<br>
 	<br>
@@ -17,11 +17,13 @@
 		标题	<input type="text" id="title">
 	</div>
 	<div>
-		分类		
-		<select class="judge" id="category">
-			<option value="项目推介">项目推介</option>
-			<option value="企业需求">企业需求</option>
-		</select>
+		分类			
+		<s:if test="#session.user.role==2">
+			<div id="category" >项目推介</div>		
+		</s:if>
+		<s:else>
+			<div id="category" >企业需求</div>	
+		</s:else>
 	</div>
 
 	<div>
@@ -63,7 +65,7 @@
  
 	function submit(){
 		var title = $("#title").val();
-		var category = $("#category").val();
+		var category = document.getElementById("category").innerText;
 		var author = $("#author").val();
 		var source = $("#source").val();
 		var content = UE.getEditor('editor').getContent();

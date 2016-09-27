@@ -119,24 +119,28 @@ function checkEmail(){
 function loginCallback(data)
 {   
 	//alert(99); 	
-	if(data.register_status == "0")
-	{    		
-		alert("普通管理员登陆成功");
-		window.location.href = "/newsAdd";
-	}
-	else if(data.register_status == "1")
-		{
-		alert("用户名或密码错误");
-		}
-	else if(data.register_status == "3")
-	{
+	if(data.register_status == "1"){    		
 		alert("超级管理员登陆成功");
-		window.location.href = "/newsAdd";
+		window.location.href = "/admin/newsAdd";
 	}
-	else  
-		{
+	else if(data.register_status=="0"){
+		alert("普通管理员登陆成功");
+		window.location.href = "/admin/newsAdd";
+	}
+	else if(data.register_status=="2"){
+		alert("登陆成功");
+		window.location.href = "/user/projectAdd";
+	}
+	else if(data.register_status=="3"){
+		alert("登陆成功");
+		window.location.href = "/user/projectAdd";
+	}	
+	else if(data.register_status == "4"){
+		alert("用户名或密码错误");
+	}
+	else{
 		alert("error with status：" + data.register_status);
-		}
+	}
 
 	
 }

@@ -21,26 +21,26 @@ import util.mail.MailSenderInfo;
 import util.mail.SimpleMailSender;
 
 public class AdminAction {
-private String username;
-private String password;
-private String email;
-private String register_status;
-private String college;
-private String phoneNumber;
-private String remark;
-private String studentId;
-private int role;
+	private String username;
+	private String password;
+	private String email;
+	private String register_status;
+	private String college;
+	private String phoneNumber;
+	private String remark;
+	private String studentId;
+	private int role;
 
 
-/**
- * 退出登录
- * @return
- */
-public String logout(){
-	Map session = ActionContext.getContext().getSession();
-	session.remove("user");
-	return ActionSupport.SUCCESS;
-}
+	/**
+	 * 退出登录
+	 * @return
+	 */
+	public String logout(){
+		Map session = ActionContext.getContext().getSession();
+		session.remove("user");
+		return ActionSupport.SUCCESS;
+	}
 	
 	
 	public String regist(){
@@ -66,6 +66,10 @@ public String logout(){
 				u.setStudentId(studentId);
 				u.setPhoneNumber(phoneNumber);
 				u.setRemark(remark);
+			}else if(role==3){
+				u.setRole(role);
+				u.setPhoneNumber(phoneNumber);
+				u.setRemark(remark);
 			}
 			dao.save(u);
 			this.register_status = "0";
@@ -82,12 +86,13 @@ public String logout(){
 		List<User> list2 = dao.findAvaliableUser(email, password);
 		List<User> list3 = dao.findAvaliableSuperUser(email, password);
 		if (list3.size()>0) {
-			this.register_status="3";//超级管理员
+			this.register_status="1";//超级管理员1
 			Map session = ActionContext.getContext().getSession();
 			session.put("user", list3.get(0));
 		}
-		else if (list2.size()>0) {//普通管理员
-			this.register_status = "0";
+		else if (list2.size()>0) {//普通管理员0  或者学生用户2  或者企业用户3
+			User user=list2.get(0);
+			this.register_status = String.valueOf(user.getRole());			
 			Map session = ActionContext.getContext().getSession();
 			session.put("user", list2.get(0));
 		}
@@ -96,7 +101,7 @@ public String logout(){
 		}
 		
 		else if (list.size()==0) {
-			this.register_status = "1";//用户名或密码错误
+			this.register_status = "4";//用户名或密码错误
 		}
 		
 		
