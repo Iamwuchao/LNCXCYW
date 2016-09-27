@@ -89,6 +89,15 @@
 			</result>
 		</action>
 	
+		<action name="request_ensure" class="admin.NewsAction" method="projectRequestEnsure">
+			<result name="success" type="json">
+				<param name="includeProperties">strValue,newsRowID</param>
+			</result>
+		</action>
+	
+	
+	
+	
 	</package>
 	
 	<package name="user_request" namespace="/admin/user_request" extends="AdminDefault">

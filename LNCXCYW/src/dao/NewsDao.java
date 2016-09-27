@@ -22,6 +22,25 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		super.setClass(News.class);
 	}
 	
+	
+	/*
+	 * 更新新闻审核状态
+	 */
+	public boolean updateNewsIsPassed(String newsId, int isPassed){
+		Session session = getSession();
+		Transaction trans=session.beginTransaction();
+		String hql="update News news set news.isPassed="+
+				isPassed+" where news.newsId="+newsId;
+		Query q=session.createQuery(hql);
+		int ret = q.executeUpdate();
+		trans.commit();
+		session.close();
+		if (ret>0) {
+			return true;
+		}
+		return false;
+	}	
+	
 	/*
 	 * 删除新闻
 	 */
@@ -71,6 +90,22 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 			session.close();
 			return result;
 	}
+	
+	
+	/*
+	 * 按时间顺序获得最近的count条记录,start为起点,针对某一栏目   和上面唯一不同是只获取已审核通过的新闻
+	 */
+	public List<News> getPassedNewsSubListOrderByDate(NewsCategory category,int start,int count){
+		Session session = getSession();
+		Criteria criteria = session.createCriteria(News.class);
+		criteria.add(Restrictions.eq("category.categoryId", category.getCategoryId()));
+		criteria.add(Restrictions.eq("isPassed", 2));
+		criteria.addOrder(Order.desc("newsId"));
+		List<News> result = this.findPagination(criteria, start, count);
+		System.out.println("getNewsSubList "+result.size());
+		session.close();
+		return result;
+}
 	
 	/*
 	 * 按时间顺序获取新闻列表 

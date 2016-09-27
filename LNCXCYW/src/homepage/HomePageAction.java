@@ -54,8 +54,8 @@ public class HomePageAction extends ActionSupport{
 		newsMap = new HashMap<String,List<News>>();
 		if(toIndex-fromIndex>MAX) return ERROR;
 		for(String category:orderOfCategory){
-			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
 			System.out.println(category);
+			List<News> temList = Cache.getNewsList(category, fromIndex, toIndex-1);
 			System.out.println(temList);
 			newsMap.put(category, temList);
 		}

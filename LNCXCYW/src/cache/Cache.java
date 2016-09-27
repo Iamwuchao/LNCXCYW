@@ -39,14 +39,18 @@ public class Cache {
 	}
 	
 	public static void updateNews(String newsCategory,News news) throws Exception{
-		cache.newsCache.add(newsCategory,news);
+		if(news.getIsPassed()==2){//只有新闻审核通过，才更新缓存
+			cache.newsCache.add(newsCategory,news);
+			
+			Set<String> set=NewsPageInfo.NEWSPAGEINFO.getNoNewsetNewsUpdateset();		
+			if(!set.contains(newsCategory)){//指定的某些类不用加入每日推荐中
+				System.out.println(newsCategory);
+				cache.newestNews.update(news);
+			}
+		}else{
+			System.out.println("lalalalalalalallalalalala");
+		}
 		
-		
-		Set<String> set=NewsPageInfo.NEWSPAGEINFO.getNoNewsetNewsUpdateset();		
-		if(!set.contains(newsCategory)){//指定的某些类不用加入每日推荐中
-			System.out.println(newsCategory);
-			cache.newestNews.update(news);
-		}		
 	}
 	
 	public static void updateHotestNews(News news){//更新点击量新闻排行榜

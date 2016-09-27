@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import GlobalInfo.NewsPageInfo;
 import cache.Cache;
 import dao.DaoFactory;
@@ -52,6 +54,10 @@ public class NewsAction extends PageGetBaseAction{
 	private List<News> projectList;//对接项目列表
 	private String newsMessageTable;//返回给前台显示的的新闻HTML字符串
 	private String status;
+	
+	private String newsRowID;
+	private String isPass;
+	private String strValue;
 	/*
 	 * 没办法我也不知道怎么改了，要实现这俩的初始化，只能这么干了
 	 */
@@ -68,11 +74,31 @@ public class NewsAction extends PageGetBaseAction{
 		System.out.println("getProjectList:");
 		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 		projectList=dao.getUnhandledProject();	
-		
-		projectList=Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
 		System.out.println(projectList);
 		return SUCCESS;
 	}
+	
+	/*
+	 * 审核通过对接项目
+	 */
+	public String projectRequestEnsure(){
+		System.out.println("projectRequestEnsure: "+newsRowID+" "+isPass);		
+		NewsDao dao=(NewsDao) DaoFactory.getDaoByName(NewsDao.class);
+		int avaliable=0;;
+		if (isPass.equals("0")) {
+			avaliable = 1;
+		}
+		else if (isPass.equals("1")) {
+			avaliable = 2;
+		}
+		
+		if(dao.updateNewsIsPassed(newsRowID, avaliable)){
+			strValue=ActionSupport.SUCCESS;
+			return ActionSupport.SUCCESS;
+		}		
+		return ActionSupport.ERROR;
+	}
+	
 	
 	
 	/**
@@ -101,7 +127,7 @@ public class NewsAction extends PageGetBaseAction{
 	
 	
 	public String pictureLink() {
-		System.out.println("pictureLink: ");
+		System.out.println("pictureLink: "+newsRowID);
 		return SUCCESS;
 	}
 	
@@ -412,6 +438,36 @@ public class NewsAction extends PageGetBaseAction{
 
 	public void setPictureLink(String pictureLink) {
 		this.pictureLink = pictureLink;
+	}
+
+
+	public String getNewsRowID() {
+		return newsRowID;
+	}
+
+
+	public void setNewsRowID(String newsRowID) {
+		this.newsRowID = newsRowID;
+	}
+
+
+	public String getStrValue() {
+		return strValue;
+	}
+
+
+	public void setStrValue(String strValue) {
+		this.strValue = strValue;
+	}
+
+
+	public String getIsPass() {
+		return isPass;
+	}
+
+
+	public void setIsPass(String isPass) {
+		this.isPass = isPass;
 	}
 
 
