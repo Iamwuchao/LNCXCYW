@@ -64,8 +64,6 @@
 	  <div class="form-group">
 	  	<span style="color:red" id="confirm_msg">*</span>
 	  </div>
-	  
-	  
 	   
 	  
 	  <br><br>
@@ -77,6 +75,42 @@
 	  	<span style="color:red" id="email_msg">*</span>
 	  </div>
 	  
+	  <br><br>
+	  <div class="form-group col-lg-offset-5">
+	  	<label for="fullName">角&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色</label>
+	  	<select class="judge" id="role">
+			<option value="0">管理员</option>
+			<option value="2">学生用户</option>
+			<option value="3">企业用户</option>
+		</select>	
+	  </div>
+	  	
+	  
+	  <br><br>
+	  <div class="form-group col-lg-offset-5">
+	  	<label for="passwordAgain">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校</label>
+	  	<input type="password" class="form-control" id="college" name="college"  value="" placeholder="">
+	  </div>
+	  
+	  <br><br>
+	  <div class="form-group col-lg-offset-5">
+	  	<label for="passwordAgain">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+	  	<input type="password" class="form-control" id="studentId" name="studentId"  value="" placeholder="">
+	  </div>	
+	  	  
+	  <br><br>
+	  <div class="form-group col-lg-offset-5">
+	  	<label for="passwordAgain">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+	  	<input type="password" class="form-control" id="phoneNumber" name="phoneNumber"  value="" placeholder="">
+	  </div>	  
+	  
+	  <br><br>
+	  <div class="form-group col-lg-offset-5">
+	  	<label for="passwordAgain">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+	  	<input type="password" class="form-control" id="remark" name="remark"  value="" placeholder="">
+	  </div>
+	  
+	  	  
 	  <br><br>
 	  <div class="form-group col-lg-offset-6">
 	  	<button type="button" id="regist" class="btn btn-primary">注册</button>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">(*为必填项)</span>
@@ -99,25 +133,33 @@ $(document).on("click","#regist", function (){
 	//alert("4");
 	var username = $("#username").val();
     var password = $("#password").val();
+    
+    var role = $("#role").val();
+    var college = $("#college").val();
+    var phoneNumber = $("#phoneNumber").val();
+    var remark = $("#remark").val();
+    var studentId = $("#studentId").val();
+    
+    alert(role+" "+college+" "+phoneNumber+""+studentId);
+    
     var email = $("#email").val();
     var params={
     		username : username,
     		password : password,
     		email : email,
+    		role : role,
+    		studentId : studentId,
+    		college : college,
+    		phoneNumber : phoneNumber,
+    		remark : remark,
     }
-    
-//     alert("1111");
-//     alert($("#username").val());
-//	   alert($("#phoneNumber").val());
+
     
     $.ajax({
       url: '/regist',
       type: 'post',
       dataType: 'json',
       data: params,
-     /*  async:true,
-      contentType:false,
-      processData:false, */
       success: registerCallback
     });
 	}

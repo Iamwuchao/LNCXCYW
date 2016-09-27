@@ -8,7 +8,7 @@
 	<br>
 	<br>
 	<br>
-	个人信息
+	个人信息<s:property value="username"/>jgjgj
 		
 </div>
 

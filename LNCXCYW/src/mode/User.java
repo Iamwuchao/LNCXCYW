@@ -19,13 +19,13 @@ public class User {
 	private String password;
 	private String school;
 	private String college;
-	private String studentName;
+	private String remark;
 	private String studentId;
 	private String phoneNumber;
 	private String company;
 	private String address;
 	
-	private int role;
+	private int role;// 0:管理员  2:学生用户    3:企业用户
 	private boolean avaliable;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -73,8 +73,8 @@ public class User {
 	}
 	
 	@Column
-	public String getStudentName() {
-		return studentName;
+	public String getRemark() {
+		return remark;
 	}
 	
 	@Column
@@ -100,10 +100,6 @@ public class User {
 	
 	
 	
-	
-	
-	
-	
 
 
 
@@ -115,8 +111,8 @@ public class User {
 		this.college = college;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	public void setStudentId(String studentId) {

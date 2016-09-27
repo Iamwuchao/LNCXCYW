@@ -6,8 +6,6 @@
 	<br>
 	<br>
 	<br>
-
-	<button onclick="myProject()">我的项目</button>
 	<br> 
 	<br> 
 	<div id="news_table">
@@ -19,28 +17,5 @@
 </div>
 
 </layout:override>
-
-<script>
-	function myProject(){
-		var authorId = document.getElementById("authorId").innerText;
-		//alert("id:"+authorId);
-	
-		$.ajax({
-			url : '/user/myProject',
-			type : 'post',
-			dataType : 'json',
-			data : {
-				"authorId" : authorId,
-			},
-			success : submitCallback
-		}); 
-	}
-	
-	
-	function submitCallback(data){
-		$("#news_table").html(data.newsMessageTable);
-	}
-
-</script>
 
 <%@ include file="/jsp/user/user.jsp" %>
