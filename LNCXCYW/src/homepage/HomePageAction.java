@@ -9,6 +9,9 @@ import GlobalInfo.NewsPageInfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cache.Cache;
+import dao.DaoFactory;
+import dao.ExamPaperDao;
+import dao.NewsDao;
 import mode.ExamPaper;
 import mode.News;
 
@@ -59,9 +62,7 @@ public class HomePageAction extends ActionSupport{
 			System.out.println(temList);
 			newsMap.put(category, temList);
 		}
-		
 		List<News> szcpList = initSuzhiceping();
-		//special 素质测评
 		newsMap.put("素质测评", szcpList);
 
 		return SUCCESS;
@@ -69,9 +70,9 @@ public class HomePageAction extends ActionSupport{
 	
 	//初始化素质测评模块
 	private List<News> initSuzhiceping(){
-		final String url = "/showExam?paperName=";
-		List<ExamPaper> paperList = Cache.getAllExamPaper();
-		System.out.println("paperList size "+paperList.size());
+		final String url = "/showExam?paperName=";		
+		ExamPaperDao dao=(ExamPaperDao) DaoFactory.getDaoByName(ExamPaperDao.class);
+		List<ExamPaper> paperList = dao.getAllExamPaper();
 		LinkedList<News> szcpList = new LinkedList<News>();
 		for(ExamPaper paper:paperList){
 			News szcp = new News();
