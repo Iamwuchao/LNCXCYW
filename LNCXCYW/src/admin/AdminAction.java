@@ -29,6 +29,7 @@ private String college;
 private String phoneNumber;
 private String remark;
 private String studentId;
+private String company;
 private int role;
 
 
@@ -61,12 +62,16 @@ public String logout(){
 		}
 		else {
 			if(role==2){
-				u.setRole(role);
 				u.setCollege(college);
 				u.setStudentId(studentId);
-				u.setPhoneNumber(phoneNumber);
-				u.setRemark(remark);
+				
 			}
+			if(role == 3){
+				u.setCompany(company);
+			}
+			u.setRole(role);
+			u.setPhoneNumber(phoneNumber);
+			u.setRemark(remark);
 			dao.save(u);
 			this.register_status = "0";
 		}
@@ -238,6 +243,16 @@ public String logout(){
 
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
+	}
+
+
+	public String getCompany() {
+		return company;
+	}
+
+
+	public void setCompany(String company) {
+		this.company = company;
 	}
 
 
