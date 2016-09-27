@@ -230,7 +230,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(0).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
 			</div>
 		</div>
 		
@@ -241,7 +241,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(1).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>">
 			</div>
 		</div>
 		
@@ -252,7 +252,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(2).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
 				
 			</div>
 		</div>
@@ -264,7 +264,7 @@
 			</div>
 			<div class="clear"></div>
 			<div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接链接').get(3).news_address}"/>">
+				<img src="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
 			</div>
 		</div>
 	</div>
