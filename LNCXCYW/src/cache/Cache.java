@@ -3,7 +3,9 @@ package cache;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
+import GlobalInfo.NewsPageInfo;
 import exam.Exam;
 import mode.ExamPaper;
 import mode.News;
@@ -38,7 +40,11 @@ public class Cache {
 	
 	public static void updateNews(String newsCategory,News news) throws Exception{
 		cache.newsCache.add(newsCategory,news);
-		if(!newsCategory.equals("图片新闻链接")){//图片新闻链接不用加入每日推荐中
+		
+		
+		Set<String> set=NewsPageInfo.NEWSPAGEINFO.getNoNewsetNewsUpdateset();		
+		if(!set.contains(newsCategory)){//指定的某些类不用加入每日推荐中
+			System.out.println(newsCategory);
 			cache.newestNews.update(news);
 		}		
 	}

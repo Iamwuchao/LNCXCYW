@@ -3,14 +3,22 @@ package GlobalInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public enum NewsPageInfo {
 	NEWSPAGEINFO;
 	private final int newsCountOfCategory = 20;//每个栏目的新闻数目
 	private final int newestNewsCount = 10;//每日推荐新闻数目
 	private final int pictureNewsCount = 4;//焦点图片新闻数目
+	
+	
+	private final Set<String> noNewsetNewsUpdateset=new HashSet<String>(Arrays.asList(new String[]{//每日推荐，不更新下面几类
+			"图片新闻链接", "成果展示链接", "创新创业资讯链接", "项目推介链接", "素质测评"
+	}));
+	
 	String[] zixun={"政策规章", "创新创业资讯","他山之石"};
 	String[] xunlian={"创新创业训练计划", "创新创业年会"};
 	String[] jingsai={"创新创业竞赛", "优秀创新创业作品"};
@@ -93,6 +101,11 @@ public enum NewsPageInfo {
 	public Map<String, List<String>> getMap() {
 		return map;
 	}
+
+	public Set<String> getNoNewsetNewsUpdateset() {
+		return noNewsetNewsUpdateset;
+	}
+
 
 
 	
