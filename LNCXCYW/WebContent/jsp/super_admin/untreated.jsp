@@ -14,6 +14,7 @@
 					<!-- <th>序号</th> -->
 					<th>姓名</th>
 					<th>邮箱</th>
+					<th>角色</th>
 					<th>状态</th>
 					
 					<th></th>
@@ -26,6 +27,11 @@
 					<%-- <td> <s:property value="#index.count"/> </td> --%>
 					<td> <s:property value="#i.userName"/> </td>
 					<td> <s:property value="#i.mail"/> </td>
+					<td> 
+						<s:if test="#i.role==0">管理员</s:if>
+						<s:elseif test="#i.role==2">学生用户</s:elseif>
+						<s:elseif test="#i.role==3">企业用户</s:elseif>
+					</td>
 					
 					<form class="form-inline" action="untreated" method="POST" id="request_form">
 					<td> 

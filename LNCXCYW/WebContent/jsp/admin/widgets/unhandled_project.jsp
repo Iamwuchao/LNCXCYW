@@ -39,22 +39,22 @@
 $(".ensure-button").click(function(){
 	var id=$(this).closest("tr").attr("id");
 	var isPass=$(this).closest("td").prev().children("select").val();
-	alert(id+" "+isPass);
+	//alert(id+" "+isPass);
 	//var isPass=$('#judge').find("option:selected").val();
 	
-/* 	$.ajax({
-		url: '/admin/user_request/request_ensure',
+ 	$.ajax({
+		url: '/admin/project_manage/request_ensure',
         type: 'post',
         dataType: 'json',
-        data:{userId:id,isPass:isPass},
+        data:{newsRowID:id,isPass:isPass},
         success:ensureCallBack
-	}); */
+	}); 
 })
 	
 function ensureCallBack(data){
 	if(data.strValue=="success"){
-		var t=$("#"+data.userId);
-		$("#"+data.userId).remove();
+		var t=$("#"+data.newsRowID);
+		$("#"+data.newsRowID).remove();
 	}
 	else alert("something wrong!!");
 }

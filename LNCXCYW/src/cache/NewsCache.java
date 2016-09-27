@@ -37,7 +37,7 @@ public class NewsCache implements LeftCycle<String>{
 			List<NewsCategory> newsCategorylist = (List<NewsCategory>) dao.getAll();
 			NewsDao nd = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 			for(NewsCategory category:newsCategorylist){
-				List<News> list = nd.getNewsSubListOrderByDate(category, 0, MAX_CACHE.get());
+				List<News> list = nd.getPassedNewsSubListOrderByDate(category, 0, MAX_CACHE.get());//只获取审核通过的新闻
 				System.out.println("init news cache"+"  "+category.getNewscategory()+"  "+list.size());
 				ConcurrentLinkedDeque<News> cdq = new ConcurrentLinkedDeque<News>();
 				cdq.addAll(list);
@@ -94,7 +94,7 @@ public class NewsCache implements LeftCycle<String>{
         if(newsList.size() < toIndex){
 			NewsDao newsDao = (NewsDao) DaoFactory.getDaoByName(NewsDao.class);
 			NewsCategory newsCategory = Cache.getNewsCategorybyName(category);
-			List<News> temList = newsDao.getNewsSubListOrderByDate(newsCategory, newsList.size(), toIndex);
+			List<News> temList = newsDao.getPassedNewsSubListOrderByDate(newsCategory, newsList.size(), toIndex);
 			for(News news:temList){
 				list.add(news);
 			}
