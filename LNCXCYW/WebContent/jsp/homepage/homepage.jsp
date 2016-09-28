@@ -146,7 +146,7 @@
 			</div>
 			
 			<div id="con_two_2" style="display:  none;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="newsMap.get('创新创业资讯')" var="i" status="index">  
 							<li>
@@ -170,7 +170,7 @@
 			</div>
 			<div class="clear"></div>
 			<div id="con_three_1" style="display: block;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="%{newsMap.get('教指委工作动态')}" var="i" status="index">   
 							<li>
@@ -183,7 +183,7 @@
 				</div>
 			</div>
 			<div id="con_three_2" style="display:  none;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="%{newsMap.get('高校创新创业教育季报')}" var="i" status="index">   
 							<li>
@@ -233,7 +233,7 @@
 				</div>
 			</div>
 			<div id="con_four_2" style="display: none;">
-		         <div class="list1" style="padding-top: 15px">
+		         <div class="list1" style="padding-top: 18px">
 		         	<ul>
 						<s:iterator value="%{newsMap.get('企业需求')}" var="i" status="index">   
 							<li>
@@ -253,45 +253,90 @@
 		<!-- 第三行  第一块 -->
 		<div id="third_con1" style="margin-right:10px;" class="con_img">
 			<div class="name">
-				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
+				<span style="line-height:30px; font-weight:bold; padding-left:10px; margin-bottom:0px">热点</span>
 			</div>
 			<div class="clear"></div>
-			<div >
+			<%-- <div >
 				<img src="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
+			</div> --%>
+			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
+				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+				title = "<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>"
+				alt="<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>">
+				</a>
+				
+				<div class="TxtBg"></div>
+				<div class="PicConTxt">
+				<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>
+				</div>
 			</div>
 		</div>
 		
 		<!-- 第三行 第二块 -->
 		<div id="third_con2" style="margin-right:10px;" class="con_img">
 			<div class="name">
-				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
+				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>">
+			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>">
+				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+				title = "<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>"
+				alt="<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>">
+				</a>
+				
+				<div class="TxtBg"></div>
+				<div class="PicConTxt">
+				<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>
+				</div>
 			</div>
 		</div>
 		
 		<!-- 第三行 第三块 -->
 		<div id="third_con3" style="margin-right:10px;" class="con_img">
 			<div class="name">
-				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
+				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<div >
+			<%-- <div >
 				<img src="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
 				
+			</div> --%>
+			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
+				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+				title = "<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>"
+				alt="<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>">
+				</a>
+				
+				<div class="TxtBg"></div>
+				<div class="PicConTxt">
+				<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>
+				</div>
 			</div>
 		</div>
 		
 		<!-- 第三行   第四块 -->
 		<div id="third_con3"  class="con_img">
 			<div class="name">
-				<p style="line-height:36px; font-weight:bold; padding:10px;">热点</p>
+				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<div >
+			<%-- <div >
 				<img src="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
+			</div> --%>
+			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
+				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+				title = "<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>"
+				alt="<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>">
+				</a>
+				
+				<div class="TxtBg"></div>
+				<div class="PicConTxt">
+				<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -306,7 +351,7 @@
 	
 	<!-- 第四行   原来的第三行 -->
 	<div id="fourth_con" class="connews">
-		<div id="third_con1" style=" margin-right: 10px" class="congrey">
+		<div id="third_con1" style=" margin-right: 13px" class="congrey">
 			<div class="name">
 				<ul style="width:100%;height:36px;">
 	         		<a href="/second_page?category=创新创业训练计划" target="_blank"><li id="five1" onmouseover="setTabsnow('five',1,2)" class="curnews">创新创业训练计划</li></a>
@@ -315,7 +360,7 @@
 			</div>
 			<div class="clear"></div>
 	          <div id="con_five_1" style="display: block;">
-	          	<div class="list1" style="padding-top: 15px">
+	          	<div class="list1" style="padding-top: 20px">
 	          		<ul>
 						<s:iterator value="%{newsMap.get('创新创业训练计划')}" var="i" status="index">    
 							<li>
@@ -328,7 +373,7 @@
 	          	</div>
 	          </div>
 	          <div id="con_five_2" style="display:  none;">
-	          	<div class="list1" style="padding-top: 15px">
+	          	<div class="list1" style="padding-top: 18px">
 	          		<ul>
 						<s:iterator value="%{newsMap.get('创新创业竞赛')}" var="i" status="index">     
 							<li>
@@ -343,7 +388,7 @@
 		</div>
 		
 		<!-- 第四行  第二块 -->
-		<div id="third_con2" style=" margin-right: 10px" class="conblue">
+		<div id="third_con2" style=" margin-right: 12px" class="conblue">
 			<div class="name">
 				<ul style="width:100%;height:36px;">
 	         		<a href="/second_page?category=创新创业年会" target="_blank"><li id="six1" onmouseover="setTabsnow('six',1,2)" class="curnews">创新创业年会</li></a>
@@ -352,7 +397,7 @@
 			</div>
 			<div class="clear"></div>
 			<div id="con_six_1" style="display: block;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="%{newsMap.get('创新创业年会')}" var="i" status="index">     
 							<li>
@@ -365,7 +410,7 @@
 				</div>
 			</div>
 			<div id="con_six_2" style="display:  none;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="%{newsMap.get('优秀创新创业作品')}" var="i" status="index">
 							<li>
@@ -389,7 +434,7 @@
 	        </div>
 	        <div class="clear"></div>
 	        <div id="con_seven_1" style="display: block;">
-				<div class="list1" style="padding-top: 15px">
+				<div class="list1" style="padding-top: 18px">
 					<ul>
 						<s:iterator value="newsMap['他山之石']" var="i" status="index">      
 							<li>
@@ -402,7 +447,7 @@
 				</div>
 			</div>
 			<div id="con_seven_2" style="display: none;">
-		         <div class="list1" style="padding-top: 15px">
+		         <div class="list1" style="padding-top: 18px">
 		         	<ul>
 						<s:iterator value="%{newsMap.get('创新创业典型')}" var="i" status="index">     
 							<li>
@@ -429,7 +474,7 @@
        		</div>
        		<div class="clear"></div>
        		<div id="con_eight_1">
-       			<div class="list1" style="padding-top: 15px">
+       			<div class="list1" style="padding-top: 18px">
        				<ul>
 						<s:iterator value="%{newsMap.get('创新创业培训')}" var="i" status="index">     
 							<li>
@@ -442,7 +487,7 @@
        			</div>
        		</div>
        		<div id="con_eight_2" style="display:  none;">
-		         <div class="list1" style="padding-top: 15px">
+		         <div class="list1" style="padding-top: 18px">
 		         	<ul>
 						<s:iterator value="%{newsMap.get('创新创业理论')}" var="i" status="index">    
 							<li>
@@ -466,7 +511,7 @@
 		 	</div>
 		 	<div class="clear"></div>
        		<div id="con_nine_1">
-       			<div class="list1" style="padding-top: 15px">
+       			<div class="list1" style="padding-top: 18px">
        				<ul>
 						<s:iterator value="%{newsMap.get('创新创业课程')}" var="i" status="index">  
 							<li>
@@ -479,7 +524,7 @@
        			</div>
        		</div>
        		<div id="con_nine_2" style="display:  none;">
-		         <div class="list1" style="padding-top: 15px">
+		         <div class="list1" style="padding-top: 18px">
 		         	<ul>
 						<s:iterator value="%{newsMap.get('创新创业教材')}" var="i" status="index">  
 							<li>
@@ -503,7 +548,7 @@
       		</div>
       		<div class="clear"></div>
        		<div id="con_ten_1">
-       			<div class="list1" style="padding-top: 15px">
+       			<div class="list1" style="padding-top: 18px">
        				<ul>
 						<s:iterator value="%{newsMap.get('创新创业导师')}" var="i" status="index">  
 							<li>
@@ -516,7 +561,7 @@
        			</div>
        		</div>
        		<div id="con_ten_2" style="display:  none;">
-       			<div class="list1" style="padding-top: 15px">
+       			<div class="list1" style="padding-top: 18px">
        				<ul>
 						<s:iterator value="%{newsMap.get('素质测评')}" var="i" status="index">
 							<li>
