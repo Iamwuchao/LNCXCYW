@@ -79,8 +79,7 @@ public class NewsAction extends PageGetBaseAction{
 		
 		//更新每日推荐焦点图片和排行榜
 		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());
-		hotestNewsList=Cache.getHotestNewsList();		
-		Cache.getNewsList("图片新闻", 0, 3);
+		hotestNewsList=Cache.getHotestNewsList();	
 		return ActionSupport.SUCCESS;
 		
 	}
@@ -101,10 +100,6 @@ public class NewsAction extends PageGetBaseAction{
 			newsList=makeCurrentPageList(newsList, NewsPageInfo.NEWSPAGEINFO.getNewsCountOfCategory());
 		}
 		
-		//更新每日推荐焦点图片和排行榜
-		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());		
-		hotestNewsList=Cache.getHotestNewsList();		
-		Cache.getNewsList("图片新闻", 0, 3);		
 		return ActionSupport.SUCCESS;
 		
 	}

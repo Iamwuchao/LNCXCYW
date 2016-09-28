@@ -14,13 +14,16 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import GlobalInfo.NewsPageInfo;
 import baseaction.BasePageInfoAction;
+import cache.Cache;
 import dao.ExamDao;
 import dao.ExamPaperDao;
 import mode.ExamEvalution;
 import mode.ExamOption;
 import mode.ExamPaper;
 import mode.ExamTitle;
+import mode.News;
 
 /*
  * 该类主要对应于用户进行素质测评 相关的action
@@ -37,71 +40,13 @@ public class ExamAction extends BasePageInfoAction {
 	private String evaluate;//评价
 	private String paperDescription;
 	
+	private List<News> newestNewsList;//每日推荐的新闻列表
+	private List<News> pictureNewsList;//焦点图片新闻列表
+	private List<News> hotestNewsList;//排行榜新闻列表
+	
 	private final String examKey = "exam";//exam存入session中后对应的键值
 	
-	public String getPaperName() {
-		return paperName;
-	}
 
-	public void setPaperName(String paperName) {
-		this.paperName = paperName;
-	}
-
-	public int getCountOftitle() {
-		return countOftitle;
-	}
-	
-	public void setCountOftitle(int countOftitle) {
-		this.countOftitle = countOftitle;
-	}
-
-	public List<ExamTitle> getListOftitle() {
-		return listOftitle;
-	}
-
-	public void setListOftitle(List<ExamTitle> listOftitle) {
-		this.listOftitle = listOftitle;
-	}
-	
-	public List<List<ExamOption>> getOptionsOfTitle() {
-		return optionsOfTitle;
-	}
-
-	public void setOptionsOfTitle(List<List<ExamOption>> optionsOfTitle) {
-		this.optionsOfTitle = optionsOfTitle;
-	}
-	
-	public List<Integer> getCheckedOptionList() {
-		return checkedOptionList;
-	}
-
-	public void setCheckedOptionList(List<Integer> checkedOptionList) {
-		this.checkedOptionList = checkedOptionList;
-	}
-
-	public List<ExamPaper> getExamPaperList() {
-		return examPaperList;
-	}
-
-	public void setExamPaperList(List<ExamPaper> examPaperList) {
-		this.examPaperList = examPaperList;
-	}
-
-	public String getEvaluate() {
-		return evaluate;
-	}
-
-	public void setEvaluate(String evaluate) {
-		this.evaluate = evaluate;
-	}	
-	
-	public String getPaperDescription() {
-		return paperDescription;
-	}
-
-	public void setPaperDescription(String paperDescription) {
-		this.paperDescription = paperDescription;
-	}
 
 	
 	public Exam getExamByPaperName(ExamPaper exampaper){
@@ -136,6 +81,9 @@ public class ExamAction extends BasePageInfoAction {
 			ExamPaperDao dao = new ExamPaperDao();
 			exampaper = dao.getExamPaperByCategory(paperName);
 		}
+		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		pictureNewsList = Cache.getNewsList("图片新闻链接", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
+		hotestNewsList=Cache.getHotestNewsList();	
 		if(exampaper!=null){
 			//获取试卷
 			System.out.println("exampaper is not null "+paperName);
@@ -163,6 +111,10 @@ public class ExamAction extends BasePageInfoAction {
 		System.out.println("getAllExamPaper: ");
 		ExamPaperDao dao = new ExamPaperDao();
 		examPaperList = dao.getAllExamPaper();
+		newestNewsList = Cache.getNewestNewsList(NewsPageInfo.NEWSPAGEINFO.getNewestNewsCount());//初始化每日推荐新闻列表
+		pictureNewsList = Cache.getNewsList("图片新闻链接", 0,NewsPageInfo.NEWSPAGEINFO.getPictureNewsCount()-1 );//初始化焦点图片新闻
+		hotestNewsList=Cache.getHotestNewsList();	
+		
 		return SUCCESS;
 	}
 	
@@ -198,4 +150,131 @@ public class ExamAction extends BasePageInfoAction {
 		}
 		return SUCCESS;
 	}
+
+
+	public String getPaperName() {
+		return paperName;
+	}
+
+
+	public void setPaperName(String paperName) {
+		this.paperName = paperName;
+	}
+
+
+	public int getCountOftitle() {
+		return countOftitle;
+	}
+
+
+	public void setCountOftitle(int countOftitle) {
+		this.countOftitle = countOftitle;
+	}
+
+
+	public List<ExamTitle> getListOftitle() {
+		return listOftitle;
+	}
+
+
+	public void setListOftitle(List<ExamTitle> listOftitle) {
+		this.listOftitle = listOftitle;
+	}
+
+
+	public List<List<ExamOption>> getOptionsOfTitle() {
+		return optionsOfTitle;
+	}
+
+
+	public void setOptionsOfTitle(List<List<ExamOption>> optionsOfTitle) {
+		this.optionsOfTitle = optionsOfTitle;
+	}
+
+
+	public List<Integer> getCheckedOptionList() {
+		return checkedOptionList;
+	}
+
+
+	public void setCheckedOptionList(List<Integer> checkedOptionList) {
+		this.checkedOptionList = checkedOptionList;
+	}
+
+
+	public List<ExamPaper> getExamPaperList() {
+		return examPaperList;
+	}
+
+
+	public void setExamPaperList(List<ExamPaper> examPaperList) {
+		this.examPaperList = examPaperList;
+	}
+
+
+	public String getEvaluate() {
+		return evaluate;
+	}
+
+
+	public void setEvaluate(String evaluate) {
+		this.evaluate = evaluate;
+	}
+
+
+	public String getPaperDescription() {
+		return paperDescription;
+	}
+
+
+	public void setPaperDescription(String paperDescription) {
+		this.paperDescription = paperDescription;
+	}
+
+
+	public List<News> getNewestNewsList() {
+		return newestNewsList;
+	}
+
+
+	public void setNewestNewsList(List<News> newestNewsList) {
+		this.newestNewsList = newestNewsList;
+	}
+
+
+	public List<News> getPictureNewsList() {
+		return pictureNewsList;
+	}
+
+
+	public void setPictureNewsList(List<News> pictureNewsList) {
+		this.pictureNewsList = pictureNewsList;
+	}
+
+
+	public List<News> getHotestNewsList() {
+		return hotestNewsList;
+	}
+
+
+	public void setHotestNewsList(List<News> hotestNewsList) {
+		this.hotestNewsList = hotestNewsList;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	public String getExamKey() {
+		return examKey;
+	}
+	
+	
+	
+	
+	
+	
+	
 }

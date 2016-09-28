@@ -48,23 +48,9 @@ public class LoginFilter implements Filter {
 			servletResponse.sendRedirect("/jsp/homepage/login.jsp");
 		}
 		else {
-			int role=user.getRole();
-			if(role==2||role==3){
-				if(path.contains("/user/")){
-					chain.doFilter(request, response);
-				}else{
-					servletResponse.sendRedirect("/user/projectAdd");
-				}
-			}else if(role==0||role==1){
-				if(path.contains("/admin/")){
-					chain.doFilter(request, response);
-				}else{
-					servletResponse.sendRedirect("/admin/newsAdd");
-				}
-			}else{
 				//已经登录，继续此次请求
 				chain.doFilter(request, response);
-			}
+			
 			
 			
 			
