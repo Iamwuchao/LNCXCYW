@@ -215,7 +215,7 @@
 				
 				
 				<div class="nailText">
-					<a href="<s:property value="%{newsMap.get('项目推介').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('项目推介链接').get(0).newsTile}"/></a>
+					<a href="<s:property value="%{newsMap.get('项目推介链接').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('项目推介链接').get(0).newsTile}"/></a>
 				
 				</div>
 			</div>
@@ -257,7 +257,7 @@
 			</div>
 			<div class="clear"></div>
 			<div  class="PicCon" >
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(0).news_content}"/>">
 				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>">
@@ -277,7 +277,7 @@
 			</div>
 			<div class="clear"></div>
 			<div  class="PicCon" >
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>">
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(1).news_content}"/>">
 				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>">
@@ -297,7 +297,7 @@
 			</div>
 			<div class="clear"></div>
 			<div  class="PicCon" >
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(2).news_content}"/>">
 				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>">
@@ -317,7 +317,7 @@
 			</div>
 			<div class="clear"></div>
 			<div  class="PicCon" >
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(3).news_content}"/>">
 				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>">
