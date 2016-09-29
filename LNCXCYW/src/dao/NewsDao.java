@@ -148,6 +148,21 @@ public class NewsDao extends BaseDaoImpl<News,Integer> {
 		return re;
 	}
 	
+	/*
+	 * 按新闻id获取新闻
+	 */
+	@SuppressWarnings("unchecked")
+	public News getNewsByID(int id){
+		System.out.println("getNewsListByID:");
+		List<News> re=new ArrayList<News>();
+		Session session=getSession();
+		Criteria criteria=session.createCriteria(News.class);
+		criteria.add(Restrictions.eq("newsId", id));
+		re=criteria.list();
+		session.close();
+		return re.get(0);
+	}
+	
 	
 	/*
 	 * 按时间范围查询新闻

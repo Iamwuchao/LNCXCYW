@@ -93,6 +93,14 @@ public class NewsAction extends PageGetBaseAction{
 		}
 		
 		if(dao.updateNewsIsPassed(newsRowID, avaliable)){
+			
+			News news=dao.getNewsByID(Integer.valueOf(newsRowID));
+			try{
+				Cache.updateNews(news.getCategory().getNewscategory(), news);//更新到缓存,异常没有处理
+			}catch(Exception e){
+				return ActionSupport.ERROR;
+			}
+			System.out.println("ok!");
 			strValue=ActionSupport.SUCCESS;
 			return ActionSupport.SUCCESS;
 		}		
