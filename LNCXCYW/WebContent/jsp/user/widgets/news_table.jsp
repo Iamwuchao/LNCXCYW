@@ -19,7 +19,17 @@
 					</td>						
 					<td><s:property value="#i.date" /></td>
 					<td>项目推介</td>
-					<td>通过</td>
+					<td>
+						<s:if test="#i.isPassed==0">
+							未审核
+						</s:if>
+						<s:elseif test="#i.isPassed==1">
+							审核未通过
+						</s:elseif>
+						<s:else>
+							审核通过
+						</s:else>
+					</td>
 					
 					<td>
 						<button type="button" class="btn btn-primary btn-sm ensure-button">删除</button>
