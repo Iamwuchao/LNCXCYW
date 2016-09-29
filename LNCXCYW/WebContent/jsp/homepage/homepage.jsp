@@ -215,7 +215,7 @@
 				
 				
 				<div class="nailText">
-					<a href="<s:property value="%{newsMap.get('项目推介').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('项目推介链接').get(0).newsTile}"/></a>
+					<a href="<s:property value="%{newsMap.get('项目推介链接').get(0).news_content}"/>" target="_blank"><s:property value="%{newsMap.get('项目推介链接').get(0).newsTile}"/></a>
 				
 				</div>
 			</div>
@@ -256,12 +256,9 @@
 				<span style="line-height:30px; font-weight:bold; padding-left:10px; margin-bottom:0px">热点</span>
 			</div>
 			<div class="clear"></div>
-			<%-- <div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
-			</div> --%>
-			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>">
-				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+			<div  class="PicCon" >
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(0).news_content}"/>">
+				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(0).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(0).newsTile}"/>">
 				</a>
@@ -279,9 +276,9 @@
 				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>">
-				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+			<div  class="PicCon" >
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(1).news_content}"/>">
+				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(1).newsTile}"/>">
 				</a>
@@ -299,13 +296,9 @@
 				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<%-- <div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
-				
-			</div> --%>
-			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>">
-				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+			<div  class="PicCon" >
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(2).news_content}"/>">
+				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(2).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(2).newsTile}"/>">
 				</a>
@@ -323,12 +316,9 @@
 				<p style="line-height:36px; font-weight:bold; padding:10px;"></p>
 			</div>
 			<div class="clear"></div>
-			<%-- <div >
-				<img src="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
-			</div> --%>
-			<div  class="PicCon" ><%-- src="<s:property value="%{newsMap.get('成果展示链接').get(1).news_address}"/>" --%>
-				<a href="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>">
-				<img style="display:block"  src="http://p1.ifengimg.com/a/2016_40/5cdd9fd045771ae.jpg"  
+			<div  class="PicCon" >
+				<a href="<s:property value="%{newsMap.get('成果展示链接').get(3).news_content}"/>">
+				<img style="display:block"  src="<s:property value="%{newsMap.get('成果展示链接').get(3).news_address}"/>"  
 				title = "<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>"
 				alt="<s:property value="%{newsMap.get('成果展示链接').get(3).newsTile}"/>">
 				</a>
