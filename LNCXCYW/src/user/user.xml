@@ -23,6 +23,12 @@
 				/jsp/user/information.jsp
 			</result>
 		</action> 
+		
+		<action name="informationChange" class="user.UserAction" method="informationChange">
+       		<result name="success" type="json">
+       			<param name="includeProperties">status</param>
+       		</result>
+		</action>
 
 	</package>
 	

@@ -5,9 +5,7 @@
 <div class="mycontent">  
 	<a href="#"></a>
 	 
- 	
 
-	<div id="authorId" ><s:property value="#session.user.role"/></div> 
 
 	<br>
 	<br>
